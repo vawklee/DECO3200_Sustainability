@@ -17,9 +17,9 @@
         <h2>Font family and sizing</h2>
         <h1 class="heading">35pt Krona One<br>This is a heading</h1>
         <h2 class="heading">26pt Krona One<br>This is a subheading</h2>
-        <p class="regular">20pt Anek telugu Regular<br>This is some body text</p>
-        <p class="bold">20pt Anek telugu Semi Bold<br>This is emphasised body text</p>
-        <p class="caption">18pt Anek telugu Regular<br>This is a caption</p>
+        <p class="regular">20pt Anek Telugu Regular<br>This is some body text</p>
+        <p class="bold">20pt Anek Telugu Semi Bold<br>This is emphasised body text</p>
+        <p class="caption">18pt Anek Telugu Regular<br>This is a caption</p>
 
         <h2>Colour scheme</h2>
         <section class="palette">
@@ -44,10 +44,42 @@
         </section>
 
         <h2>HTML Elements</h2>
-        <button class="caption disabled">Disabled button</button>
         <button class="caption active">Active button</button>
+        <button class="caption disabled">Disabled button</button>
         <button class="caption alt">Alternative button</button>
         <button class="caption icon">Button with icon<img src="icons/placeholder.svg"></button>
+        <br><br>
+        <a class="caption" target="_blank" rel="noopener noreferrer" href="https://www.google.com">This is a link</a>
+
+        <h2>Form Inputs</h2>
+        <form>
+            <label for="requiredField" class="caption">
+                Required field *
+            </label>
+            <input required type="text" name="requiredField" id="requiredField" value="" placeholder="Type in something for this required field"><br>
+
+            <label for="itemName" class="caption">
+                Item Name *
+            </label>
+            <input required type="text" name="itemName" id="itemName" value="" placeholder="e.g. White dress"><br>
+
+            <label for="description" class="caption">
+                Description *
+            </label>
+            <input required type="text" name="description" id="description" value="" placeholder="e.g. Style, length, etc."><br>
+
+            <label for="colour" class="caption">
+                Colour *
+            </label>
+            <select required name="colour" id="colour">
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="White">White</option>
+            </select><br>
+        </form>
 
         <!-- Coolors Palette Widget -->
         <!-- <script src="https://coolors.co/palette-widget/widget.js"></script>

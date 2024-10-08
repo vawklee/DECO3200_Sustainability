@@ -7,7 +7,15 @@
     --fontColor: rgb(32, 41, 35);
     --accent: rgb(228, 204, 238);
     --accentSecondary: rgb(233, 229, 166);
+
+    --disabledBackground: rgb(224, 224, 224);
+    --disabledBackgroundHover: rgb(178, 178, 178);
+    --disabledFont: rgb(44, 44, 44);
     /* --hover: rgb(32, 158, 148); */
+}
+
+body {
+    color: var(--fontColor);
 }
 
 /* Font styling, source: Google Font */
@@ -46,12 +54,74 @@
 
 /* Button styling */
 button {
-    height: 42pt;
-    width: 92pt;
+    height: 50px;
+    width: 200px;
+    /* padding: 15px 45px; */
+    border-radius: 4px;
+    border-style: none;
 }
 button.active {
     background-color: var(--primary);
     color: var(--background);
+}
+button.active:hover {
+    background-color: var(--fontColor);
+    border: var(--primary) solid 2px;
+}
+
+button.disabled {
+    background-color: var(--disabledBackground);
+    color: var(--disabledFont);
+}
+button.disabled:hover {
+    background-color: var(--disabledBackgroundHover);
+}
+
+button.alt {
+    background-color: var(--background);
+    color: var(--primary);
+    border: var(--primary) solid 2px;
+}
+/* Buttons with icons */
+button.icon {
+    background-color: var(--background);
+    color: var(--primary);
+    border: var(--primary) solid 2px;
+    width: auto;
+}
+button.icon img {
+    margin-left: 10px;
+    height: 20px;
+    width: auto;
+}
+button.alt:hover, button.icon:hover {
+    background-color: var(--secondary);
+}
+
+/* Link styling */
+a {
+    color: var(--primary);
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: var(--fontColor);
+}
+
+/* Form styling */
+form {
+    width: 75vw;
+    padding: 25px;
+    border: var(--primary) solid 2px;
+    border-radius: 4px;
+    background: var(--background);
+}
+form input, form select {
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: var(--secondary) solid 2px;
+    background-color: var(--background);
 }
 
 /* Set up for the colour palette */
@@ -73,6 +143,9 @@ button.active {
 }
 #palettePrimary {
     background-color: var(--primary);
+}
+#palettePrimary p {
+    color: white;
 }
 #paletteSecondary {
     background-color: var(--secondary);
