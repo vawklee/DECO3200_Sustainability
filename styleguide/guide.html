@@ -49,36 +49,47 @@
         <button class="caption alt">Alternative button</button>
         <button class="caption icon">Button with icon<img src="icons/placeholder.svg"></button>
         <br><br>
-        <a class="caption" target="_blank" rel="noopener noreferrer" href="https://www.google.com">This is a link</a>
+        <a class="caption" target="_blank" rel="noopener noreferrer" href="https://www.google.com">Click this link to learn more</a>
 
         <h2>Form Inputs</h2>
         <form>
-            <label for="requiredField" class="caption">
-                Required field *
-            </label>
-            <input required type="text" name="requiredField" id="requiredField" value="" placeholder="Type in something for this required field"><br>
+            <div>
+                <label for="requiredField" class="caption">
+                    Required field *
+                </label>
+                <input required type="text" name="requiredField" id="requiredField" value="" placeholder="Type in something for this required field"><br>
+            </div>
 
-            <label for="itemName" class="caption">
-                Item Name *
-            </label>
-            <input required type="text" name="itemName" id="itemName" value="" placeholder="e.g. White dress"><br>
+            <div>                
+                <label for="itemName" class="caption">
+                    Item Name *
+                </label>
+                <input required type="text" name="itemName" id="itemName" value="" placeholder="e.g. White dress"><br>
+            </div>
 
-            <label for="description" class="caption">
-                Description *
-            </label>
-            <input required type="text" name="description" id="description" value="" placeholder="e.g. Style, length, etc."><br>
+            <div>
+                <label for="description" class="caption">
+                    Description *
+                </label>
+                <input required type="text" name="description" id="description" value="" placeholder="e.g. Style, length, etc."><br>
+            </div>
 
-            <label for="colour" class="caption">
-                Colour *
-            </label>
-            <select required name="colour" id="colour">
-                <option value="Red">Red</option>
-                <option value="Yellow">Yellow</option>
-                <option value="Green">Green</option>
-                <option value="Blue">Blue</option>
-                <option value="Purple">Purple</option>
-                <option value="White">White</option>
-            </select><br>
+            <div>
+                <label for="colour" class="caption">
+                    Colour *
+                </label>
+                <select required name="colour" id="colour">
+                    <option value="Red">Red</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Purple">Purple</option>
+                    <option value="White">White</option>
+                </select><br>
+            </div>
+
+            <button class="closeForm alt" id="cancelForm">Cancel</button>
+            <input type="submit" id="submitButton" value="submit">
         </form>
 
         <!-- Coolors Palette Widget -->
