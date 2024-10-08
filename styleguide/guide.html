@@ -13,83 +13,95 @@
         <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&family=Krona+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>DECO3200 Web Dev Styleguide</h1>
-        <h2>Font family and sizing</h2>
-        <h1 class="heading">35pt Krona One<br>This is a heading</h1>
-        <h2 class="heading">26pt Krona One<br>This is a subheading</h2>
-        <p class="regular">20pt Anek Telugu Regular<br>This is some body text</p>
-        <p class="bold">20pt Anek Telugu Semi Bold<br>This is emphasised body text</p>
-        <p class="caption">18pt Anek Telugu Regular<br>This is a caption</p>
-
-        <h2>Colour scheme</h2>
-        <section class="palette">
-            <div class='box regular' id="paletteBackground">
-                <p>RGB: 252, 251, 248<br>HEX: #fcfbf8</p>
-            </div>
-            <div class='box regular' id="palettePrimary">
-                <p>RGB: 32, 96, 75<br>HEX: #20604b</p>
-            </div>
-            <div class='box regular' id="paletteSecondary">
-                <p>RGB: 224, 235, 225<br>HEX: #e0ebe1</p>
-            </div>
-            <div class='box regular' id="paletteFont">
-                <p>RGB: 32, 41, 35<br>HEX: #033014</p>
-            </div>
-            <div class='box regular' id="paletteAccent">
-                <p>RGB: 228, 204, 238<br>HEX: #e4ccee</p>
-            </div>
-            <div class='box regular' id="paletteAccentSecondary">
-                <p>RGB: 233, 229, 166<br>HEX: #e9e4a6</p>
-            </div>
-        </section>
-
-        <h2>HTML Elements</h2>
-        <button class="caption active">Active button</button>
-        <button class="caption disabled">Disabled button</button>
-        <button class="caption alt">Alternative button</button>
-        <button class="caption icon">Button with icon<img src="icons/placeholder.svg"></button>
-        <button class="caption icon">Add to cart<img src="icons/plus.svg"></button>
-        <button class="caption icon">Continue<img src="icons/arrow.svg"></button>
-        <br><br>
-        <a class="caption" target="_blank" rel="noopener noreferrer" href="https://www.google.com">Click this link to learn more</a>
-
-        <h2>Form Inputs</h2>
-        <form>
-            <div>
-                <label for="requiredField" class="caption">Required field *</label><br>
-                <input required type="text" name="requiredField" id="requiredField" value="" placeholder="This is a type='text' input; Type something"><br>
-            </div>
-
-            <div>                
-                <label for="itemName" class="caption">Item Name *</label><br>
-                <input required type="text" name="itemName" id="itemName" value="" placeholder="e.g. White dress"><br>
-            </div>
-
-            <div>
-                <label for="description" class="caption">Description *</label><br>
-                <input required type="text" name="description" id="description" value="" placeholder="e.g. Style, length, etc."><br>
-            </div>
-
-            <div>
-                <label for="colour" class="caption">Colour *</label><br>
-                <select required name="colour" id="colour">
-                    <option value="Red">Red</option>
-                    <option value="Yellow">Yellow</option>
-                    <option value="Green">Green</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Purple">Purple</option>
-                    <option value="White">White</option>
-                </select><br>
-            </div>
-
-            <button class="closeForm alt" id="cancelForm">Cancel</button>
-            <input type="submit" id="submitButton" value="submit">
-        </form>
-
-        <!-- Coolors Palette Widget -->
-        <!-- <script src="https://coolors.co/palette-widget/widget.js"></script>
-        <script data-id="06901877445571163">new CoolorsPaletteWidget("06901877445571163", ["fcfbf8","20604b","e0ebe1","033014","e4ccee","e9e4a6"]); </script> -->
-
-        <!-- buttons, links, forms, visual elements -->
+        <main>
+            <article>
+                <!-- <h1 class="heading">DECO3200 Web Dev Styleguide</h1>
+                <h2 class="heading">Font family and sizing</h2> -->
+                <h1 class="heading">35pt Krona One<br>This is a heading</h1>
+                <h2 class="heading">26pt Krona One<br>This is a subheading. Different font size between H1 and H2 does not apply on Google Chrome.</h2>
+                <p class="body">20pt Anek Telugu Regular<br>This is some body text</p>
+                <p class="bold">20pt Anek Telugu Semi Bold<br>This is emphasised body text</p>
+                <p class="caption">15pt Anek Telugu Regular<br>This is a caption</p>
+            </article>
+    
+            <article>
+                <h2 class="heading">Colour Palette</h2>
+                <section class="palette">
+                    <div class='paletteBox body' id="paletteBackground">
+                        <p>RGB: 252, 251, 248<br>HEX: #fcfbf8<br>Background</p>
+                    </div>
+                    <div class='paletteBox body' id="palettePrimary">
+                        <p>RGB: 32, 96, 75<br>HEX: #20604b<br>Primary</p>
+                    </div>
+                    <div class='paletteBox body' id="paletteSecondary">
+                        <p>RGB: 224, 235, 225<br>HEX: #e0ebe1<br>Secondary</p>
+                    </div>
+                    <div class='paletteBox body' id="paletteFont">
+                        <p>RGB: 32, 41, 35<br>HEX: #033014<br>Font</p>
+                    </div>
+                    <div class='paletteBox body' id="paletteAccent">
+                        <p>RGB: 228, 204, 238<br>HEX: #e4ccee<br>Accent</p>
+                    </div>
+                    <div class='paletteBox body' id="paletteAccentSecondary">
+                        <p>RGB: 233, 229, 166<br>HEX: #e9e4a6<br>Accent Secondary</p>
+                    </div>
+                </section>
+            </article>
+    
+            <article>
+                <h2 class="heading">HTML Elements</h2>
+                <p class="body">Hover over elements to see things happen</p>
+                <button class="caption active">Active button</button>
+                <button class="caption disabled">Disabled button</button>
+                <button class="caption alt">Alternative</button>
+                <button class="caption icon">Button with icon<img src="icons/placeholder.svg"></button>
+                <button class="caption icon">Add to cart<img src="icons/plus.svg"></button>
+                <button class="caption icon">Continue<img src="icons/arrow.svg"></button>
+                <button class="caption icon backButton"><img src="icons/backArrow.svg">Back</button>
+                <br>
+                <a class="caption" target="_blank" rel="noopener noreferrer" href="https://www.google.com">Click this link to learn more</a>
+            </article>
+            
+            <article>
+                <h2 class="heading">Form Inputs</h2>
+                <form>
+                    <div>
+                        <label for="requiredField" class="body">Required field *</label><br>
+                        <input required type="text" name="requiredField" id="requiredField" class="caption" value="" placeholder="This is a text input, type something"><br>
+                    </div>
+        
+                    <div>                
+                        <label for="itemName" class="body">Item Name *</label><br>
+                        <input required type="text" name="itemName" id="itemName" class="caption" value="" placeholder="e.g. White dress"><br>
+                    </div>
+        
+                    <div>
+                        <label for="description" class="body">Description *</label><br>
+                        <input required type="text" name="description" id="description" class="caption" value="" placeholder="e.g. Style, length, etc."><br>
+                    </div>
+        
+                    <div>
+                        <label for="colour" class="body">Colour *</label><br>
+                        <select required name="colour" id="colour" class="caption">
+                            <option value="Red" class="caption">Red</option>
+                            <option value="Yellow" class="caption">Yellow</option>
+                            <option value="Green" class="caption">Green</option>
+                            <option value="Blue" class="caption">Blue</option>
+                            <option value="Purple" class="caption">Purple</option>
+                            <option value="White" class="caption">White</option>
+                        </select><br>
+                    </div>
+        
+                    <button class="closeForm alt" id="cancelForm">Cancel</button>
+                    <input type="submit" id="submitButton" value="Submit">
+                </form>
+            </article>
+    
+            <!-- Coolors Palette Widget -->
+            <!-- <script src="https://coolors.co/palette-widget/widget.js"></script>
+            <script data-id="06901877445571163">new CoolorsPaletteWidget("06901877445571163", ["fcfbf8","20604b","e0ebe1","033014","e4ccee","e9e4a6"]); </script> -->
+    
+            <!-- buttons, links, forms, visual elements -->
+        </main>
     </body>
 </html>

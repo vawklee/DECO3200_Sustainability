@@ -14,3 +14,4 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 ## References <a id="references"></a>
 https://codepen.io/sosuke/pen/Pjoqqp
 https://medium.com/@chilakaemmanuel/changing-svg-image-color-loaded-through-img-tag-with-css-3-filters-c8e912f52dd3
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items
