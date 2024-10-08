@@ -10,3 +10,5 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 3. Using the terminal, run `npm install` to install all dependencies
 4. Using the terminal, run `npm run dev` to start the web server
 5. View on a web browser at http://localhost:1234/ (port number may vary)
+
+## References <a id="references"></a>
