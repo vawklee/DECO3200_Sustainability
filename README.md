@@ -10,10 +10,12 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 3. Using the terminal, run `npm install` to install all dependencies
 4. Using the terminal, run `npm run dev` to start the web server
 5. View on a web browser at http://localhost:1234/ (port number may vary)
+6. Using the terminal, press Control + C to stop the web server at any time
 
 ## How to view the styleguide
 1. Using the terminal, run `npm run styleguide` to start the web server
 2. View on a web browser at http://localhost:1234/ (port number may vary)
+3. Using the terminal, press Control + C to stop the web server at any time
 
 ## References <a id="references"></a>
 https://codepen.io/sosuke/pen/Pjoqqp
