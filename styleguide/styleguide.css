@@ -1,0 +1,91 @@
+/* setting up variables (e.g. set colour scheme) to be called later */
+/* Example for how to call a variable --> color: var(--primaryFont); */
+:root {
+    --background: rgb(252, 251, 248);
+    --primary: rgb(32, 96, 75);
+    --secondary: rgb(224, 235, 225);
+    --fontColor: rgb(32, 41, 35);
+    --accent: rgb(228, 204, 238);
+    --accentSecondary: rgb(233, 229, 166);
+    /* --hover: rgb(32, 158, 148); */
+}
+
+/* Font styling, source: Google Font */
+.heading {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.regular {
+    font-family: "Anek Telugu", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-size: 20pt;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.bold {
+    font-family: "Anek Telugu", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-size: 20pt;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.caption {
+    font-family: "Anek Telugu", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+/* Button styling */
+button {
+    height: 42pt;
+    width: 92pt;
+}
+button.active {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+/* Set up for the colour palette */
+.palette {
+    display: inline-flex;
+}
+.box {
+    height: 150px;
+    width: 250px;
+    margin-right: 15px;
+    border: rgb(102, 102, 102) solid;
+}
+.box p {
+    display: flex;
+    margin-left: 10px;
+}
+#paletteBackground {
+    background-color: var(--background);
+}
+#palettePrimary {
+    background-color: var(--primary);
+}
+#paletteSecondary {
+    background-color: var(--secondary);
+}
+#paletteFont {
+    background-color: var(--fontColor);
+}
+#paletteFont p {
+    color: white;
+}
+#paletteAccent {
+    background-color: var(--accent);
+}
+#paletteAccentSecondary {
+    background-color: var(--accentSecondary);
+}
