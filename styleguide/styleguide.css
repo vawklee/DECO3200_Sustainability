@@ -32,6 +32,53 @@ article {
     flex: 1 1 10vw;
 }
 
+/* Nav bar styling */
+header {
+    background-color: var(--secondary);
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+header h2 {
+    margin-left: 1vw;
+    color: var(--primary);
+}
+/* Source for below: https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexbox-3511cd936af9 */
+/* #navBarContainer {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+} */
+.navBarItems {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1vw;
+}
+.navBarItems a {
+    color: var(--font);
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 40px;
+    margin: 0 10px;
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: var(--primary) solid 2px;
+    display: flex;
+}
+.navBarItems a:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
 /* Font styling, source: Google Font */
 /* Heading font */
 .heading {
@@ -77,7 +124,7 @@ button, #submitButton {
     border-style: none;
     margin: 5px;
     /* text-align: center; */
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -152,6 +199,16 @@ form {
 form div {
     margin-bottom: 10px;
 }
+/* possible alt input styling, requires commenting out other border css below */
+/* input[type=text], select {
+    border-style: none;
+    border-bottom: var(--disabledBackground) solid 2px;
+}
+input:focus, select:focus {
+    background-color: var(--secondary);
+    border-style: none;
+    border-bottom: var(--primary) solid 2px;
+} */
 input[type=text], select {
     width: 75%;
     padding: 15px 25px;
@@ -159,17 +216,18 @@ input[type=text], select {
     border-radius: 5px;
     box-sizing: border-box;
     background-color: var(--background);
-    border: var(--disabledBackground) solid 1px;
+    border: var(--disabledBackground) solid 1.5px;
 }
 input:focus, select:focus {
     background-color: var(--secondary);
-    border: var(--primary) solid 1px;
+    border: var(--primary) solid 1.5px;
 }
 
 /* Set up for the colour palette */
 .palette {
     /* display: inline-flex; */
     flex-wrap: wrap;
+    display: flex;
 }
 .paletteBox {
     height: 150px;
@@ -216,4 +274,9 @@ input:focus, select:focus {
 }
 .locationAvailable {
     filter: invert(78%) sepia(42%) saturate(5031%) hue-rotate(76deg) brightness(89%) contrast(82%);
+}
+
+/* temp styling */
+.locationMarkerImgs {
+    display: flex;
 }
