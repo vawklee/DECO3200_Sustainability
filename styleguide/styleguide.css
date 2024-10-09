@@ -74,9 +74,14 @@ header h2 {
     border: var(--primary) solid 2px;
     display: flex;
 }
-.navBarItems a:hover {
+/* Use a.activeNav to highlight the active page you are on */
+.navBarItems a:hover, a.activeNav {
     background-color: var(--primary);
     color: var(--background);
+    /* text-decoration: underline; */
+}
+.navBarItems a:hover {
+    text-decoration: underline;
 }
 
 /* Font styling, source: Google Font */
