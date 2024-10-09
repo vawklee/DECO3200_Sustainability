@@ -11,7 +11,10 @@
     --disabledBackground: rgb(224, 224, 224);
     --disabledBackgroundHover: rgb(178, 178, 178);
     --disabledFont: rgb(44, 44, 44);
-    /* --hover: rgb(32, 158, 148); */
+    
+    --locationRepair: rgb(1, 1, 1);
+    --locationRequest: rgb(255, 61, 32);
+    --locationAvailable: rgb(41, 191, 61);
 }
 
 body {
@@ -30,11 +33,13 @@ article {
 }
 
 /* Font styling, source: Google Font */
+/* Heading font */
 .heading {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
+/* Regular body font */
 .body {
     font-family: "Anek Telugu", sans-serif;
     /* font-optical-sizing: auto; */
@@ -44,6 +49,7 @@ article {
     font-variation-settings:
         "wdth" 100;
 }
+/* Regular body font, bolded */
 .bold {
     font-family: "Anek Telugu", sans-serif;
     /* font-optical-sizing: auto; */
@@ -53,6 +59,7 @@ article {
     font-variation-settings:
         "wdth" 100;
 }
+/* Regular body font, caption size */
 .caption {
     font-family: "Anek Telugu", sans-serif;
     /* font-optical-sizing: auto; */
@@ -65,7 +72,7 @@ article {
 
 /* Button styling */
 button, #submitButton {
-    padding: 15px 45px;
+    padding: 15px 40px;
     border-radius: 4px;
     border-style: none;
     margin: 5px;
@@ -170,7 +177,7 @@ input:focus, select:focus {
     margin: 10px;
     border: var(--primary) solid;
 }
-.box p {
+.paletteBox p {
     display: flex;
     margin-left: 10px;
 }
@@ -197,4 +204,16 @@ input:focus, select:focus {
 }
 #paletteAccentSecondary {
     background-color: var(--accentSecondary);
+}
+
+/* Location marker styling */
+.locationRepair, .locationRequest, .locationAvailable {
+    margin: 15px;
+}
+/* The following applies the respective red and green colours to the location markers, as designed */
+.locationRequest {
+    filter: invert(37%) sepia(62%) saturate(5158%) hue-rotate(348deg) brightness(100%) contrast(101%);
+}
+.locationAvailable {
+    filter: invert(78%) sepia(42%) saturate(5031%) hue-rotate(76deg) brightness(89%) contrast(82%);
 }
