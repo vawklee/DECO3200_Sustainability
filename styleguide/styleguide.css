@@ -228,6 +228,17 @@ input:focus, select:focus {
     border: var(--primary) solid 1.5px;
 }
 
+/* Temp */
+.locationMarkerImgs {
+    display: flex;
+}
+code {
+    font-family: Consolas,"courier new";
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 101%;
+}
 /* Set up for the colour palette */
 .palette {
     /* display: inline-flex; */
@@ -279,9 +290,4 @@ input:focus, select:focus {
 }
 .locationAvailable {
     filter: invert(78%) sepia(42%) saturate(5031%) hue-rotate(76deg) brightness(89%) contrast(82%);
-}
-
-/* temp styling */
-.locationMarkerImgs {
-    display: flex;
 }
