@@ -61,6 +61,7 @@ header h2 {
     display: flex;
     justify-content: space-between;
     margin-right: 1vw;
+    align-self: center;
 }
 .navBarItems a {
     color: var(--font);
@@ -90,6 +91,13 @@ header h2 {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 30pt;
+  }
+.subheading {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25pt;
   }
 /* Regular body font */
 .body {
