@@ -2,11 +2,12 @@
 /* Example for how to call a variable --> color: var(--primaryFont); */
 :root {
     --background: rgb(252, 251, 248);
-    --primary: rgb(32, 96, 75);
-    --secondary: rgb(224, 235, 225);
+    --primary: rgb(13, 93, 90);
+    --secondary: rgb(194, 232, 157);
     --fontColor: rgb(32, 41, 35);
     --accent: rgb(228, 204, 238);
     --accentSecondary: rgb(233, 229, 166);
+    --purple: rgb(158, 84, 201);
 
     --disabledBackground: rgb(224, 224, 224);
     --disabledBackgroundHover: rgb(178, 178, 178);
@@ -14,7 +15,7 @@
     
     --locationRepair: rgb(1, 1, 1);
     --locationRequest: rgb(255, 61, 32);
-    --locationAvailable: rgb(41, 191, 61);
+    --locationAvailable: rgb(154, 216, 127);
 }
 
 body {
@@ -34,7 +35,7 @@ article {
 
 /* Nav bar styling */
 header {
-    background-color: var(--secondary);
+    background-color: var(--primary);
     height: 100%;
     width: 100%;
     margin: auto;
@@ -45,8 +46,18 @@ header {
     justify-content: space-between;
 }
 header h2 {
+    margin-left: 0.5vw;
+    color: var(--secondary);
+}
+/*
+header img {
+    align-self: center;
+    margin-left: 10px;
+} */
+.navLogo {
+    align-self: center;
     margin-left: 1vw;
-    color: var(--primary);
+    display: flex;
 }
 /* Source for below: https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexbox-3511cd936af9 */
 /* #navBarContainer {
@@ -64,26 +75,26 @@ header h2 {
     align-self: center;
 }
 .navBarItems a {
-    color: var(--font);
+    color: var(--secondary);
     text-align: center;
     text-decoration: none;
     padding: 15px 40px;
     margin: 0 10px;
-    border-radius: 8px;
-    background-color: var(--secondary);
-    color: var(--primary);
-    border: var(--primary) solid 2px;
+    /* border-radius: 8px; */
+    /* border-bottom: var(--secondary) solid 2px; */
+    background-color: var(--primary);
     display: flex;
 }
 /* Use a.activeNav to highlight the active page you are on */
 .navBarItems a:hover, a.activeNav {
-    background-color: var(--primary);
-    color: var(--background);
+    /* background-color: var(--primary); */
+    border-bottom: var(--secondary) solid 2px;
+    color: var(--secondary);
     /* text-decoration: underline; */
 }
-.navBarItems a:hover {
+/* .navBarItems a:hover {
     text-decoration: underline;
-}
+} */
 
 /* Font styling, source: Google Font */
 /* Heading font */
@@ -287,6 +298,12 @@ code {
 #paletteAccentSecondary {
     background-color: var(--accentSecondary);
 }
+#palettePurple {
+    background-color: var(--purple);
+}
+#palettePurple p {
+    color: white;
+}
 
 /* Location marker styling */
 .locationRepair, .locationRequest, .locationAvailable {
@@ -297,5 +314,5 @@ code {
     filter: invert(37%) sepia(62%) saturate(5158%) hue-rotate(348deg) brightness(100%) contrast(101%);
 }
 .locationAvailable {
-    filter: invert(78%) sepia(42%) saturate(5031%) hue-rotate(76deg) brightness(89%) contrast(82%);
+    filter: invert(90%) sepia(12%) saturate(1402%) hue-rotate(47deg) brightness(89%) contrast(91%);
 }
