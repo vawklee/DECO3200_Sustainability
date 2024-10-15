@@ -268,8 +268,9 @@ button.download:hover {
     color: var(--background);
 }
 .featureContainer {
+    border: red solid 2px;
     display: flex;
-    height: 40vh;
+    height: auto;
 }
 .feature {
     margin: auto 15px;
@@ -320,7 +321,9 @@ button.download:hover {
     border: var(--accentSecondaryHover) solid 2px;
 }
 
-.news {
+.newsContainer {
+    height: 50vh;
+    border: red solid 2px;
     background-color: red;
     display: flex;
 }
