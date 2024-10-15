@@ -7,6 +7,7 @@
     --fontColor: rgb(32, 41, 35);
     --accent: rgb(228, 204, 238);
     --accentSecondary: rgb(233, 229, 166);
+    --accentSecondaryHover: rgb(230, 210, 140);
     --purple: rgb(158, 84, 201);
 
     --disabledBackground: rgb(224, 224, 224);
@@ -21,23 +22,27 @@
 body {
     color: var(--fontColor); /* sets font colour */
     background-color: var(--background); /* sets background colour*/
+    /* the below makes it so there is no white gap on the edge */
+    margin: 0px;
+    padding: 0px;
 }
 main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 article {
     padding: 10px;
     margin: 5px;
-    border: var(--disabledBackground) solid 2px;
-    flex: 1 1 10vw;
+    /* border: var(--disabledBackground) solid 2px; */
+    /* flex: 1 1 10vw; */
 }
 
 /* Nav bar styling */
 header {
     background-color: var(--primary);
     height: 100%;
-    width: 100%;
+    width: 100vw;
     margin: auto;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -62,15 +67,6 @@ header img {
 .navLogo:hover {
     text-decoration: none;
 }
-/* Source for below: https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexbox-3511cd936af9 */
-/* #navBarContainer {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-} */
 .navBarItems {
     display: flex;
     justify-content: space-between;
@@ -255,6 +251,84 @@ input:focus, select:focus {
     border: var(--primary) solid 1.5px;
 }
 
+/* Homepage features styling */
+.introduction h1 {
+    color: var(--primary);
+}
+button.download {
+    font-weight: 600; /* sets text to bold */
+    background-color: var(--secondary);
+    color: var(--primary);
+} 
+button.download img {
+    filter: invert(28%) sepia(87%) saturate(370%) hue-rotate(129deg) brightness(90%) contrast(101%);
+}
+button.download:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+.featureContainer {
+    display: flex;
+    height: 40vh;
+}
+.feature {
+    margin: auto 15px;
+    padding: 50px 55px;
+    height: 100%;
+    border: solid var(--secondary) 2px;
+    flex: 1 1 33vw;
+}
+/* different to button.icon styling for specific selected colouring */
+.feature button {
+    width: auto;
+}
+.feature button img {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+
+.fPurple {
+    background-color: var(--accent);
+    color: var(--fontColor);
+    border: var(--accent) solid 2px;
+}
+.fPurple:hover {
+    background-color: var(--purple);
+    border: var(--purple) solid 2px;
+}
+.fGreen {
+    background-color: var(--primary);
+    color: var(--background);
+    border: var(--primary) solid 2px;
+}
+.fGreen:hover {
+    background-color: var(--fontColor);
+    border: var(--fontColor) solid 2px;
+}
+.fGreen img {
+    filter: invert(97%) sepia(2%) saturate(229%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+.fYellow {
+    background-color: var(--accentSecondary);
+    color: var(--fontColor);
+    border: var(--accentSecondary) solid 2px;
+}
+.fYellow:hover {
+    background-color: var(--accentSecondaryHover);
+    border: var(--accentSecondaryHover) solid 2px;
+}
+
+.news {
+    background-color: red;
+    display: flex;
+}
+.newsCard {
+    padding: 5px 25px;
+    border: var(--accent) solid 2px;
+}
+
 /* Temp */
 .locationMarkerImgs {
     display: flex;
@@ -279,6 +353,7 @@ code {
     filter: invert(90%) sepia(12%) saturate(1402%) hue-rotate(47deg) brightness(89%) contrast(91%);
 }
 
+/* Responsive styling */
 @media screen and (max-width: 840px){
     body {
         background-color: red;
