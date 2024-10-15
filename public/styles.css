@@ -80,7 +80,7 @@ header img {
     padding: 15px 40px;
     margin: 0 10px;
     /* border-radius: 8px; */
-    /* border-bottom: var(--secondary) solid 2px; */
+    border-bottom: var(--primary) solid 2px;
     background-color: var(--primary);
     display: flex;
     align-items: center;
@@ -289,6 +289,7 @@ button.download:hover {
     height: 40vh;
     /* border: solid var(--secondary) 2px; */
     flex: 1 1 33vw;
+    /* display: flex; */
 }
 /* different to button.icon styling for specific selected colouring */
 .feature button {
@@ -309,6 +310,9 @@ button.download:hover {
 .fPurple:hover {
     background-color: var(--purple);
     border: var(--purple) solid 2px;
+}
+.fAssist {
+    justify-content: end;
 }
 .fGreen {
     background-color: var(--primary);
@@ -355,11 +359,23 @@ button.download:hover {
     border: solid var(--disabledBackgroundHover) 2px;
     border-radius: 10px;
     background-color: var(--background);
-    filter: drop-shadow(0px 5px 1px var(--fontColor)); /* creates drop shadow to outline the news card*/
+    filter: drop-shadow(0px 5px 1px var(--fontColor)); /* creates drop shadow to outline the news card; Generator source: https://webcode.tools/css-generator/drop-shadow*/
 }
-.newsCard button {
+/* styling the read more button */
+.newsCard a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
     width: 95%;
     max-width: 25vw;
+    background-color: var(--fontColor);
+    color: var(--background);
+}
+.newsCard a:hover {
+    text-decoration: underline;
+}
+.readMore {
     background-color: var(--fontColor);
     color: var(--background);
 }
