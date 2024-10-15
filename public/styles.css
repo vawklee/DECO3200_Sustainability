@@ -50,7 +50,7 @@ header {
     align-items: end;
     justify-content: space-between;
 }
-header h2 {
+header h2{
     margin-left: 0.5vw;
     color: var(--secondary);
 }
@@ -328,8 +328,13 @@ button.download:hover {
     display: flex;
 }
 .newsCard {
-    padding: 5px 25px;
-    border: var(--accent) solid 2px;
+    /* padding: 5px 25px;
+    border: var(--accent) solid 2px; */
+    margin: auto 15px;
+    padding: 50px 55px;
+    height: 100%;
+    border: solid var(--secondary) 2px;
+    flex: 1 1 33vw;
 }
 
 /* Temp */
@@ -412,10 +417,7 @@ code {
     }
 }
 
-
-
 /* FORM CSS */
-
 .repair-assistant-background {
     background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
     background-size: cover;
