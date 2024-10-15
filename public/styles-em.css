@@ -1,0 +1,444 @@
+/* setting up variables (e.g. set colour scheme) to be called later */
+/* Example for how to call a variable --> color: var(--primaryFont); */
+:root {
+    --background: rgb(252, 251, 248);
+    --primary: rgb(13, 93, 90);
+    --secondary: rgb(194, 232, 157);
+    --fontColor: rgb(32, 41, 35);
+    --accent: rgb(228, 204, 238);
+    --accentSecondary: rgb(233, 229, 166);
+    --accentSecondaryHover: rgb(230, 210, 140);
+    --purple: rgb(158, 84, 201);
+
+    --disabledBackground: rgb(224, 224, 224);
+    --disabledBackgroundHover: rgb(178, 178, 178);
+    --disabledFont: rgb(44, 44, 44);
+    
+    --locationRepair: rgb(1, 1, 1);
+    --locationRequest: rgb(255, 61, 32);
+    --locationAvailable: rgb(154, 216, 127);
+}
+
+body {
+    color: var(--fontColor); /* sets font colour */
+    background-color: var(--background); /* sets background colour*/
+    /* the below makes it so there is no white gap on the edge */
+    margin: 0px;
+    padding: 0px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+article {
+    padding: 10px;
+    margin: 5px;
+    /* border: var(--disabledBackground) solid 2px; */
+    /* flex: 1 1 10vw; */
+}
+
+/* Nav bar styling */
+header {
+    background-color: var(--primary);
+    height: 100%;
+    width: 100vw;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+header h2{
+    margin-left: 0.5vw;
+    color: var(--secondary);
+}
+/*
+header img {
+    align-self: center;
+    margin-left: 10px;
+} */
+.navLogo {
+    align-self: center;
+    margin-left: 1vw;
+    display: flex;
+}
+.navLogo:hover {
+    text-decoration: none;
+}
+.navBarItems {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1vw;
+    align-self: center;
+}
+.navBarItems a {
+    color: var(--secondary);
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 40px;
+    margin: 0 10px;
+    /* border-radius: 8px; */
+    /* border-bottom: var(--secondary) solid 2px; */
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+/* Use a.activeNav to highlight the active page you are on */
+.navBarItems a:hover, a.activeNav {
+    /* background-color: var(--primary); */
+    border-bottom: var(--secondary) solid 2px;
+    color: var(--secondary);
+    /* text-decoration: underline; */
+}
+/* .navBarItems a:hover {
+    text-decoration: underline;
+} */
+.navBarContainer .hamburgerMenu {
+    display: none;
+    background-color: red;
+}
+
+/* Font styling, source: Google Font */
+/* Heading font */
+.heading {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30pt;
+  }
+.subheading {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25pt;
+  }
+/* Regular body font */
+.body {
+    font-family: "Anek Telugu", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-size: 20pt;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+/* Regular body font, bolded */
+.bold {
+    font-family: "Anek Telugu", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-size: 20pt;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+/* Regular body font, caption size */
+.caption {
+    font-family: "Anek Telugu", sans-serif;
+    /* font-optical-sizing: auto; */
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+/* Button styling */
+button, #submitButton {
+    padding: 15px 40px;
+    border-radius: 4px;
+    border-style: none;
+    margin: 5px;
+    /* text-align: center; */
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+button.active, #submitButton {
+    background-color: var(--primary);
+    color: var(--background);
+    border: var(--primary) solid 2px;
+}
+button.active:hover, #submitButton:hover {
+    background-color: var(--fontColor);
+    border: var(--fontColor) solid 2px;
+}
+
+button.disabled {
+    background-color: var(--disabledBackground);
+    color: var(--disabledFont);
+    border: var(--disabledBackground) solid 2px;
+}
+button.disabled:hover {
+    background-color: var(--disabledBackgroundHover);
+    border: var(--disabledBackgroundHover) solid 2px;
+}
+
+button.alt {
+    background-color: var(--background);
+    color: var(--primary);
+    border: var(--primary) solid 2px;
+}
+/* Buttons with icons */
+button.icon {
+    background-color: var(--background);
+    color: var(--primary);
+    border: var(--primary) solid 2px;
+    width: auto;
+}
+button.icon img {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+    filter: invert(29%) sepia(20%) saturate(1291%) hue-rotate(109deg) brightness(96%) contrast(87%); /* source: https://codepen.io/sosuke/pen/Pjoqqp && https://medium.com/@chilakaemmanuel/changing-svg-image-color-loaded-through-img-tag-with-css-3-filters-c8e912f52dd3*/
+}
+button.backButton img {
+    margin-left: 0px;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+button.alt:hover, button.icon:hover {
+    background-color: var(--secondary);
+}
+
+/* Link styling */
+a {
+    color: var(--primary);
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: var(--fontColor);
+}
+
+/* Form styling */
+form {
+    width: 75vw;
+    padding: 25px;
+    border: var(--primary) solid 2px;
+    border-radius: 4px;
+    background: var(--background);
+}
+form div {
+    margin-bottom: 10px;
+}
+/* possible alt input styling, requires commenting out other border css below */
+/* input[type=text], select {
+    border-style: none;
+    border-bottom: var(--disabledBackground) solid 2px;
+}
+input:focus, select:focus {
+    background-color: var(--secondary);
+    border-style: none;
+    border-bottom: var(--primary) solid 2px;
+} */
+input[type=text], select {
+    width: 75%;
+    padding: 15px 25px;
+    outline: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: var(--background);
+    border: var(--disabledBackground) solid 1.5px;
+}
+input:focus, select:focus {
+    background-color: var(--secondary);
+    border: var(--primary) solid 1.5px;
+}
+
+/* Homepage features styling */
+.introduction h1 {
+    color: var(--primary);
+}
+button.download {
+    font-weight: 600; /* sets text to bold */
+    background-color: var(--secondary);
+    color: var(--primary);
+} 
+button.download img {
+    filter: invert(28%) sepia(87%) saturate(370%) hue-rotate(129deg) brightness(90%) contrast(101%);
+}
+button.download:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+.featureContainer {
+    border: red solid 2px;
+    display: flex;
+    height: auto;
+}
+.feature {
+    margin: auto 15px;
+    padding: 50px 55px;
+    height: 100%;
+    border: solid var(--secondary) 2px;
+    flex: 1 1 33vw;
+}
+/* different to button.icon styling for specific selected colouring */
+.feature button {
+    width: auto;
+}
+.feature button img {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+
+.fPurple {
+    background-color: var(--accent);
+    color: var(--fontColor);
+    border: var(--accent) solid 2px;
+}
+.fPurple:hover {
+    background-color: var(--purple);
+    border: var(--purple) solid 2px;
+}
+.fGreen {
+    background-color: var(--primary);
+    color: var(--background);
+    border: var(--primary) solid 2px;
+}
+.fGreen:hover {
+    background-color: var(--fontColor);
+    border: var(--fontColor) solid 2px;
+}
+.fGreen img {
+    filter: invert(97%) sepia(2%) saturate(229%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+.fYellow {
+    background-color: var(--accentSecondary);
+    color: var(--fontColor);
+    border: var(--accentSecondary) solid 2px;
+}
+.fYellow:hover {
+    background-color: var(--accentSecondaryHover);
+    border: var(--accentSecondaryHover) solid 2px;
+}
+
+.newsContainer {
+    height: 50vh;
+    border: red solid 2px;
+    background-color: red;
+    display: flex;
+}
+.newsCard {
+    /* padding: 5px 25px;
+    border: var(--accent) solid 2px; */
+    margin: auto 15px;
+    padding: 50px 55px;
+    height: 100%;
+    border: solid var(--secondary) 2px;
+    flex: 1 1 33vw;
+}
+
+/* Temp */
+.locationMarkerImgs {
+    display: flex;
+}
+code {
+    font-family: Consolas,"courier new";
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 101%;
+}
+
+/* Location marker styling */
+.locationRepair, .locationRequest, .locationAvailable {
+    margin: 15px;
+}
+/* The following applies the respective red and green colours to the location markers, as designed */
+.locationRequest {
+    filter: invert(37%) sepia(62%) saturate(5158%) hue-rotate(348deg) brightness(100%) contrast(101%);
+}
+.locationAvailable {
+    filter: invert(90%) sepia(12%) saturate(1402%) hue-rotate(47deg) brightness(89%) contrast(91%);
+}
+
+/* Responsive styling */
+@media screen and (max-width: 840px){
+    body {
+        background-color: red;
+    }
+    .heading {
+        font-size: 28px;
+    }
+    .subheading {
+        font-size: 23px;
+    }
+    .body, .bold {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    body {
+        background-color: blue;
+    }
+    header {
+        padding-top: 2px;
+        padding-bottom: 5px;
+    }
+    .navLogo h2{
+        width: 175px;
+    }
+    .navBarItems a {
+        padding: 5px 20px;
+        margin: 0 10px;
+    }
+    /* .navBarContainer a:not(:first-child) {
+        display: none;
+    } */
+    .navBarItems a:not(:last-child){
+        display: none;
+    }
+    .navBarContainer a.hamburgerMenu {
+        float: right;
+        display: block;
+    }
+    .navBarContainer.responsive {
+        position: relative;
+    }
+    .navBarContainer.responsive .hamburgerMenu {
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .navBarContainer.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+/* FORM CSS */
+.repair-assistant-background {
+    background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.secondhand-hub-background {
+    background-image: url('images/imgs/secondhandHubBackground.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+dialog {
+    background-color: #f0f0f0; /* Background color of the dialog */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    color: black; /* Text color inside the dialog */
+    position: relative;
+    z-index: 1; /* Ensure the dialog appears above the background */
+}
