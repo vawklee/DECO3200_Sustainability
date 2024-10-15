@@ -87,6 +87,7 @@ header img {
     /* border-bottom: var(--secondary) solid 2px; */
     background-color: var(--primary);
     display: flex;
+    align-items: center;
 }
 /* Use a.activeNav to highlight the active page you are on */
 .navBarItems a:hover, a.activeNav {
@@ -98,6 +99,10 @@ header img {
 /* .navBarItems a:hover {
     text-decoration: underline;
 } */
+.navBarContainer .hamburgerMenu {
+    display: none;
+    background-color: red;
+}
 
 /* Font styling, source: Google Font */
 /* Heading font */
@@ -272,4 +277,59 @@ code {
 }
 .locationAvailable {
     filter: invert(90%) sepia(12%) saturate(1402%) hue-rotate(47deg) brightness(89%) contrast(91%);
+}
+
+@media screen and (max-width: 840px){
+    body {
+        background-color: red;
+    }
+    .heading {
+        font-size: 28px;
+    }
+    .subheading {
+        font-size: 23px;
+    }
+    .body, .bold {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    body {
+        background-color: blue;
+    }
+    header {
+        padding-top: 2px;
+        padding-bottom: 5px;
+    }
+    .navLogo h2{
+        width: 175px;
+    }
+    .navBarItems a {
+        padding: 5px 20px;
+        margin: 0 10px;
+    }
+    /* .navBarContainer a:not(:first-child) {
+        display: none;
+    } */
+    .navBarItems a:not(:last-child){
+        display: none;
+    }
+    .navBarContainer a.hamburgerMenu {
+        float: right;
+        display: block;
+    }
+    .navBarContainer.responsive {
+        position: relative;
+    }
+    .navBarContainer.responsive .hamburgerMenu {
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .navBarContainer.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 }

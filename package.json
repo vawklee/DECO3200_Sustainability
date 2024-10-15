@@ -7,7 +7,8 @@
     "start": "node server.js",
     "prestart": "parcel build ./public/index.html",
     "dev": "parcel serve ./public/index.html",
-    "styleguide": "parcel serve ./styleguide/guide.html"
+    "styleguide": "parcel serve ./styleguide/guide.html",
+    "build": "parcel build --dist-dir public"
   },
   "author": "Emma M., Eva M. A., Kate M., Veronica L.",
   "license": "ISC",
