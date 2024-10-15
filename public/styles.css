@@ -408,3 +408,32 @@ code {
         text-align: left;
     }
 }
+
+
+
+/* FORM CSS */
+
+.repair-assistant-background {
+    background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.secondhand-hub-background {
+    background-image: url('images/imgs/secondhandHubBackground.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+dialog {
+    background-color: #f0f0f0; /* Background color of the dialog */
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    color: black; /* Text color inside the dialog */
+    position: relative;
+    z-index: 1; /* Ensure the dialog appears above the background */
+}

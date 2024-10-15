@@ -26,7 +26,68 @@
             </div>
         </header>
         <main>
-            <article class="body">Repair Assistant</article>
+            <h1 class="heading">Repair Assistant</h1>
+            <p>Tell us a bit about your damaged garment and we’ll identify the best way to repair it.</p>
+            <dialog class="form-container" id="repairAssistantDialog">
+                <form id="addBookForm" action="#">
+                    <div class="form-row">
+                        <label for="material">Material Type</label><br>
+                        <!-- Although there are a significant number of options that could be provided for this drop down, 
+                            I have chosen 10 common clothing materials  -->   
+                        <select id="materialType" class="form-input" name="materialType" required="true">
+                            <option selected disabled>Select a material type</option>                            
+                            <option value="Acrylic">Acrylic (most often a wool substitute)</option>
+                            <option value="Cotton">Cotton</option>
+                            <option value="Denim">Denim</option>
+                            <option value="Linen">Linen</option>
+                            <option value="Lycra/Elastane">Lycra/Elastane (typically in actvewear)</option>
+                            <option value="Nylon">Nylon</option>
+                            <option value="Polyester">Polyester</option>
+                            <option value="Rayon">Rayon (most often a silk substitute)</option>
+                            <option value="Silk">Silk</option>
+                            <option value="Wool">Wool</option>
+                        </select><br>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="clothing">Clothing Type</label><br>
+                        <!-- Although there are a significant number of options that could be provided for this drop down, 
+                                                I have chosen 9 common clothing types  -->
+                        <select id="clothingType" class="form-input" name="clothingType" required="true">
+                            <option selected disabled>Select a clothing type</option>
+                            <option value="Activewear">Activewear</option>
+                            <option value="Dress">Dress</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Jumper">Jumper</option>
+                            <option value="Pants">Pants</option>
+                            <option value="Shirt">Shirt</option>
+                            <option value="Shorts">Shorts</option>
+                            <option value="Skirt">Skirt</option>
+                            <option value="Socks">Socks</option>
+                        </select><br>
+                    </div>
+                    <div class="form-row">
+                        <label for="damage">Damage Type</label><br>  
+                        <!-- Although there are a significant number of options that could be provided for this drop down, 
+                            I have chosen 9 common damage types  -->  
+                        <select id="damageType" class="form-input" name="damageType" required="true">
+                            <option selected disabled>Select a clothing type</option>                            
+                            <option value="Broken Zipper">Broken Zipper</option>
+                            <option value="Fallen Hem">Fallen Hem</option>
+                            <option value="Fraying Edges">Fraying Hem</option>
+                            <option value="Hole">Hole</option>
+                            <option value="Loose Stitching">Loose Stitching</option>
+                            <option value="Loss of Elasticity">Loss of Elasticity</option>
+                            <option value="Pilling">Pilling</option>
+                            <option value="Replacing Button">Replacing Button</option>
+                            <option value="Rip/Tear">Rip/Tear</option>
+                        </select><br>
+                    </div>
+                    <button class="btn btn-submit hidden" id="submit">SUBMIT</button>
+                </form>
+                <button onclick="closeDialog()">Close</button>
+            </dialog>
+
         </main>
         <script src="script.js"></script>
     </body>
