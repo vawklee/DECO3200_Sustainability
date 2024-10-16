@@ -41,8 +41,8 @@ article {
 /* Nav bar styling */
 header {
     background-color: var(--primary);
-    height: 100%;
-    width: 99.1vw;
+    height: 75px;
+    width: 100vw;
     margin: auto;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -54,11 +54,6 @@ header h2 {
     margin-left: 0.5vw;
     color: var(--secondary);
 }
-/*
-header img {
-    align-self: center;
-    margin-left: 10px;
-} */
 .navLogo {
     align-self: center;
     margin-left: 1vw;
@@ -74,7 +69,8 @@ header img {
     align-self: center;
 }
 .navBarItems a {
-    color: var(--secondary);
+    /* color: var(--secondary); */
+    color: var(--background);
     text-align: center;
     text-decoration: none;
     padding: 15px 40px;
@@ -85,6 +81,11 @@ header img {
     display: flex;
     align-items: center;
 }
+.navBarItems a img {
+    filter: invert(96%) sepia(2%) saturate(367%) hue-rotate(336deg) brightness(104%) contrast(97%);
+    align-self: center;
+    margin-left: 15%;
+}
 /* Use a.activeNav to highlight the active page you are on */
 .navBarItems a:hover, a.activeNav {
     /* background-color: var(--primary); */
@@ -92,9 +93,6 @@ header img {
     color: var(--secondary);
     /* text-decoration: underline; */
 }
-/* .navBarItems a:hover {
-    text-decoration: underline;
-} */
 .navBarContainer .hamburgerMenu {
     display: none;
     background-color: red;
@@ -148,7 +146,7 @@ header img {
 /* Button styling */
 button, #submitButton {
     padding: 15px 40px;
-    border-radius: 4px;
+    border-radius: 5px;
     border-style: none;
     margin: 5px;
     /* text-align: center; */
@@ -221,7 +219,7 @@ form {
     width: 75vw;
     padding: 25px;
     border: var(--primary) solid 2px;
-    border-radius: 4px;
+    border-radius: 5px;
     background: var(--background);
 }
 form div {
@@ -251,17 +249,20 @@ input:focus, select:focus {
     border: var(--primary) solid 1.5px;
 }
 
-/* Homepage features styling */
+/* HOMEPAGE (index.html) STYLING */
 /* article {
     border: red solid 2px;
 } */
 .introduction {
+    width: 30vw;
     display: flex;
     flex-direction: column;
     align-content: center;
+    align-items: center;
 }
 .introduction h1 {
     color: var(--primary);
+    font-weight: bold;
 }
 .introduction button {
     align-self: center;
@@ -279,9 +280,11 @@ button.download:hover {
     color: var(--background);
 }
 .featureContainer {
+    border: red solid 2px;
     display: flex;
     height: fit-content;
-    width: 95vw;
+    justify-content: space-evenly;
+    width: 92vw;
 }
 .feature {
     margin: auto 15px;
@@ -336,29 +339,30 @@ button.download:hover {
     border: var(--accentSecondaryHover) solid 2px;
 }
 
-.newsContainer {
-    width: 95vw;
+.news {
+    width: 92vw;
     height: fit-content;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.cardContainer {
+.cards {
+    height: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 .newsCard {
-    width: 30vw;
+    max-width: 25vw;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin: auto 5px;
-    padding: 15px;
+    margin: 0 5px;
+    background-color: var(--background);
     border: solid var(--disabledBackgroundHover) 2px;
     border-radius: 10px;
-    background-color: var(--background);
     filter: drop-shadow(0px 5px 1px var(--fontColor)); /* creates drop shadow to outline the news card; Generator source: https://webcode.tools/css-generator/drop-shadow*/
 }
 /* styling the read more button */
@@ -367,10 +371,12 @@ button.download:hover {
     flex-direction: row;
     justify-content: center;
     text-decoration: none;
+    margin-bottom: 15px;
     width: 95%;
     max-width: 25vw;
     background-color: var(--fontColor);
     color: var(--background);
+    border-radius: 5px;
 }
 .newsCard a:hover {
     text-decoration: underline;
@@ -384,20 +390,19 @@ button.download:hover {
     width: 100%;
     max-width: 25vw;
 }
+/* styling for news headline */
 .newsCard figcaption {
     font-weight: 600;
+    margin: auto 2%;
+}
+.newsCard figure img {
+    width: 100%;
+    height: auto;
 }
 
-/* Temp */
-.locationMarkerImgs {
-    display: flex;
-}
-code {
-    font-family: Consolas,"courier new";
-    color: crimson;
-    background-color: #f1f1f1;
-    padding: 2px;
-    font-size: 101%;
+/* MENDER MAP STYLING (map.html) */
+.menderMap {
+    border: red solid 2px;
 }
 
 /* Location marker styling */
