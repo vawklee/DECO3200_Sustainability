@@ -28,12 +28,16 @@ body {
 }
 main {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
 }
 article {
     padding: 10px;
     margin: 5px;
+    justify-self: center;
     /* border: var(--disabledBackground) solid 2px; */
     /* flex: 1 1 10vw; */
 }
@@ -264,6 +268,7 @@ input:focus, select:focus {
 .introduction h1 {
     color: var(--primary);
     font-weight: bold;
+    font-size: 45pt;
 }
 .introduction button {
     align-self: center;
@@ -403,6 +408,35 @@ button.download:hover {
 .newsCard figure img {
     width: 100%;
     height: auto;
+}
+
+/* Source: https://uiverse.io/ArturCodeCraft/afraid-fish-22 */
+.scrollContainer {
+    max-width: 50%;
+}
+
+.scrollContainer .scrollBox {
+    animation: scroll-down 2s infinite;
+    position: inherit;
+    width: 5vw;
+}
+
+/* Animating the scroll icon */
+@keyframes scroll-down {
+    0%, 100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    35% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
 }
 
 /* MENDER MAP STYLING (map.html) */
