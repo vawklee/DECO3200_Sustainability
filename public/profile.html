@@ -25,8 +25,61 @@
                 <a href="javascript:void(0);" class="hamburgerMenu" onclick="minimiseNavBar()"><i class="fa fa-bars"></i></a>
             </div>
         </header>
-        <main>
-            <article class="body">Profile</article>
+        <main id="profilePage">
+            <article class="sideContainer">
+                <a class="body">My Profile</a>
+                <a class="body">My Clothing/Materials</a>
+                <a class="body">My DIY Resources</a>
+            </article>
+            <article class="profileContainer">
+                <section class="pTitle">
+                    <h2 class="subheading">My Profile</h2>
+                    <button class="caption">Edit<img src="images/icons/placeholder.svg"></button>
+                </section>
+                <section class="pSummary">
+                    <div class="profilePicture">
+                        <img src="images/imgs/home_donateCard.png" class="profilePicture"> <!-- TEMP PROFILE IMAGE -->
+                    </div>
+                    <div class="nameNTags">
+                        <h2 class="subheading">Username Lastname</h2>
+                        <div class="pTagContainer">
+                            <p class="pTag">Verified member</p>
+                            <p class="pTag">Intermediate sewing ability</p>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="pInformation">
+                    <form>
+                        <!-- <div>
+                            <label for="requiredField" class="body">Required field *</label><br>
+                            <input required type="text" name="requiredField" id="requiredField" class="caption" value="" placeholder="This is a text input, type something"><br>
+                        </div> -->
+                        <div>
+                            <label for="phoneNumber" class="body">Phone number</label><br>
+                            <input type="text" name="phoneNumber" id="phoneNumber" class="caption" value="" placeholder="+61 XXX XXX XXX"><br>
+                        </div>
+            
+                        <div>                
+                            <label for="emailAddress" class="body">Email</label><br>
+                            <input type="text" name="emailAddress" id="emailAddress" class="caption" value="" placeholder="firstnamelastname@domain.com"><br>
+                        </div>
+            
+                        <div>
+                            <label for="preferredContact" class="body">Preferred Contact Method</label><br>
+                            <select name="preferredContact" id="preferredContact" class="caption">
+                                <option value="Phone" class="caption">Phone</option>
+                                <option value="Email" class="caption">Email</option>
+                            </select><br>
+                        </div>
+
+                        <div>
+                            <label for="address" class="body">Address</label><br>
+                            <input type="text" name="address" id="address" class="caption" value="" placeholder="42 Wallaby Way, Blaxland, NSW 2774"><br>
+                        </div>
+                    </form>
+                </section>
+            </article>
         </main>
         <script src="script.js"></script>
     </body>

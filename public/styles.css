@@ -460,6 +460,30 @@ button.download:hover {
     width: 90vw;
 }
 
+/* PROFILE PAGE STYLING (profile.html) */
+#profilePage, #profilePage article {
+    border: red solid 2px;
+}
+
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.profilePicture {
+    border-radius: 50%;
+    border: red solid 2px;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
+.profilePicture img {
+    /* width: 100%;
+    height: auto; */
+    height: 100%;
+    width: auto;
+}
+
 /* Location marker styling */
 .locationRepair, .locationRequest, .locationAvailable {
     margin: 15px;
