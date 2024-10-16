@@ -42,7 +42,7 @@ article {
 header {
     background-color: var(--primary);
     height: 75px;
-    width: 100vw;
+    width: 100%;
     margin: auto;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -56,7 +56,9 @@ header h2 {
 }
 .navLogo {
     align-self: center;
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
+    position: relative;
+    right: -2vw;
     display: flex;
 }
 .navLogo:hover {
@@ -65,27 +67,26 @@ header h2 {
 .navBarItems {
     display: flex;
     justify-content: space-between;
-    margin-right: 1vw;
     align-self: center;
+    position: relative;
+    left: -1vw;
 }
 .navBarItems a {
-    /* color: var(--secondary); */
     color: var(--background);
     text-align: center;
     text-decoration: none;
     padding: 15px 40px;
     margin: 0 10px;
-    /* border-radius: 8px; */
     border-bottom: var(--primary) solid 2px;
     background-color: var(--primary);
     display: flex;
     align-items: center;
 }
-.navBarItems a img {
+/* .navBarItems a img {
     filter: invert(96%) sepia(2%) saturate(367%) hue-rotate(336deg) brightness(104%) contrast(97%);
     align-self: center;
     margin-left: 15%;
-}
+} */
 /* Use a.activeNav to highlight the active page you are on */
 .navBarItems a:hover, a.activeNav {
     /* background-color: var(--primary); */
@@ -254,7 +255,7 @@ input:focus, select:focus {
     border: red solid 2px;
 } */
 .introduction {
-    width: 30vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -288,11 +289,12 @@ button.download:hover {
 }
 .feature {
     margin: auto 15px;
-    padding: 35px 55px;
+    padding: 25px 20px;
     height: 40vh;
     /* border: solid var(--secondary) 2px; */
-    flex: 1 1 33vw;
+    /* flex: 1 1 33vw; */
     /* display: flex; */
+    border: red solid 2px;
 }
 /* different to button.icon styling for specific selected colouring */
 .feature button {
@@ -309,6 +311,9 @@ button.download:hover {
     background-color: var(--accent);
     color: var(--fontColor);
     border: var(--accent) solid 2px;
+    position: relative;
+    top: -10%;
+    left: -15%;
 }
 .fPurple:hover {
     background-color: var(--purple);
