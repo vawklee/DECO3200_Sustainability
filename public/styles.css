@@ -412,7 +412,7 @@ button.download:hover {
     flex-direction: row;
     justify-content: space-evenly;
 }
-.newsContent {
+.newsCard {
     max-width: 25vw;
     height: 100%;
     display: flex;
@@ -425,19 +425,8 @@ button.download:hover {
     border-radius: 10px;
     filter: drop-shadow(0px 5px 1px var(--fontColor)); /* creates drop shadow to outline the news card; Generator source: https://webcode.tools/css-generator/drop-shadow*/
 }
-/* styling for news headline */
-.newsContent p {
-    width: 100%;
-    max-width: 25vw;
-    font-weight: 600;
-    margin: auto 2%;
-}
-.newsCard img {
-    width: 100%;
-    height: auto;
-}
 /* styling the read more button */
-.newsContent a {
+.newsCard a {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -449,12 +438,26 @@ button.download:hover {
     color: var(--background);
     border-radius: 5px;
 }
-.newsContent a:hover {
+.newsCard a:hover {
     text-decoration: underline;
 }
 .readMore {
     background-color: var(--fontColor);
     color: var(--background);
+}
+.newsCard figure {
+    /* border: blue solid 3px; */
+    width: 100%;
+    max-width: 25vw;
+}
+/* styling for news headline */
+.newsCard figcaption {
+    font-weight: 600;
+    margin: auto 2%;
+}
+.newsCard figure img {
+    width: 100%;
+    height: auto;
 }
 
 /* Source: https://uiverse.io/ArturCodeCraft/afraid-fish-22 */
