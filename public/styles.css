@@ -9,6 +9,7 @@
     --accentSecondary: rgb(233, 229, 166);
     --accentSecondaryHover: rgb(230, 210, 140);
     --purple: rgb(158, 84, 201);
+    --green: rgb(172, 207, 138);
 
     --disabledBackground: rgb(224, 224, 224);
     --disabledBackgroundHover: rgb(178, 178, 178);
@@ -259,9 +260,6 @@ input:focus, select:focus {
 }
 
 /* HOMEPAGE (index.html) STYLING */
-/* article {
-    border: red solid 2px;
-} */
 .introduction {
     width: 50vw;
     display: flex;
@@ -294,7 +292,6 @@ button.download:hover {
     text-decoration: underline; 
 }
 .featureContainer {
-    border: red solid 2px;
     display: flex;
     height: fit-content;
     justify-content: space-evenly;
@@ -307,7 +304,6 @@ button.download:hover {
     /* border: solid var(--secondary) 2px; */
     /* flex: 1 1 33vw; */
     /* display: flex; */
-    border: red solid 2px;
 }
 /* different to button.icon styling for specific selected colouring */
 .feature button {
@@ -320,37 +316,79 @@ button.download:hover {
     width: auto;
 }
 
+/* the following feature "f" containers and styling uses position: relative and specific % values to create the desired overlap effect */
+.fPurpleContainer>img {
+    position: relative;
+    right: -30%;
+}
 .fPurple {
     background-color: var(--accent);
     color: var(--fontColor);
     border: var(--accent) solid 2px;
     position: relative;
     top: -10%;
-    left: -15%;
+    left: -3%;
 }
 .fPurple:hover {
     background-color: var(--purple);
     border: var(--purple) solid 2px;
 }
-.fAssist {
-    justify-content: end;
+.fAssistContainer {
+    position: relative;
+    padding-bottom: 15px;
+    padding-right: 35px;
 }
-.fGreen {
+.fAssist {
+    background-color: var(--secondary);
+    color: var(--primary);
+    justify-content: end;
+    position: absolute;
+    left: 46.5%;
+    top: 68%;
+}
+.fAssist img {
+    filter: invert(28%) sepia(87%) saturate(370%) hue-rotate(129deg) brightness(90%) contrast(101%);
+}
+.fAssist:hover {
+    background-color: var(--green);
+    /* color: var(--background); */
+    text-decoration: none;
+}
+.fDonateContainer {
+    margin-top: 28px;
+    position: relative;
+    top: 10%;
+}
+.fDonateContainer>img {
+    position: relative;
+    right: -35%;
+}
+.fDonate {
     background-color: var(--primary);
     color: var(--background);
     border: var(--primary) solid 2px;
+    position: absolute;
+    top: 80%;
+    left: -8%;
 }
-.fGreen:hover {
+.fDonate:hover {
     background-color: var(--fontColor);
     border: var(--fontColor) solid 2px;
 }
-.fGreen img {
+.fDonate img {
     filter: invert(97%) sepia(2%) saturate(229%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+.fYellowContainer>img {
+    position: relative;
+    right: -20%;
+    z-index: -1;
 }
 .fYellow {
     background-color: var(--accentSecondary);
     color: var(--fontColor);
     border: var(--accentSecondary) solid 2px;
+    position: relative;
+    top: 5%;
 }
 .fYellow:hover {
     background-color: var(--accentSecondaryHover);
