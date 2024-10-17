@@ -458,7 +458,7 @@ button.download:hover {
 /* styling for news headline */
 .newsCard figcaption {
     font-weight: 600;
-    margin: auto 2%;
+    margin: 3% 5% 0 5%;
 }
 
 /* Source: https://uiverse.io/ArturCodeCraft/afraid-fish-22 */
