@@ -30,7 +30,7 @@ if (productPages.some(page => currentPage.includes(page))) {
 }
 // Create an image element
 const icon = document.createElement('img');
-icon.src = chrome.runtime.getURL('extension icon.png');  // Ensure the file path is correct
+icon.src = chrome.runtime.getURL("images/extension icon.png");  // Ensure the file path is correct
 icon.id = 'icon';
 
 // Append the image to the body
