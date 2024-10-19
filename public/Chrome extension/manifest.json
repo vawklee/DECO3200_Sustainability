@@ -1,15 +1,24 @@
 {
-    "manifest_version": 3,
-    "name": "Zara Product Extension",
-    "version": "1.0",
-    "description": "An extension that shows sustainability ratings of products",
-    "permissions": ["activeTab", "scripting"],
-    "content_scripts": [
-      {
-        "matches": ["https://www.zara.com/au/*"], 
-        "js": ["extension.js"],
-        "css": ["extension_styles.css"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "Sustainability Extension",
+  "version": "1.0",
+  "description": "An extension that shows sustainability ratings of products",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["extension.js"],
+      "css": ["extension_styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+        "resources": ["images/extension_icon.png"],
+        "matches": ["<all_urls>"]
+    }
+],
+  "action": {
+    "default_popup": "extension.html",
+    "default_icon": "images/icon.png"
   }
-  
+}

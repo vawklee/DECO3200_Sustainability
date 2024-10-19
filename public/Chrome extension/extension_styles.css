@@ -1,40 +1,31 @@
-/* Slide-out modal styles */
-#slide-out-modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-}
-
-#slide-out-modal.show {
-    transform: translateX(0);
-}
-
-.modal-content {
-    padding: 20px;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-#icon {
+/* Style for the sustainability icon */
+._sustainability_button {
     position: fixed;
     right: 20px;
-    top: 50%;
+    top: 100%;
     transform: translateY(-50%);
-    width: 100px;
+    width: 60px; /* Set width */
+    height: 60px; /* Set height */
     cursor: pointer;
-    z-index: 9999;
-  }
+    z-index: 9999; /* Ensure it appears above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Optional: Add a background color to make the icon more visible */
+    border: 2px solid #ccc; /* Optional: Add a border for better visibility */
+    border-radius: 50%; /* Make it circular */
+}
+
+/* Ensure the icon image fills the button */
+._sustainability_button img {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%; /* Round the image if needed */
+}
+img {
+    max-width: 170px;  /* Limit the maximum width of the image */
+    max-height: 100px; /* Limit the maximum height of the image */
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
