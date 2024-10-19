@@ -18,37 +18,32 @@ console.log(chrome.runtime.getURL('images/extension_icon.png'));
 // Create the sustainability icon button element
 var sustainabilityButton = document.createElement('img');
 sustainabilityButton.src = chrome.runtime.getURL('images/extension_icon.png'); 
-sustainabilityButton.style.cssText = 'height:10%;width:10%;cursor:pointer;position:fixed;top:5px;right:5px;z-index:9999999999;';
+sustainabilityButton.style.cssText = 'cursor:pointer;position:fixed;top:5px;right:5px;z-index:9999999999;';
 
-// Add the icon for sustainability (replacing the emoji with the sustainability icon)
-// var iconImg = document.createElement('img');
-// iconImg.src = chrome.runtime.getURL('images/extension_icon.png');  
-// iconImg.style.width = '100%';
-// iconImg.style.height = '100%';
-// sustainabilityButton.appendChild(iconImg);
 
 // Append the button (icon) to the body
 document.body.appendChild(sustainabilityButton);
 
-// Function to create and display the sustainability modal
-var showModal = function() {
-    var sustainabilityModal = document.createElement('div');
-    sustainabilityModal.className = '_sustainability_modal';
-    sustainabilityModal.innerHTML = '<h1>Sustainability Info</h1><p>This product has a low carbon footprint and uses 50% less water than comparable items.</p>';
-    sustainabilityModal.style.cssText = 'height:300px;width:300px;border-radius:3px;border:1px solid;background:white;color:green;cursor:pointer;position:fixed;top:90px;right:5px;z-index:9999999999;overflow:hidden;';
-    
-    document.body.appendChild(sustainabilityModal);
-};
-// Event listener to toggle the modal when the icon is clicked
-sustainabilityButton.addEventListener('click', function() {
-    var modalExists = document.querySelector('._sustainability_modal');
-    if (modalExists) {
-        modalExists.remove(); // Remove modal if it exists (to toggle visibility)
-    } else {
-        showModal(); // Show modal if it doesn't exist
-    }
-});
+// Create the side panel (sliding modal)
+// Create the side panel (sliding modal)
+var sustainabilityPanel = document.createElement('div');
+sustainabilityPanel.className = 'side-panel';
+sustainabilityPanel.innerHTML = `
+    <h2>Sustainability Info</h2>
+    <p>This product has a low carbon footprint and uses 50% less water than comparable items.</p>
+    <button class="close-panel">Close</button>`;
+document.body.appendChild(sustainabilityPanel);
 
+// Function to open the slide-out modal
+var togglePanel = function() {
+    document.body.classList.toggle('side-panel-open');  // Toggle visibility and sliding
+};
+
+// Event listener to toggle the panel when the icon is clicked
+sustainabilityButton.addEventListener('click', togglePanel);
+
+// Event listener to close the panel when the "Close" button is clicked
+document.querySelector('.close-panel').addEventListener('click', togglePanel);
 // //function to show the extension
 // function showModal() {
 //     fetch(chrome.runtime.getURL('extension.html')) // Load modal HTML

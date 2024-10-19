@@ -16,16 +16,68 @@
     border-radius: 50%; /* Make it circular */
 }
 
-/* Ensure the icon image fills the button */
+/* Ensure the icon image fills the button 
 ._sustainability_button img {
     width: 10%;
     height: 10%;
-    border-radius: 50%; /* Round the image if needed */
-}
+    border-radius: 50%; 
+}*/
 img {
-    max-width: 170px;  /* Limit the maximum width of the image */
-    max-height: 100px; /* Limit the maximum height of the image */
+    max-width: 126px;  /* Limit the maximum width of the image */
+    max-height: 72px; /* Limit the maximum height of the image */
     width: auto;
     height: auto;
     cursor: pointer;
 }
+/* Styles for the toggle button 
+.side-panel-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    background: #009578;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    cursor: pointer;
+  }*/
+  
+  /* Slide-out panel hidden initially */
+  .side-panel {
+    position: fixed;
+    top: 16px;
+    right: 70px; /* Off-screen by default */
+    width: 0px; /* Set the width of your panel */
+    height: 50%;
+    padding: 0px;
+    background: #009578;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    opacity: 1; /* Hidden initially */
+    transform: translateX(10px); /* Slightly moved to the right for smooth appearance */
+    transition: transform 0.9s ease, opacity 0.9s ease; /* Smooth transition for both properties */
+    z-index: 9999;
+    overflow: hidden;
+}
+  
+  /* Slide-out panel visible */
+  .side-panel-open .side-panel {
+    width: 300px; /* Expand to full width when opened */
+    /*right: 100px;*/
+    opacity: 1; /* Fully visible */
+   transform: translateX(0);  /*No sliding effect */
+  }
+  
+  /* Optional: Styling for the close button inside the panel */
+  .close-panel {
+    background-color: white;
+    color: #009578;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 3px;
+  }
+  
