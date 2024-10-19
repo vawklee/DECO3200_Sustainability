@@ -10,6 +10,8 @@
     --accentSecondaryHover: rgb(230, 210, 140);
     --purple: rgb(158, 84, 201);
     --green: rgb(172, 207, 138);
+    --blue: rgb(231, 245, 255);
+    --blueText: rgb(44, 67, 113);
 
     --disabledBackground: rgb(224, 224, 224);
     --disabledBackgroundHover: rgb(178, 178, 178);
@@ -110,20 +112,20 @@ header h2 {
 
 /*  ---- FONT STYLING, Source: Google Fonts ---- */
 /* Heading font */
-.heading {
+.heading, h1 {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 30pt;
   }
-.subheading {
+.subheading, h2 {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 25pt;
   }
 /* Regular body font */
-.body {
+.body, p {
     font-family: "Anek Telugu", sans-serif;
     /* font-optical-sizing: auto; */
     font-size: 20pt;
@@ -558,6 +560,7 @@ button.download:hover {
     justify-content: flex-start;
 }
 
+/* Profile sidebar */
 .sideContainer {
     border-right: var(--disabledBackgroundHover) solid 2px;
     height: 85vh;
@@ -579,9 +582,50 @@ button.download:hover {
     text-decoration: underline;
 }
 
+/* Profile main content */
 .profileContainer {
     border: red solid 2px;
     height: 85vh;
+}
+
+.pTitle {
+    display: flex;
+}
+.pTitle>button:hover {
+    background-color: var(--disabledBackgroundHover);
+}
+.pTitle>button img {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+
+.pTag {
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 15pt;
+    text-align: center;
+}
+.tagVerify {
+    background-color: var(--blue);
+    color: var(--blueText);
+}
+.tagSkill {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.profilePicture {
+    border-radius: 50%;
+    border: red solid 2px;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
+.profilePicture img {
+    height: 100%;
+    width: auto;
 }
 
 /* #profilePage, #profilePage article {
@@ -626,18 +670,6 @@ button.download:hover {
     display: flex;
     flex-direction: column;
     height: 80vh;
-}
-
-.profilePicture {
-    border-radius: 50%;
-    border: red solid 2px;
-    height: 250px;
-    width: 250px;
-    overflow: hidden;
-}
-.profilePicture img {
-    height: 100%;
-    width: auto;
 } */
 
 /* Location marker styling */
