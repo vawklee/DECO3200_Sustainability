@@ -26,8 +26,185 @@
             </div>
         </header>
         <main>
-            <article class="body">oompa loompa</article>
+            <article>
+                <h1 class="formHeading">Secondhand Hub</h1>
+                <input type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials">
+                <button type="button" class="caption" onclick="showDialog()">Giveaway or Request an Item or Material +</button>
+            </article>
+
+            <!-- https://www.w3schools.com/howto/howto_js_form_steps.asp? -->
+            <dialog id="secondhandHubDialog">
+                <form id="secondhandForm" action="">                    
+                    <!-- One "tab" for each step in the form: -->
+                    <div class="tab" id="selectPage">
+                        <h1 class="formHeading">Secondhand Hub:</h1>
+                        <p class="caption">Select from the below to be directed to the correct form.</p>
+                        <div class="form-row">Give Away or Request:<br>
+                            <label class="fakeButton">
+                            <input type="radio" name="itemType" value="Give Away" class="giveAwayStyling"> 
+                            <span class="buttonCheckedStyling giveAwayStyling">Give Away</span>
+                            </label>
+                            <p class="or-text">or</p> 
+                            <label class="fakeButton">
+                            <input type="radio" name="itemType" value="Request">
+                            <span class="buttonCheckedStyling requestStyling" >Request</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-row">Type:<br>
+                            <label class="fakeButton">
+                                <input type="radio" name="itemCategory" value="Clothing">
+                                <span class="buttonCheckedStyling secondhandTypeStyling">Clothing Item</span>
+                            </label>
+                            <p class="or-text">or</p> 
+                            <label class="fakeButton">
+                                <input type="radio" name="itemCategory" value="Material">
+                                <span class="buttonCheckedStyling secondhandTypeStyling">Material</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- REQUEST ITEM FORM PAGE -->
+                    <div class="tab" id="requestItemForm">
+                        <h1 class="heading">Request Item:</h1>
+                        <p class="caption">Add information for the clothing item you would like to request below.</p>
+                        <label for="requestItemName">Item Name:</label>
+                        <input type="text" id="requestItemName" name="requestItemName"placeholder="eg. White dress" required><br>
+                        <label for="requestItemDescription">Description:</label>
+                        <input type="text" id="requestItemDescription" name="requestItemDescription" placeholder="eg. Style, length, etc" required><br>
+                        <label for="requestItemColour">Colour:</label>
+                        <select id="requestItemColour" name="requestItemColour" required>
+                            <option selected disabled>Select item colour</option>                            
+                            <option value="Any Colour">Any Colour</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Green">Green</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Red">Red</option>
+                            <option value="White">White</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Other">Other</option>
+                        </select><br>
+                        <label for="requestItemSize">Size:</label>
+                        <select id="requestItemSize" name="requestItemSize" required>
+                            <option selected disabled>Select item size</option> 
+                            <option value="XXS">Extra Extra Small (XXS) / 0-2</option>                            
+                            <option value="XS">Extra Small (XS) / 4-6</option>
+                            <option value="S">Small (S) / 8-10</option>
+                            <option value="M">Medium (M) / 12-14</option>
+                            <option value="L">Large (L) / 16-18</option>
+                            <option value="XL">Extra Large (XL) / 20-22</option>
+                            <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
+                        </select><br>
+                    </div>
+                    
+                    <!-- GIVE AWAY ITEM FORM PAGE -->
+                    <div class="tab" id="giveAwayItemForm">
+                    <h1 class="heading">Give Away Item:</h1>
+                    <p class="caption">Add information for the clothing item you would like to request below.</p>
+                    <label for="giveAwayItemName">Item Name:</label>
+                    <input type="text" id="giveAwayItemName" name="giveAwayItemName" placeholder="eg. White dress" required><br>
+                    <label for="giveAwayItemDescription">Description:</label>
+                    <input type="text" id="giveAwayItemDescription" name="giveAwayItemDescription"placeholder="eg. Style, length, etc" 
+                        required><br>
+                    <label for="giveAwayItemColour">Colour:</label>
+                    <select id="giveAwayItemColour" name="giveAwayItemColour" required>
+                        <option selected disabled>Select item colour</option>                            
+                        <option value="Black">Black</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Green">Green</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Pink">Pink</option>
+                        <option value="Purple">Purple</option>
+                        <option value="Red">Red</option>
+                        <option value="White">White</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Other">Other</option>
+                    </select><br>
+                    <label for="giveAwayItemSize">Size:</label>
+                    <select id="giveAwayItemSize" name="giveAwayItemSize" required>
+                        <option selected disabled>Select item size</option>
+                        <option value="XXS">Extra Extra Small (XXS) / 0-2</option>                            
+                        <option value="XS">Extra Small (XS) / 4-6</option>
+                        <option value="S">Small (S) / 8-10</option>
+                        <option value="M">Medium (M) / 12-14</option>
+                        <option value="L">Large (L) / 16-18</option>
+                        <option value="XL">Extra Large (XL) / 20-22</option>
+                        <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
+                    </select><br>
+                    <label for="giveAwayItemImage">Item Image:</label>
+                    <input type="file" id="giveAwayItemImage" name="giveAwayItemImage">
+                    </div>
+
+                    <!-- GIVE AWAY MATERIAL FORM PAGE -->
+                    <div class="tab" id="giveAwayMaterialForm">
+                        <h1 class="heading">Give Away Material:</h1>
+                        <p class="caption">Add information for the clothing item you would like to give away.</p>
+                        <label for="giveAwayMaterialName">Material Name:</label>
+                        <input type="text" id="giveAwayMaterialName" name="giveAwayMaterialName" placeholder="eg. Denim scraps" required><br>
+                        <label for="giveAwayMaterialDescription">Description:</label>
+                        <input type="text" id="giveAwayMaterialDescription" name="giveAwayMaterialDescription" placeholder="eg. Good condition, leftover from project"  required><br>
+                        <label for="giveAwayMaterialColour">Colour:</label>
+                        <select id="giveAwayMaterialColour" name="giveAwayMaterialColour" required>
+                            <option selected disabled>Select item colour</option>                            
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Green">Green</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Red">Red</option>
+                            <option value="White">White</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Other">Other</option>
+                        </select><br>
+                        <label for="giveAwayMaterialSize">Size:</label>
+                        <input type="text" id="giveAwayMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 30cm x 10cm" required><br>
+                        <label for="giveAwayMaterialImage">Material Image:</label>
+                        <input type="file" id="giveAwayMaterialImage" name="giveAwayMaterialImage">
+                    </div>  
+
+                    <!-- REQUEST MATERIAL FORM PAGE-->
+                    <div class="tab" id="requestMaterialForm">
+                        <h1 class="heading">Request Material:</h1>
+                        <p class="caption">Add information for the clothing item you would like to request below.</p>
+                        <label for="requestMaterialName">Item Name:</label>
+                        <input type="text" id="requestMaterialName" name="requestMaterialName"placeholder="eg. White dress" required><br>
+                        <label for="requestMaterialDescription">Description:</label>
+                        <input type="text" id="requestMaterialDescription" name="requestMaterialDescription" placeholder="eg. Style, length, etc" required><br>
+                        <label for="requestMaterialColour">Colour:</label>
+                        <select id="requestMaterialColour" name="requestMaterialColour" required>
+                            <option selected disabled>Select item colour</option>                            
+                            <option value="Any Colour">Any Colour</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Green">Green</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Red">Red</option>
+                            <option value="White">White</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Other">Other</option>
+                        </select><br>
+                        <label for="requestMaterialSize">Minimum:</label>
+                        <input type="text" id="requestMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 1m x 1m" required>
+                    </div>
+                    <div>
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Back</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Submit</button>
+                        <button class="disabled" id="cancel" onclick="closeDialog()">CANCEL</button>
+                    </div>
+                
+                </form>
+            </dialog>   
         </main>
-        <script src="script.js"></script>
+        <script src="script-em.js"></script>
     </body>
 </html>

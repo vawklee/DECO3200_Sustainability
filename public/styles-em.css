@@ -216,7 +216,7 @@ a:hover {
     color: var(--fontColor);
 }
 
-/* Form styling */
+/* Form styling
 form {
     width: 75vw;
     padding: 25px;
@@ -227,18 +227,21 @@ form {
 form div {
     margin-bottom: 10px;
 }
+ */
+
 /* possible alt input styling, requires commenting out other border css below */
 /* input[type=text], select {
     border-style: none;
     border-bottom: var(--disabledBackground) solid 2px;
-}
+} */
+
 input:focus, select:focus {
     background-color: var(--secondary);
     border-style: none;
     border-bottom: var(--primary) solid 2px;
-} */
+}
 input[type=text], select {
-    width: 75%;
+    /* width: 75%; */
     padding: 15px 25px;
     outline: none;
     border-radius: 5px;
@@ -417,7 +420,74 @@ code {
     }
 }
 
+
+
 /* FORM CSS */
+
+/* Dialog styling */
+dialog {
+    background-color: var(--background);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    /* height: 70vh;
+    width: 90vw; */
+    color: var(--fontColor);
+    position: relative;
+    z-index: 0.5;
+    padding: 0; /* Ensure no internal padding */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+.closeButton {
+    background-color: none;
+}
+
+/* Make the form fill the dialog */
+#secondhandForm {
+    /* display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 10px 20px;
+    align-items: center; */
+    /* max-width: 75%; */
+    height: 100%; /* Keep form height */
+    margin: auto;
+    padding: 20px 20px 50px 20px;
+    box-sizing: border-box; /* Ensure padding/border are included in size calculations */
+    background-color: var(--background); /* Optional: form background color */
+    border-top: var(--primary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+}
+
+#repairAssistantBorderStyling {
+    background-color: var(--background);
+    border-top: var(--secondary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+}
+
+
+/* 
+label {
+    justify-self: end;
+} */
+
+
+/* Styling the "or" text */
+.or-text {
+    font-size: 1.2em;
+    color: var(--fontColor); /* Use your desired color */
+    margin: 10px 0; /* Space above and below the "or" text */
+}
+
+
 .repair-assistant-background {
     background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
     background-size: cover;
@@ -432,13 +502,123 @@ code {
     background-repeat: no-repeat;
 }
 
-dialog {
-    background-color: #f0f0f0; /* Background color of the dialog */
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    width: 300px;
-    color: black; /* Text color inside the dialog */
-    position: relative;
-    z-index: 1; /* Ensure the dialog appears above the background */
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Hide the default radio button */
+.fakeButton input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Default button style */
+.buttonCheckedStyling {
+    background-color: var(----background); /* Default background color */
+    color: var(--fontColor); /* Default text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.giveAwayStyling {
+    border: var(--locationAvailable) 2px solid;
+    background-color: var(--background); /* Default background color */
+}
+
+.giveAwayStyling:checked .giveAwayStyling:hover {
+    border: var(--locationAvailable) 2px solid;
+    background-color: var(--locationAvailable);
+}
+
+.requestStyling {
+    border: var(--locationRequest) 2px solid;
+}
+
+.requestStyling:checked .requestStyling:hover {
+    background-color: var(--locationRequest);
+}
+    
+.secondhandTypeStyling {
+    border: var(--primary)2px solid;
+    }
+
+.fakeButton:hover .giveAwayStyling {
+    background: var(--locationAvailable)
+}
+
+.fakeButton:checked .giveAwayStyling {
+    background: var(--locationAvailable);
+}
+
+.fakeButton:hover .requestStyling {
+    background: var(--locationRequest);
+}
+
+.fakeButton:hover .secondhandTypeStyling {
+    background-color: var(--primary); /* Change to hover color */
+    color: #ffffff;
+} 
+.fakeButton:checked .secondhandTypeStyling {
+    background-color: var(--primary); /* Change to hover color */
+    color: #ffffff;
+} 
+
+
+button { 
+font-family: 'Anek Telugu', sans-serif;
+}
+
+/* Apply the custom fonts to the form elements */
+label, input, select, option, input::placeholder, textarea::placeholder, input[type="search"], input[type="search"]::placeholder, input[type="file"]{
+    font-family: 'Anek Telugu', sans-serif;
+    margin: 5px;
+}
+
+/* Input styling */
+input, select {
+    /* width: 100%;  */
+    padding: 10px; /* Add some padding */
+    border: 1px solid var(--disabledBackground); /* Example border style */
+    border-radius: 5px;
+}
+
+
+
+
+
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+background-color: #ffdddd;
+}
+
+.tab { 
+display: none; 
+}
+
+.tab.active { 
+    display: block; 
+}
+
+
+.formHeading {
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30pt;
+    margin-top: 0;
+}
+
+
+#repairAssistantPage {
+    background-image: url(images/imgs/repairAssistantBackground.jpg);
+    background-size: cover;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
