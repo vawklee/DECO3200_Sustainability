@@ -50,30 +50,25 @@
                 </section>
                 <hr>
                 <section class="pInformation">
-                    <form>
-                        <div>
-                            <label for="phoneNumber" class="body">Phone number</label><br>
-                            <input type="text" name="phoneNumber" id="phoneNumber" class="caption" value="" placeholder="+61 XXX XXX XXX"><br>
+                    <p class="bold" id="personalInformationTitle">Personal Information</p>
+                    <div class="contactInfoContainer">
+                        <div id="infoPhone">
+                            <p class="caption">Phone number</p>
+                            <p class="caption infoTag">+61 432 789 567</p>
                         </div>
-            
-                        <div>                
-                            <label for="emailAddress" class="body">Email</label><br>
-                            <input type="text" name="emailAddress" id="emailAddress" class="caption" value="" placeholder="firstnamelastname@domain.com"><br>
+                        <div id="infoEmail">
+                            <p class="caption">Email</p>
+                            <p class="caption infoTag">jenniferduong@domain.com</p>
                         </div>
-            
-                        <div>
-                            <label for="preferredContact" class="body">Preferred Contact Method</label><br>
-                            <select name="preferredContact" id="preferredContact" class="caption">
-                                <option value="Phone" class="caption">Phone</option>
-                                <option value="Email" class="caption">Email</option>
-                            </select><br>
-                        </div>
-
-                        <div>
-                            <label for="address" class="body">Address</label><br>
-                            <input type="text" name="address" id="address" class="caption" value="" placeholder="42 Wallaby Way, Blaxland, NSW 2774"><br>
-                        </div>
-                    </form>
+                    </div>
+                    <div id="infoPreference">
+                        <p class="caption">Preferred contact method</p>
+                        <p class="caption infoTag">Phone</p>
+                    </div>
+                    <div id="infoAddress">
+                        <p class="caption">Address</p>
+                        <p class="caption infoTag">42 Wallaby Way, Blaxland, NSW 2774</p>
+                    </div>
                 </section>
             </article>
         </main>

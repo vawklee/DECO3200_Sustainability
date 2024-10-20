@@ -610,6 +610,7 @@ button.download:hover {
     max-height: 55px;
     display: flex;
     margin-top: 15px;
+    background-color: var(--disabledBackground);
 }
 .pHeader>button:hover {
     background-color: var(--disabledBackgroundHover);
@@ -665,6 +666,42 @@ button.download:hover {
 .profilePicture img {
     height: 100%;
     width: auto;
+}
+
+/* profile information styling */
+.pInformation{
+    display: flex;
+    flex-direction: column;
+}
+#personalInformationTitle {
+    margin-top: 35px;
+}
+.pInformation p {
+    margin: 0px;
+}
+.contactInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 35px 0px;
+}
+
+.infoTag {
+    background-color: var(--disabledBackground);
+    padding: 10px 10px 10px 20px;
+    border-radius: 3px;
+}
+#infoPhone {
+    margin-right: 15px;
+    width: 35vw;
+}
+#infoEmail {
+    margin-left: 15px;
+    width: 100%;
+}
+#infoPreference, #infoAddress {
+    width: 100%;
+    margin-bottom: 35px;
 }
 
 /* Location marker styling */
