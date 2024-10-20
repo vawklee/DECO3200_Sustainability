@@ -4,14 +4,50 @@
         <title> Sustainability extension</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="extension_styles.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
     </head>
     <body>
-        <!-- <div class="modal-content">
-           <button class="close-btn">✕</button>
-            <h2>Product Information</h2>
-            <p>This is an empty modal for now.</p>
+     <!-- The button-->
+      <div class ="toggle-container">
+        <!--logo image -->
+      <img src="images/sustainability_icon.png" alt="sustainability extension logo" id="sustainabilityButton">
+      <!-- toggle button-->
+       <!--https://codepen.io/dcode-software/pen/OJxEWWz-->
+      <div class="button-modal-container">
+      <button class="side-panel-toggle" type="button">
+        <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
+        <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
+      </button>
+      
+  
+    <!--sliding modal-->
+    <div id="sustainabilityPanel" class="side-panel">
+        <div id="sustainabilityBanner" class="banner">
+            <!-- Image placeholder -->
+            <div class="banner-image">
+              <img id="bannerImage" src="" alt="Product Image" />
+            </div>
+          
+            <!-- Text content placeholder -->
+            <div class="banner-content">
+              <h2 id="bannerTitle"></h2>
+              <p id="bannerDescription"></p>
+            </div>
+            <div class="banner-icon">
+        <span class="material-symbols-outlined">chevron_right </span>
+    </div>
+    </div>
+        <div class="scrolling-wrapper">
+            <div class="card"><h2>Card</h2></div>
+            <div class="card"><h2>Card</h2></div>
+            <div class="card"><h2>Card</h2></div>
           </div>
-    </div> -->
+        <h2>Sustainability Info</h2>
+        <p>This product has a low carbon footprint and uses 50% less water than comparable items.</p>
+      </div>
+      </div>
+    </div>
         <script src="extension.js"></script>
     </body>
 </html>
