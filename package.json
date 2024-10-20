@@ -14,7 +14,8 @@
   "author": "Emma M., Eva M. A., Kate M., Veronica L.",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "parcel": "^2.12.0"

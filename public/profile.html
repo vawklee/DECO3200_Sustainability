@@ -27,50 +27,58 @@
         </header>
         <main id="profilePage">
             <article class="sideContainer">
-                <a class="caption pActive" href="">My Profile</a>
-                <a class="caption" href="">My Clothing & Materials</a>
-                <a class="caption" href="">My DIY Resources</a>
+                <a class="caption pActive" id="profileSelector">My Profile</a>
+                <a class="caption" id="materialSelector">My Clothing & Materials</a>
+                <a class="caption" id="resourceSelector">My DIY Resources</a>
             </article>
-            <article class="profileContainer">
-                <section class="pHeader">
-                    <!-- <h2 class="subheading">My Profile</h2> -->
-                    <div class="profileTagsContainer">
-                        <div class="profilePicture">
-                            <img src="images/imgs/profilePicture.png" class="profilePicture"  alt="Profile picture of the user">
-                        </div>
-                        <div class="nameNTags">
-                            <h2 class="subheading">Jennifer Duong</h2>
-                            <div class="pTagContainer">
-                                <p class="pTag tagVerify"><img src="images/icons/verification.svg">Verified member</p>
-                                <p class="pTag tagSkill"><img src="images/icons/skill.svg">Intermediate Skill</p>
+            <div class="mainContainer">
+                <article class="profileContainer">
+                    <section class="pHeader">
+                        <!-- <h2 class="subheading">My Profile</h2> -->
+                        <div class="profileTagsContainer">
+                            <div class="profilePicture">
+                                <img src="images/imgs/profilePicture.png" class="profilePicture"  alt="Profile picture of the user">
+                            </div>
+                            <div class="nameNTags">
+                                <h2 class="subheading">Jennifer Duong</h2>
+                                <div class="pTagContainer">
+                                    <p class="pTag tagVerify"><img src="images/icons/verification.svg">Verified member</p>
+                                    <p class="pTag tagSkill"><img src="images/icons/skill.svg">Intermediate Skill</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <button class="caption">Edit<img src="images/icons/edit.svg"  alt="Edit icon"></button>
-                </section>
-                <hr>
-                <section class="pInformation">
-                    <p class="bold" id="personalInformationTitle">Personal Information</p>
-                    <div class="contactInfoContainer">
-                        <div id="infoPhone">
-                            <p class="caption">Phone number</p>
-                            <p class="caption infoTag">+61 432 789 567</p>
+                        <button class="caption editButton">Edit<img src="images/icons/edit.svg"  alt="Edit icon"></button>
+                    </section>
+                    <hr>
+                    <section class="pInformation">
+                        <p class="bold" id="personalInformationTitle">Personal Information</p>
+                        <div class="contactInfoContainer">
+                            <div id="infoPhone">
+                                <p class="caption">Phone number</p>
+                                <p class="caption infoTag">+61 432 789 567</p>
+                            </div>
+                            <div id="infoEmail">
+                                <p class="caption">Email</p>
+                                <p class="caption infoTag">jenniferduong@domain.com</p>
+                            </div>
                         </div>
-                        <div id="infoEmail">
-                            <p class="caption">Email</p>
-                            <p class="caption infoTag">jenniferduong@domain.com</p>
+                        <div id="infoPreference">
+                            <p class="caption">Preferred contact method</p>
+                            <p class="caption infoTag">Phone</p>
                         </div>
-                    </div>
-                    <div id="infoPreference">
-                        <p class="caption">Preferred contact method</p>
-                        <p class="caption infoTag">Phone</p>
-                    </div>
-                    <div id="infoAddress">
-                        <p class="caption">Address</p>
-                        <p class="caption infoTag">42 Wallaby Way, Blaxland, NSW 2774</p>
-                    </div>
-                </section>
-            </article>
+                        <div id="infoAddress">
+                            <p class="caption">Address</p>
+                            <p class="caption infoTag">42 Wallaby Way, Blaxland, NSW 2774</p>
+                        </div>
+                    </section>
+                </article>
+                <article class="materialContainer">
+                    <button class="caption editButton">Edit<img src="images/icons/edit.svg"  alt="Edit icon"></button>
+                </article>
+                <article class="resourcesContainer">
+    
+                </article>
+            </div>
         </main>
         <script src="script.js"></script>
     </body>

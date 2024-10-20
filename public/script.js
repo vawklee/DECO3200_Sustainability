@@ -1,30 +1,31 @@
-// LEAFLET MAP API SETUP
-var map = L.map('map').setView([-33.8887156, 151.1894847], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 25, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+// ---- PROFILE PAGE SCRIPTING ----
+var profileSelector = document.getElementById("profileSelector");
+var materialSelector = document.getElementById("materialSelector");
+var resourceSelector = document.getElementById("resourceSelector");
 
-// creates location marker 
-var marker = L.marker([-33.85, 151.190]).addTo(map);
-// creates popup for that marker
-marker.bindPopup("<b>Wilkinson Building</b><br>Darlinghurst, NSW");
+profileSelector.addEventListener("click", (e) => {this.onSelectorClick(e)});
+materialSelector.addEventListener("click", (e) => {this.onSelectorClick(e)});
+resourceSelector.addEventListener("click", (e) => {this.onSelectorClick(e)});
 
-// Click event on map example
-var clickPopup = L.popup();
-function onMapClick(e) {
-    // alert(`You clicked the map at ${e.latlng}`);
-    // clickPopup.setLatLng(e.latlng).setContent(`You clicked the map at ${e.latlng.toString()}`).openOn(map);
-    clickPopup
-    .setLatLng(e.latlng)
-    .setContent("You clicked on the map at " + e.latlng.toString())
-    .openOn(map);
-}
-map.on('click', onMapClick);
+function onSelectorClick(e) {
+    // console.log("Selector has been clicked");
+    // console.log("target id " + e.target.id);
+    // console.log("target class " + e.target.className);
+    // console.log(profileSelector.className);
+    // console.log(materialSelector.className);
+    // console.log(resourceSelector.className);
 
-function minimiseNavBar() {
-    var x = document.getElementById("navBarContainer");
-    if (x.className === "navBarContainer") {
-        x.className += " responsive";
-    } else {
-        x.className = "navBarContainer";
+    if (e.target.id === "profileSelector") {
+        profileSelector.className = "caption pActive";
+        materialSelector.className = "caption";
+        resourceSelector.className = "caption";
+    } else if (e.target.id === "materialSelector") {
+        profileSelector.className = "caption";
+        materialSelector.className = "caption  pActive";
+        resourceSelector.className = "caption";
+    } else if (e.target.id === "resourceSelector") {
+        profileSelector.className = "caption";
+        materialSelector.className = "caption";
+        resourceSelector.className = "caption pActive";
     }
-    console.log("minimise clicked");
 }

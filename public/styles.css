@@ -560,7 +560,7 @@ button.download:hover {
     justify-content: flex-start;
 }
 
-/* Profile sidebar */
+/* ---- PROFILE PAGE SIDE BAR ---- */
 .sideContainer {
     border-right: var(--disabledBackgroundHover) solid 2px;
     height: 85vh;
@@ -606,27 +606,29 @@ button.download:hover {
 }
 
 /* profile edit button */
-.pHeader>button {
+.editButton {
     max-height: 55px;
     display: flex;
     margin-top: 15px;
     background-color: var(--disabledBackground);
 }
-.pHeader>button:hover {
+.editButton:hover {
     background-color: var(--disabledBackgroundHover);
 }
-.pHeader>button img {
+.editButton img {
     margin-left: 25px;
     vertical-align: middle;
     height: 20px;
     width: auto;
 }
 
+/* profile verification and skill tags */
 .pTag {
-    padding: 5px 15px;
+    padding: 8px 15px;
     border-radius: 7px;
     font-size: 15pt;
     text-align: center;
+    margin-top: 0px;
 }
 .pTagContainer {
     display: flex;
@@ -667,6 +669,9 @@ button.download:hover {
     height: 100%;
     width: auto;
 }
+.nameNTags h2 {
+    margin-top: 50px;
+}
 
 /* profile information styling */
 .pInformation{
@@ -704,7 +709,17 @@ button.download:hover {
     margin-bottom: 35px;
 }
 
-/* Location marker styling */
+/* ---- PROFILE PAGE MATERIALS INFORMATION ---- */
+.materialContainer {
+    border: red solid 2px;
+}
+
+/* PROFILE PAGE SAVED RESOURCES */
+.resourcesContainer {
+    border: red solid 2px;
+}
+
+/* ---- Location marker styling ---- */
 .locationRepair, .locationRequest, .locationAvailable {
     margin: 15px;
 }
