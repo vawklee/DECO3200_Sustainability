@@ -1,0 +1,142 @@
+.toggle-container{
+  position: fixed;
+  /* top: 5px; */
+  right: 5px;
+  z-index: 9999999999;
+  display:flex;
+  height:50vh;
+   /* align-items: center;  */
+  /* flex-direction: row-reverse; Display image first, then the button to its left */
+}
+.button-modal-container {
+  /* position: relative; */
+  display: flex;
+  /* flex-direction: column; Ensure the button and modal are stacked vertically */
+  align-items: flex-start; /* Align items to the left */
+  top: 50%;
+}
+img {
+    max-width: 72px;  /* Limit the maximum width of the image */
+    max-height: 72px; /* Limit the maximum height of the image */
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    order: 3;
+}
+
+/*Styles for the toggle button */
+.side-panel-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex; /* Switch from grid to flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    color: #ffffff;
+    background: #009578;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    cursor: pointer;
+    order: 1;
+  }
+  .sp-icon-close {
+    display: none !important;
+  }
+  /* Slide-out panel hidden initially */
+  #sustainabilityPanel {
+    position: relative;
+    display: none;
+    max-width: 535px;
+    height: 745px;
+    flex-shrink: 0;
+    padding: 20px;
+    color: #ffffff;
+    background: #009578;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    order: 2;
+    overflow-y: auto;
+}
+  
+  /* Slide-out panel visible */
+ .toggle-container.panel-open #sustainabilityPanel{
+  display: initial;
+ }
+.toggle-container.panel-open .sp-icon-open{
+  display: none !important;
+}
+.toggle-container.panel-open .sp-icon-close {
+  display: initial !important;
+}
+/* Banner container */
+.banner {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;  */
+  padding: 20px; 
+  border-radius: 8px;
+  background-color: #ffeae9; /* Default background color */
+  color: #000;
+  max-width: 480px; /* set-width banner */
+  max-height: 105px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;  
+}
+
+/* Banner image */
+.banner-image img {
+  width: 100px; /* Set width for the image */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Banner content */
+.banner-content {
+  flex-grow: 1;
+  padding-left: 20px; 
+}
+
+.banner-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d00000; /* Default color for the title */
+  margin: 0;
+}
+
+.banner-content p {
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+
+/* Banner icon */
+.banner-icon {
+  font-size: 24px;
+  color: #d00000; /* Default color for the icon */
+}
+
+/* You can customize the banner with dynamic styles */
+/* Scrolling wrapper to hold the product cards */
+.scrolling-wrapper {
+  display: flex; /* Make the cards align horizontally */
+  flex-wrap: nowrap; /* Prevent wrapping to the next row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 10px;
+  margin-bottom: 20px; /*Add space between cards and other content */
+}
+
+/* Product card styling */
+.card {
+  flex: 0 0 auto; /* Make sure the cards don't shrink and stay inline */
+  width: 381px; /* Set a fixed width for the cards */
+  height: 436px; /* Set a fixed height for the cards */
+  margin-right: 10px; /* Space between cards */
+  background-color: #f1f1f1; /* Light background for the card */
+  border-radius: 8px; /* Add rounded corners */
+  /* display: flex;
+  align-items: center;
+  justify-content: center;  */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+  

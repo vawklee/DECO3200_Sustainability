@@ -9,6 +9,9 @@
     --accentSecondary: rgb(233, 229, 166);
     --accentSecondaryHover: rgb(230, 210, 140);
     --purple: rgb(158, 84, 201);
+    --green: rgb(172, 207, 138);
+    --blue: rgb(231, 245, 255);
+    --blueText: rgb(44, 67, 113);
 
     --disabledBackground: rgb(224, 224, 224);
     --disabledBackgroundHover: rgb(178, 178, 178);
@@ -28,21 +31,25 @@ body {
 }
 main {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
 }
 article {
     padding: 10px;
     margin: 5px;
+    justify-self: center;
     /* border: var(--disabledBackground) solid 2px; */
     /* flex: 1 1 10vw; */
 }
 
-/* Nav bar styling */
+/* ---- NAVIGATION BAR STYLING ---- */
 header {
     background-color: var(--primary);
-    height: 100%;
-    width: 100vw;
+    height: 75px;
+    width: 100%;
     margin: auto;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -50,41 +57,47 @@ header {
     align-items: end;
     justify-content: space-between;
 }
-header h2{
+header h2 {
     margin-left: 0.5vw;
     color: var(--secondary);
 }
-/*
-header img {
-    align-self: center;
-    margin-left: 10px;
-} */
 .navLogo {
     align-self: center;
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
+    position: relative;
+    right: -2vw;
     display: flex;
+    text-decoration: none;
 }
 .navLogo:hover {
     text-decoration: none;
 }
+.navLogo img {
+    margin-right: 20px;
+}
 .navBarItems {
     display: flex;
     justify-content: space-between;
-    margin-right: 1vw;
     align-self: center;
+    position: relative;
+    left: -1vw;
 }
 .navBarItems a {
-    color: var(--secondary);
+    color: var(--background);
     text-align: center;
     text-decoration: none;
     padding: 15px 40px;
     margin: 0 10px;
-    /* border-radius: 8px; */
-    /* border-bottom: var(--secondary) solid 2px; */
+    border-bottom: var(--primary) solid 2px;
     background-color: var(--primary);
     display: flex;
     align-items: center;
 }
+/* .navBarItems a img {
+    filter: invert(96%) sepia(2%) saturate(367%) hue-rotate(336deg) brightness(104%) contrast(97%);
+    align-self: center;
+    margin-left: 15%;
+} */
 /* Use a.activeNav to highlight the active page you are on */
 .navBarItems a:hover, a.activeNav {
     /* background-color: var(--primary); */
@@ -92,30 +105,27 @@ header img {
     color: var(--secondary);
     /* text-decoration: underline; */
 }
-/* .navBarItems a:hover {
-    text-decoration: underline;
-} */
 .navBarContainer .hamburgerMenu {
     display: none;
     background-color: red;
 }
 
-/* Font styling, source: Google Font */
+/*  ---- FONT STYLING, Source: Google Fonts ---- */
 /* Heading font */
-.heading {
+.heading, h1 {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 30pt;
   }
-.subheading {
+.subheading, h2 {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 25pt;
   }
 /* Regular body font */
-.body {
+.body, p {
     font-family: "Anek Telugu", sans-serif;
     /* font-optical-sizing: auto; */
     font-size: 20pt;
@@ -145,10 +155,10 @@ header img {
         "wdth" 100;
 }
 
-/* Button styling */
+/*  ---- BUTTON STYLING ---- */
 button, #submitButton {
     padding: 15px 40px;
-    border-radius: 4px;
+    border-radius: 5px;
     border-style: none;
     margin: 5px;
     /* text-align: center; */
@@ -205,7 +215,7 @@ button.alt:hover, button.icon:hover {
     background-color: var(--secondary);
 }
 
-/* Link styling */
+/* ---- LINK STYLING ---- */
 a {
     color: var(--primary);
 }
@@ -216,12 +226,12 @@ a:hover {
     color: var(--fontColor);
 }
 
-/* Form styling */
+/* ---- FORM STYLING ---- */
 form {
     width: 75vw;
     padding: 25px;
     border: var(--primary) solid 2px;
-    border-radius: 4px;
+    border-radius: 5px;
     background: var(--background);
 }
 form div {
@@ -251,9 +261,21 @@ input:focus, select:focus {
     border: var(--primary) solid 1.5px;
 }
 
-/* Homepage features styling */
+/* ---- HOMEPAGE (index.html) STYLING ---- */
+.introduction {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
 .introduction h1 {
     color: var(--primary);
+    font-weight: bold;
+    font-size: 45pt;
+}
+.introduction button {
+    align-self: center;
 }
 button.download {
     font-weight: 600; /* sets text to bold */
@@ -263,21 +285,27 @@ button.download {
 button.download img {
     filter: invert(28%) sepia(87%) saturate(370%) hue-rotate(129deg) brightness(90%) contrast(101%);
 }
-button.download:hover {
+/* button.download:hover {
     background-color: var(--primary);
     color: var(--background);
+} */
+/* use this setting if the button is in the nav bar */
+button.download:hover {
+    text-decoration: underline; 
 }
 .featureContainer {
-    border: red solid 2px;
     display: flex;
-    height: auto;
+    height: fit-content;
+    justify-content: space-evenly;
+    width: 92vw;
 }
 .feature {
     margin: auto 15px;
-    padding: 50px 55px;
-    height: 100%;
-    border: solid var(--secondary) 2px;
-    flex: 1 1 33vw;
+    padding: 25px 20px;
+    height: 40vh;
+    /* border: solid var(--secondary) 2px; */
+    /* flex: 1 1 33vw; */
+    /* display: flex; */
 }
 /* different to button.icon styling for specific selected colouring */
 .feature button {
@@ -290,66 +318,408 @@ button.download:hover {
     width: auto;
 }
 
+/* the following feature "f" containers and styling uses position: relative and specific % values to create the desired overlap effect */
+.fPurpleContainer>img {
+    position: relative;
+    right: -30%;
+}
 .fPurple {
+    filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
     background-color: var(--accent);
     color: var(--fontColor);
     border: var(--accent) solid 2px;
+    position: relative;
+    top: -10%;
+    left: -3%;
 }
 .fPurple:hover {
     background-color: var(--purple);
     border: var(--purple) solid 2px;
 }
-.fGreen {
+.fAssistContainer {
+    position: relative;
+    padding-bottom: 15px;
+    padding-right: 35px;
+}
+.fAssist {
+    filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
+    background-color: var(--secondary);
+    color: var(--primary);
+    justify-content: end;
+    position: absolute;
+    left: 46.5%;
+    top: 68%;
+}
+.fAssist img {
+    filter: invert(28%) sepia(87%) saturate(370%) hue-rotate(129deg) brightness(90%) contrast(101%);
+}
+.fAssist:hover {
+    background-color: var(--green);
+    /* color: var(--background); */
+    text-decoration: none;
+}
+.fDonateContainer {
+    margin-top: 28px;
+    position: relative;
+    top: 10%;
+}
+.fDonateContainer>img {
+    position: relative;
+    right: -35%;
+}
+.fDonate {
+    filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
     background-color: var(--primary);
     color: var(--background);
     border: var(--primary) solid 2px;
+    position: absolute;
+    top: 80%;
+    left: -8%;
 }
-.fGreen:hover {
+.fDonate:hover {
     background-color: var(--fontColor);
     border: var(--fontColor) solid 2px;
 }
-.fGreen img {
+.fDonate img {
     filter: invert(97%) sepia(2%) saturate(229%) hue-rotate(9deg) brightness(102%) contrast(98%);
 }
+.fYellowContainer>img {
+    position: relative;
+    right: -20%;
+    z-index: -1;
+}
 .fYellow {
+    filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
     background-color: var(--accentSecondary);
     color: var(--fontColor);
     border: var(--accentSecondary) solid 2px;
+    position: relative;
+    top: 5%;
 }
 .fYellow:hover {
     background-color: var(--accentSecondaryHover);
     border: var(--accentSecondaryHover) solid 2px;
 }
 
-.newsContainer {
-    height: 50vh;
-    border: red solid 2px;
-    background-color: red;
+/* Homepage Extension Information Styling */
+.extContainer {
+    margin-top: 15px;
+    width: 92vw;
+    height: fit-content;
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.extContent {
+    margin-right: 8px;
+    max-width: 48vw;
+}
+.extContent h2 {
+    color: var(--primary);
+}
+
+/* styling for the extension image and download button */
+.extFeature {
+    margin-left: 8px;
+}
+.extFeature>img {
+    height: 375px;
+    width: auto;
+    position: relative;
+    right: -10%;
+}
+.extFeature>button {
+    filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
+    position: relative;
+    top: -0.05%;
+    left: -5%;
+}
+.chromeIcon {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+    filter: invert(11%) sepia(77%) saturate(6523%) hue-rotate(174deg) brightness(87%) contrast(90%);
+}
+
+/* styling for the 'sustainability news' section under homepage */
+.news {
+    margin-top: 20px;
+    width: 92vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.news h2 {
+    color: var(--primary);
+}
+.cards {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .newsCard {
-    /* padding: 5px 25px;
-    border: var(--accent) solid 2px; */
-    margin: auto 15px;
-    padding: 50px 55px;
+    max-width: 29vw;
     height: 100%;
-    border: solid var(--secondary) 2px;
-    flex: 1 1 33vw;
-}
-
-/* Temp */
-.locationMarkerImgs {
     display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin: 0 5px;
+    background-color: var(--background);
+    border: solid var(--disabledBackgroundHover) 2px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 3px var(--disabledBackgroundHover)); /* creates drop shadow to outline the news card; Generator source: https://webcode.tools/css-generator/drop-shadow*/
 }
-code {
-    font-family: Consolas,"courier new";
-    color: crimson;
-    background-color: #f1f1f1;
-    padding: 2px;
-    font-size: 101%;
+/* styling the read more button */
+.newsCard a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 15px;
+    width: 95%;
+    max-width: 25vw;
+    background-color: var(--fontColor);
+    color: var(--background);
+    border-radius: 5px;
+}
+.newsCard a:hover {
+    text-decoration: underline;
+}
+.readMore {
+    background-color: var(--fontColor);
+    color: var(--background);
+}
+.newsCard figure {
+    width: 100%;
+    max-width: 29vw;
+    margin-top: 0px;
+}
+.newsCard figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0px 0px;
+}
+/* styling for news headline */
+.newsCard figcaption {
+    font-weight: 400;
+    margin: 3% 7% 0 7%;
 }
 
-/* Location marker styling */
+/* Source: https://uiverse.io/ArturCodeCraft/afraid-fish-22 */
+.scrollContainer {
+    max-width: 50%;
+}
+
+.scrollContainer .scrollBox {
+    animation: scroll-down 2s infinite;
+    position: inherit;
+    width: 5vw;
+}
+
+/* Animating the scroll icon */
+@keyframes scroll-down {
+    0%, 100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    35% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+}
+
+/* ---- MENDER MAP STYLING (map.html) ---- */
+.menderMap {
+    background-color: var(--background);
+    border: var(--disabledBackgroundHover) solid 2px;
+    border-radius: 15px;
+    filter: drop-shadow(0px 5px 1px var(--fontColor));
+}
+
+#map {
+    height: 75vh;
+    width: 90vw;
+}
+
+/* ---- PROFILE PAGE STYLING (profile.html) ---- */
+#profilePage {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* ---- PROFILE PAGE SIDE BAR ---- */
+.sideContainer {
+    border-right: var(--disabledBackgroundHover) solid 2px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+.pActive {
+    background-color: var(--accent);
+    border-radius: 5px;
+    color: var(--purple);
+    font-weight: 600;
+}
+.pActive:hover {
+    color: var(--purple);
+}
+.sideContainer a {
+    text-decoration: none;
+    margin: 10px 15px;
+    padding: 10px 15px;
+}
+.sideContainer a:hover {
+    text-decoration: underline;
+}
+
+/* Profile main content */
+.profileContainer {
+    height: 85vh;
+    margin-left: 25px;
+}
+
+.pHeader {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.profileTagsContainer {
+    display: flex;
+    flex-direction: row;
+    padding-right: 25vw;
+}
+.profilePicture {
+    margin-right: 45px;
+}
+
+/* profile edit button */
+.editButton {
+    max-height: 55px;
+    display: flex;
+    margin-top: 15px;
+    background-color: var(--disabledBackground);
+}
+.editButton:hover {
+    background-color: var(--disabledBackgroundHover);
+}
+.editButton img {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+
+/* profile verification and skill tags */
+.pTag {
+    padding: 8px 15px;
+    border-radius: 7px;
+    font-size: 15pt;
+    text-align: center;
+    margin-top: 0px;
+}
+.pTagContainer {
+    display: flex;
+    justify-content: flex-start;
+}
+.tagVerify {
+    background-color: var(--blue);
+    color: var(--blueText);
+    margin-right: 8px;
+}
+.tagVerify img {
+    filter: invert(24%) sepia(39%) saturate(874%) hue-rotate(182deg) brightness(90%) contrast(91%);
+    margin-right: 15px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+.tagSkill {
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin-left: 8px;
+}
+.tagSkill img {
+    filter: invert(29%) sepia(15%) saturate(2360%) hue-rotate(129deg) brightness(91%) contrast(90%);
+    margin-right: 15px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
+}
+
+.profilePicture {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}
+.profilePicture img {
+    height: 100%;
+    width: auto;
+}
+.nameNTags h2 {
+    margin-top: 50px;
+}
+
+/* profile information styling */
+.pInformation{
+    display: flex;
+    flex-direction: column;
+}
+#personalInformationTitle {
+    margin-top: 35px;
+}
+.pInformation p {
+    margin: 0px;
+}
+.contactInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 35px 0px;
+}
+
+.infoTag {
+    background-color: var(--disabledBackground);
+    padding: 10px 10px 10px 20px;
+    border-radius: 3px;
+}
+#infoPhone {
+    margin-right: 15px;
+    width: 35vw;
+}
+#infoEmail {
+    margin-left: 15px;
+    width: 100%;
+}
+#infoPreference, #infoAddress {
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+/* ---- PROFILE PAGE MATERIALS INFORMATION ---- */
+.materialContainer {
+    border: red solid 2px;
+}
+
+/* PROFILE PAGE SAVED RESOURCES */
+.resourcesContainer {
+    border: red solid 2px;
+}
+
+/* ---- Location marker styling ---- */
 .locationRepair, .locationRequest, .locationAvailable {
     margin: 15px;
 }
@@ -361,7 +731,7 @@ code {
     filter: invert(90%) sepia(12%) saturate(1402%) hue-rotate(47deg) brightness(89%) contrast(91%);
 }
 
-/* Responsive styling */
+/*  ---- Responsive styling ---- */
 @media screen and (max-width: 840px){
     body {
         background-color: red;

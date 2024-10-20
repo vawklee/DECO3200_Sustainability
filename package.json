@@ -8,12 +8,14 @@
     "prestart": "parcel build ./public/index.html",
     "dev": "parcel serve ./public/index.html",
     "styleguide": "parcel serve ./styleguide/guide.html",
-    "build": "parcel build --dist-dir public"
+    "build": "parcel build --dist-dir public",
+    "map": "parcel serve ./public/map.html"
   },
   "author": "Emma M., Eva M. A., Kate M., Veronica L.",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "parcel": "^2.12.0"
