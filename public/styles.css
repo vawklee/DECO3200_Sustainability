@@ -585,15 +585,16 @@ button.download:hover {
     text-decoration: underline;
 }
 
-/* Profile main content */
-.profileContainer {
+/* PROFILE PAGE MAIN CONTENT */
+.profileContainer, .materialContainer, .resourcesContainer {
     height: 85vh;
+    width: 78vw;
     margin-left: 25px;
 }
 
 .pHeader {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 .profileTagsContainer {
@@ -710,13 +711,112 @@ button.download:hover {
 }
 
 /* ---- PROFILE PAGE MATERIALS INFORMATION ---- */
-.materialContainer {
+.materialHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.materialCardContainer {
+    display: flex;
+    flex-direction: row;
+}
+.recentContainer {
+    margin-bottom: 25px;
+}
+.recentContainer>p {
+    margin-top: 0px;
+}
+
+/* Recently added material card */
+.materialCardNew {
+    border: var(--locationAvailable) solid 3px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    max-width: 25vw;
+    max-height: 30vh;
+    justify-content: space-between;
+}
+.dotAvailable {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    background-color: var(--locationAvailable);
+    border-radius: 50%;
+}
+.matInfoContainer {
     border: red solid 2px;
+    margin: 10px 15px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.matName {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.matInfo p {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* label icons below */
+.matInfoContainer img {
+    height: auto;
+    width: 20px;
+}
+.dotAvailable, .matInfoContainer img {
+    margin-right: 15px;
+}
+
+/* thumbnail of material card */
+.matPic {
+    /* border: red solid 2px; */
+    align-self: center;
+    justify-self: flex-end;
+    width: auto;
+    height: 20vh;
+    border-radius: 15px;
+}
+
+/* Available material card */
+.materialCardAvailable {
+    border: var(--locationAvailable) solid 3px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    max-width: 25vw;
+    max-height: 30vh;
+    justify-content: space-between;
+}
+
+/* Requested material card */
+.materialCardRequest {
+    border: var(--locationRequest) solid 3px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    max-width: 25vw;
+    max-height: 30vh;
+    justify-content: space-between;
 }
 
 /* PROFILE PAGE SAVED RESOURCES */
 .resourcesContainer {
     border: red solid 2px;
+}
+
+/* TEMP PROFILE PAGE CODE DEBUGS */
+/* use display: block to show the profile tab you want to see */
+#profileContainer {
+    display: none;
+}
+#materialContainer {
+    display: block;
+}
+#resourcesContainer {
+    display: none;
 }
 
 /* ---- Location marker styling ---- */
