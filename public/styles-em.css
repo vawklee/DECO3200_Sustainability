@@ -41,7 +41,7 @@ article {
 /* Nav bar styling */
 header {
     background-color: var(--primary);
-    height: 100%;
+    height: 75px;
     width: 100vw;
     margin: auto;
     padding-top: 5px;
@@ -57,24 +57,34 @@ header h2{
 
 .navLogo {
     align-self: center;
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
+    position: relative;
+    right: -2vw;
     display: flex;
+    text-decoration: none;
 }
 .navLogo:hover {
     text-decoration: none;
 }
+
+.navLogo img {
+    margin-right: 20px;
+}
+
 .navBarItems {
     display: flex;
     justify-content: space-between;
-    margin-right: 1vw;
     align-self: center;
+    position: relative;
+    left: -1vw;
 }
 .navBarItems a {
-    color: var(--secondary);
+    color: var(--background);
     text-align: center;
     text-decoration: none;
     padding: 15px 40px;
     margin: 0 10px;
+    border-bottom: var(--primary) solid 2px;
     background-color: var(--primary);
     display: flex;
     align-items: center;
@@ -453,6 +463,17 @@ dialog {
     gap: 10px; /* Optional: Add some spacing between elements */
 }
 
+.resultsBox {
+    background-color: var(--background);
+    border-top: var(--secondary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+}
+
 
 #repairAssistantBorderStyling {
     background-color: var(--background);
@@ -647,3 +668,15 @@ background-color: #ffdddd;
     background-color: #d0d0d0;
     border-color: #555;
 } */
+
+
+.iconSize {
+    height: 15px;
+    width: auto;
+    margin-left: 10px
+}
+
+
+.redAsterisk {
+    color: var(--locationRequest)
+}

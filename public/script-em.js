@@ -63,6 +63,12 @@ if (cancel4) {
     });
 }
 
+const cancel5 = document.getElementById("cancel5");
+if (cancel5) {
+    cancel5.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
 
 // results ?? 
@@ -101,7 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // Use backticks for template literals
             localStorage.setItem("repairResult", `Your results for ${materialType} ${clothingType} with ${damageType}`);
             console.log("Redirecting to results.html");
-            window.location.href = "results.html";
+            // window.location.href = "results.html";
+            window.location.replace = "results.html";
+            // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
+            return false; 
         });
     } 
 });
@@ -185,8 +194,6 @@ document.querySelectorAll('.option').forEach(button => {
     button.addEventListener('click', function() {
         const question = this.getAttribute('data-question');
         const value = this.getAttribute('data-value');
-        const selectPage = document.getElementById("selectPage");
-
         // Update selection based on the data-question attribute
         if (question === '1') {
             selection.giveAwayRequest = value;
@@ -200,8 +207,9 @@ document.querySelectorAll('.option').forEach(button => {
         });
         this.classList.add('active');
 
-        // Redirect based on selection if both questions are answered
-        if (selection.giveAwayRequest && selection.itemMaterial) {
+        // updated to be based on submit event listener becasue i'm silly
+        document.getElementById('typeSubmit').addEventListener('click', function() {
+            const selectPage = document.getElementById("selectPage");
             let giveAwayItem =  document.getElementById("giveAwayItemForm");
             let requestItem = document.getElementById("requestItemForm");
             let giveAwayMaterial = document.getElementById("giveAwayMaterialForm")
@@ -234,10 +242,6 @@ document.querySelectorAll('.option').forEach(button => {
             } else {
                 console.log("Something went wrong");
             }
-        }
+        });
     });
 });
-
-
-
-
