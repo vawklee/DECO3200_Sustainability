@@ -54,11 +54,7 @@ header h2{
     margin-left: 0.5vw;
     color: var(--secondary);
 }
-/*
-header img {
-    align-self: center;
-    margin-left: 10px;
-} */
+
 .navLogo {
     align-self: center;
     margin-left: 1vw;
@@ -79,8 +75,6 @@ header img {
     text-decoration: none;
     padding: 15px 40px;
     margin: 0 10px;
-    /* border-radius: 8px; */
-    /* border-bottom: var(--secondary) solid 2px; */
     background-color: var(--primary);
     display: flex;
     align-items: center;
@@ -100,7 +94,6 @@ header img {
     background-color: red;
 }
 
-/* Font styling, source: Google Font */
 /* Heading font */
 .heading {
     font-family: "Krona One", sans-serif;
@@ -151,8 +144,6 @@ button, #submitButton {
     border-radius: 4px;
     border-style: none;
     margin: 5px;
-    /* text-align: center; */
-    /* display: flex; */
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -167,7 +158,7 @@ button.active:hover, #submitButton:hover {
     border: var(--fontColor) solid 2px;
 }
 
-button.disabled {
+/* button.disabled {
     background-color: var(--disabledBackground);
     color: var(--disabledFont);
     border: var(--disabledBackground) solid 2px;
@@ -175,7 +166,7 @@ button.disabled {
 button.disabled:hover {
     background-color: var(--disabledBackgroundHover);
     border: var(--disabledBackgroundHover) solid 2px;
-}
+} */
 
 button.alt {
     background-color: var(--background);
@@ -183,19 +174,19 @@ button.alt {
     border: var(--primary) solid 2px;
 }
 /* Buttons with icons */
-button.icon {
+/* button.icon {
     background-color: var(--background);
     color: var(--primary);
     border: var(--primary) solid 2px;
     width: auto;
-}
-button.icon img {
+} */
+/* button.icon img {
     margin-left: 25px;
     vertical-align: middle;
     height: 20px;
     width: auto;
-    filter: invert(29%) sepia(20%) saturate(1291%) hue-rotate(109deg) brightness(96%) contrast(87%); /* source: https://codepen.io/sosuke/pen/Pjoqqp && https://medium.com/@chilakaemmanuel/changing-svg-image-color-loaded-through-img-tag-with-css-3-filters-c8e912f52dd3*/
-}
+    filter: invert(29%) sepia(20%) saturate(1291%) hue-rotate(109deg) brightness(96%) contrast(87%);
+} */
 button.backButton img {
     margin-left: 0px;
     margin-right: 25px;
@@ -215,25 +206,6 @@ a:visited {
 a:hover {
     color: var(--fontColor);
 }
-
-/* Form styling
-form {
-    width: 75vw;
-    padding: 25px;
-    border: var(--primary) solid 2px;
-    border-radius: 4px;
-    background: var(--background);
-}
-form div {
-    margin-bottom: 10px;
-}
- */
-
-/* possible alt input styling, requires commenting out other border css below */
-/* input[type=text], select {
-    border-style: none;
-    border-bottom: var(--disabledBackground) solid 2px;
-} */
 
 input:focus, select:focus {
     background-color: var(--secondary);
@@ -270,28 +242,6 @@ button.download:hover {
     background-color: var(--primary);
     color: var(--background);
 }
-.featureContainer {
-    border: red solid 2px;
-    display: flex;
-    height: auto;
-}
-.feature {
-    margin: auto 15px;
-    padding: 50px 55px;
-    height: 100%;
-    border: solid var(--secondary) 2px;
-    flex: 1 1 33vw;
-}
-/* different to button.icon styling for specific selected colouring */
-.feature button {
-    width: auto;
-}
-.feature button img {
-    margin-left: 25px;
-    vertical-align: middle;
-    height: 20px;
-    width: auto;
-}
 
 .fPurple {
     background-color: var(--accent);
@@ -322,22 +272,6 @@ button.download:hover {
 .fYellow:hover {
     background-color: var(--accentSecondaryHover);
     border: var(--accentSecondaryHover) solid 2px;
-}
-
-.newsContainer {
-    height: 50vh;
-    border: red solid 2px;
-    background-color: red;
-    display: flex;
-}
-.newsCard {
-    /* padding: 5px 25px;
-    border: var(--accent) solid 2px; */
-    margin: auto 15px;
-    padding: 50px 55px;
-    height: 100%;
-    border: solid var(--secondary) 2px;
-    flex: 1 1 33vw;
 }
 
 /* Temp */
@@ -395,9 +329,7 @@ code {
         padding: 5px 20px;
         margin: 0 10px;
     }
-    /* .navBarContainer a:not(:first-child) {
-        display: none;
-    } */
+
     .navBarItems a:not(:last-child){
         display: none;
     }
@@ -422,45 +354,95 @@ code {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* FORM CSS */
+
+#secondhandHubDialog, #selectPage {
+    display: none;
+}
+
+/* #selectPage {
+    padding: 50px;
+    min-width: 80vw;
+} */
+
+/* .form-options {
+    display: none;
+} */
+
 
 /* Dialog styling */
 dialog {
     background-color: var(--background);
     border: 2px solid var(--primary);
     border-radius: 8px;
-    /* height: 70vh;
-    width: 90vw; */
     color: var(--fontColor);
     position: relative;
     z-index: 0.5;
     padding: 0; /* Ensure no internal padding */
-    display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;
 }
 
-.closeButton {
-    background-color: none;
+/* Make the form fill the dialog */
+#selectPage {
+    gap: 10px 20px;
+    align-items: center;
+    height: min-content; 
+    margin: auto;
+    padding: 30px;
+    box-sizing: border-box; 
+    background-color: var(--background);
+    border-top: var(--primary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    width: 60%; 
 }
 
-/* Make the form fill the dialog */
-#secondhandForm {
-    /* display: grid;
-    grid-template-columns: max-content 1fr;
+.secondarySecondhandForm {
     gap: 10px 20px;
-    align-items: center; */
-    /* max-width: 75%; */
-    height: 100%; /* Keep form height */
+    align-items: center;
+    height: min-content; /* Keep form height */
     margin: auto;
-    padding: 20px 20px 50px 20px;
+    padding: 30px;
     box-sizing: border-box; /* Ensure padding/border are included in size calculations */
     background-color: var(--background); /* Optional: form background color */
     border-top: var(--primary) 10px solid;
     border-left: var(--primary) 2px solid;
     border-right:var(--primary) 2px solid;
     border-bottom: var(--primary) 2px solid;
+    width: 60%; 
+    display: none;
 }
+
+.form-row {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    gap: 10px; /* Optional: Add some spacing between elements */
+}
+
 
 #repairAssistantBorderStyling {
     background-color: var(--background);
@@ -473,51 +455,38 @@ dialog {
     margin: 20px auto auto auto;
 }
 
-
-/* 
-label {
-    justify-self: end;
-} */
-
-
-/* Styling the "or" text */
-.or-text {
-    font-size: 1.2em;
-    color: var(--fontColor); /* Use your desired color */
-    margin: 10px 0; /* Space above and below the "or" text */
-}
-
-
 .repair-assistant-background {
     background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 .secondhand-hub-background {
     background-image: url('images/imgs/secondhandHubBackground.jpg'); /* Path to your image */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
-.button-group {
+label {
+    width: 300px;
+}
+
+/* .button-group {
     display: flex;
-    gap: 10px; /* Space between buttons */
-}
+    gap: 10px;
+} */
 
-/* Hide the default radio button */
-.fakeButton input[type="radio"] {
+
+/* .fakeButton input[type="radio"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-}
+} */
 
 /* Default button style */
 .buttonCheckedStyling {
-    background-color: var(----background); /* Default background color */
-    color: var(--fontColor); /* Default text color */
+    background-color: var(----background); 
+    color: var(--fontColor);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -526,7 +495,7 @@ label {
 }
 .giveAwayStyling {
     border: var(--locationAvailable) 2px solid;
-    background-color: var(--background); /* Default background color */
+    background-color: var(--background);
 }
 
 .giveAwayStyling:checked .giveAwayStyling:hover {
@@ -546,7 +515,7 @@ label {
     border: var(--primary)2px solid;
     }
 
-.fakeButton:hover .giveAwayStyling {
+/* .fakeButton:hover .giveAwayStyling {
     background: var(--locationAvailable)
 }
 
@@ -559,14 +528,13 @@ label {
 }
 
 .fakeButton:hover .secondhandTypeStyling {
-    background-color: var(--primary); /* Change to hover color */
+    background-color: var(--primary); 
     color: #ffffff;
 } 
 .fakeButton:checked .secondhandTypeStyling {
-    background-color: var(--primary); /* Change to hover color */
+    background-color: var(--primary); 
     color: #ffffff;
-} 
-
+}  */
 
 button { 
 font-family: 'Anek Telugu', sans-serif;
@@ -578,6 +546,10 @@ label, input, select, option, input::placeholder, textarea::placeholder, input[t
     margin: 5px;
 }
 
+input[type="search"]{
+    min-width: 50vw;
+}
+
 /* Input styling */
 input, select {
     /* width: 100%;  */
@@ -586,24 +558,10 @@ input, select {
     border-radius: 5px;
 }
 
-
-
-
-
-
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
 background-color: #ffdddd;
 }
-
-.tab { 
-display: none; 
-}
-
-.tab.active { 
-    display: block; 
-}
-
 
 .formHeading {
     font-family: "Krona One", sans-serif;
@@ -617,8 +575,68 @@ display: none;
 #repairAssistantPage {
     background-image: url(images/imgs/repairAssistantBackground.jpg);
     background-size: cover;
-
     background-position: center;
-    background-repeat: no-repeat;
 
+}
+
+
+#repairAssistantForm select {
+    width: 75%;
+}
+
+
+/* .circle-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+} */
+
+.redCircle {
+    width: 10px;
+    height: 10px;
+    background-color: var(--locationRequest); /* Change this to the desired color */
+    border-radius: 50%;
+    margin-right: 8px; /* Space between the circle and the text */
+}
+
+.greenCircle {
+    width: 10px;
+    height: 10px;
+    background-color: var(--locationAvailable); /* Change this to the desired color */
+    border-radius: 50%;
+    margin-right: 8px; /* Space between the circle and the text */
+}
+
+
+.option {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40%;
+}
+
+.option .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+    border-color: #888;
+}
+
+.option.active {
+    background-color: #d0d0d0;
+    border-color: #555;
 }
