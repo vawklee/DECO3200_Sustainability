@@ -11,12 +11,6 @@
       "css": ["extension_styles.css"]
     }
   ],
-  "web_accessible_resources": [
-    {
-        "resources": ["images/extension_icon.png"],
-        "matches": ["<all_urls>"]
-    }
-],
   "action": {
     "default_popup": "extension.html",
     "default_icon": "images/icon.png"
