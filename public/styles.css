@@ -736,7 +736,7 @@ button.download:hover {
 .materialCardNew {
     border: var(--locationAvailable) solid 3px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-radius: 20px;
     max-width: 25vw;
     max-height: 30vh;
@@ -755,7 +755,7 @@ button.download:hover {
     background-color: var(--locationRequest);
 }
 .matInfoContainer {
-    margin: 10px 15px;
+    margin: 0px 15px 5px 15px;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -780,13 +780,17 @@ button.download:hover {
 }
 
 /* thumbnail of material card */
+.matPicContainer {
+    width: 100%;
+    height: 35%;
+}
 .matPic {
-    /* border: red solid 2px; */
+    border-radius: 15px 15px 0 0;
     align-self: center;
     justify-self: flex-end;
-    width: auto;
-    height: 20vh;
-    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Available material card */
@@ -820,13 +824,12 @@ button.download:hover {
     border: red solid 2px;
 }
 
-/* TEMP PROFILE PAGE CODE DEBUGS */
-/* use display: block to show the profile tab you want to see */
-#profileContainer {
+/* Profile page default states */
+/* #profileContainer {
     display: none;
-}
+} */
 #materialContainer {
-    display: block;
+    display: none;
 }
 #resourcesContainer {
     display: none;
