@@ -1,3 +1,5 @@
+// veronic's nav bar function 
+
 function minimiseNavBar() {
     var x = document.getElementById("navBarContainer");
     if (x.className === "navBarContainer") {
@@ -8,152 +10,38 @@ function minimiseNavBar() {
     console.log("minimise clicked");
 }
 
-// // https://www.w3schools.com/howto/howto_js_form_steps.asp?
-
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-
-function showTab(n) {
-  // This function will display the specified tab of the form ...
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-  // ... and fix the Previous/Next buttons:
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
-  }
-  // ... and run a function that displays the correct step indicator:
-  fixStepIndicator(n)
-}
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
-    //...the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
-    }
-  }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid; // return the valid status
-}
-
-function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
-  }
-  //... and adds the "active" class to the current step:
-  x[n].className += " active";
-}
-
-
-function nextPrev(n) {
-    // Get all the tab elements
-    var tabs = document.getElementsByClassName("tab");
-    // Find the current tab
-    var currentTab = document.querySelector(".tab.active");
-    var currentTabIndex = Array.from(tabs).indexOf(currentTab);
-
-    // If navigating forward, check user choices and conditionally skip to the appropriate tab
-    if (n === 1) {
-        // Get user choices
-        var itemType = document.querySelector('input[name="itemType"]:checked');
-        var itemCategory = document.querySelector('input[name="itemCategory"]:checked');
-
-        if (currentTabIndex === 0) {
-            // If the first tab, determine the next tab based on selections
-            if (itemType && itemCategory) {
-                // Custom logic: for example, if "Request" and "Clothing", go to the second tab
-                if (itemType.value === "Request" && itemCategory.value === "Clothing") {
-                    showTab(1); // Go to "Birthday" tab
-                } else if (itemType.value === "Giveaway" && itemCategory.value === "Material") {
-                    showTab(2); // Skip to "Login Info" tab
-                } else {
-                    showTab(1); // Default behavior
-                }
-            } else {
-                alert("Please select both Giveaway or Request and Clothing or Material.");
-                return false;
-            }
-        } else {
-            // Move to the next tab if already past the first tab
-            showTab(currentTabIndex + n);
-        }
-    } else {
-        // If navigating backward, move to the previous tab
-        showTab(currentTabIndex + n);
-    }
-}
-
-function showTab(n) {
-    // Hide all the tabs
-    var tabs = document.getElementsByClassName("tab");
-    for (var i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove("active");
-    }
-    // Show the specified tab
-    tabs[n].classList.add("active");
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Show the first tab
-    showTab(0);
-});
 
 
 function showDialog() {
-    document.body.classList.add('secondhand-hub-background'); // Add background when dialog is opened
-    document.getElementById("secondhandHubDialog").showModal();
+    document.body.classList.add('secondhand-hub-background');
+    document.getElementById("selectPage").showModal();
 }
 function closeDialog() {
     document.body.classList.remove('secondhand-hub-background'); // Remove background when dialog is closed
-    document.getElementById("secondhandHubDialog").close();
+    document.getElementById("selectPage").close();
 }
+
+function showResults(id) {
+    document.getElementById(id).showModal();
+}
+function closeResults() {
+    document.getElementById(id).close();
+}
+
+const openSecondhandForm = document.getElementById("openSecondhandForm");
+const selectPage = document.getElementById("selectPage");
+
+openSecondhandForm.addEventListener("click", () => {
+    selectPage.style.display = "block";
+    document.body.classList.add('secondhand-hub-background');
+    selectPage.showModal();
+});
 
 
 // form submission adapted from my advanced web project 
 // form.addEventListener("submit", function (event) {
 //     event.preventDefault();
 //     formModal.close();
-//     //getting correct value for the radio button - rating 
-//     let rating = document.querySelector('input[name="bookRating"]:checked').value
 
 //     addRequestedItem(
 //         form.elements.requestItemName.value,
@@ -185,41 +73,96 @@ function closeDialog() {
 // });
 
 
-// chattie helping with form determining 
-function determineForm() {
-    const itemType = document.querySelector('input[name="itemType"]:checked');
-    const itemCategory = document.querySelector('input[name="itemCategory"]:checked');
-    
-    // Hide all form sections initially
-    const allTabs = document.querySelectorAll('.tab');
-    allTabs.forEach(tab => tab.style.display = 'none');
-    
-    // Show the appropriate form based on selections
-    if (itemType && itemCategory) {
-        if (itemType.value === 'Give Away' && itemCategory.value === 'Clothing') {
-            document.getElementById('giveAwayItemForm').style.display = 'block';
-        } else if (itemType.value === 'Give Away' && itemCategory.value === 'Material') {
-            document.getElementById('giveAwayMaterialForm').style.display = 'block';
-        } else if (itemType.value === 'Request' && itemCategory.value === 'Clothing') {
-            document.getElementById('requestItemForm').style.display = 'block';
-        } else if (itemType.value === 'Request' && itemCategory.value === 'Material') {
-            document.getElementById('requestMaterialForm').style.display = 'block';
-        }
-    } else {
-        // If selections are incomplete, show the first tab
-        document.getElementById('selectPage').style.display = 'block';
-    }
-}
+// Store selected options
+let selection = { giveAwayRequest: null, itemMaterial: null };
 
-// Attach event listeners to the radio buttons
-document.querySelectorAll('input[name="itemType"], input[name="itemCategory"]').forEach(input => {
-    input.addEventListener('change', determineForm);
+document.querySelectorAll('.option').forEach(button => {
+    button.addEventListener('click', function() {
+        const question = this.getAttribute('data-question');
+        const value = this.getAttribute('data-value');
+        const selectPage = document.getElementById("selectPage");
+
+        // Update selection based on the data-question attribute
+        if (question === '1') {
+            selection.giveAwayRequest = value;
+        } else if (question === '2') {
+            selection.itemMaterial = value;
+        }
+
+        // Highlight the selected button and reset other options for the same question
+        document.querySelectorAll(`.option[data-question="${question}"]`).forEach(btn => {
+            btn.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        // Redirect based on selection if both questions are answered
+        if (selection.giveAwayRequest && selection.itemMaterial) {
+            let giveAwayItem =  document.getElementById("giveAwayItemForm");
+            let requestItem = document.getElementById("requestItemForm");
+            let giveAwayMaterial = document.getElementById("giveAwayMaterialForm")
+            let requestMaterial = document.getElementById("requestMaterialForm")
+            
+
+            if (selection.giveAwayRequest === 'giveAway' && selection.itemMaterial === 'item') {
+                console.log("Give Away Item selected");
+                selectPage.style.display = "none";
+                giveAwayItem.style.display = "block";
+                giveAwayItem.showModal();
+
+            } else if (selection.giveAwayRequest === 'giveAway' && selection.itemMaterial === 'material') {
+                console.log("Give Away Material selected");
+                selectPage.style.display = "none";
+                giveAwayMaterial.style.display = "block";
+                giveAwayMaterial.showModal();
+
+            } else if (selection.giveAwayRequest === 'request' && selection.itemMaterial === 'item') {
+                console.log("Request Item selected");
+                selectPage.style.display = "none";
+                requestItem.style.display = "block";
+                requestItem.showModal();
+
+            } else if (selection.giveAwayRequest === 'request' && selection.itemMaterial === 'material') {
+                console.log("Request Material selected");
+                selectPage.style.display = "none";
+                requestMaterial.style.display = "block";
+                requestMaterial.showModal();
+            } else {
+                console.log("Something went wrong");
+            }
+        }
+    });
 });
 
-// Initial form setup
-determineForm();
 
-// "Next" button functionality
-function nextPrev() {
-    determineForm(); // Show the appropriate form when "Next" is clicked
-}
+
+
+
+// https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
+
+// let repairResults = repairAssistantForm.getElementById("repairAssistantForm");
+// repairAssistantForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
+
+//     let material = document.getElementById("materialType").value
+//     let item = document.getElementById("clothingType").value
+//     let damage = document.getElementById("damageType").value
+
+//     // this is a simplified version for the purpose of the prototype 
+//     // in the expanded version, all three components would be used to suggest solutions
+    
+//     if (damage == "Broken Zipper") {
+//         showResults(brokenZipperResults)
+//     }
+//     else if (damage == "Fallen Hem") {
+//         showResults(fallenHemResults)
+//     }
+//     else if (damage == "Replacing Button") {
+//         showResults(replacingButtonResults)
+//     }
+//     else if (damage == "Rip/Tear") {
+//         showResults(ripTearHoleResults)
+//     }
+
+//     // return({material}, {item}, "with", {damage})
+
+// });
