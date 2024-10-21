@@ -544,7 +544,7 @@ button.download:hover {
     background-color: var(--background);
     border: var(--disabledBackgroundHover) solid 2px;
     border-radius: 15px;
-    filter: drop-shadow(0px 5px 1px var(--fontColor));
+    filter: drop-shadow(0px 4px 2px var(--disabledBackgroundHover));
 }
 
 #map {
@@ -720,6 +720,11 @@ button.download:hover {
     display: flex;
     flex-direction: row;
 }
+.materialCardContainer>div {
+    margin-right: 20px;
+    background-color: var(--background);
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
+}
 .recentContainer {
     margin-bottom: 25px;
 }
@@ -731,22 +736,26 @@ button.download:hover {
 .materialCardNew {
     border: var(--locationAvailable) solid 3px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border-radius: 20px;
     max-width: 25vw;
     max-height: 30vh;
     justify-content: space-between;
 }
-.dotAvailable {
+.dotAvailable, .dotRequest {
     display: inline-flex;
     height: 20px;
     width: 20px;
-    background-color: var(--locationAvailable);
     border-radius: 50%;
 }
+.dotAvailable {
+    background-color: var(--locationAvailable);
+}
+.dotRequest {
+    background-color: var(--locationRequest);
+}
 .matInfoContainer {
-    border: red solid 2px;
-    margin: 10px 15px;
+    margin: 0px 15px 5px 15px;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -766,54 +775,61 @@ button.download:hover {
     height: auto;
     width: 20px;
 }
-.dotAvailable, .matInfoContainer img {
+.dotAvailable, .dotRequest, .matInfoContainer img {
     margin-right: 15px;
 }
 
 /* thumbnail of material card */
+.matPicContainer {
+    width: 100%;
+    height: 35%;
+}
 .matPic {
-    /* border: red solid 2px; */
+    border-radius: 15px 15px 0 0;
     align-self: center;
     justify-self: flex-end;
-    width: auto;
-    height: 20vh;
-    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Available material card */
+/* Requested material card */
+.materialCardAvailable, .materialCardRequest {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    max-width: 25vw;
+    max-height: 30vh;
+    justify-content: space-between;
+}
 .materialCardAvailable {
     border: var(--locationAvailable) solid 3px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 20px;
-    max-width: 25vw;
-    max-height: 30vh;
-    justify-content: space-between;
 }
-
-/* Requested material card */
 .materialCardRequest {
     border: var(--locationRequest) solid 3px;
+}
+
+/* .materialCardRequest {
     display: flex;
     flex-direction: row;
     border-radius: 20px;
     max-width: 25vw;
     max-height: 30vh;
     justify-content: space-between;
-}
+} */
 
 /* PROFILE PAGE SAVED RESOURCES */
 .resourcesContainer {
     border: red solid 2px;
 }
 
-/* TEMP PROFILE PAGE CODE DEBUGS */
-/* use display: block to show the profile tab you want to see */
-#profileContainer {
+/* Profile page default states */
+/* #profileContainer {
     display: none;
-}
+} */
 #materialContainer {
-    display: block;
+    display: none;
 }
 #resourcesContainer {
     display: none;
