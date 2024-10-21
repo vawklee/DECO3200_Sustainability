@@ -29,32 +29,33 @@
                 <h1 class="formHeading">Secondhand Hub</h1>
                 <input type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials"><br>
                 <button id="openSecondhandForm" type="button" class="caption">Giveaway or Request an Item or Material +</button>
-
-                <dialog id="selectPage">
-                    <h1 class="formHeading">Secondhand Hub:</h1>
-                    <p class="body">Select from the below to be directed to the correct form.</p>
-                    <p class="caption">Give Away or Request: *</p>
-                    <div class="question form-row">
-                        <button class="option giveAwayStyling" data-question="1" data-value="giveAway"> 
-                            <span class="greenCircle"></span> Give Away
-                        </button>
-                        <p class="caption">or</p> 
-                        <button class="option requestStyling" data-question="1" data-value="request">
-                            <span class="redCircle"></span> Request
-                        </button>
-                    </div>
-                    <p class="caption">Type: *</p>
-                    <div class="question form-row">
-                        <button class="option secondhandTypeStyling" data-question="2" data-value="item">Clothing Item</button>
-                        <p class="caption">or</p> 
-                        <button class="option secondhandTypeStyling" data-question="2" data-value="material">Material</button>
-                    </div>
-                </dialog>
             </article>
+
+            <dialog id="selectPage">
+                <h1 class="formHeading">Secondhand Hub:</h1>
+                <p class="body">Select from the below to be directed to the correct form.</p>
+                <p class="caption">Give Away or Request: *</p>
+                <div class="question form-row">
+                    <button class="option giveAwayStyling" data-question="1" data-value="giveAway"> 
+                        <span class="greenCircle"></span> Give Away
+                    </button>
+                    <p class="caption">or</p> 
+                    <button class="option requestStyling" data-question="1" data-value="request">
+                        <span class="redCircle"></span> Request
+                    </button>
+                </div>
+                <p class="caption">Type: *</p>
+                <div class="question form-row">
+                    <button class="option secondhandTypeStyling" data-question="2" data-value="item">Clothing Item</button>
+                    <p class="caption">or</p> 
+                    <button class="option secondhandTypeStyling" data-question="2" data-value="material">Material</button>
+                </div>
+            </dialog>
+
 
             <!-- GIVE AWAY ITEM FORM -->
             <dialog class="secondarySecondhandForm form-options" id="giveAwayItemForm">
-                <form>
+                <form class="secondPageFormStyling">
                     <h1 class="heading">Give Away Item:</h1>
                     <p class="caption">Add information for the clothing item you would like to request below.</p>
                     <label for="giveAwayItemName">Item Name:</label>
@@ -89,9 +90,10 @@
                         <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
                     </select><br>
                     <label for="giveAwayItemImage">Item Image:</label>
-                    <input type="file" id="giveAwayItemImage" name="giveAwayItemImage"><br>
-                    <button type="button">Cancel</button>   
-                    <input type="submit">
+                    <input type="file" id="giveAwayItemImage" name="giveAwayItemImage">
+                    <br>
+                    <button type="button" id="cancel1">Cancel</button>   
+                    <button type="submit" id="submit1">Submit</button>
                 </form>
             </dialog>
 
@@ -130,7 +132,9 @@
                         <option value="L">Large (L) / 16-18</option>
                         <option value="XL">Extra Large (XL) / 20-22</option>
                         <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
-                    </select><br>      
+                    </select><br>
+                    <button type="button" id="cancel2">Cancel</button>   
+                    <button type="submit" id="submit2">Submit</button>      
                 </form>
             </dialog>
 
@@ -162,11 +166,13 @@
                     <input type="text" id="giveAwayMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 30cm x 10cm" required><br>
                     <label for="giveAwayMaterialImage">Material Image:</label>
                     <input type="file" id="giveAwayMaterialImage" name="giveAwayMaterialImage">
+                    <button type="button" id="cancel3">Cancel</button>   
+                    <button type="submit" id="submit3">Submit</button>
                 </form>
             </dialog>
 
             <!-- REQUEST MATERIAL FORM -->
-            <dialog class="secondarySecondhandForm form-options" id="giveAwayMaterialForm">
+            <dialog class="secondarySecondhandForm form-options" id="requestMaterialForm">
                 <form>
                     <h1 class="heading">Request Material:</h1>
                     <p class="caption">Add information for the clothing item you would like to request below.</p>
@@ -191,7 +197,9 @@
                         <option value="Other">Other</option>
                     </select><br>
                     <label for="requestMaterialSize">Minimum:</label>
-                    <input type="text" id="requestMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 1m x 1m" required>
+                    <input type="text" id="requestMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 1m x 1m" required><br>
+                    <button type="button" id="cancel4">Cancel</button>   
+                    <button class="greenButton" type="submit" id="submit4">Submit</button>
                 </form>
             </dialog>
 

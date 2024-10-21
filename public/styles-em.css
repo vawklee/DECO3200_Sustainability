@@ -153,12 +153,13 @@ button.active, #submitButton {
     color: var(--background);
     border: var(--primary) solid 2px;
 }
+
 button.active:hover, #submitButton:hover {
     background-color: var(--fontColor);
     border: var(--fontColor) solid 2px;
 }
 
-/* button.disabled {
+button.disabled {
     background-color: var(--disabledBackground);
     color: var(--disabledFont);
     border: var(--disabledBackground) solid 2px;
@@ -166,7 +167,7 @@ button.active:hover, #submitButton:hover {
 button.disabled:hover {
     background-color: var(--disabledBackgroundHover);
     border: var(--disabledBackgroundHover) solid 2px;
-} */
+}
 
 button.alt {
     background-color: var(--background);
@@ -174,19 +175,19 @@ button.alt {
     border: var(--primary) solid 2px;
 }
 /* Buttons with icons */
-/* button.icon {
+button.icon {
     background-color: var(--background);
     color: var(--primary);
     border: var(--primary) solid 2px;
     width: auto;
-} */
-/* button.icon img {
+} 
+button.icon img {
     margin-left: 25px;
     vertical-align: middle;
     height: 20px;
     width: auto;
     filter: invert(29%) sepia(20%) saturate(1291%) hue-rotate(109deg) brightness(96%) contrast(87%);
-} */
+}
 button.backButton img {
     margin-left: 0px;
     margin-right: 25px;
@@ -213,7 +214,7 @@ input:focus, select:focus {
     border-bottom: var(--primary) solid 2px;
 }
 input[type=text], select {
-    /* width: 75%; */
+    width: 100%;
     padding: 15px 25px;
     outline: none;
     border-radius: 5px;
@@ -382,14 +383,10 @@ code {
     display: none;
 }
 
-/* #selectPage {
-    padding: 50px;
-    min-width: 80vw;
-} */
 
-/* .form-options {
-    display: none;
-} */
+#submit1, #submit2, #submit3, #submit4, #openSecondhandForm {
+    background-color: var(--secondary);
+}
 
 
 /* Dialog styling */
@@ -403,6 +400,11 @@ dialog {
     padding: 0; /* Ensure no internal padding */
     justify-content: center; /* Center horizontally */
     align-items: center;
+}
+
+#repairSubmit {
+    background-color: var(--secondary);
+    width: 100%
 }
 
 /* Make the form fill the dialog */
@@ -423,9 +425,10 @@ dialog {
 
 .secondarySecondhandForm {
     gap: 10px 20px;
-    align-items: center;
-    height: min-content; /* Keep form height */
-    margin: auto;
+    height: 70%;
+    min-height:fit-content;
+    /* margin: 10% auto auto auto; */
+    margin: 20px auto auto;
     padding: 30px;
     box-sizing: border-box; /* Ensure padding/border are included in size calculations */
     background-color: var(--background); /* Optional: form background color */
@@ -433,8 +436,15 @@ dialog {
     border-left: var(--primary) 2px solid;
     border-right:var(--primary) 2px solid;
     border-bottom: var(--primary) 2px solid;
-    width: 60%; 
+    width: 70%; 
     display: none;
+}
+
+.secondPageFormStyling input, select, input[type="file"] {
+    width: 100%;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
 }
 
 .form-row {
@@ -467,22 +477,6 @@ dialog {
     background-position: center;
 }
 
-label {
-    width: 300px;
-}
-
-/* .button-group {
-    display: flex;
-    gap: 10px;
-} */
-
-
-/* .fakeButton input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-} */
-
 /* Default button style */
 .buttonCheckedStyling {
     background-color: var(----background); 
@@ -498,8 +492,10 @@ label {
     background-color: var(--background);
 }
 
-.giveAwayStyling:checked .giveAwayStyling:hover {
-    border: var(--locationAvailable) 2px solid;
+.giveAwayStyling:checked {
+    background-color: var(--locationAvailable);
+}
+.giveAwayStyling:hover {
     background-color: var(--locationAvailable);
 }
 
@@ -507,13 +503,27 @@ label {
     border: var(--locationRequest) 2px solid;
 }
 
-.requestStyling:checked .requestStyling:hover {
+.requestStyling:checked {
+    background-color: var(--locationRequest);
+}
+.requestStyling:hover {
     background-color: var(--locationRequest);
 }
     
 .secondhandTypeStyling {
     border: var(--primary)2px solid;
     }
+
+.secondhandTypeStyling:hover {
+    background-color: var(--primary);
+    color: var(--background)
+    }
+
+.secondhandTypeStyling:checked {
+    background-color: var(--primary);
+    color: var(--background)
+    }
+    
 
 /* .fakeButton:hover .giveAwayStyling {
     background: var(--locationAvailable)
@@ -576,12 +586,12 @@ background-color: #ffdddd;
     background-image: url(images/imgs/repairAssistantBackground.jpg);
     background-size: cover;
     background-position: center;
-
 }
 
 
 #repairAssistantForm select {
-    width: 75%;
+    width: 100%;
+    height:fit-content
 }
 
 
@@ -616,9 +626,6 @@ background-color: #ffdddd;
     align-items: center;
     padding: 10px 20px;
     margin: 5px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    background-color: #f0f0f0;
     cursor: pointer;
     transition: all 0.3s ease;
     width: 40%;
@@ -631,12 +638,12 @@ background-color: #ffdddd;
     margin-right: 8px;
 }
 
-.option:hover {
+/* .option:hover {
     background-color: #e0e0e0;
     border-color: #888;
-}
+} */
 
-.option.active {
+/* .option.active {
     background-color: #d0d0d0;
     border-color: #555;
-}
+} */

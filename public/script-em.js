@@ -1,4 +1,4 @@
-// veronic's nav bar function 
+// veronica's nav bar function 
 
 function minimiseNavBar() {
     var x = document.getElementById("navBarContainer");
@@ -11,6 +11,7 @@ function minimiseNavBar() {
 }
 
 
+//background for secondhand hub modal 
 
 function showDialog() {
     document.body.classList.add('secondhand-hub-background');
@@ -21,12 +22,7 @@ function closeDialog() {
     document.getElementById("selectPage").close();
 }
 
-function showResults(id) {
-    document.getElementById(id).showModal();
-}
-function closeResults() {
-    document.getElementById(id).close();
-}
+// opening the secondhand hub modal 
 
 const openSecondhandForm = document.getElementById("openSecondhandForm");
 const selectPage = document.getElementById("selectPage");
@@ -37,6 +33,96 @@ openSecondhandForm.addEventListener("click", () => {
     selectPage.showModal();
 });
 
+
+const cancel1 = document.getElementById("cancel1")
+
+cancel1.addEventListener("click", () => {
+    // https://www.semrush.com/blog/javascript-redirect/
+    window.location.href = "secondhand.html"
+});
+
+const cancel2 = document.getElementById("cancel2")
+
+cancel2.addEventListener("click", () => {
+    // https://www.semrush.com/blog/javascript-redirect/
+    window.location.href = "secondhand.html"
+});
+
+const cancel3 = document.getElementById("cancel3")
+
+cancel3.addEventListener("click", () => {
+    // https://www.semrush.com/blog/javascript-redirect/
+    window.location.href = "secondhand.html"
+});
+
+const cancel4 = document.getElementById("cancel4")
+
+cancel4.addEventListener("click", () => {
+    // https://www.semrush.com/blog/javascript-redirect/
+    window.location.href = "secondhand.html"
+});
+
+
+
+// results ?? 
+function showResults(id) {
+    document.getElementById(id).showModal();
+}
+function closeResults() {
+    document.getElementById(id).close();
+}
+
+// repair assistant submission and results 
+// https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
+
+// let repairAssistantForm = document.getElementById("repairAssistantForm");
+
+// repairAssistantForm.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     let materialType = document.getElementById("materialType").value;
+//     let clothingType = document.getElementById("clothingType").value;
+//     let damageType = document.getElementById("damageType").value;
+
+//     // this is a simplified version for the purpose of the prototype 
+//     // in the expanded version, all three components would be used to suggest solutions
+    
+//     if (damageType == "Broken Zipper") {
+//         // showResults(brokenZipperResults)
+//         console.log("broken zipper")
+//     }
+//     else if (damageType == "Fallen Hem") {
+//         // showResults(fallenHemResults)
+//         console.log("fallen hem")
+//     }
+//     else if (damageType == "Replacing Button") {
+//         // showResults(replacingButtonResults)
+//         console.log("replacing button")
+//     }
+//     else if (damageType == "Rip/Tear") {
+//         // showResults(ripTearHoleResults)
+//         console.log("rip")
+//     }
+
+//     // return({material}, {item}, "with", {damage})
+
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// https://stackoverflow.com/questions/52430565/how-do-i-style-form-results-posted-to-a-page
 
 // form submission adapted from my advanced web project 
 // form.addEventListener("submit", function (event) {
@@ -136,33 +222,3 @@ document.querySelectorAll('.option').forEach(button => {
 
 
 
-
-// https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
-
-// let repairResults = repairAssistantForm.getElementById("repairAssistantForm");
-// repairAssistantForm.addEventListener("submit", (e) => {
-//     e.preventDefault();
-
-//     let material = document.getElementById("materialType").value
-//     let item = document.getElementById("clothingType").value
-//     let damage = document.getElementById("damageType").value
-
-//     // this is a simplified version for the purpose of the prototype 
-//     // in the expanded version, all three components would be used to suggest solutions
-    
-//     if (damage == "Broken Zipper") {
-//         showResults(brokenZipperResults)
-//     }
-//     else if (damage == "Fallen Hem") {
-//         showResults(fallenHemResults)
-//     }
-//     else if (damage == "Replacing Button") {
-//         showResults(replacingButtonResults)
-//     }
-//     else if (damage == "Rip/Tear") {
-//         showResults(ripTearHoleResults)
-//     }
-
-//     // return({material}, {item}, "with", {damage})
-
-// });
