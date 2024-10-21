@@ -432,8 +432,8 @@ button.download:hover {
 .extFeature>button {
     filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
     position: relative;
-    top: -8%;
-    left: 45%;
+    top: -0.05%;
+    left: -15%;
 }
 .chromeIcon {
     margin-left: 25px;
@@ -845,6 +845,10 @@ button.download:hover {
     flex-direction: row;
     justify-content: space-between;
     margin: 0px 15px;
+}
+.bookmarkIcon {
+    height: 35px;
+    align-self: center;
 }
 .rThumbnail {
     align-self: center;
