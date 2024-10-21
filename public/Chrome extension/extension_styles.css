@@ -1,3 +1,57 @@
+:root {
+  /* Font families */
+  --font-primary: 'Krona One', sans-serif;
+  --font-secondary: 'Anek Telugu', sans-serif;
+
+  /* Font sizes */
+  --font-size-large: 29px;
+  --font-size-medium: 21px;
+  --font-size-small: 18px;
+  --font-size-extra-small: 17px;
+  /*Font Weights*/
+--font-weight-regular: 200;
+--font-weight-bold: 400;
+--font-weight-light: 150;
+}
+
+/*TYPOGRAPHY*/
+body{
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: #000;
+}
+
+h1{
+  font-family: var(--font-primary);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-regular);
+}
+h2{
+  font-size: var(--font-size-medium);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+}
+h3,h4{
+  margin: 0%;
+}
+h3{
+  font-size: var(--font-size-small);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-bold);
+  
+}
+h4{
+  font-size: var(--font-size-small);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-regular);
+}
+p{
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-extra-small);
+  font-weight: var(--font-weight-regular);
+  /* line-height: 13px; */
+}
 .toggle-container{
   position: fixed;
   /* top: 5px; */
@@ -149,6 +203,7 @@ font-weight: normal;
   height: 436px; /* Set a fixed height for the cards */
   margin-right: 10px; /* Space between cards */
   background-color: #f1f1f1; /* Light background for the card */
+  padding: 5%;
   border-radius: 8px; /* Add rounded corners */
   /* display: flex;
   align-items: center;
@@ -156,12 +211,44 @@ font-weight: normal;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
-
+.card-image-container{
+  background-color:#E2DACF;
+  height: 180px;
+  width: 380px;
+}
+.product-info {
+  /* position: relative; Ensure relative positioning */
+  color: #000;
+}
+.product-info-header {
+  display: flex;
+  align-items: center; /* Vertically align the title and label */
+  gap: 15px; /* Optional: Adds space between the title and label */
+  
+}
+.sustainability-label{
+  display: inline-flex;
+  align-items: center;
+  background-color: #E8F6FF;
+  color: #16A2FF;
+  max-height: 29px;
+  padding: 5px 10px;
+  border-radius: 25px;
+  box-shadow: 0 2px 2px  #16A2FF;
+  ;
+}
+.sustainability-text {
+margin: 0; /* Remove default paragraph margin */
+ color: 16A2FF;
+ font-size: 17px;
+}
 .card-footer-btn {
   padding: 15px 40px;
+  width:350px ;
+  height: 59px;
   border-radius: 5px;
   border-style: none;
-  margin: 5px;
+  margin: bottom 10px;
   /* text-align: center; */
   /* display: flex; */
   flex-wrap: wrap;
@@ -169,11 +256,11 @@ font-weight: normal;
   align-items: center;
 }
 button.active, .card-footer-btn {
-  background-color: rgb(13, 93, 90);
+  background-color: #20604B;
   color: rgb(252, 251, 248);
   border: rgb(13, 93, 90) solid 2px;
 }
 button.active:hover, .card-footer-btn:hover {
-  background-color: rgb(252, 251, 248);
+  background-color: rgb(32, 41, 35);
   border: rgb(32, 41, 35)solid 2px;
 }
