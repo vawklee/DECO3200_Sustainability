@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "This is for the DECO3200 Interactive Design Product Studio. Our project addresses SDG 12 and aims to target reducing textiles waste. This implements a web-app and browser extension solution.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "prestart": "parcel build ./public/index.html",
     "dev": "parcel serve ./public/index.html",
-    "styleguide": "parcel serve ./styleguide/guide.html",
-    "build": "parcel build --dist-dir public",
-    "map": "parcel serve ./public/map.html"
+    "styleguide": "parcel serve ./styleguide/guide.html"
   },
   "author": "Emma M., Eva M. A., Kate M., Veronica L.",
   "license": "ISC",
