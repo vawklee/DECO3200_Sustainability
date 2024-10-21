@@ -10,7 +10,6 @@ function minimiseNavBar() {
     console.log("minimise clicked");
 }
 
-
 //background for secondhand hub modal 
 
 function showDialog() {
@@ -27,85 +26,105 @@ function closeDialog() {
 const openSecondhandForm = document.getElementById("openSecondhandForm");
 const selectPage = document.getElementById("selectPage");
 
-openSecondhandForm.addEventListener("click", () => {
-    selectPage.style.display = "block";
-    document.body.classList.add('secondhand-hub-background');
-    selectPage.showModal();
-});
+if (openSecondhandForm) {
+    openSecondhandForm.addEventListener("click", () => {
+        selectPage.style.display = "block";
+        document.body.classList.add('secondhand-hub-background');
+        selectPage.showModal();
+    });
+}
 
 
-const cancel1 = document.getElementById("cancel1")
+const cancel1 = document.getElementById("cancel1");
+if (cancel1) {
+    cancel1.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
-cancel1.addEventListener("click", () => {
-    // https://www.semrush.com/blog/javascript-redirect/
-    window.location.href = "secondhand.html"
-});
+const cancel2 = document.getElementById("cancel2");
+if (cancel2) {
+    cancel2.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
-const cancel2 = document.getElementById("cancel2")
+const cancel3 = document.getElementById("cancel3");
+if (cancel3) {
+    cancel3.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
-cancel2.addEventListener("click", () => {
-    // https://www.semrush.com/blog/javascript-redirect/
-    window.location.href = "secondhand.html"
-});
-
-const cancel3 = document.getElementById("cancel3")
-
-cancel3.addEventListener("click", () => {
-    // https://www.semrush.com/blog/javascript-redirect/
-    window.location.href = "secondhand.html"
-});
-
-const cancel4 = document.getElementById("cancel4")
-
-cancel4.addEventListener("click", () => {
-    // https://www.semrush.com/blog/javascript-redirect/
-    window.location.href = "secondhand.html"
-});
+const cancel4 = document.getElementById("cancel4");
+if (cancel4) {
+    cancel4.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
 
 
 // results ?? 
-function showResults(id) {
-    document.getElementById(id).showModal();
-}
-function closeResults() {
-    document.getElementById(id).close();
-}
+// function showResults(id) {
+//     document.getElementById(id).showModal();
+// }
+// function closeResults() {
+//     document.getElementById(id).close();
+// }
+
+
+
+
+
+
+
+
+
+
 
 // repair assistant submission and results 
 // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
 
-// let repairAssistantForm = document.getElementById("repairAssistantForm");
 
-// repairAssistantForm.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     let materialType = document.getElementById("materialType").value;
-//     let clothingType = document.getElementById("clothingType").value;
-//     let damageType = document.getElementById("damageType").value;
+document.addEventListener("DOMContentLoaded", () => {
+    const repairAssistantForm = document.getElementById("repairAssistantForm");
+    const repairResultText = document.getElementById("resultsText");
 
-//     // this is a simplified version for the purpose of the prototype 
-//     // in the expanded version, all three components would be used to suggest solutions
-    
-//     if (damageType == "Broken Zipper") {
-//         // showResults(brokenZipperResults)
-//         console.log("broken zipper")
-//     }
-//     else if (damageType == "Fallen Hem") {
-//         // showResults(fallenHemResults)
-//         console.log("fallen hem")
-//     }
-//     else if (damageType == "Replacing Button") {
-//         // showResults(replacingButtonResults)
-//         console.log("replacing button")
-//     }
-//     else if (damageType == "Rip/Tear") {
-//         // showResults(ripTearHoleResults)
-//         console.log("rip")
-//     }
+    if (repairAssistantForm) {
+        repairAssistantForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            let materialType = document.getElementById("materialType").value;
+            let clothingType = document.getElementById("clothingType").value;
+            let damageType = document.getElementById("damageType").value;
 
-//     // return({material}, {item}, "with", {damage})
+            // Use backticks for template literals
+            localStorage.setItem("repairResult", `Your results for ${materialType} ${clothingType} with ${damageType}`);
+            console.log("Redirecting to results.html");
+            window.location.href = "results.html";
+        });
+    } 
+});
 
-// });
+
+    // if (damageType == "Broken Zipper") {
+    //     <img src="${book.cover}" class="displayBook" alt="${book.title} by ${book.author}"/><br><img src="${getStars(book.rating)}"class="displayBook"/>`
+    //     window.location.href = "secondhand.html"
+    // }
+    // else if (damageType == "Fallen Hem") {
+    //     // showResults(fallenHemResults)
+    //     console.log("fallen hem")
+    // }
+    // else if (damageType == "Replacing Button") {
+    //     // showResults(replacingButtonResults)
+    //     console.log("replacing button")
+    // }
+    // else if (damageType == "Rip/Tear") {
+    //     // showResults(ripTearHoleResults)
+    //     console.log("rip")
+    // }
+
+
 
 
 
