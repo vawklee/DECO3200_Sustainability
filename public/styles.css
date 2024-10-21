@@ -588,7 +588,7 @@ button.download:hover {
 /* PROFILE PAGE MAIN CONTENT */
 .profileContainer, .materialContainer, .resourcesContainer {
     height: 85vh;
-    width: 78vw;
+    width: 79vw;
     margin-left: 25px;
 }
 
@@ -600,7 +600,7 @@ button.download:hover {
 .profileTagsContainer {
     display: flex;
     flex-direction: row;
-    padding-right: 25vw;
+    padding-right: 5vw;
 }
 .profilePicture {
     margin-right: 45px;
@@ -608,10 +608,11 @@ button.download:hover {
 
 /* profile edit button */
 .editButton {
-    max-height: 55px;
-    display: flex;
-    margin-top: 15px;
     background-color: var(--disabledBackground);
+    max-height: 55px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
 }
 .editButton:hover {
     background-color: var(--disabledBackgroundHover);
@@ -624,16 +625,23 @@ button.download:hover {
 }
 
 /* profile verification and skill tags */
+.pTagContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
 .pTag {
     padding: 8px 15px;
     border-radius: 7px;
     font-size: 15pt;
     text-align: center;
     margin-top: 0px;
-}
-.pTagContainer {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
 }
 .tagVerify {
     background-color: var(--blue);
