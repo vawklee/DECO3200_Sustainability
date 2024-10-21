@@ -28,3 +28,11 @@ https://codepen.io/sosuke/pen/Pjoqqp
 https://medium.com/@chilakaemmanuel/changing-svg-image-color-loaded-through-img-tag-with-css-3-filters-c8e912f52dd3
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items
 https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexbox-3511cd936af9
+
+## To-Do
+- Reference list
+- DIY resources based on local storage
+- User's materials based on local storage
+- map.html
+- User's materials interactivity linking to map
+- DIY resources interactivity linking to full page of instructions
