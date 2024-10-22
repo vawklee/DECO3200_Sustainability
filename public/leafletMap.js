@@ -4,11 +4,13 @@
 
 // ---- MENDER MAP SCRIPTING ----
 // LEAFLET MAP API SETUP; LEAFLET JS NEEDS TO STAY AT THE TOP OF THE FILE OTHERWISE IT FAILS TO REFERENCE THE SCRIPTING
-var map = L.map('map').setView([-33.8887156, 151.1894847], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 25, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+
+// Setting up the Leaflet Map with a set starting position that is showing
+var map = L.map('map').setView([-33.89209, 151.1981702], 15);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 35, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
 
 // creates location marker 
-var marker = L.marker([-33.85, 151.190]).addTo(map);
+var marker = L.marker([-33.891579, 151.200532]).addTo(map);
 // creates popup for that marker
 marker.bindPopup("<b>Wilkinson Building</b><br>Darlinghurst, NSW");
 
