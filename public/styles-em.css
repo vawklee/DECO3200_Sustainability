@@ -486,6 +486,31 @@ dialog {
     margin: 20px auto auto auto;
 }
 
+
+.giveawayFormBorderStyling {
+    background-color: var(--background);
+    border-top: var(--locationAvailable) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+}
+
+.requestFormBorderStyling {
+    background-color: var(--background);
+    border-top: var(--locationRequest) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+
+}
+
+
 .repair-assistant-background {
     background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
     background-size: cover;
@@ -679,4 +704,61 @@ background-color: #ffdddd;
 
 .redAsterisk {
     color: var(--locationRequest)
+}
+
+.resourcesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.resourceCardContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+/* styling for each resource card */
+.resource {
+    border: var(--purple) solid 3px;
+    border-radius: 20px;
+    background-color: var(--background);
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
+    display: flex;
+    flex-direction: column;
+}
+.rTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 15px;
+}
+.bookmarkIcon {
+    height: 35px;
+    align-self: center;
+}
+.rThumbnail {
+    align-self: center;
+}
+.rThumbnail img {
+    border-radius: 5px;
+}
+.rTags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* styling each individual tag */
+.rTags p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 15px;
+    padding: 5px 10px;
+    background-color: var(--accent);
+    border-radius: 5px;
+}
+.rTags img {
+    height: 20px;
+    width: auto;
+    margin-right: 15px;
 }
