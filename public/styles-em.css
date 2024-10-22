@@ -41,7 +41,7 @@ article {
 /* Nav bar styling */
 header {
     background-color: var(--primary);
-    height: 100%;
+    height: 75px;
     width: 100vw;
     margin: auto;
     padding-top: 5px;
@@ -57,24 +57,34 @@ header h2{
 
 .navLogo {
     align-self: center;
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
+    position: relative;
+    right: -2vw;
     display: flex;
+    text-decoration: none;
 }
 .navLogo:hover {
     text-decoration: none;
 }
+
+.navLogo img {
+    margin-right: 20px;
+}
+
 .navBarItems {
     display: flex;
     justify-content: space-between;
-    margin-right: 1vw;
     align-self: center;
+    position: relative;
+    left: -1vw;
 }
 .navBarItems a {
-    color: var(--secondary);
+    color: var(--background);
     text-align: center;
     text-decoration: none;
     padding: 15px 40px;
     margin: 0 10px;
+    border-bottom: var(--primary) solid 2px;
     background-color: var(--primary);
     display: flex;
     align-items: center;
@@ -453,6 +463,17 @@ dialog {
     gap: 10px; /* Optional: Add some spacing between elements */
 }
 
+.resultsBox {
+    background-color: var(--background);
+    border-top: var(--secondary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+}
+
 
 #repairAssistantBorderStyling {
     background-color: var(--background);
@@ -464,6 +485,31 @@ dialog {
     padding: 20px 20px 50px 20px;
     margin: 20px auto auto auto;
 }
+
+
+.giveawayFormBorderStyling {
+    background-color: var(--background);
+    border-top: var(--locationAvailable) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+}
+
+.requestFormBorderStyling {
+    background-color: var(--background);
+    border-top: var(--locationRequest) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+
+}
+
 
 .repair-assistant-background {
     background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
@@ -647,3 +693,72 @@ background-color: #ffdddd;
     background-color: #d0d0d0;
     border-color: #555;
 } */
+
+
+.iconSize {
+    height: 15px;
+    width: auto;
+    margin-left: 10px
+}
+
+
+.redAsterisk {
+    color: var(--locationRequest)
+}
+
+.resourcesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.resourceCardContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+/* styling for each resource card */
+.resource {
+    border: var(--purple) solid 3px;
+    border-radius: 20px;
+    background-color: var(--background);
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
+    display: flex;
+    flex-direction: column;
+}
+.rTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 15px;
+}
+.bookmarkIcon {
+    height: 35px;
+    align-self: center;
+}
+.rThumbnail {
+    align-self: center;
+}
+.rThumbnail img {
+    border-radius: 5px;
+}
+.rTags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* styling each individual tag */
+.rTags p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 15px;
+    padding: 5px 10px;
+    background-color: var(--accent);
+    border-radius: 5px;
+}
+.rTags img {
+    height: 20px;
+    width: auto;
+    margin-right: 15px;
+}

@@ -63,6 +63,12 @@ if (cancel4) {
     });
 }
 
+const cancel5 = document.getElementById("cancel5");
+if (cancel5) {
+    cancel5.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
 
 // results ?? 
@@ -86,10 +92,10 @@ if (cancel4) {
 // repair assistant submission and results 
 // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const repairAssistantForm = document.getElementById("repairAssistantForm");
-    const repairResultText = document.getElementById("resultsText");
+    const repairResult = document.getElementById("repairResult");
+
 
     if (repairAssistantForm) {
         repairAssistantForm.addEventListener("submit", function (event) {
@@ -97,42 +103,28 @@ document.addEventListener("DOMContentLoaded", () => {
             let materialType = document.getElementById("materialType").value;
             let clothingType = document.getElementById("clothingType").value;
             let damageType = document.getElementById("damageType").value;
-
             // Use backticks for template literals
             localStorage.setItem("repairResult", `Your results for ${materialType} ${clothingType} with ${damageType}`);
             console.log("Redirecting to results.html");
             window.location.href = "results.html";
+            // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
+            return false; 
         });
     } 
 });
 
+// This script should be in results.html to update the page content
+document.addEventListener("DOMContentLoaded", () => {
+    const repairResult = document.getElementById("repairResult");
 
-    // if (damageType == "Broken Zipper") {
-    //     <img src="${book.cover}" class="displayBook" alt="${book.title} by ${book.author}"/><br><img src="${getStars(book.rating)}"class="displayBook"/>`
-    //     window.location.href = "secondhand.html"
-    // }
-    // else if (damageType == "Fallen Hem") {
-    //     // showResults(fallenHemResults)
-    //     console.log("fallen hem")
-    // }
-    // else if (damageType == "Replacing Button") {
-    //     // showResults(replacingButtonResults)
-    //     console.log("replacing button")
-    // }
-    // else if (damageType == "Rip/Tear") {
-    //     // showResults(ripTearHoleResults)
-    //     console.log("rip")
-    // }
+    // Retrieve the repair result from localStorage
+    const storedResult = localStorage.getItem("repairResult");
 
-
-
-
-
-
-
-
-
-
+    if (storedResult && repairResult) {
+        // Update the <p> tag with the stored result
+        repairResult.textContent = storedResult;
+    }
+});
 
 
 
@@ -185,8 +177,6 @@ document.querySelectorAll('.option').forEach(button => {
     button.addEventListener('click', function() {
         const question = this.getAttribute('data-question');
         const value = this.getAttribute('data-value');
-        const selectPage = document.getElementById("selectPage");
-
         // Update selection based on the data-question attribute
         if (question === '1') {
             selection.giveAwayRequest = value;
@@ -200,8 +190,9 @@ document.querySelectorAll('.option').forEach(button => {
         });
         this.classList.add('active');
 
-        // Redirect based on selection if both questions are answered
-        if (selection.giveAwayRequest && selection.itemMaterial) {
+        // updated to be based on submit event listener becasue i'm silly
+        document.getElementById('typeSubmit').addEventListener('click', function() {
+            const selectPage = document.getElementById("selectPage");
             let giveAwayItem =  document.getElementById("giveAwayItemForm");
             let requestItem = document.getElementById("requestItemForm");
             let giveAwayMaterial = document.getElementById("giveAwayMaterialForm")
@@ -234,10 +225,6 @@ document.querySelectorAll('.option').forEach(button => {
             } else {
                 console.log("Something went wrong");
             }
-        }
+        });
     });
 });
-
-
-
-
