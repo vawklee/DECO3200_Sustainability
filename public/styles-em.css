@@ -791,9 +791,10 @@ background-color: #ffdddd;
     margin-right: 15px;
 }
 
-#instructionArticle {
+.instructionArticle {
     display: flex;
     flex-direction: column;
+    width: 80vw;
 }
 
 .displayRow {
@@ -804,6 +805,10 @@ background-color: #ffdddd;
 
 .repairSubHeadings {
     color: var(--purple);
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15pt;
 }
 
 
@@ -832,5 +837,24 @@ background-color: #ffdddd;
 
 #diyButton:hover, #localButton:hover {
     text-decoration: underline;
+}
+
+
+li {
+    font-family: "Anek Telugu", sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.materialsList, .videoLink, .repairInstructions{
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+}
+
+.materialsList, .videolink {
+    width: 40%;
 }
 
