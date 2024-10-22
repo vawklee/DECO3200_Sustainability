@@ -22,7 +22,7 @@
                 <h2 class="heading">Repair & Rewear</h2>
             </a>
             <div class="navBarItems">
-                <a href="repair.html" class="caption">Repair Assistant</a>
+                <a href="repair.html" class="caption activeNav">Repair Assistant</a>
                 <a href="secondhand.html" class="caption">Secondhand Hub</a>
                 <a href="profile.html" class="caption">Profile</a>
                 <a href="javascript:void(0);" class="hamburgerMenu" onclick="minimiseNavBar()"><i class="fa fa-bars"></i></a>
@@ -30,8 +30,42 @@
         </header>
         <main>
             <article class="menderMap">
-                <h2 class="subheading">Local Mender Map</h2>
-                <div id="map"></div>
+                <h2 class="subheading">Local Repair Services</h2>
+                <div class="mapContainer">
+                    <section id="map"></section>
+                    <section class="mapCardContainer">
+                        <div class="mapCard">
+                            <div class="mInfo">
+                                <p class="body mName">Temmuni Fabrics</p>
+                                <p class="caption mRating">⭐ ⭐ ⭐ ⭐ ⭑</p>
+                                <p class="caption mAddress"><img src="images/icons/location.svg">21 Rose St, Surry Hills, 2010</p>
+                                <p class="caption mDistance"><img src="images/icons/distance.svg">2.1 km</p>
+                                <p class="caption mPhone"><img src="images/icons/phone.svg">02 998 299 762</p>
+                            </div>
+                            <a class="mButton" href="https://www.tessuti-shop.com/" target="_blank"><button class="caption">Visit Website</button></a>
+                        </div>
+                        <div class="mapCard">
+                            <div class="mInfo">
+                                <p class="body mName">Fabric Moose</p>
+                                <p class="caption mRating">⭐ ⭐ ⭐ ⭑ ⭑</p>
+                                <p class="caption mAddress"><img src="images/icons/location.svg">118 Thomas St, Surry Hills, 2010</p>
+                                <p class="caption mDistance"><img src="images/icons/distance.svg">2.2 km</p>
+                                <p class="caption mPhone"><img src="images/icons/phone.svg">02 388 029 938</p>
+                            </div>
+                            <a class="mButton" href="https://www.fabricmuse.com.au/" target="_blank"><button class="caption">Visit Website</button></a>
+                        </div>
+                        <div class="mapCard">
+                            <div class="mInfo">
+                                <p class="body mName">So Special</p>
+                                <p class="caption mRating">⭐ ⭐ ⭐ ⭐ ⭐</p>
+                                <p class="caption mAddress"><img src="images/icons/location.svg">28 Myrtle St, Newtown, 2042</p>
+                                <p class="caption mDistance"><img src="images/icons/distance.svg">5.3 km</p>
+                                <p class="caption mPhone"><img src="images/icons/phone.svg">02 808 429 954</p>
+                            </div>
+                            <a class="mButton" href="https://www.sewspecial.com.au/" target="_blank"><button class="caption">Visit Website</button></a>
+                        </div>
+                    </section>
+                </div>
             </article>
         </main>
         <script src="script.js"></script>

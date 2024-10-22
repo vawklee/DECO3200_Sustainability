@@ -542,14 +542,63 @@ button.download:hover {
 /* ---- MENDER MAP STYLING (map.html) ---- */
 .menderMap {
     background-color: var(--background);
-    border: var(--disabledBackgroundHover) solid 2px;
+    /* border: var(--disabledBackgroundHover) solid 2px; */
     border-radius: 15px;
-    filter: drop-shadow(0px 4px 2px var(--disabledBackgroundHover));
+    /* filter: drop-shadow(0px 4px 2px var(--disabledBackgroundHover)); */
+    /* margin-top: 20px; */
+    height: 85vh;
+    width: 90vw;
 }
 
+.mapContainer {
+    display: flex;
+    flex-direction: row;
+}
 #map {
     height: 75vh;
-    width: 90vw;
+    width: 70%;
+}
+.mapCardContainer {
+    margin-left: 25px;
+    height: 75vh;
+    width: 30%;
+    overflow-y: scroll;
+}
+
+.mapCard {
+    background-color: var(--background);
+    border: var(--disabledBackgroundHover) solid 2px;
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.mInfo {
+    margin: 15px 25px;
+}
+.mInfo p img {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+}
+/* styling the actual text elements */
+.mapCard p {
+    margin: 0px;
+}
+.mButton {
+    align-self: center;
+    width: 90%;
+    margin-bottom: 15px;
+}
+.mButton button {
+    width: 100%;
+    background-color: var(--fontColor);
+    color: var(--background);
+    text-decoration: none;
+}
+.mButton button:hover {
+    text-decoration: underline;
 }
 
 /* ---- PROFILE PAGE STYLING (profile.html) ---- */
