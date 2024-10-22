@@ -82,13 +82,6 @@ if (cancel5) {
 
 
 
-
-
-
-
-
-
-
 // repair assistant submission and results 
 // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
 
@@ -104,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let clothingType = document.getElementById("clothingType").value;
             let damageType = document.getElementById("damageType").value;
             // Use backticks for template literals
-            localStorage.setItem("repairResult", `Your results for ${materialType} ${clothingType} with ${damageType}`);
+            localStorage.setItem("repairResult", `Your results for: ${materialType} ${clothingType} with ${damageType}`);
             console.log("Redirecting to results.html");
             window.location.href = "results.html";
             // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
@@ -129,6 +122,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const diyButton = document.getElementById("diyButton");
+{
+    diyButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log("test")
+        window.location.href = "diy.html";
+        console.log("test2")
+        // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
+        return false; 
+    });
+    } 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const localButton = document.getElementById("localButton");
+{
+    localButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "map.html";
+        // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
+        return false; 
+    });
+    } 
+});
+
+
 
 
 
@@ -145,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //         form.elements.requestItemDescription.value,
 //         form.elements.requestItemColour.value,
 //         form.elements.requestItemSize.value
+
 //     );
 //     addGiveAwayItem(
 //         form.elements.giveAwayItemName.value,

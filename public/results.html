@@ -31,27 +31,56 @@
             <article>
                 <h1 class="formHeading">Repair Assistant</h1>
                 <div id="resultsBox" class="resultsBox">
-                    <p id="repairResult"></p>
+                    <p class="caption" id="repairResult"></p>
                 </div>
-                <section class="resourceCardContainer">
-                    <div class="resource">
-                        <div class="rTitle">
-                            <p>How to repair a zipper</p>
-                            <img class="bookmarkIcon" src="images/icons/bookmark_true.svg">
-                        </div>
-                        <section class="resourceCardContainer">
+                <section class="recommendationContainer">
+                    <section class="diyRepairContainer">
+                        <div class="resource">
+                            <div class="rTitle">
+                                <div class="displayRow">
+                                    <h2 class="subheading">DIY Repair</h2>
+                                    <img id="recommendedPurple" src="images/imgs/recommendedTagPurple.png">
+                                </div>
+
+                                <p class="caption">Check out this how-to guide on repairing a broken zipper.</p>
+                            </div>
                             <div class="rThumbnail">
                                 <img src="images/imgs/resources_zipper.png">
                             </div>
-                            <div class="rTags">
-                                <p class="rtTime caption"><img src="images/icons/time.svg">30 mins</p>
-                                <p class="rtCost caption"><img src="images/icons/cost.svg">10 - 15</p>
-                                <p class="rtSkill caption"><img src="images/icons/skill.svg">Intermediate</p>
+                            <div class="rTags diyTags">
+                                <p class="caption"><img src="images/icons/time.svg">30 mins</p>
+                                <p class="caption"><img src="images/icons/cost.svg">10 - 15</p>
+                                <p class="caption"><img src="images/icons/skill.svg">Intermediate</p>
                             </div>
-                        </section>
-                    </div>
+                            <button type="button" id="diyButton" class="purpleButton caption">DIY Repair</button>
+                        </div>
+                    </section>
+                    <section class="localRepairContainer">
+                        <div class="resource">
+                            <div class="rTitle">
+                                <div class="displayRow">
+                                    <h2 class="subheading">Local Repair Services</h2>
+                                    <img id="recommendedBlack" src="images/imgs/recommendedTagBlack.png">
+                                </div>
+
+                                <p class="caption">Find a professional in your local area to repair your garment.</p>
+
+                            </div>
+                            <div class="rThumbnail">
+                                <img src="images/imgs/local_mender_map.png">
+                            </div>
+                            <div class="rTags serviceTags">
+                                <p class="caption"><img src="images/icons/time.svg">15 mins</p>
+                                <p class="caption"><img src="images/icons/cost.svg">20 - 30</p>
+                            </div>
+                            <button type="button" id="localButton" class="blackButton caption">Outsource Repair</button>
+                        </div>
+                    </section>
                 </section>
             </article>
+
+
+
         
         </main>
         <script src="script-em.js"></script>
