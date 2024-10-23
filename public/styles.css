@@ -122,7 +122,7 @@ header h2 {
     font-family: "Krona One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 20pt;
+    font-size: 25pt;
   }
 /* Regular body font */
 .body, p {
@@ -541,6 +541,11 @@ button.download:hover {
 }
 
 /* ---- MENDER MAP STYLING (map.html) ---- */
+/* markerHueChange is used for the Leaflet Map markers, making them black */
+img.markerHueChange {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(4259%) hue-rotate(109deg) brightness(101%) contrast(104%);
+}
+
 .menderMap {
     background-color: var(--background);
     /* border: var(--disabledBackgroundHover) solid 2px; */
@@ -555,7 +560,7 @@ button.download:hover {
     display: flex;
     flex-direction: row;
 }
-#map {
+#map, #googleMyMaps {
     height: 75vh;
     width: 70%;
 }
