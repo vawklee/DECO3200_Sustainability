@@ -29,7 +29,7 @@
             <article>
                 <h1 class="formHeading">Secondhand Hub</h1>
                 <input type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials"><br>
-                <button id="openSecondhandForm" type="button" class="caption">Giveaway or Request an Item or Material <img class="iconSize" src="images/icons/plus.svg"></button>
+                <button id="openSecondhandForm" type="button" class="greenButton caption">Giveaway or Request an Item or Material <img class="iconSize" src="images/icons/plus.svg"></button>
             </article>
 
             <dialog id="selectPage">
@@ -52,7 +52,7 @@
                     <button class="option secondhandTypeStyling" data-question="2" data-value="material">Material</button>
                 </div>
                 <button type="button" id="cancel5">Cancel</button>
-                <button type="button" id="typeSubmit">Next</button>
+                <button type="button" id="typeSubmit" class="greenButton">Next</button>
 
             </dialog>
 
@@ -61,7 +61,7 @@
             <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayItemForm">
                 <form class="secondPageFormStyling">
                     <h1 class="heading">Give Away Item:</h1>
-                    <p class="caption">Add information for the clothing item you would like to request below.</p>
+                    <p class="caption">Add information for the clothing item you would like to give away below.</p>
                     <label for="giveAwayItemName">Item Name: <span class="redAsterisk">*</span></label>
                     <input type="text" id="giveAwayItemName" name="giveAwayItemName" placeholder="eg. White dress" required><br>
                     <label for="giveAwayItemDescription">Description: <span class="redAsterisk">*</span></label>
@@ -97,7 +97,7 @@
                     <input type="file" id="giveAwayItemImage" name="giveAwayItemImage">
                     <br>
                     <button type="button" id="cancel1">Cancel</button>   
-                    <button type="submit" id="submit1">Submit</button>
+                    <button type="submit" id="submit1" class="greenButton">Submit</button>
                 </form>
             </dialog>
 
@@ -138,7 +138,7 @@
                         <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
                     </select><br>
                     <button type="button" id="cancel2">Cancel</button>   
-                    <button type="submit" id="submit2">Submit</button>      
+                    <button type="submit" id="submit2" class="greenButton">Submit</button>      
                 </form>
             </dialog>
 
@@ -146,7 +146,7 @@
             <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayMaterialForm">
                 <form>
                     <h1 class="heading">Give Away Material:</h1>
-                    <p class="caption">Add information for the clothing item you would like to give away.</p>
+                    <p class="caption">Add information for the material you would like to give away below.</p>
                     <label for="giveAwayMaterialName">Material Name: <span class="redAsterisk">*</span></label>
                     <input type="text" id="giveAwayMaterialName" name="giveAwayMaterialName" placeholder="eg. Denim scraps" required><br>
                     <label for="giveAwayMaterialDescription">Description: <span class="redAsterisk">*</span></label>
@@ -171,7 +171,7 @@
                     <label for="giveAwayMaterialImage">Material Image:</label>
                     <input type="file" id="giveAwayMaterialImage" name="giveAwayMaterialImage">
                     <button type="button" id="cancel3">Cancel</button>   
-                    <button type="submit" id="submit3">Submit</button>
+                    <button type="submit" id="submit3" class="greenButton">Submit</button>
                 </form>
             </dialog>
 
@@ -179,7 +179,7 @@
             <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestMaterialForm">
                 <form>
                     <h1 class="heading">Request Material:</h1>
-                    <p class="caption">Add information for the clothing item you would like to request below.</p>
+                    <p class="caption">Add information for the material you would like to request below.</p>
                     <label for="requestMaterialName">Item Name: <span class="redAsterisk">*</span></label>
                     <input type="text" id="requestMaterialName" name="requestMaterialName"placeholder="eg. White dress" required><br>
                     <label for="requestMaterialDescription">Description: <span class="redAsterisk">*</span></label>
