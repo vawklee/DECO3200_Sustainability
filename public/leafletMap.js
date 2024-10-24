@@ -4,6 +4,7 @@
 
 // ---- MENDER MAP SCRIPTING ----
 // LEAFLET MAP API SETUP; LEAFLET JS NEEDS TO STAY AT THE TOP OF THE FILE OTHERWISE IT FAILS TO REFERENCE THE SCRIPTING
+// Requires internet connection due to relying on URLs for libraries
 
 // Setting up the Leaflet Map with a set starting position that is showing
 
@@ -27,13 +28,13 @@ var userCircle = L.circle(userLocation, {
 
 // Temmuni Fabric Location Marker
 var markerTemmuni = L.marker([-33.8805, 151.21096]).addTo(map);
-markerTemmuni.bindPopup("<b>Temmuni Fabrics</b><br>Surry Hills, 2010");
+markerTemmuni.bindPopup("<b>Temmuni Fabrics</b><br>⭐ ⭐ ⭐ ⭐ ⭑<br>110 Commonwealth St, Surry Hills 2010<br>0.6 km away<br>Tel.: 02 998 299 762");
 // Fabric Moose Location Marker
 var markerFabricM = L.marker([-33.88808, 151.19686]).addTo(map);
-markerFabricM.bindPopup("<b>Fabric Moose</b><br>Chippendale, 2008");
+markerFabricM.bindPopup("<b>Fabric Moose</b><br>⭐ ⭐ ⭐ ⭑ ⭑<br>92-120 Cleveland St, Chippendale 2008<br>1.8 km away<br>Tel.: 02 388 029 938");
 // So Special Location Marker
 var markerSoSpecial = L.marker([-33.86984, 151.21013]).addTo(map);
-markerSoSpecial.bindPopup("<b>So Special</b><br>Sydney, 2000")
+markerSoSpecial.bindPopup("<b>So Special</b><br>⭐ ⭐ ⭐ ⭐ ⭐<br>111 Elizabeth St, Sydney 2000<br>1.9 km away<br>Tel.: 02 808 429 954");
 
 // applying colour change filter through .css class
 markerTemmuni._icon.classList.add("markerHueChange");
@@ -44,20 +45,51 @@ markerSoSpecial._icon.classList.add("markerHueChange");
 var clickPopupExample = L.popup();
 map.on('click', onMapClick);
 
+markerTemmuni.on('click', onMapClick);
+markerFabricM.on('click', onMapClick);
+markerSoSpecial.on('click', onMapClick);
 markerTemmuni.on('mouseover', onMarkerHover);
 markerFabricM.on('mouseover', onMarkerHover);
 markerSoSpecial.on('mouseover', onMarkerHover);
 
 function onMapClick(e) {
-    // alert(`You clicked the map at ${e.latlng}`);
-    // clickPopupExample.setLatLng(e.latlng).setContent(`You clicked the map at ${e.latlng.toString()}`).openOn(map);
-    clickPopupExample
-    .setLatLng(e.latlng)
-    .setContent("You clicked on the map at " + e.latlng.toString())
-    .openOn(map);
+    // clickPopupExample
+    // .setLatLng(e.latlng)
+    // .setContent("You clicked on the map at " + e.latlng.toString())
+    // .openOn(map);
+    e.target.openPopup();
 }
 
 // Shows the preset pop-up when cursor hover's over the marker
 function onMarkerHover(e) {
     e.target.openPopup();
+    // console.log(e.target);
+    // console.log(e.target._popup._content);
+}
+
+// ---- Scripting for map card interactivity ---
+var cardTemmuni = document.getElementById("cardTemmuni");
+var cardFabricMoose = document.getElementById("cardFabricMoose");
+var cardSoSpecial = document.getElementById("cardSoSpecial");
+
+cardTemmuni.addEventListener("click", onMapCardClick);
+cardFabricMoose.addEventListener("click", onMapCardClick);
+cardSoSpecial.addEventListener("click", onMapCardClick);
+
+function onMapCardClick(e) {
+    // Used for recognising which card was clicked on the map page
+    // Shows the appropriate marker on the map based on what was clicked
+    console.log(e.target.className);
+    console.log(e.target.id);
+
+    if (e.target.className.includes("classCardTemmuni")) {
+        // console.log(e.target.className + "this is temmuni");
+        markerTemmuni.openPopup();
+    } else if (e.target.className.includes("classCardFabricMoose")) {
+        // console.log(e.target.className + "this is fabric moose");
+        markerFabricM.openPopup();
+    } else if (e.target.className.includes("classCardSoSpecial")) {
+        // console.log(e.target.className + "this is so special");
+        markerSoSpecial.openPopup();
+    }
 }
