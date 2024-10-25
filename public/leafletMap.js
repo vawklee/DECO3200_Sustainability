@@ -15,10 +15,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: attr
 // creating a circle marker to indicate the user location
 var blueHexCode = "#40a9e6";
 var redHexCode = "#e34d42";
+var blackHexCode = "#4a4a4a";
 var userCircle = L.circle(userLocation, {
     color: redHexCode,
     fillColor: redHexCode,
     fillOpacity: 0.35,
+    weight: 1,
     radius: 100
 }).addTo(map);
 var moreCircle = L.circle(userLocation, {
@@ -41,18 +43,21 @@ moreCircle.on("mouseover", onMarkerHover);
 
 // Local Repair Services Coordinates
 coordsTemmuni = [-33.8805, 151.21096];
+popupTemmuni = "<b>Temmuni Fabrics</b><br>⭐ ⭐ ⭐ ⭐ ⭑<br>110 Commonwealth St, Surry Hills 2010<br>0.6 km away<br>Tel.: 02 998 299 762";
 coordsFabricM = [-33.88808, 151.19686];
+popupFabricM = "<b>Fabric Moose</b><br>⭐ ⭐ ⭐ ⭑ ⭑<br>92-120 Cleveland St, Chippendale 2008<br>1.8 km away<br>Tel.: 02 388 029 938";
 coordsSoSpecial = [-33.86984, 151.21013];
+popupSoSpecial = "<b>So Special</b><br>⭐ ⭐ ⭐ ⭐ ⭐<br>111 Elizabeth St, Sydney 2000<br>1.9 km away<br>Tel.: 02 808 429 954";
 
 // Temmuni Fabric Location Marker
 var markerTemmuni = L.marker(coordsTemmuni).addTo(map);
-markerTemmuni.bindPopup("<b>Temmuni Fabrics</b><br>⭐ ⭐ ⭐ ⭐ ⭑<br>110 Commonwealth St, Surry Hills 2010<br>0.6 km away<br>Tel.: 02 998 299 762");
+markerTemmuni.bindPopup(popupTemmuni);
 // Fabric Moose Location Marker
 var markerFabricM = L.marker(coordsFabricM).addTo(map);
-markerFabricM.bindPopup("<b>Fabric Moose</b><br>⭐ ⭐ ⭐ ⭑ ⭑<br>92-120 Cleveland St, Chippendale 2008<br>1.8 km away<br>Tel.: 02 388 029 938");
+markerFabricM.bindPopup(popupFabricM);
 // So Special Location Marker
 var markerSoSpecial = L.marker(coordsSoSpecial).addTo(map);
-markerSoSpecial.bindPopup("<b>So Special</b><br>⭐ ⭐ ⭐ ⭐ ⭐<br>111 Elizabeth St, Sydney 2000<br>1.9 km away<br>Tel.: 02 808 429 954");
+markerSoSpecial.bindPopup(popupSoSpecial);
 
 // applying colour change filter through .css class
 markerTemmuni._icon.classList.add("markerHueChange");
