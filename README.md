@@ -33,6 +33,8 @@ https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexb
 - Reference list
 - DIY resources based on local storage
 - User's materials based on local storage
-- map.html
-- User's materials interactivity linking to map
-- DIY resources interactivity linking to full page of instructions
+- secondhand.html (change colour of dot based on which dot class is used / what string is used (text content))
+- secondhand.html (change border colour of each card based on available/request)
+- secondhand.html (change button colour of each card based on available/request)
+- secondhand Map colours are hard to see
+- secondhand map interactivity on click, on hover

@@ -541,12 +541,12 @@ button.download:hover {
 }
 
 /* ---- MENDER MAP STYLING (map.html) ---- */
-/* markerHueChange is used for the Leaflet Map markers, making them black */
-img.markerHueChange {
+/* menderMarkerHueChange is used for the Leaflet Map markers, making them black */
+img.menderMarkerHueChange {
     filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(4259%) hue-rotate(109deg) brightness(101%) contrast(104%);
 }
 
-.menderMap {
+.menderMapPage {
     background-color: var(--background);
     /* border: var(--disabledBackgroundHover) solid 2px; */
     border-radius: 15px;

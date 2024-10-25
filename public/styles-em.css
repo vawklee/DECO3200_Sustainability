@@ -368,10 +368,115 @@ code {
 
 
 
+/* ---- SECONDHAND MAP STYLING ---- (Author: Vero) */
+.dotAvailable, .dotRequest {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.dotAvailable {
+    background-color: var(--locationAvailable);
+}
+.dotRequest {
+    background-color: var(--locationRequest);
+}
 
+/* changes the Leaflet Map marker colours */
+img.sechandMarkerHueChangeReq {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(99%) saturate(5063%) hue-rotate(350deg) brightness(110%) contrast(101%);
+}
+img.sechandMarkerHueChangeAvail {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(10%) saturate(1552%) hue-rotate(55deg) brightness(95%) contrast(88%);
+}
 
+/* main page container & title + button */
+.secondhandHub, .secondhandHeader {
+    display: flex;
+    flex-direction: column;
+}
+.secondhandHeader>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+/* contains map and cards */
+.secondhandMapPage {
+    margin-top: 25px;
+    align-self: center;
+    background-color: var(--background);
+    border-radius: 15px;
+    height: 85vh;
+    width: 90vw;
+}
 
+.mapContainer {
+    display: flex;
+    flex-direction: row;
+}
+#secondhandMap {
+    height: 75vh;
+    width: 70%;
+}
+.sechandCardContainer {
+    margin-left: 25px;
+    height: 75vh;
+    width: 30%;
+    overflow-y: scroll;
+}
+
+.sechandCard {
+    background-color: var(--background);
+    border: var(--disabledBackgroundHover) solid 2px;
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sThumbnail {
+    margin: 0px 5px;
+    width: 100%;
+    height: 100px;
+    align-self: center;
+}
+.sThumbnail>img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.sInfo {
+    margin: 15px 25px;
+}
+.sInfo p img {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+}
+/* styling the actual text elements */
+.sechandCard p {
+    margin: 0px;
+}
+.sButton {
+    align-self: center;
+    width: 90%;
+    margin-bottom: 15px;
+}
+.sButton button {
+    width: 100%;
+    background-color: var(--fontColor);
+    color: var(--background);
+    text-decoration: none;
+}
+.sButton button:hover {
+    text-decoration: underline;
+}
 
 
 

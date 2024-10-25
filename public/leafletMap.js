@@ -1,43 +1,42 @@
 // ---- INIT ----
 // import L from "leaflet";
 // import 'leaflet/dist/leaflet.css';
+// Leaflet is linked directly in each HTML <head> thus requiring an internet connection to function
 
-// ---- MENDER MAP SCRIPTING ----
-// LEAFLET MAP API SETUP; LEAFLET JS NEEDS TO STAY AT THE TOP OF THE FILE OTHERWISE IT FAILS TO REFERENCE THE SCRIPTING
-// Requires internet connection due to relying on URLs for libraries
+// -------- MENDER MAP SCRIPTING --------
 
 // ---- Setting up the Leaflet Map with a set starting position that is showing ----
 var userLocation = [-33.880466, 151.206894];
 var attributionText = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-var map = L.map('menderMap').setView(userLocation, 15); // references id="menderMap"
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: attributionText}).addTo(map);
+var menderMap = L.map('menderMap').setView(userLocation, 15); // references id="menderMap"
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: attributionText}).addTo(menderMap);
 
 // creating a circle marker to indicate the user location
 var blueHexCode = "#40a9e6";
 var redHexCode = "#e34d42";
 var blackHexCode = "#4a4a4a";
-var userCircle = L.circle(userLocation, {
+var menderMapUserLoc = L.circle(userLocation, {
     color: redHexCode,
     fillColor: redHexCode,
     fillOpacity: 0.35,
     weight: 1,
     radius: 100
-}).addTo(map);
-var moreCircle = L.circle(userLocation, {
+}).addTo(menderMap);
+var menderMapUserRadius = L.circle(userLocation, {
     color: redHexCode,
     fillColor: redHexCode,
     fillOpacity: 1.00,
     radius: 50
-}).addTo(map);
+}).addTo(menderMap);
 
-userCircle.bindPopup("You are here");
-moreCircle.bindPopup("You are here");
+menderMapUserLoc.bindPopup("You are here");
+menderMapUserRadius.bindPopup("You are here");
 
-userCircle.on("mouseover", onMarkerHover);
-moreCircle.on("mouseover", onMarkerHover);
+menderMapUserLoc.on("mouseover", onMarkerHover);
+menderMapUserRadius.on("mouseover", onMarkerHover);
 
 // creates location marker 
-// var marker = L.marker([-33.891579, 151.200532]).addTo(map);
+// var marker = L.marker([-33.891579, 151.200532]).addTo(menderMap);
 // creates popup for that marker
 // marker.bindPopup("<b>Wilkinson Building</b><br>Darlinghurst, NSW");
 
@@ -50,23 +49,23 @@ coordsSoSpecial = [-33.86984, 151.21013];
 popupSoSpecial = "<b>So Special</b><br>⭐ ⭐ ⭐ ⭐ ⭐<br>111 Elizabeth St, Sydney 2000<br>1.9 km away<br>Tel.: 02 808 429 954";
 
 // Temmuni Fabric Location Marker
-var markerTemmuni = L.marker(coordsTemmuni).addTo(map);
+var markerTemmuni = L.marker(coordsTemmuni).addTo(menderMap);
 markerTemmuni.bindPopup(popupTemmuni);
 // Fabric Moose Location Marker
-var markerFabricM = L.marker(coordsFabricM).addTo(map);
+var markerFabricM = L.marker(coordsFabricM).addTo(menderMap);
 markerFabricM.bindPopup(popupFabricM);
 // So Special Location Marker
-var markerSoSpecial = L.marker(coordsSoSpecial).addTo(map);
+var markerSoSpecial = L.marker(coordsSoSpecial).addTo(menderMap);
 markerSoSpecial.bindPopup(popupSoSpecial);
 
 // applying colour change filter through .css class
-markerTemmuni._icon.classList.add("markerHueChange");
-markerFabricM._icon.classList.add("markerHueChange");
-markerSoSpecial._icon.classList.add("markerHueChange");
+markerTemmuni._icon.classList.add("menderMarkerHueChange");
+markerFabricM._icon.classList.add("menderMarkerHueChange");
+markerSoSpecial._icon.classList.add("menderMarkerHueChange");
 
 // Click event on map example
 var clickPopupExample = L.popup();
-map.on('click', onMapClick);
+menderMap.on('click', onMapClick);
 
 markerTemmuni.on('click', onMapClick);
 markerFabricM.on('click', onMapClick);
@@ -79,7 +78,7 @@ function onMapClick(e) {
     // clickPopupExample
     // .setLatLng(e.latlng)
     // .setContent("You clicked on the map at " + e.latlng.toString())
-    // .openOn(map);
+    // .openOn(menderMap);
     e.target.openPopup();
 }
 
@@ -103,28 +102,6 @@ cardSoSpecial.addEventListener("click", onMapCardClick);
 // Shows the appropriate marker on the map based on what was clicked
 function onMapCardClick(e) {
     console.log(e.target.className);
-    // console.log(e.target.id);
-
-    // if (e.target.closest(".classCardTemmuni")) {
-    //     console.log(e.target.id + "closest");
-    //     var thumbnail = document.getElementById("thumbnailTemmuni");
-    //     thumbnail.style.display = "block";
-    //     markerTemmuni.openPopup();
-    // } else if (e.target.closest(".classCardFabricMoose")) {
-    //     console.log(e.target.id + "closest");
-    //     var thumbnail = document.getElementById("thumbnailFabricMoose");
-    //     thumbnail.style.display = "block";
-    //     markerFabricM.openPopup();
-    // } else if (e.target.closest(".classCardSoSpecial")) {
-    //     console.log(e.target.id + "closest");
-    //     var thumbnail = document.getElementById("thumbnailSoSpecial");
-    //     thumbnail.style.display = "block";
-    //     markerSoSpecial.openPopup();
-    // } else {
-    //     document.getElementById("thumbnailTemmuni").style.display = "none";
-    //     document.getElementById("thumbnailFabricMoose").style.display = "none";
-    //     document.getElementById("thumbnailSoSpecial").style.display = "none";
-    // }
 
     // The following works to make the image appear but cannot revert that change
     if (e.target.className.includes("classCardTemmuni")) {
