@@ -9,7 +9,7 @@
 // ---- Setting up the Leaflet Map with a set starting position that is showing ----
 var userLocation = [-33.880466, 151.206894];
 var attributionText = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-var map = L.map('map').setView(userLocation, 15);
+var map = L.map('menderMap').setView(userLocation, 15); // references id="menderMap"
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: attributionText}).addTo(map);
 
 // creating a circle marker to indicate the user location
