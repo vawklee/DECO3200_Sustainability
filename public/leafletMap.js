@@ -16,24 +16,32 @@ var blueHexCode = "#40a9e6";
 var redHexCode = "#e34d42";
 var blackHexCode = "#4a4a4a";
 var menderMapUserLoc = L.circle(userLocation, {
-    color: redHexCode,
-    fillColor: redHexCode,
+    color: blueHexCode,
+    fillColor: blueHexCode,
     fillOpacity: 0.35,
     weight: 1,
     radius: 100
 }).addTo(menderMap);
 var menderMapUserRadius = L.circle(userLocation, {
-    color: redHexCode,
-    fillColor: redHexCode,
+    color: blueHexCode,
+    fillColor: blueHexCode,
     fillOpacity: 1.00,
+    radius: 50
+}).addTo(menderMap);
+var menderMapUserBorder = L.circle(userLocation, {
+    color: "#FFFFFF",
+    fillColor: "#FFFFFF",
+    fillOpacity: 0.00,
     radius: 50
 }).addTo(menderMap);
 
 menderMapUserLoc.bindPopup("You are here");
 menderMapUserRadius.bindPopup("You are here");
+menderMapUserBorder.bindPopup("You are here");
 
 menderMapUserLoc.on("mouseover", onMarkerHover);
 menderMapUserRadius.on("mouseover", onMarkerHover);
+menderMapUserBorder.on("mouseover", onMarkerHover);
 
 // creates location marker 
 // var marker = L.marker([-33.891579, 151.200532]).addTo(menderMap);

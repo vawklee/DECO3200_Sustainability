@@ -9,24 +9,32 @@ var blueHexCode = "#40a9e6";
 var redHexCode = "#e34d42";
 var blackHexCode = "#4a4a4a";
 var sechandMapUserLoc = L.circle(userLocation, {
-    color: redHexCode,
-    fillColor: redHexCode,
+    color: blueHexCode,
+    fillColor: blueHexCode,
     fillOpacity: 0.35,
     weight: 1,
     radius: 100
 }).addTo(sechandMap);
 var sechandMapUserRadius = L.circle(userLocation, {
-    color: redHexCode,
-    fillColor: redHexCode,
+    color: blueHexCode,
+    fillColor: blueHexCode,
     fillOpacity: 1.00,
+    radius: 50
+}).addTo(sechandMap);
+var sechandMapUserBorder = L.circle(userLocation, {
+    color: "#FFFFFF",
+    fillColor: "#FFFFFF",
+    fillOpacity: 0.00,
     radius: 50
 }).addTo(sechandMap);
 
 sechandMapUserLoc.bindPopup("You are here");
 sechandMapUserRadius.bindPopup("You are here");
+sechandMapUserBorder.bindPopup("You are here");
 
 sechandMapUserLoc.on("mouseover", onMarkerHover);
 sechandMapUserRadius.on("mouseover", onMarkerHover);
+sechandMapUserBorder.on("mouseover", onMarkerHover);
 
 // Secondhand Materials Coordinates
 coordsDress = [-33.8826528, 151.2024924];
@@ -49,7 +57,7 @@ markerPants.bindPopup(popupPants);
 // applying colour change filter through .css class
 markerDress._icon.classList.add("sechandMarkerHueChangeReq");
 markerDenim._icon.classList.add("sechandMarkerHueChangeAvail");
-markerPants._icon.classList.add("sechandMarkerHueChangeReq");
+markerPants._icon.classList.add("sechandMarkerHueChangeAvail");
 
 markerDress.on('click', onMapClick);
 markerDenim.on('click', onMapClick);
@@ -67,15 +75,24 @@ function onMarkerHover(e) {
     e.target.openPopup();
 }
 
+// ---- Scripting for map card interactivity ---
+var cardDress = document.getElementById("cardDress");
+var cardDenim = document.getElementById("cardDenim");
+var cardPants = document.getElementById("cardPants");
+
+cardDress.addEventListener("click", onMapCardClick);
+cardDenim.addEventListener("click", onMapCardClick);
+cardPants.addEventListener("click", onMapCardClick);
+
 // Opens popup when user clicks on the available info cards on the right
 function onMapCardClick(e) {
     console.log(e.target.className);
 
-    if (e.target.className.includes("classCardTemmuni")) {
-        markerTemmuni.openPopup();
-    } else if (e.target.className.includes("classCardFabricMoose")) {
-        markerFabricM.openPopup();
-    } else if (e.target.className.includes("classCardSoSpecial")) {
-        markerSoSpecial.openPopup();
+    if (e.target.className.includes("classCardDress")) {
+        markerDress.openPopup();
+    } else if (e.target.className.includes("classCardDenim")) {
+        markerDenim.openPopup();
+    } else if (e.target.className.includes("classCardPants")) {
+        markerPants.openPopup();
     }
 }

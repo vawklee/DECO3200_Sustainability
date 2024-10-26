@@ -388,7 +388,8 @@ img.sechandMarkerHueChangeReq {
     filter: brightness(0) saturate(100%) invert(42%) sepia(99%) saturate(5063%) hue-rotate(350deg) brightness(110%) contrast(101%);
 }
 img.sechandMarkerHueChangeAvail {
-    filter: brightness(0) saturate(100%) invert(84%) sepia(10%) saturate(1552%) hue-rotate(55deg) brightness(95%) contrast(88%);
+    /* filter: brightness(0) saturate(100%) invert(84%) sepia(10%) saturate(1552%) hue-rotate(55deg) brightness(95%) contrast(88%); */
+    filter: brightness(0) saturate(100%) invert(28%) sepia(9%) saturate(5486%) hue-rotate(134deg) brightness(93%) contrast(90%);
 }
 
 /* main page container & title + button */
@@ -405,7 +406,7 @@ img.sechandMarkerHueChangeAvail {
 
 /* contains map and cards */
 .secondhandMapPage {
-    margin-top: 25px;
+    margin-top: 20px;
     align-self: center;
     background-color: var(--background);
     border-radius: 15px;
