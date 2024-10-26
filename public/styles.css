@@ -428,13 +428,15 @@ button.download:hover {
     height: 375px;
     width: auto;
     position: relative;
-    right: -10%;
+    left: -50%;
 }
 .extFeature>button {
     filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
+}
+.extensionDownloadButton {
     position: relative;
-    top: -0.05%;
-    left: -15%;
+    top: -8%;
+    /* left: -2%; */
 }
 .chromeIcon {
     margin-left: 25px;
@@ -820,7 +822,7 @@ img.menderMarkerHueChange {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    width: 25vw;
+    width: 425px;
     /* max-height: 30vh; */
     height: 300px;
     justify-content: space-between;
