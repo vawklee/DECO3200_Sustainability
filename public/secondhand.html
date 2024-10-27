@@ -110,6 +110,26 @@
 
             </dialog>
 
+            <div id="newPopUp" class="materialCardNew" style="display:none;">
+                <!-- currently only works for one upload -->
+                <div class="materialCardContainer">
+                    <div id="materialContainer">
+                        <div>
+                            <p><span class="dotAvailable"></span></p>
+                            <p id="newType" class="caption"></p>
+                            <!-- <p class="bold"><img src="images/icons/location.svg">Colour:</p> -->
+                            <p>Colour:</p>
+                            <p id="newColour" class="caption"></p>
+                            <!-- <p class="bold">Size:<img src="images/icons/ruler.svg"></p> -->
+                            <p class="bold">Size:</p>
+                            <p id="newSize" class="caption"></p>
+                            <!-- <p class="bold"><img src="images/icons/speechBubble.svg">Description:</p> -->
+                            <p class="bold">Description:</p>
+                            <p id="newDescription" class="caption"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- GIVE AWAY ITEM FORM -->
             <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayItemForm">
@@ -154,6 +174,7 @@
                     <button type="submit" id="giveAwayItemSubmit" class="greenButton">Submit</button>
                 </form>
             </dialog>
+
 
             <!-- REQUEST ITEM FORM -->
             <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestItemForm">

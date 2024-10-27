@@ -490,19 +490,153 @@ img.sechandMarkerHueChangeAvail {
 
 
 
+/*-----------------------------------------------
+-
+- ALL PAGES 
+-
+------------------------------------------------*/
+
+/*-----------------------------------------------
+-
+- REPAIR.HTML
+-
+------------------------------------------------*/
+
+
+/*-----------------------------------------------
+-
+- RESULTS.HTML
+-
+------------------------------------------------*/
+
+/*-----------------------------------------------
+-
+- SECONDHAND.HTML
+-
+------------------------------------------------*/
+
+#newPopUp {
+    position: fixed; /* Use absolute positioning */
+    top: 0; /* Aligns to the top of the page */
+    right: 0; /* Aligns to the left of the page */
+    margin: 10px; /* Optional: adds some spacing from the edges */
+    background-color: var(--background); /* Optional: background color for visibility */
+    padding: 10px; /* Optional: padding for better readability */
+    height: fit-content
+}
+
+/*-----------------------------------------------
+-
+- ALL PAGES 
+-
+------------------------------------------------*/
+
+/*-----------------------------------------------
+-
+- FROM VERO FOR CARDS
+-
+------------------------------------------------*/
+
+/* All material card styling */
+.materialCardNew, .materialCardAvailable, .materialCardRequest {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 425px;
+    /* max-height: 30vh; */
+    height: 300px;
+    justify-content: space-between;
+    background-color: var(----background); 
+}
+/* Recently added material card */
+.materialCardNew {
+    border: var(--locationAvailable) solid 3px;
+    background-color: var(--background); 
+}
+.dotAvailable, .dotRequest {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.dotAvailable {
+    background-color: var(--locationAvailable);
+}
+.dotRequest {
+    background-color: var(--locationRequest);
+}
+.matInfoContainer {
+    margin: 0px 15px 10px 15px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+.matName {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.matInfo p {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--background); 
+}
+/* label icons below */
+.matInfoContainer img {
+    height: auto;
+    width: 20px;
+}
+.dotAvailable, .dotRequest, .matInfoContainer img {
+    margin-right: 15px;
+}
+
+/* thumbnail of material card */
+.matPicContainer {
+    width: 100%;
+    height: 100px;
+}
+.matPic {
+    border-radius: 15px 15px 0 0;
+    align-self: center;
+    justify-self: flex-end;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Available material card */
+/* Requested material card */
+/* .materialCardAvailable, .materialCardRequest {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    max-width: 25vw;
+    max-height: 30vh;
+    justify-content: space-between;
+} */
+.materialCardAvailable {
+    border: var(--locationAvailable) solid 3px;
+}
+.materialCardRequest {
+    border: var(--locationRequest) solid 3px;
+}
 
 
 
 
-/* FORM CSS */
+
+
+
+
+
+
+
+
 
 .startHidden {
     display: none;
 }
-
-/* #secondhandHubDialog, #selectPage{
-    display: none;
-} */
 
 
 .greenButton {
@@ -521,8 +655,8 @@ dialog {
     color: var(--fontColor);
     position: relative;
     z-index: 0.5;
-    padding: 0; /* Ensure no internal padding */
-    justify-content: center; /* Center horizontally */
+    padding: 0;
+    justify-content: center; 
     align-items: center;
 }
 
@@ -550,11 +684,10 @@ dialog {
     gap: 10px 20px;
     height: 70%;
     min-height:fit-content;
-    /* margin: 10% auto auto auto; */
     margin: 20px auto auto;
     padding: 30px;
-    box-sizing: border-box; /* Ensure padding/border are included in size calculations */
-    background-color: var(--background); /* Optional: form background color */
+    box-sizing: border-box; 
+    background-color: var(--background); 
     border-top: var(--primary) 10px solid;
     border-left: var(--primary) 2px solid;
     border-right:var(--primary) 2px solid;
@@ -572,8 +705,8 @@ dialog {
 
 .form-row {
     display: flex;
-    align-items: center; /* Align items vertically centered */
-    gap: 10px; /* Optional: Add some spacing between elements */
+    align-items: center; 
+    gap: 10px; 
 }
 
 .resultsBox {
@@ -630,11 +763,12 @@ dialog {
     background-position: center;
 }
 
-.secondhand-hub-background {
-    background-image: url('images/imgs/secondhandHubBackground.jpg'); /* Path to your image */
+/* .secondhand-hub-background {
+    background-image: url('images/imgs/secondhandHubBackground.jpg');
     background-size: cover;
     background-position: center;
-}
+    z-index: 100;
+} */
 
 /* Default button style */
 .buttonCheckedStyling {
@@ -754,16 +888,6 @@ background-color: #ffdddd;
     height:fit-content
 }
 
-
-/* .circle-button {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    border: none;
-    background-color: #f0f0f0;
-    cursor: pointer;
-} */
-
 .redCircle {
     width: 10px;
     height: 10px;
@@ -797,16 +921,6 @@ background-color: #ffdddd;
     border-radius: 50%;
     margin-right: 8px;
 }
-
-/* .option:hover {
-    background-color: #e0e0e0;
-    border-color: #888;
-} */
-
-/* .option.active {
-    background-color: #d0d0d0;
-    border-color: #555;
-} */
 
 
 .iconSize {
