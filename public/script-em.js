@@ -1,5 +1,8 @@
-// veronica's nav bar function 
-
+/*
+--------------------------------------------------------------------------
+VERONICA'S NAV BAR
+--------------------------------------------------------------------------
+*/
 function minimiseNavBar() {
     var x = document.getElementById("navBarContainer");
     if (x.className === "navBarContainer") {
@@ -10,66 +13,6 @@ function minimiseNavBar() {
     console.log("minimise clicked");
 }
 
-//background for secondhand hub modal 
-
-function showDialog() {
-    document.body.classList.add('secondhand-hub-background');
-    document.getElementById("selectPage").showModal();
-}
-function closeDialog() {
-    document.body.classList.remove('secondhand-hub-background'); // Remove background when dialog is closed
-    document.getElementById("selectPage").close();
-}
-
-// opening the secondhand hub modal 
-
-const openSecondhandForm = document.getElementById("openSecondhandForm");
-const selectPage = document.getElementById("selectPage");
-
-if (openSecondhandForm) {
-    openSecondhandForm.addEventListener("click", () => {
-        selectPage.style.display = "block";
-        document.body.classList.add('secondhand-hub-background');
-        selectPage.showModal();
-    });
-}
-
-// closing the secondhand hub modal 
-const cancel1 = document.getElementById("cancel1");
-if (cancel1) {
-    cancel1.addEventListener("click", () => {
-        window.location.href = "secondhand.html";
-    });
-}
-
-const cancel2 = document.getElementById("cancel2");
-if (cancel2) {
-    cancel2.addEventListener("click", () => {
-        window.location.href = "secondhand.html";
-    });
-}
-
-const cancel3 = document.getElementById("cancel3");
-if (cancel3) {
-    cancel3.addEventListener("click", () => {
-        window.location.href = "secondhand.html";
-    });
-}
-
-const cancel4 = document.getElementById("cancel4");
-if (cancel4) {
-    cancel4.addEventListener("click", () => {
-        window.location.href = "secondhand.html";
-    });
-}
-
-const cancel5 = document.getElementById("cancel5");
-if (cancel5) {
-    cancel5.addEventListener("click", () => {
-        window.location.href = "secondhand.html";
-    });
-}
-
 
 // results ?? 
 // function showResults(id) {
@@ -78,6 +21,13 @@ if (cancel5) {
 // function closeResults() {
 //     document.getElementById(id).close();
 // }
+
+
+/*
+--------------------------------------------------------------------------
+ REPAIR.HTML & UPDATING RESULTS.HTML
+--------------------------------------------------------------------------
+*/
 
 
 // repair assistant submission and results 
@@ -99,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("clothingType", clothingType);
             localStorage.setItem("damageType", damageType);
 
-            // Use backticks for template literals
+            // use backticks for template literals
             localStorage.setItem("repairResult", `Your results for: ${materialType} ${clothingType} with ${damageType}`);
 
             console.log("Redirecting to results.html");
@@ -110,21 +60,20 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
 });
 
-
 // update the page content of results.html 
 document.addEventListener("DOMContentLoaded", () => {
     const repairResult = document.getElementById("repairResult");
     
-    // Retrieve the repair result from localStorage
+    // retrieve the repair result from localStorage
     const storedResult = localStorage.getItem("repairResult");
 
     if (storedResult && repairResult) {
-        // Update the <p> tag with the stored result
+        // update with the stored result
         repairResult.textContent = storedResult;
     }
 });
 
-// diy page - display the one from the form on the repair assitant page 
+// change which instructions are displayed 
 document.addEventListener("DOMContentLoaded", () => {
     const diyButton = document.getElementById("diyButton");
     if (diyButton) {
@@ -161,61 +110,94 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const localButton = document.getElementById("localButton");
 {
-    localButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        window.location.href = "map.html";
-        // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
-        return false; 
-    });
-    } 
+    if(localButton){
+        localButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            window.location.href = "map.html";
+            // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
+            return false; 
+        });
+        } 
+    }
 });
 
 
 
 
+/*
+--------------------------------------------------------------------------
+SECONDHAND.HTML 
+--------------------------------------------------------------------------
+*/
 
 
-// https://stackoverflow.com/questions/52430565/how-do-i-style-form-results-posted-to-a-page
+//background for secondhand hub modal 
 
-// form submission adapted from my advanced web project 
-// form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     formModal.close();
+function showDialog() {
+    document.body.classList.add('secondhand-hub-background');
+    document.getElementById("selectPage").showModal();
+}
+function closeDialog() {
+    document.body.classList.remove('secondhand-hub-background'); // Remove background when dialog is closed
+    document.getElementById("selectPage").close();
+}
 
-//     addRequestedItem(
-//         form.elements.requestItemName.value,
-//         form.elements.requestItemDescription.value,
-//         form.elements.requestItemColour.value,
-//         form.elements.requestItemSize.value
-//         form.elements.requestItemDate.value
+// opening the secondhand hub modal 
 
-//     );
-//     addGiveAwayItem(
-//         form.elements.giveAwayItemName.value,
-//         form.elements.giveAwayItemDescription.value,
-//         form.elements.giveAwayItemColour.value,
-//         form.elements.giveAwayItemSize.value,
-//         form.elements.giveAwayItemImage.value
-//     );
-//     addRequestedMaterial(
-//         form.elements.requestMaterialName.value,
-//         form.elements.requestMaterialDescription.value,
-//         form.elements.requestMaterialColour.value,
-//         form.elements.requestMaterialSize.value,
-//         form.elements.requestMaterialDate.value
+const openSecondhandForm = document.getElementById("openSecondhandForm");
+const selectPage = document.getElementById("selectPage");
 
-//     );
-//     addGiveAwayMaterial(
-//         form.elements.giveAwayMaterialName.value,
-//         form.elements.giveAwayMaterialDescription.value,
-//         form.elements.giveAwayMaterialColour.value,
-//         form.elements.giveAwayMaterialSize.value,
-//         form.elements.giveAwayMaterialImage.value
-//     );
-// });
+if (openSecondhandForm) {
+    openSecondhandForm.addEventListener("click", () => {
+        selectPage.style.display = "block";
+        document.body.classList.add('secondhand-hub-background');
+        selectPage.showModal();
+    });
+}
+
+// closing the secondhand hub modal 
+
+const selectCancel = document.getElementById("selectCancel");
+if (selectCancel) {
+    selectCancel.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
+
+// cancel buttons - planning to update these to go back a page but that's pending 
+
+const giveAwayItemCancel = document.getElementById("giveAwayItemCancel");
+if (giveAwayItemCancel) {
+    giveAwayItemCancel.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
+
+const requestItemCancel = document.getElementById("requestItemCancel");
+if (requestItemCancel) {
+    requestItemCancel.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
+
+const giveAwayMaterialCancel = document.getElementById("giveAwayMaterialCancel");
+if (giveAwayMaterialCancel) {
+    giveAwayMaterialCancel.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
+
+const requestMaterialCancel = document.getElementById("requestMaterialCancel");
+if (requestMaterialCancel) {
+    requestMaterialCancel.addEventListener("click", () => {
+        window.location.href = "secondhand.html";
+    });
+}
 
 
-// Store selected options
+// store selected options so they can be 
+
+// set up empty values so they can be updated 
 let selection = { giveAwayRequest: null, itemMaterial: null };
 
 document.querySelectorAll('.option').forEach(button => {
@@ -235,7 +217,7 @@ document.querySelectorAll('.option').forEach(button => {
         });
         this.classList.add('active');
 
-        // updated to be based on submit event listener becasue i'm silly
+        // on submit - open the correct form 
         document.getElementById('typeSubmit').addEventListener('click', function() {
             const selectPage = document.getElementById("selectPage");
             let giveAwayItem =  document.getElementById("giveAwayItemForm");
@@ -243,25 +225,21 @@ document.querySelectorAll('.option').forEach(button => {
             let giveAwayMaterial = document.getElementById("giveAwayMaterialForm")
             let requestMaterial = document.getElementById("requestMaterialForm")
             
-
             if (selection.giveAwayRequest === 'giveAway' && selection.itemMaterial === 'item') {
                 console.log("Give Away Item selected");
                 selectPage.style.display = "none";
                 giveAwayItem.style.display = "block";
                 giveAwayItem.showModal();
-
             } else if (selection.giveAwayRequest === 'giveAway' && selection.itemMaterial === 'material') {
                 console.log("Give Away Material selected");
                 selectPage.style.display = "none";
                 giveAwayMaterial.style.display = "block";
                 giveAwayMaterial.showModal();
-
             } else if (selection.giveAwayRequest === 'request' && selection.itemMaterial === 'item') {
                 console.log("Request Item selected");
                 selectPage.style.display = "none";
                 requestItem.style.display = "block";
                 requestItem.showModal();
-
             } else if (selection.giveAwayRequest === 'request' && selection.itemMaterial === 'material') {
                 console.log("Request Material selected");
                 selectPage.style.display = "none";
@@ -274,5 +252,80 @@ document.querySelectorAll('.option').forEach(button => {
     });
 });
 
+// combo of my advanced web and help from this 
+// https://stackoverflow.com/questions/52430565/how-do-i-style-form-results-posted-to-a-page
+
+document.addEventListener("DOMContentLoaded", () => {
+    const giveAwayMaterialForm = document.getElementById("giveAwayMaterialForm");
+    const giveAwayMaterialSubmit = document.getElementById("giveAwayMaterialSubmit");
+
+    // check they exist on this page so it doesn't error
+    if (giveAwayMaterialForm && giveAwayMaterialSubmit){
+        giveAwayMaterialSubmit.addEventListener("click", function (event) {
+            event.preventDefault();
+            // get the input data
+            const giveAwayMaterialName = document.getElementById("giveAwayMaterialName").value;
+            const giveAwayMaterialDescription = document.getElementById("giveAwayMaterialDescription").value;
+            const giveAwayMaterialColour = document.getElementById("giveAwayMaterialColour").value;
+            const giveAwayMaterialSize = document.getElementById("giveAwayMaterialSize").value;
+            const giveAwayMaterialImage = document.getElementById("giveAwayMaterialImage").files[0];
+
+            // store the values in localStorage
+            localStorage.setItem("giveAwayMaterialName", giveAwayMaterialName);
+            localStorage.setItem("giveAwayMaterialDescription", giveAwayMaterialDescription);
+            localStorage.setItem("giveAwayMaterialColour", giveAwayMaterialColour);
+            localStorage.setItem("giveAwayMaterialSize", giveAwayMaterialSize);
+
+            
+            // if the user uploads an image
+            if (giveAwayMaterialImage) {
+                // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+                const reader = new FileReader();
+                reader.onload = function () {
+                    localStorage.setItem("giveAwayMaterialImage", reader.result); // Store the image as a base64 string
+                    window.location.href = "test.html";
+                };
+                reader.readAsDataURL(giveAwayMaterialImage);
+            } else {
+                // If no image is uploaded, just redirect to the new page
+                window.location.href = "test.html";
+            }
+        });
+    }
+});
 
 
+
+// display the stored data in a card format
+document.addEventListener("DOMContentLoaded", () => {
+    const giveAwayMaterialName = localStorage.getItem("giveAwayMaterialName");
+    const giveAwayMaterialDescription = localStorage.getItem("giveAwayMaterialDescription");
+    const giveAwayMaterialColour = localStorage.getItem("giveAwayMaterialColour");
+    const giveAwayMaterialSize = localStorage.getItem("giveAwayMaterialSize");
+    const giveAwayMaterialImage = localStorage.getItem("giveAwayMaterialImage");
+  
+    // Create a card to display the material information
+    const materialCard = document.getElementById("materialCard");
+    if (materialCard) {
+        // const newCard = document.createElement("div");
+        // newCard.className = "material-card";
+        materialCard.innerHTML = `
+            <h2>${giveAwayMaterialName}</h2>
+            <p>Description: ${giveAwayMaterialDescription}</p>
+            <p>Colour: ${giveAwayMaterialColour}</p>
+            <p>Size: ${giveAwayMaterialSize}</p>
+            ${giveAwayMaterialImage ? `<img src="${giveAwayMaterialImage}" 
+                alt="${giveAwayMaterialName}" style="max-width: 200px;">` : ""}`;
+
+            // materialCard.appendChild(newCard);
+    } else {
+        console.error("The element with ID 'material card was not found")
+    }
+});
+
+
+
+// giveAwayItemSubmit
+// requestItemSubmit
+// giveAwayMaterialSubmit
+// requestMaterialSubmit
