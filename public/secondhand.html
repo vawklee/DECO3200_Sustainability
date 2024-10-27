@@ -29,21 +29,14 @@
             </div>
         </header>
         <main class="secondhandHub">
-            <!-- the search bar feature below currently does not work for the sake of assignment MVP -->
-            <!-- <article class="secondhandHeader">
-                <h1 class="formHeading">Secondhand Hub</h1>
-                <div>
-                    <h2 class="subheading">Secondhand Hub</h2>
-                    <button id="openSecondhandForm" type="button" class="greenButton caption">Giveaway or Request an Item or Material <img class="iconSize" src="images/icons/plus.svg"></button>
-                </div>
-                <input type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials"><br>
-            </article> -->
+
             <article class="secondhandMapPage">
                 <section class="secondhandHeader">
                     <div>
                         <h2 class="subheading" style="font-size: 25pt;">Secondhand Hub</h2>
                         <button id="openSecondhandForm" type="button" class="greenButton caption">Giveaway or Request an Item or Material <img class="iconSize" src="images/icons/plus.svg"></button>
                     </div>
+                    <!-- the search bar feature below currently does not work for the sake of assignment MVP -->
                     <input class="caption" type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials"><br>
                 </section>
                 <div class="mapContainer">
@@ -197,6 +190,8 @@
                         <option value="XL">Extra Large (XL) / 20-22</option>
                         <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
                     </select><br>
+                    <label for="itemNeededBy">Needed Before:</label>
+                    <input type="date" id="itemNeededBy" name="itemNeededBy" placeholder="Select date needed before"><br>
                     <button type="button" id="cancel2">Cancel</button>   
                     <button type="submit" id="submit2" class="greenButton">Submit</button>      
                 </form>
@@ -262,6 +257,9 @@
                     </select><br>
                     <label for="requestMaterialSize">Minimum: <span class="redAsterisk">*</span></label>
                     <input type="text" id="requestMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 1m x 1m" required><br>
+                    <label for="materialNeededBy">Needed Before:</label>
+                    <input type="date" id="materialNeededBy" name="materialNeededBy" placeholder="Select date needed before"><br>
+                    <button type="button" id="cancel2">Cancel</button>  
                     <button type="button" id="cancel4">Cancel</button>   
                     <button class="greenButton" type="submit" id="submit4">Submit</button>
                 </form>

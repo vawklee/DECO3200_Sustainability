@@ -34,7 +34,7 @@ if (openSecondhandForm) {
     });
 }
 
-
+// closing the secondhand hub modal 
 const cancel1 = document.getElementById("cancel1");
 if (cancel1) {
     cancel1.addEventListener("click", () => {
@@ -80,8 +80,6 @@ if (cancel5) {
 // }
 
 
-
-
 // repair assistant submission and results 
 // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
 
@@ -89,15 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const repairAssistantForm = document.getElementById("repairAssistantForm");
     const repairResult = document.getElementById("repairResult");
 
-
     if (repairAssistantForm) {
         repairAssistantForm.addEventListener("submit", function (event) {
             event.preventDefault();
             let materialType = document.getElementById("materialType").value;
             let clothingType = document.getElementById("clothingType").value;
             let damageType = document.getElementById("damageType").value;
+
+            // Store individual values in localStorage
+            localStorage.setItem("materialType", materialType);
+            localStorage.setItem("clothingType", clothingType);
+            localStorage.setItem("damageType", damageType);
+
             // Use backticks for template literals
             localStorage.setItem("repairResult", `Your results for: ${materialType} ${clothingType} with ${damageType}`);
+
             console.log("Redirecting to results.html");
             window.location.href = "results.html";
             // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
@@ -106,10 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
 });
 
-// This script should be in results.html to update the page content
+
+// update the page content of results.html 
 document.addEventListener("DOMContentLoaded", () => {
     const repairResult = document.getElementById("repairResult");
-
+    
     // Retrieve the repair result from localStorage
     const storedResult = localStorage.getItem("repairResult");
 
@@ -119,23 +124,61 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
-
+// diy page - display the one from the form on the repair assitant page 
 document.addEventListener("DOMContentLoaded", () => {
+    // window.location.href = "diy.html";
     const diyButton = document.getElementById("diyButton");
-{
-    diyButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log("test")
-        window.location.href = "diy.html";
-        console.log("test2")
-        // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
-        return false; 
-    });
-    } 
-});
+    
+    if (diyButton) {
+        diyButton.addEventListener("click", function (event) {
+            event.preventDefault();
 
+            // Retrieve stored input values from repair form
+            
+            let damageType = localStorage.getItem("damageType");
+            console.log("damageType = ", damageType)
+        
+            const brokenZipperArticle = document.getElementById("brokenZipperArticle");
+            const fallenHemArticle = document.getElementById("fallenHemArticle");
+            const replacingButtonArticle = document.getElementById("replacingButtonArticle");
+            const holeRipTearArticle = document.getElementById("holeRipTearArticle");
+            const repairAssistantResults = document.getElementById("repairAssistantResults")
+
+            // Display the appropriate article based on damageType
+            if (damageType === "Broken Zipper") {
+                // window.location.href = "diy.html";
+                brokenZipperArticle.style.display = "block";
+                repairAssistantResults.style.display = "none"
+                // fallenHemArticle.style.display = "none";
+                // replacingButtonArticle.style.display = "none";
+                // holeRipTearArticle.style.display = "none";
+            } else if (damageType === "Fallen Hem") {
+                // window.location.href = "diy.html";
+                // brokenZipperArticle.style.display = "none";
+                fallenHemArticle.style.display = "block";
+                repairAssistantResults.style.display = "none"
+                // replacingButtonArticle.style.display = "none";
+                // holeRipTearArticle.style.display = "none";
+            } else if (damageType === "Replacing Button") {
+                // window.location.href = "diy.html";
+                // brokenZipperArticle.style.display = "none";
+                // fallenHemArticle.style.display = "none";
+                replacingButtonArticle.style.display = "block";
+                repairAssistantResults.style.display = "none"
+                // holeRipTearArticle.style.display = "none";
+            } else if (damageType === "Rip/Tear/Hole") {
+                // window.location.href = "diy.html";
+                // brokenZipperArticle.style.display = "none";
+                // fallenHemArticle.style.display = "none";
+                // replacingButtonArticle.style.display = "none";
+                holeRipTearArticle.style.display = "block";
+                repairAssistantResults.style.display = "none"
+            }
+
+            // console.log("Display logic executed, check if the correct article is shown");
+        });
+    }
+});
 document.addEventListener("DOMContentLoaded", () => {
     const localButton = document.getElementById("localButton");
 {
@@ -249,3 +292,6 @@ document.querySelectorAll('.option').forEach(button => {
         });
     });
 });
+
+
+

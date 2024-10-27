@@ -224,7 +224,7 @@ input:focus, select:focus {
     border-style: none;
     border-bottom: var(--primary) solid 2px;
 }
-input[type=text], select {
+input[type=text], input[type=date], select {
     width: 100%;
     padding: 15px 25px;
     outline: none;
@@ -496,9 +496,13 @@ img.sechandMarkerHueChangeAvail {
 
 /* FORM CSS */
 
-#secondhandHubDialog, #selectPage {
+.startHidden {
     display: none;
 }
+
+/* #secondhandHubDialog, #selectPage{
+    display: none;
+} */
 
 
 .greenButton {
@@ -891,6 +895,13 @@ background-color: #ffdddd;
 .serviceTags p {
     background-color: var(--disabledBackground);
 }
+
+.serviceTags {
+    margin-right: 40%;
+
+}
+
+
 .rTags img {
     height: 20px;
     width: auto;

@@ -28,7 +28,8 @@
         </header>
         <main>
             <a style="display:none;" href="diy.html"></a>
-            <article>
+            
+            <article id="repairAssistantResults">
                 <h1 class="formHeading">Repair Assistant</h1>
                 <div id="resultsBox" class="resultsBox">
                     <p class="caption" id="repairResult"></p>
@@ -78,6 +79,240 @@
                     </section>
                 </section>
             </article>
+
+
+
+
+            <!-- broken zipper repair instructions to display when broken zipper is selected in the repair assistant form and diy is selected -->
+            <article id="brokenZipperArticle" class="startHidden">
+                <h1 class="heading">How To Repair A Zipper</h1><br>
+                <img class="bookmarkIcon" src="images/icons/bookmark_false.svg">
+                <p class="caption">A simple and easy to follow guide. Suitable for most fabrics including cotton, denim, polyester and linen.</p>
+                <section  class="instructionArticle">
+                    <div class="displayRow"> 
+                        <div class="materialsList">
+                            <div class="displayRow">
+                            <h2 class="repairSubHeadings">Materials Needed</h2>
+                            <img src="images/icons/basket.svg">
+                        </div>
+                            <ul>
+                                <li>Replacement Zipper</li>
+                                <li>Matching Colour Thread</li>
+                                <li>Seam Ripper</li>
+                                <li>Zipperfoot [optional]</li>
+                            </ul>
+                        </div>
+                        <div class="videoLink">
+                            <!-- https://www.w3schools.com/html/html_youtube.asp -->
+                            <div class="displayRow">
+                                <h2 class="repairSubHeadings">Video Guide</h2>
+                                <img src="images/icons/video.svg">
+                            </div>
+                            <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/gpW3uZHQOQ0">
+                            </iframe>   
+                        </div>
+                    </div>
+                    
+                    <div class="repairInstructions">
+                        <h2 class="repairSubHeadings">Instructions</h2>
+                        <h3 class="bold">Find a Replacement Zipper</h3>
+                        <ol>
+                            <li>Measure existing zipper.</li>
+                            <li>Buy a zipper of matching colour and length.</li>
+                        </ol>
+                        <h3 class="bold">Remove the Previous Zipper</h3>
+                        <ol>
+                            <li>Take note of how the old zipper is positioned.</li>
+                            <li>Using a seam ripper to cut through the zipper stitches.</li>
+                            <li>Gently pull on the zipper once stitches have been removed.</li>
+                            <li>Remove stray threads.</li>
+                        </ol>
+                        <h3 class="bold">Attach the New Zipper</h3>
+                        <ol>
+                            <li>Position new zipper.</li>
+                            <li>[Optional] Install a ZipperFoot.</li>
+                            <li>Thread your sewing machine with the matching thread colour.</li>
+                            <li>Lower the presser foot.</li>
+                            <li>Sew a straight stitch along the edges. </li>
+                            <li>Trim off any loose threads.</li>
+                        </ol>
+                    </div>
+                </section>
+            </article>
+
+
+            <!-- fallen hem repair instructions to display when fallen hem is selected in the repair assistant form and diy is selected -->
+            <article id="fallenHemArticle" class="startHidden">
+                <h1 class="heading">How To Repair A Fallen Hem</h1><br>
+                <img class="bookmarkIcon" src="images/icons/bookmark_false.svg">
+                <p class="caption">A simple and easy to follow guide to re-hem a garment.</p>
+                <section class="instructionArticle>
+                    <div class="displayRow"> 
+                        <div class="materialsList">
+                            <div class="displayRow">
+                            <h2 class="repairSubHeadings">Materials Needed</h2>
+                            <img src="images/icons/basket.svg">
+                        </div>
+                            <ul>
+                                <li>Needle</li>
+                                <li>Matching Colour Thread</li>
+                                <li>Scissors</li>
+                                <li>Pins/Marker</li>
+                            </ul>
+
+                        </div>
+                        <div class="videoLink">
+                            <!-- https://www.w3schools.com/html/html_youtube.asp -->
+                            <div class="displayRow">
+                                <h2 class="repairSubHeadings">Video Guide</h2>
+                                <img src="images/icons/video.svg">
+                            </div>
+                            <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/S4riD5a_vKg">
+                            </iframe>   
+
+                        </div>
+                    </div>
+                    
+                    <div class="repairInstructions">
+                        <h2 class="repairSubHeadings">Instructions</h2>
+                        <h3 class="bold">Fold The Hem</h3>
+                        <ol>
+                            <li>Iron the garment to remove creases. </li>
+                            <li>Measure your hemline while wearing the garment to 
+                                ensure the correct height. Mark the point with pins or chalk to test.</li>
+                            <li>If there is excess fabric, trim it to 2cm below the new hemline.</li>
+                            <li>Fold the hem up.</li>
+                        </ol>
+                        <h3 class="bold">Sew The Hem Using A Whipstitch</h3>
+                        <ol>
+                        <p class="caption">Hide your thread knot and bring the thread from the inside through the outside 
+                            of the hem fold. Moving from right to left (or left to right if you're left-handed), cross over 
+                            diagonally and pick up a few threads of the fabric above the fold. Keep the needle pointed in the 
+                            direction in which you're working. Bring the needle back out through the fold and repeat.
+                        </p>
+                        </ol>
+                        <h3 class="bold">Stitch The New Hem</h3>
+                        <ol>
+                            <li>Measure and cut your thread, you need more thread than the circumference of the hem.</li>
+                            <li>Thread your needle and tie a knot at the other end. Flip your garment inside out. </li>
+                            <li>Start with a tiny stitch at the seam line on the wrong side of the hem.</li>
+                            <li>Stitch around the hemline using the above whipstitch.</li>
+                            <li>Knot the thread once you’ve stitched the whole way around the hem.</li>
+                            <li>Try on the garment to test the the wrong hemline.</li>
+                        </ol>
+                    </div>
+                </section>
+            </article>
+
+            <!-- hole/rip/tear repair instructions to display when hole/rip/tear is selected in the repair assistant form and diy is selected -->
+            <article id="holeRipTearArticle" class="startHidden">
+                <h1 class="heading">How To Repair A Hole, Rip, or Tear</h1><br>
+                <img class="bookmarkIcon" src="images/icons/bookmark_false.svg">
+                <p class="caption">A simple and easy to follow guide to repair a hole, rip, or tear in a garment.</p>
+                <section class="instructionArticle">
+                    <div class="displayRow"> 
+                        <div class="materialsList">
+                            <div class="displayRow">
+                            <h2 class="repairSubHeadings">Materials Needed</h2>
+                            <img src="images/icons/basket.svg">
+                        </div>
+                            <ul>
+                                <li>Needle</li>
+                                <li>Matching Colour Thread</li>
+                            </ul>
+
+                        </div>
+                        <div class="videoLink">
+                            <!-- https://www.w3schools.com/html/html_youtube.asp -->
+                            <div class="displayRow">
+                                <h2 class="repairSubHeadings">Video Guide</h2>
+                                <img src="images/icons/video.svg">
+                            </div>
+                            <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/8HqvugsnmSU">
+                            </iframe>   
+
+                        </div>
+                    </div>
+                    
+                    <div class="repairInstructions">
+                        <h2 class="repairSubHeadings">Instructions</h2>
+                        <h3 class="bold">Thread The Needle</h3>
+                        <ol>
+                            <li>Use a thick needle for thick fabrics or a thin needle for soft fabrics.</li>
+                            <li>Cut the thread approximately 2.5 times the length of the hole or rip.</li>
+                            <li>If there is excess fabric, trim it to 2cm below the new hemline.</li>
+                            <li>Thread the needle and tie a knot at the end. </li>
+                        </ol>
+                        <h3 class="bold">Fix The Hole/Rip/Tear</h3>
+                        <ol>
+                            <li>Turn the garment inside out, and cut away any loose threads.</li>
+                            <li>Pinch the edges of one end together so that they're aligned on the inside.</li>
+                            <li>Approxiumately 2mm from the edge, insert the needle and pull all the way through.</li>
+                            <li>Thread the needle back through edge 2mm along and continue this every 2mm.</li>
+                            <li>When you get to the end, loop the needle through the final stitch to tie off the thread.</li>
+                            <li>Once you have done this a few times, snip off the thread just above the knot.</li>
+                        </ol>
+                    </div>
+                </section>
+            </article>
+
+
+
+            <!-- replacement button instructions to display when replacement button is selected in the repair assistant form and diy is selected -->
+            <article id="replacingButtonArticle" class="startHidden">
+                <h1 class="heading">How To Replace a Button</h1><br>
+                <img class="bookmarkIcon" src="images/icons/bookmark_false.svg">
+                <p class="caption">A simple and easy to follow guide to replace the button on a garment.</p>
+                <section class="instructionArticle">
+                    <div class="displayRow"> 
+                        <div class="materialsList">
+                            <div class="displayRow">
+                            <h2 class="repairSubHeadings">Materials Needed</h2>
+                            <img src="images/icons/basket.svg">
+                        </div>
+                            <ul>
+                                <li>Original Button or Similar Replacement Button</li>
+                                <li>Matching Colour Thread</li>
+
+                            </ul>
+
+                        </div>
+                        <div class="videoLink">
+                            <!-- https://www.w3schools.com/html/html_youtube.asp -->
+                            <div class="displayRow">
+                                <h2 class="repairSubHeadings">Video Guide</h2>
+                                <img src="images/icons/video.svg">
+                            </div>
+                            <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/7Czvb9hgw">
+                            </iframe>   
+
+                        </div>
+                    </div>
+                    
+                    <div class="repairInstructions">
+                        <h2 class="repairSubHeadings">Instructions</h2>
+                        <h3 class="bold">Setting Up</h3>
+                        <ol>
+                            <li>Thread the needle so there is an equal length on both sides and tie a knot in the end.</li>
+                            <li>Position the button so it lines up with the previous button stitching or the other garment buttons. </li>
+                            <li>Check that the button lines up with the button hole.</li>
+                        </ol>
+                        <h3 class="bold">Replacing/Reattaching the Button</h3>
+                        <ol>
+                            <li>Push the threaded needle up through the fabric and one hole of the button and pull through.</li>
+                            <li>Place a pin between the button and the fabric to prevent it from being stitiched too tight.</li>
+                            <li>Push the needle down through the opposite hole and repeat twice.</li>
+                            <li>From the underside, switch to the other set and repeat twice.</li>
+                            <li>Remove the pin and loop the thread between the button and the material six times.</li>
+                            <li>Push the needle back to the underside of the fabric.</li>
+                            <li>Make three or four stitches to secure the thread and cut off the excess.</li>
+                        </ol>
+                    </div>
+                </section>
 
 
 
