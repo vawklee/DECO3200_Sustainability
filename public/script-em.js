@@ -126,56 +126,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // diy page - display the one from the form on the repair assitant page 
 document.addEventListener("DOMContentLoaded", () => {
-    // window.location.href = "diy.html";
     const diyButton = document.getElementById("diyButton");
-    
     if (diyButton) {
         diyButton.addEventListener("click", function (event) {
             event.preventDefault();
 
             // Retrieve stored input values from repair form
-            
             let damageType = localStorage.getItem("damageType");
             console.log("damageType = ", damageType)
         
+            const repairAssistantResults = document.getElementById("repairAssistantResults")
             const brokenZipperArticle = document.getElementById("brokenZipperArticle");
             const fallenHemArticle = document.getElementById("fallenHemArticle");
             const replacingButtonArticle = document.getElementById("replacingButtonArticle");
             const holeRipTearArticle = document.getElementById("holeRipTearArticle");
-            const repairAssistantResults = document.getElementById("repairAssistantResults")
 
             // Display the appropriate article based on damageType
             if (damageType === "Broken Zipper") {
-                // window.location.href = "diy.html";
                 brokenZipperArticle.style.display = "block";
                 repairAssistantResults.style.display = "none"
-                // fallenHemArticle.style.display = "none";
-                // replacingButtonArticle.style.display = "none";
-                // holeRipTearArticle.style.display = "none";
             } else if (damageType === "Fallen Hem") {
-                // window.location.href = "diy.html";
-                // brokenZipperArticle.style.display = "none";
                 fallenHemArticle.style.display = "block";
                 repairAssistantResults.style.display = "none"
-                // replacingButtonArticle.style.display = "none";
-                // holeRipTearArticle.style.display = "none";
             } else if (damageType === "Replacing Button") {
-                // window.location.href = "diy.html";
-                // brokenZipperArticle.style.display = "none";
-                // fallenHemArticle.style.display = "none";
                 replacingButtonArticle.style.display = "block";
                 repairAssistantResults.style.display = "none"
-                // holeRipTearArticle.style.display = "none";
             } else if (damageType === "Rip/Tear/Hole") {
-                // window.location.href = "diy.html";
-                // brokenZipperArticle.style.display = "none";
-                // fallenHemArticle.style.display = "none";
-                // replacingButtonArticle.style.display = "none";
                 holeRipTearArticle.style.display = "block";
                 repairAssistantResults.style.display = "none"
             }
-
-            // console.log("Display logic executed, check if the correct article is shown");
         });
     }
 });
@@ -208,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //         form.elements.requestItemDescription.value,
 //         form.elements.requestItemColour.value,
 //         form.elements.requestItemSize.value
+//         form.elements.requestItemDate.value
 
 //     );
 //     addGiveAwayItem(
@@ -222,6 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //         form.elements.requestMaterialDescription.value,
 //         form.elements.requestMaterialColour.value,
 //         form.elements.requestMaterialSize.value,
+//         form.elements.requestMaterialDate.value
 
 //     );
 //     addGiveAwayMaterial(
