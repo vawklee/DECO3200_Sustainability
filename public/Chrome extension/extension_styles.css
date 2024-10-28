@@ -209,6 +209,20 @@ font-weight: normal;
 } */
 /* You can customize the banner with dynamic styles */
 /* Scrolling wrapper to hold the product cards */
+/*Collapsible dropdown styles*/
+.panel-container{
+  max-height: 0;/*hide at first*/
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  padding: 0 20px;
+  background-color: #F9F9F9;
+  margin-top: 10px;
+}
+/*expanded state*/
+.panel-container.expanded{
+  max-height: 400px; 
+  transition: max-height 0.4s ease-in;
+}
 .scrolling-wrapper {
   display: flex; /* Make the cards align horizontally */
   flex-wrap: nowrap; /*Prevent wrapping to the next row */

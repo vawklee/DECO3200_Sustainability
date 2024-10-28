@@ -62,3 +62,8 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
        dot.classList.toggle('active', index === cardIndex);
      });
    });
+   document.querySelector('#sustainabilityBanner').addEventListener('click', function() {
+    const panel = document.querySelector('.panel-container');
+    panel.classList.toggle('expanded');
+  });
+  
