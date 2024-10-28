@@ -10,6 +10,27 @@
 document.querySelector(".side-panel-toggle").addEventListener("click", function() {
     document.querySelector(".toggle-container").classList.toggle("panel-open");
   });
+  // Function to change the background image dynamically
+function setBackgroundImage(imageUrl) {
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
+  document.body.style.backgroundSize = 'cover'; // Ensures the image covers the whole page
+  document.body.style.backgroundRepeat = 'no-repeat'; // Prevents the image from repeating
+  //document.body.style.backgroundPosition = 'center'; // Centers the image
+}
+setBackgroundImage('images/background_image-1.png'); // image path to starting product
+// Function to close the modal
+// Function to close the modal by removing the 'panel-open' class
+function closeModal() {
+  const toggleContainer = document.querySelector('.toggle-container');
+  if (toggleContainer && toggleContainer.classList.contains('panel-open')) {
+    toggleContainer.classList.remove('panel-open');
+  }
+}
+document.getElementById('buyNowButton').addEventListener('click', function(){
+  //change the image when button is clicked
+  setBackgroundImage('images/background_image-2.png');
+  closeModal(); // Close the modal
+});
 //   const bannerData = {
 //     "https://www.zara.com/au/en/zw-collection-rhinestone-trousers-p04877259.html?v1=406889827/*": {
 //       imageUrl: "images/product_1.webp", // Relative path to the local image

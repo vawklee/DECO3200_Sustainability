@@ -20,6 +20,10 @@ body{
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-regular);
   color: #000;
+  /* background-image:url('images/background_image-1.png') ;
+  background-size: cover; /* Ensures the image covers the whole page */
+  /*background-repeat: no-repeat; /* Prevents the image from repeating */
+  /*background-position:  Centers the image */
 }
 
 h1{
