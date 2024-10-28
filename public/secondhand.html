@@ -114,10 +114,13 @@
                 <!-- currently only works for one upload -->
                 <div class="materialCardContainer">
                     <!-- <div id="materialContainer"> -->
-                        <div>
+                        <div class="materialCardNew">
                             <!-- <p><span class="dotAvailable"></span></p> -->
-                            <p id="newType" class="bold"></p>
-
+                             <div class="sideBySide">
+                                <p id="newType" class="bold"></p>
+                                <!-- <img id="newTagImage" src="images/imgs/new-tag.png" class="rTitle"> -->
+                             </div>
+                            
                              <div class="sideBySide">
                                 <!-- <p class="bold"><img src="images/icons/location.svg">Colour:</p> -->
                                 <p class="caption">Colour:</p>
@@ -133,6 +136,12 @@
                                 <p class="caption">Description:</p>
                                 <p id="newDescription" class="caption"></p>
                              </div>
+                             <div id="optionalDateDisplay" class="sideBySide" style="display:none;">
+                                <!-- <p class="bold"><img src="images/icons/speechBubble.svg">Description:</p> -->
+                                <p class="caption">Date Needed By:</p>
+                                <p id="newDate" class="caption"></p>
+                             </div>
+                             
                         <!-- </div> -->
                     </div>
                 </div>
@@ -265,9 +274,9 @@
                     <h1 class="heading">Request Material:</h1>
                     <p class="caption">Add information for the material you would like to request below.</p>
                     <label for="requestMaterialName">Item Name: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestMaterialName" name="requestMaterialName"placeholder="eg. White dress" required><br>
+                    <input type="text" id="requestMaterialName" name="requestMaterialName"placeholder="eg. Linen" required><br>
                     <label for="requestMaterialDescription">Description: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestMaterialDescription" name="requestMaterialDescription" placeholder="eg. Style, length, etc" required><br>
+                    <input type="text" id="requestMaterialDescription" name="requestMaterialDescription" placeholder="eg. Condition, Purpose" required><br>
                     <label for="requestMaterialColour">Colour: <span class="redAsterisk">*</span></label>
                     <select id="requestMaterialColour" name="requestMaterialColour" required>
                         <option selected disabled>Select item colour</option>                            

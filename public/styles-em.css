@@ -945,12 +945,12 @@ background-color: #ffdddd;
     flex-direction: row;
     margin-right: 10px;
     border: var(--purple) solid 3px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .localRepairContainer {
     margin-left: 10px;
     border: var(--fontColor) solid 3px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 
@@ -966,7 +966,7 @@ background-color: #ffdddd;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0px 15px;
+    margin: 0 0 0 15px
 }
 .rTitle h2, .rTitle p {
     margin: 10px;
@@ -1100,4 +1100,11 @@ li {
 #materialCardContainer {
     margin: 20px;
 
+}
+
+
+
+.newTagImage {
+    height: 35px;
+    width: auto;
 }
