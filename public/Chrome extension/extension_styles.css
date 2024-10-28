@@ -144,6 +144,7 @@ p{
 }
 /* Banner container */
 .banner {
+  position: relative; 
   display: flex;
   align-items: center;
   justify-content: space-between;  
@@ -211,6 +212,10 @@ font-weight: normal;
 /* Scrolling wrapper to hold the product cards */
 /*Collapsible dropdown styles*/
 .panel-container{
+  position: absolute; /* Make the panel absolute */
+  top: 180px; /* Adjust top to place it below the banner */
+  left: 20px;
+  width: 440px;
   max-height: 0;/*hide at first*/
   overflow: hidden;
   transition: max-height 0.4s ease-out;
