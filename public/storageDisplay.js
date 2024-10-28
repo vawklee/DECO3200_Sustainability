@@ -118,7 +118,7 @@ function displayMaterials() {
             let item = document.createElement('div');
             item.setAttribute('data-id', material.id);
             item.className = "materialCardNew";
-            item.style.height = "fit-content";
+            // item.style.height = "300px";
 
             // let information = document.createElement('p');
             // information.innerHTML = `<p class="body">${material.name}<br>Description: ${material.description}<br>Colour: ${material.colour}<br>Size: ${material.size}</p>`;
@@ -147,12 +147,15 @@ function displayMaterials() {
         })
     } else {
         console.log("Materials in local storage is empty");
+        document.getElementById('recentlyAddedContainer').style.display = 'none';
     }
 }
 
 displayMaterials();
-document.getElementsByClassName("rulerIcon").src = "./images/icons/ruler.svg";
-document.getElementsByClassName("speechIcon").src = "./images/icons/speechBubble.svg";
+// document.getElementsByClassName("rulerIcon").src = "./images/icons/ruler.svg";
+// document.getElementsByClassName("speechIcon").src = "./images/icons/speechBubble.svg";
+document.getElementsByClassName("rulerIcon").src = "ruler.svg";
+document.getElementsByClassName("speechIcon").src = "speechBubble.svg";
 
 // THE FORBIDDEN BUTTON (profileMaterials.html)
 // THIS BUTTON IS USED ONLY TO CLEAR LOCAL STORAGE FOR DEBUGGING PURPOSES
