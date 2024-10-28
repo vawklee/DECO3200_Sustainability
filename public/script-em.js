@@ -77,23 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // update with the stored result
         repairResult.textContent = storedResult;
     }
-
-    // recommendedPurple.style.display = "none"
-    // recommendedBlack.style.display = "none"
-
+    // change visibility of recommended tag based on damage type 
     if (recommendedColour === "Purple") {
         recommendedPurple.style.display = "block"
     }
     else if (recommendedColour === "Black") {
         recommendedBlack.style.display = "block"
     }
-
-    // if (damageType === "Broken Zipper" || damageType === "Rip/Tear/Hole") {
-        
-    // } else if (damageType === "Fallen Hem" || damageType === "Replacing Button") {
-    //     localStorage.setItem("recommendedType", "Purple");
-    // }
-
 });
 
 // change which instructions are displayed 
@@ -150,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /*
 --------------------------------------------------------------------------
-SECONDHAND.HTML 
+SECONDHAND.HTML - Opening The Select Form & Handling Which Form Opens Next
 --------------------------------------------------------------------------
 */
 
@@ -265,7 +255,6 @@ document.querySelectorAll('.option').forEach(button => {
                 requestItem.style.display = "block";
                 requestItem.showModal();
             } else if (selection.giveAwayRequest === 'request' && selection.itemMaterial === 'material') {
-                console.log("Request Material selected");
                 selectPage.style.display = "none";
                 requestMaterial.style.display = "block";
                 requestMaterial.showModal();
@@ -275,6 +264,32 @@ document.querySelectorAll('.option').forEach(button => {
         });
     });
 });
+
+
+/*
+--------------------------------------------------------------------------
+SECONDHAND.HTML - Function For All Forms 
+--------------------------------------------------------------------------
+*/
+
+function updateMaterialDetails(type, colour, size, description) {
+    const newType = document.getElementById("newType");
+    const newColour = document.getElementById("newColour");
+    const newSize = document.getElementById("newSize");
+    const newDescription = document.getElementById("newDescription");
+    
+    if (newType) newType.innerHTML = type;
+    if (newColour) newColour.innerHTML = colour;
+    if (newSize) newSize.innerHTML = size;
+    if (newDescription) newDescription.innerHTML = description;
+}
+
+
+/*
+--------------------------------------------------------------------------
+SECONDHAND.HTML - Give Away Material
+--------------------------------------------------------------------------
+*/
 
 // combo of my advanced web and help from this 
 // https://stackoverflow.com/questions/52430565/how-do-i-style-form-results-posted-to-a-page
@@ -291,24 +306,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (giveAwayMaterialForm && giveAwayMaterialSubmit){
         giveAwayMaterialSubmit.addEventListener("click", function (event) {
             event.preventDefault();
-            console.log("step1")
             // get the input data
             const giveAwayMaterialName = document.getElementById("giveAwayMaterialName").value;
             const giveAwayMaterialDescription = document.getElementById("giveAwayMaterialDescription").value;
             const giveAwayMaterialColour = document.getElementById("giveAwayMaterialColour").value;
             const giveAwayMaterialSize = document.getElementById("giveAwayMaterialSize").value;
             const giveAwayMaterialImage = document.getElementById("giveAwayMaterialImage").files[0];
-            console.log("name", giveAwayMaterialName)
 
-            const newType = document.getElementById("newType");
-            const newColour = document.getElementById("newColour");
-            const newSize = document.getElementById("newSize");
-            const newDescription = document.getElementById("newDescription");
-            
-            if (newType) newType.innerHTML = "Give Away Material";
-            if (newColour) newColour.innerHTML = giveAwayMaterialColour;
-            if (newSize) newSize.innerHTML = giveAwayMaterialSize;
-            if (newDescription) newDescription.innerHTML = giveAwayMaterialDescription;
+            updateMaterialDetails("Give Away Material", giveAwayMaterialColour, giveAwayMaterialSize, giveAwayMaterialDescription);
+
             // store the values in localStorage
             localStorage.setItem("giveAwayMaterialName", giveAwayMaterialName);
             localStorage.setItem("giveAwayMaterialDescription", giveAwayMaterialDescription);
@@ -329,10 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 reader.onload = function () {
                     localStorage.setItem("giveAwayMaterialImage", reader.result); // Store the image as a base64 string
 
-                    document.getElementById("newType").innerHTML = "Give Away Material"
-                    document.getElementById("newColour").innerHTML = giveAwayMaterialColour
-                    document.getElementById("newSize").innerHTML = giveAwayMaterialSize
-                    document.getElementById("newDescription").innerHTML = giveAwayMaterialDescription 
+                    updateMaterialDetails("Give Away Material", giveAwayMaterialColour, giveAwayMaterialSize, giveAwayMaterialDescription);
 
                     // window.location.href = "test.html";
                     // from veronica's script file
@@ -425,3 +428,87 @@ document.addEventListener("DOMContentLoaded", () => {
 // requestItemSubmit
 // giveAwayMaterialSubmit
 // requestMaterialSubmit
+
+
+
+/*
+--------------------------------------------------------------------------
+SECONDHAND.HTML - Request Material
+--------------------------------------------------------------------------
+*/
+
+// combo of my advanced web and help from this 
+// https://stackoverflow.com/questions/52430565/how-do-i-style-form-results-posted-to-a-page
+
+document.addEventListener("DOMContentLoaded", () => {
+    const requestMaterialForm = document.getElementById("requestMaterialForm");
+    const requestMaterialSubmit = document.getElementById("requestMaterialSubmit");
+
+    // https://stackoverflow.com/questions/74212470/how-do-i-make-an-element-disappear-after-a-set-amount-of-time
+    
+
+    // check they exist on this page so it doesn't error
+    if (requestMaterialForm && requestMaterialSubmit){
+        requestMaterialSubmit.addEventListener("click", function (event) {
+            event.preventDefault();
+            // get the input data
+            const requestMaterialName = document.getElementById("requestMaterialName").value;
+            const requestMaterialDescription = document.getElementById("requestMaterialDescription").value;
+            const requestMaterialColour = document.getElementById("requestMaterialColour").value;
+            const requestMaterialSize = document.getElementById("requestMaterialSize").value;
+            const requestMaterialDate = document.getElementById("requestMaterialDate").files[0];
+
+            const newType = document.getElementById("newType");
+            const newColour = document.getElementById("newColour");
+            const newSize = document.getElementById("newSize");
+            const newDescription = document.getElementById("newDescription");
+            
+            if (newType) newType.innerHTML = "Request Material";
+            if (newColour) newColour.innerHTML = requestMaterialColour;
+            if (newSize) newSize.innerHTML = requestMaterialSize;
+            if (newDescription) newDescription.innerHTML = requestMaterialDescription;
+
+            // store the values in localStorage
+            localStorage.setItem("requestMaterialName", requestMaterialName);
+            localStorage.setItem("requestMaterialDescription", requestMaterialDescription);
+            localStorage.setItem("requestMaterialColour", requestMaterialColour);
+            localStorage.setItem("requestMaterialSize", requestMaterialSize);
+
+            giveAwayMaterialForm.style.display = "none";
+            document.getElementById("newPopUp").style.display = "block"
+            // https://stackoverflow.com/questions/74212470/how-do-i-make-an-element-disappear-after-a-set-amount-of-time
+            setTimeout(() => {
+                newPopUp.style.display = "none";
+            }, 5000);
+
+            // if the user uploads an image
+            if (requestMaterialImage) {
+                // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+                const reader = new FileReader();
+                reader.onload = function () {
+                    localStorage.setItem("requestMaterialImage", reader.result); // Store the image as a base64 string
+
+                    document.getElementById("newType").innerHTML = "Request Material"
+                    document.getElementById("newColour").innerHTML = requestMaterialColour
+                    document.getElementById("newSize").innerHTML = requestMaterialSize
+                    document.getElementById("newDescription").innerHTML = requestMaterialDescription 
+                }; 
+                reader.readAsDataURL(requestMaterialImage);
+            } else {
+
+                const newType = document.getElementById("newType");
+                const newColour = document.getElementById("newColour");
+                const newSize = document.getElementById("newSize");
+                const newDescription = document.getElementById("newDescription");
+                
+                if (newType) newType.innerHTML = "Request Material";
+                if (newColour) newColour.innerHTML = requestMaterialColour;
+                if (newSize) newSize.innerHTML = requestMaterialSize;
+                if (newDescription) newDescription.innerHTML = requestMaterialDescription;
+            }
+        }); 
+    } 
+});
+
+
+
