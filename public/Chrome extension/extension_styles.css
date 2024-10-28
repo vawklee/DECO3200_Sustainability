@@ -20,6 +20,10 @@ body{
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-regular);
   color: #000;
+  /* background-image:url('images/background_image-1.png') ;
+  background-size: cover; /* Ensures the image covers the whole page */
+  /*background-repeat: no-repeat; /* Prevents the image from repeating */
+  /*background-position:  Centers the image */
 }
 
 h1{
@@ -225,6 +229,7 @@ font-weight: normal;
   padding: 0 20px;
   background-color: #F9F9F9;
   margin-top: 10px;
+  z-index: 2;
 }
 /*expanded state*/
 .panel-container.expanded{
@@ -284,10 +289,40 @@ font-weight: normal;
   background-color:#D8DCDE;
   height: 180px;
   width: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.label{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding:5px;
+  border-radius: 20px;
+  display:inline-flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  /* z-index: 2; */
+  width: fit-content;
+  color: #000;
+}
+.label img{
+  width:30px;
+  height: auto;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.label span{
+  margin-top: 3.8px;/*not really sure how to get it to align so i just hardcoded this*/
+  display: inline-block;
+  vertical-align: middle;
 }
 .card-image-container img{
   height: 90%;
 }
+
  .card-body{
     padding: 5% 0 0 5%;
   } 
