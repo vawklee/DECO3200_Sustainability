@@ -26,10 +26,17 @@ function closeModal() {
     toggleContainer.classList.remove('panel-open');
   }
 }
+function changeSustainabilityIcon() {
+  const sustainabilityIcon = document.getElementById('sustainabilityButton');
+  if (sustainabilityIcon.src.includes('images/sustainability_icon.png')) {
+    sustainabilityIcon.src = 'images/icon_neutral.png'; // Change to the happy face image path
+  }
+}
 document.getElementById('buyNowButton').addEventListener('click', function(){
   //change the image when button is clicked
   setBackgroundImage('images/background_image-2.png');
   closeModal(); // Close the modal
+  changeSustainabilityIcon(); // Call the function to change the image
 });
 //   const bannerData = {
 //     "https://www.zara.com/au/en/zw-collection-rhinestone-trousers-p04877259.html?v1=406889827/*": {
