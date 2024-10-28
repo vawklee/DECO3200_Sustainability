@@ -975,6 +975,7 @@ background-color: #ffdddd;
 #recommendedPurple, #recommendedBlack {
     width: auto;
     height:auto;
+    display: none;
 }
 
 .bookmarkIcon {
@@ -1089,3 +1090,14 @@ li {
     width: 40%;
 }
 
+.sideBySide {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+#materialCardContainer {
+    margin: 20px;
+
+}

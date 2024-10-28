@@ -23,9 +23,12 @@ function minimiseNavBar() {
 // repair assistant submission and results 
 // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const repairAssistantForm = document.getElementById("repairAssistantForm");
     const repairResult = document.getElementById("repairResult");
+    const recommendedColour = null;
 
     if (repairAssistantForm) {
         repairAssistantForm.addEventListener("submit", function (event) {
@@ -38,7 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("materialType", materialType);
             localStorage.setItem("clothingType", clothingType);
             localStorage.setItem("damageType", damageType);
+            console.log("damage type = ", damageType)
 
+            if (damageType === "Broken Zipper" || damageType === "Rip/Tear/Hole"){
+                localStorage.setItem("recommendedType", "Black");
+            }
+            else if (damageType === "Fallen Hem" || damageType === "Replacing Button"){
+                localStorage.setItem("recommendedType", "Purple")
+            }
+            else {
+                localStorage.setItem("recommendedType", null)
+            }
             // use backticks for template literals
             localStorage.setItem("repairResult", `Your results for: ${materialType} ${clothingType} with ${damageType}`);
 
@@ -53,14 +66,34 @@ document.addEventListener("DOMContentLoaded", () => {
 // update the page content of results.html 
 document.addEventListener("DOMContentLoaded", () => {
     const repairResult = document.getElementById("repairResult");
-    
-    // retrieve the repair result from localStorage
+    var recommendedColour = localStorage.getItem("recommendedType");
+        // retrieve the repair result from localStorage
     const storedResult = localStorage.getItem("repairResult");
+    const recommendedBlack = document.getElementById("recommendedBlack")
+    const recommendedPurple = document.getElementById("recommendedPurple")
+    console.log("recommended colour is", recommendedColour)
 
     if (storedResult && repairResult) {
         // update with the stored result
         repairResult.textContent = storedResult;
     }
+
+    // recommendedPurple.style.display = "none"
+    // recommendedBlack.style.display = "none"
+
+    if (recommendedColour === "Purple") {
+        recommendedPurple.style.display = "block"
+    }
+    else if (recommendedColour === "Black") {
+        recommendedBlack.style.display = "block"
+    }
+
+    // if (damageType === "Broken Zipper" || damageType === "Rip/Tear/Hole") {
+        
+    // } else if (damageType === "Fallen Hem" || damageType === "Replacing Button") {
+    //     localStorage.setItem("recommendedType", "Purple");
+    // }
+
 });
 
 // change which instructions are displayed 
@@ -79,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const fallenHemArticle = document.getElementById("fallenHemArticle");
             const replacingButtonArticle = document.getElementById("replacingButtonArticle");
             const holeRipTearArticle = document.getElementById("holeRipTearArticle");
+
 
             // Display the appropriate article based on damageType
             if (damageType === "Broken Zipper") {
@@ -295,14 +329,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 reader.onload = function () {
                     localStorage.setItem("giveAwayMaterialImage", reader.result); // Store the image as a base64 string
 
-
                     document.getElementById("newType").innerHTML = "Give Away Material"
                     document.getElementById("newColour").innerHTML = giveAwayMaterialColour
                     document.getElementById("newSize").innerHTML = giveAwayMaterialSize
                     document.getElementById("newDescription").innerHTML = giveAwayMaterialDescription 
-
-
-
 
                     // window.location.href = "test.html";
                     // from veronica's script file
