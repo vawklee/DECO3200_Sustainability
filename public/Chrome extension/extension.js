@@ -66,4 +66,7 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
     const panel = document.querySelector('.panel-container');
     panel.classList.toggle('expanded');
   });
-  
+  function redirectToSecondhand() {
+    // console.log("Redirecting to secondhand.html");
+    window.location.href = '../secondhand.html'; // Redirects to the specified page
+}

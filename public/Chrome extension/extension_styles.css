@@ -149,7 +149,7 @@ p{
   align-items: center;
   justify-content: space-between;  
   padding-right: 20px;  
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #ffeae9; /* Default background color */
   color: #000;
   width: 480px; /* set-width banner */
@@ -225,7 +225,7 @@ font-weight: normal;
 }
 /*expanded state*/
 .panel-container.expanded{
-  max-height: 400px; 
+  max-height: 500px; 
   transition: max-height 0.4s ease-in;
 }
 .scrolling-wrapper {
