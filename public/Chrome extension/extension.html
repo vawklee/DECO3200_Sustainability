@@ -37,7 +37,7 @@
         <button id="sustainabilityBanner" class="banner">
             <!-- Image placeholder -->
             <div class="banner-image">
-              <img id="bannerImage" src="images/product_1.png" alt="Product Image" />
+              <img id="bannerImage" src="images/product_1_card.webp" alt="Product Image" />
             </div> <!--closes off the banner-image-->
           
             <!-- Text content placeholder -->
@@ -46,7 +46,7 @@
               <h4 id="bannerDescription"> Cotton uses more water than most.</h4>
             </div> <!--closing off the banner content-->
             <div class="banner-icon">
-        <span class="material-symbols-outlined">chevron_right </span>
+        <span class="material-symbols-outlined chevron-icon">chevron_right </span>
     </div> <!-- closing off the banner-icon-->
         </button><!--closes off the sustanabilityBanner-->
         <!--DROPDOWN CONTENT-->
@@ -56,12 +56,17 @@
                 <p>Current Fabric</p>
             </div><!--closes off the panel header-->
     <div class ="sustainability-details">
-        <span class="material-icons">water-icon</span>
+        <!--Water Usage Section-->
+        <div class="detail-item">
+        <span class="material-icons water">waves</span>
         <p><strong>Water Usage:</strong></p>
+    </div> <!--closes off detail-item-->
         <p>Denim is a highly water-intensive crop, needing thousands of litres of water to produce a single item.</p>
         <hr>
-        <span class="material-icons">cloud</span>
+        <div class="detail-item">
+        <span class="material-icons carbon-icon">cloud</span>
         <p><strong>Carbon Footprint</strong></p>
+    </div> <!--closes off detail-item-->
         <p>Cotton farming has a larger carbon footprint due to intensive farming practices, synthetic fertilizers, and water usage.</p>
     
     </div><!--closes off sustainability details-->
@@ -92,7 +97,7 @@
                         </div>
                       </div><!--closes off the product-info-->
                 </div><!--closes off the card body-->
-                <button class="card-footer-btn">
+                <button class="card-footer-btn" onclick="redirectToSecondhand()">
                     Buy Now
                   </button>
             </div><!--closes off the card-->
@@ -160,7 +165,11 @@
     <span class="dot"></span>
   </div>
           <div class="modal-footer">
-          <p>Your small choices add up. Learn more about sustainability.</p>
+            <p> Your small choices add up.
+            <a href="../index.html" style="text-decoration: underline; color:black">Learn more about sustainability.</a>
+            <span class="material-icons question-icon">help_outline</span>
+            </p>
+          <!-- <p>Your small choices add up. <u>Learn more about sustainability.</u></p> -->
       </div> <!-- closes off the modal footer -->
       </div><!--closes off sustainability panel-->
       </div><!--closes off button-modal-container-->

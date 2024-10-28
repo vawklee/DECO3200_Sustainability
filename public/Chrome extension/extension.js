@@ -64,6 +64,11 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
    });
    document.querySelector('#sustainabilityBanner').addEventListener('click', function() {
     const panel = document.querySelector('.panel-container');
+    const chevronIcon =document.querySelector('.chevron-icon');
     panel.classList.toggle('expanded');
+    chevronIcon.classList.toggle('rotate')
   });
-  
+  function redirectToSecondhand() {
+    // console.log("Redirecting to secondhand.html");
+    window.location.href = '../secondhand.html'; // Redirects to the specified page
+}
