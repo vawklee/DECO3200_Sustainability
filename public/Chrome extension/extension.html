@@ -31,25 +31,47 @@
   
     <!--sliding modal-->
     <div id="sustainabilityPanel" class="side-panel">
-        <div id="sustainabilityBanner" class="banner">
+        <div class="modal-header">
+            <h2>Cotton Trousers</h2>
+        </div> <!-- closes off the header -->
+        <button id="sustainabilityBanner" class="banner">
             <!-- Image placeholder -->
             <div class="banner-image">
               <img id="bannerImage" src="images/product_1.png" alt="Product Image" />
-            </div>
+            </div> <!--closes off the banner-image-->
           
             <!-- Text content placeholder -->
             <div class="banner-content">
                 <h2 id="bannerTitle"> <b>Low</b> sustainability rating</h2>
               <h4 id="bannerDescription"> Cotton uses more water than most.</h4>
-            </div>
+            </div> <!--closing off the banner content-->
             <div class="banner-icon">
         <span class="material-symbols-outlined">chevron_right </span>
-    </div>
-    </div>
+    </div> <!-- closing off the banner-icon-->
+        </button><!--closes off the sustanabilityBanner-->
+        <!--DROPDOWN CONTENT-->
+        <div class="panel-container">
+            <div class="panel-header">
+                <h2><strong>Denim Fabric:</strong></h2>
+                <p>Current Fabric</p>
+            </div><!--closes off the panel header-->
+    <div class ="sustainability-details">
+        <span class="material-icons">water-icon</span>
+        <p><strong>Water Usage:</strong></p>
+        <p>Denim is a highly water-intensive crop, needing thousands of litres of water to produce a single item.</p>
+        <hr>
+        <span class="material-icons">cloud</span>
+        <p><strong>Carbon Footprint</strong></p>
+        <p>Cotton farming has a larger carbon footprint due to intensive farming practices, synthetic fertilizers, and water usage.</p>
+    
+    </div><!--closes off sustainability details-->
+        </div><!--closes off the panel-container-->
+    <h3 class="banner-text">Sustainable Alternatives</h3>
         <div class="scrolling-wrapper">
+            <!--FIRST CARD-->
             <div class="card">
                 <div class="card-image-container">
-                    <img src="/images/product_1_card.webp" alt="alternative product image-1">
+                    <img src="images/product_1_card.webp" alt="alternative product image-1">
                 </div>
                 <div class="card-body">
                     <div class="product-info">
@@ -74,56 +96,75 @@
                     Buy Now
                   </button>
             </div><!--closes off the card-->
+            <!--SECOND CARD-->
             <div class="card">
                 <div class="card-image-container">
-                    <img src="/images/product_1-card" alt="alternative product image-1">
+                    <img src="images/product_1_card.webp" alt="alternative product image-1">
                 </div>
                 <div class="card-body">
                     <div class="product-info">
+                        <div class="product-info-header">
                         <h2 class="product-title">Oversized Linen Shirt</h2>
-                        <span class="product-price">$34.99</span>
-                      </div>
-                </div>
-                <div class="sustainability-label">
-                    <span class="material-icons water-icon">opacity</span>
-                    <span class="sustainability-text">Uses 50% less water</span>
-                  </div>
-                  <ul class="product-details">
-                    <li><strong>Size:</strong> M</li>
-                    <li><strong>Material:</strong> 100% Linen</li>
-                    <li><strong>Description:</strong> Navy blue/Natural white, Striped</li>
-                  </ul>
+                        <div class="sustainability-label">
+                            <span class="material-icons water-icon" style="font-size: 17px">opacity</span>
+                            <span class="sustainability-text">
+                                Uses 50% less water
+                            </span>
+                          </div> <!--closes off the sustainability label-->
+                          </div><!--closes off product-info-header-->
+                        <p class="product-price">$34.99</p>
+                        <div class="product-details">
+                            <h4><strong>Size:</strong> M</h4>
+                            <h4><strong>Material:</strong> 100% Linen</h4>
+                            <h4><strong>Description:</strong> Navy Blue/Natural White</h4>
+                        </div>
+                      </div><!--closes off the product-info-->
+                </div><!--closes off the card body-->
                 <button class="card-footer-btn">
                     Buy Now
                   </button>
-            </div>
+            </div><!--closes off the card-->
+            <!--THIRD CARD-->
             <div class="card">
                 <div class="card-image-container">
-                    <img src="" alt="alternative product image-1">
+                    <img src="images/product_1_card.webp" alt="alternative product image-1">
                 </div>
                 <div class="card-body">
                     <div class="product-info">
+                        <div class="product-info-header">
                         <h2 class="product-title">Oversized Linen Shirt</h2>
-                        <span class="product-price">$34.99</span>
-                      </div>
-                </div>
-                <div class="sustainability-label">
-                    <span class="material-icons water-icon">opacity</span>
-                    <span class="sustainability-text">Uses 50% less water</span>
-                  </div>
-                  <ul class="product-details">
-                    <ul><strong>Size:</strong> M</ul>
-                    <ul><strong>Material:</strong> 100% Linen</ul>
-                    <ul><strong>Description:</strong> Navy blue/Natural white, Striped</ul>
-                  </ul>
+                        <div class="sustainability-label">
+                            <span class="material-icons water-icon" style="font-size: 17px">opacity</span>
+                            <span class="sustainability-text">
+                                Uses 50% less water
+                            </span>
+                          </div> <!--closes off the sustainability label-->
+                          </div><!--closes off product-info-header-->
+                        <p class="product-price">$34.99</p>
+                        <div class="product-details">
+                            <h4><strong>Size:</strong> M</h4>
+                            <h4><strong>Material:</strong> 100% Linen</h4>
+                            <h4><strong>Description:</strong> Navy Blue/Natural White</h4>
+                        </div>
+                      </div><!--closes off the product-info-->
+                </div><!--closes off the card body-->
                 <button class="card-footer-btn">
                     Buy Now
                   </button>
-            </div>
-          </div>
-      </div>
-      </div>
-    </div>
+            </div><!--closes off the card-->
+          </div><!--closes off the scrolling wrapper-->
+          <!-- Pagination Dots -->
+<div class="pagination-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+          <div class="modal-footer">
+          <p>Your small choices add up. Learn more about sustainability.</p>
+      </div> <!-- closes off the modal footer -->
+      </div><!--closes off sustainability panel-->
+      </div><!--closes off button-modal-container-->
+    </div><!--closes off toggle-contaioner-->
         <script src="extension.js"></script>
     </body>
 </html>

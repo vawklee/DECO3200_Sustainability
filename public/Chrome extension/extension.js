@@ -47,4 +47,23 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
     document.querySelector(".toggle-container").classList.toggle("panel-open");
    });
   
-
+   const scrollingWrapper = document.querySelector('.scrolling-wrapper');
+   const dots = document.querySelectorAll('.dot');
+   
+   // Add event listener to the scroll event
+   scrollingWrapper.addEventListener('scroll', () => {
+     // Calculate the index of the card in the viewport
+     const cardWidth = scrollingWrapper.querySelector('.card').offsetWidth + 20; // Add margin/padding
+     const scrollPosition = scrollingWrapper.scrollLeft;
+     const cardIndex = Math.round(scrollPosition / cardWidth);
+   
+     // Update the active dot
+     dots.forEach((dot, index) => {
+       dot.classList.toggle('active', index === cardIndex);
+     });
+   });
+   document.querySelector('#sustainabilityBanner').addEventListener('click', function() {
+    const panel = document.querySelector('.panel-container');
+    panel.classList.toggle('expanded');
+  });
+  
