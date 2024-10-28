@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("giveAwayMaterialSize", giveAwayMaterialSize);
 
             giveAwayMaterialForm.style.display = "none";
-            document.getElementById("newPopUp").style.display = "block"
+            // document.getElementById("newPopUp").style.display = "block"
             // https://stackoverflow.com/questions/74212470/how-do-i-make-an-element-disappear-after-a-set-amount-of-time
             disappear(newPopUp)
             // setTimeout(() => {
@@ -365,48 +365,52 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateGiveAwayDetails("Give Away Material", giveAwayMaterialColour, giveAwayMaterialSize, giveAwayMaterialDescription);
 
                     // window.location.href = "test.html";
+                    window.location.href = "profileMaterials.html";
+                    console.log("redirecting to profile page");
                     // from veronica's script file
-                    // var profileContainer = document.getElementById("profileContainer");
-                    // var materialContainer = document.getElementById("materialContainer");
-                    // var resourcesContainer = document.getElementById("resourcesContainer");
-                    // var profileSelector = document.getElementById("profileSelector");
-                    // var materialSelector = document.getElementById("materialSelector");
-                    // var resourceSelector = document.getElementById("resourceSelector");
-                    // profileSelector.className = "caption";
-                    // materialSelector.className = "caption  pActive";
-                    // resourceSelector.className = "caption";
-                    // profileContainer.style.display = "none";
-                    // materialContainer.style.display = "block";
-                    // resourcesContainer.style.display = "none";
+                    var profileContainer = document.getElementById("profileContainer");
+                    var materialContainer = document.getElementById("materialContainer");
+                    var resourcesContainer = document.getElementById("resourcesContainer");
+                    var profileSelector = document.getElementById("profileSelector");
+                    var materialSelector = document.getElementById("materialSelector");
+                    var resourceSelector = document.getElementById("resourceSelector");
+                    profileSelector.className = "caption";
+                    materialSelector.className = "caption  pActive";
+                    resourceSelector.className = "caption";
+                    profileContainer.style.display = "none";
+                    materialContainer.style.display = "block";
+                    resourcesContainer.style.display = "none";
                 }; 
                 reader.readAsDataURL(giveAwayMaterialImage);
             } else {
 
                 updateGiveAwayDetails("Give Away Material", giveAwayMaterialColour, giveAwayMaterialSize, giveAwayMaterialDescription);
-                // const newType = document.getElementById("newType");
-                // const newColour = document.getElementById("newColour");
-                // const newSize = document.getElementById("newSize");
-                // const newDescription = document.getElementById("newDescription");
+                const newType = document.getElementById("newType");
+                const newColour = document.getElementById("newColour");
+                const newSize = document.getElementById("newSize");
+                const newDescription = document.getElementById("newDescription");
                 
-                // if (newType) newType.innerHTML = "Give Away Material";
-                // if (newColour) newColour.innerHTML = giveAwayMaterialColour;
-                // if (newSize) newSize.innerHTML = giveAwayMaterialSize;
-                // if (newDescription) newDescription.innerHTML = giveAwayMaterialDescription;
+                if (newType) newType.innerHTML = "Give Away Material";
+                if (newColour) newColour.innerHTML = giveAwayMaterialColour;
+                if (newSize) newSize.innerHTML = giveAwayMaterialSize;
+                if (newDescription) newDescription.innerHTML = giveAwayMaterialDescription;
                 // If no image is uploaded, just redirect to the new page
                 // window.location.href = "test.html";
+                window.location.href = "profileMaterials.html";
+                console.log("redirecting to profile page");
                 // from veronica's script file
-                // var profileContainer = document.getElementById("profileContainer");
-                // var materialContainer = document.getElementById("materialContainer");
-                // var resourcesContainer = document.getElementById("resourcesContainer");
-                // var profileSelector = document.getElementById("profileSelector");
-                // var materialSelector = document.getElementById("materialSelector");
-                // var resourceSelector = document.getElementById("resourceSelector");
-                // profileSelector.className = "caption";
-                // materialSelector.className = "caption  pActive";
-                // resourceSelector.className = "caption";
-                // profileContainer.style.display = "none";
-                // materialContainer.style.display = "block";
-                // resourcesContainer.style.display = "none";
+                var profileContainer = document.getElementById("profileContainer");
+                var materialContainer = document.getElementById("materialContainer");
+                var resourcesContainer = document.getElementById("resourcesContainer");
+                var profileSelector = document.getElementById("profileSelector");
+                var materialSelector = document.getElementById("materialSelector");
+                var resourceSelector = document.getElementById("resourceSelector");
+                profileSelector.className = "caption";
+                materialSelector.className = "caption pActive";
+                resourceSelector.className = "caption";
+                profileContainer.style.display = "none";
+                materialContainer.style.display = "block";
+                resourcesContainer.style.display = "none";
 
             }
             
@@ -419,36 +423,36 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // display the stored data in a card format
-// document.addEventListener("DOMContentLoaded", () => {
-//     const giveAwayMaterialName = localStorage.getItem("giveAwayMaterialName");
-//     const giveAwayMaterialDescription = localStorage.getItem("giveAwayMaterialDescription");
-//     const giveAwayMaterialColour = localStorage.getItem("giveAwayMaterialColour");
-//     const giveAwayMaterialSize = localStorage.getItem("giveAwayMaterialSize");
-//     const giveAwayMaterialImage = localStorage.getItem("giveAwayMaterialImage");
+document.addEventListener("DOMContentLoaded", () => {
+    const giveAwayMaterialName = localStorage.getItem("giveAwayMaterialName");
+    const giveAwayMaterialDescription = localStorage.getItem("giveAwayMaterialDescription");
+    const giveAwayMaterialColour = localStorage.getItem("giveAwayMaterialColour");
+    const giveAwayMaterialSize = localStorage.getItem("giveAwayMaterialSize");
+    const giveAwayMaterialImage = localStorage.getItem("giveAwayMaterialImage");
   
-//     // Create a card to display the material information
-//     const materialCard = document.getElementById("newPopUp");
-//     if (materialCard) {
-//         // const newCard = document.createElement("div");
-//         // newCard.className = "material-card";
+    // Create a card to display the material information
+    const materialCard = document.getElementById("newPopUp");
+    if (materialCard) {
+        const newCard = document.createElement("div");
+        newCard.className = "material-card";
 
 
 
-//         materialCard.classList.add("materialCardNew")
+        materialCard.classList.add("materialCardNew")
     
-//         // materialCard.innerHTML = `
-//         //     <h2>${giveAwayMaterialName}</h2>
-//         //     <p>Description: ${giveAwayMaterialDescription}</p>
-//         //     <p>Colour: ${giveAwayMaterialColour}</p>
-//         //     <p>Size: ${giveAwayMaterialSize}</p>
-//         //     ${giveAwayMaterialImage ? `<img src="${giveAwayMaterialImage}" 
-//         //         alt="${giveAwayMaterialName}" style="max-width: 200px;">` : ""}`;
+        materialCard.innerHTML = `
+            <h2>${giveAwayMaterialName}</h2>
+            <p>Description: ${giveAwayMaterialDescription}</p>
+            <p>Colour: ${giveAwayMaterialColour}</p>
+            <p>Size: ${giveAwayMaterialSize}</p>
+            ${giveAwayMaterialImage ? `<img src="${giveAwayMaterialImage}" 
+                alt="${giveAwayMaterialName}" style="max-width: 200px;">` : ""}`;
 
-//             // materialCard.appendChild(newCard);
-//     } else {
-//         console.error("The element with ID 'material card was not found")
-//     }
-// });
+            materialCard.appendChild(newCard);
+    } else {
+        console.error("The element with ID 'material card was not found")
+    }
+});
 
 
 
@@ -597,3 +601,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // }
     } 
 });
+
+// ????????????
+console.log(localStorage);

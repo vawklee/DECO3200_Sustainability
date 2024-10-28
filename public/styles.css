@@ -799,17 +799,17 @@ img.menderMarkerHueChange {
     flex-direction: row;
     justify-content: space-between;
 }
-.materialCardContainer {
+.materialCardContainer, #materialDisplay {
     display: flex;
     flex-direction: row;
 }
-.materialCardContainer>div {
+.materialCardContainer>div, #materialDisplay>div {
     margin-right: 20px;
     background-color: var(--background);
     filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
 }
 .recentContainer {
-    margin-bottom: 25px;
+    margin: 25px auto;
 }
 .recentContainer>p {
     margin-top: 0px;
@@ -875,6 +875,7 @@ img.menderMarkerHueChange {
     height: 100px;
 }
 .matPic {
+    background-color: var(--accentSecondary);
     border-radius: 15px 15px 0 0;
     align-self: center;
     justify-self: flex-end;
@@ -966,10 +967,18 @@ img.menderMarkerHueChange {
 /* #profileContainer {
     display: none;
 } */
-#materialContainer {
+/* THE FOLLOWING DISPLAY:NONE HAVE BEEN DISABLED DUE TO SEPARATE .HTML IMPLEMENTATION */
+/* #materialContainer {
     display: none;
 }
 #resourcesContainer {
+    display: none;
+} */
+
+/* This button is only for the sake of debugging localStorage in JavaScript */
+/* must use display:none when done with the button, this should not be visible to the average user */
+.forbiddenButton {
+    color: red;
     display: none;
 }
 
@@ -986,7 +995,8 @@ img.menderMarkerHueChange {
 }
 
 /*  ---- Responsive styling ---- */
-@media screen and (max-width: 840px){
+/* ---- WIP ---- */
+/* @media screen and (max-width: 840px){
     body {
         background-color: red;
     }
@@ -1016,9 +1026,6 @@ img.menderMarkerHueChange {
         padding: 5px 20px;
         margin: 0 10px;
     }
-    /* .navBarContainer a:not(:first-child) {
-        display: none;
-    } */
     .navBarItems a:not(:last-child){
         display: none;
     }
@@ -1039,7 +1046,7 @@ img.menderMarkerHueChange {
         display: block;
         text-align: left;
     }
-}
+} */
 
 /* FORM CSS */
 .repair-assistant-background {

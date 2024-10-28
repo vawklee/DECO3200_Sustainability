@@ -3,9 +3,11 @@ var profileSelector = document.getElementById("profileSelector");
 var materialSelector = document.getElementById("materialSelector");
 var resourceSelector = document.getElementById("resourceSelector");
 
-profileSelector.addEventListener("click", (e) => {this.onProfileSelectorClick(e)});
-materialSelector.addEventListener("click", (e) => {this.onProfileSelectorClick(e)});
-resourceSelector.addEventListener("click", (e) => {this.onProfileSelectorClick(e)});
+// DISABLED DUE TO ADDING EACH PROFILE TAB AS A SEPARATE .HTML FILE 
+// DONE FOR THE SAKE OF MVP PROTOTYPE ASSIGNMENT SUBMISSION
+// profileSelector.addEventListener("click", (e) => {this.onProfileSelectorClick(e)});
+// materialSelector.addEventListener("click", (e) => {this.onProfileSelectorClick(e)});
+// resourceSelector.addEventListener("click", (e) => {this.onProfileSelectorClick(e)});
 
 // Changes the profile page content based on the side bar tab clicked
 function onProfileSelectorClick(e) {
@@ -52,13 +54,13 @@ function onProfileSelectorClick(e) {
     }
 }
 
-// disfunctional responsive code ---- WIP
-function minimiseNavBar() {
-    var x = document.getElementById("navBarContainer");
-    if (x.className === "navBarContainer") {
-        x.className += " responsive";
-    } else {
-        x.className = "navBarContainer";
-    }
-    console.log("minimise clicked");
-}
+// disfunctional responsive code ---- WIP ----
+// function minimiseNavBar() {
+//     var x = document.getElementById("navBarContainer");
+//     if (x.className === "navBarContainer") {
+//         x.className += " responsive";
+//     } else {
+//         x.className = "navBarContainer";
+//     }
+//     console.log("minimise clicked");
+// }
