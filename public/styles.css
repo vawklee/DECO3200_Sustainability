@@ -423,21 +423,40 @@ button.download:hover {
 
 /* styling for the extension image and download button */
 .extFeature {
-    margin-left: 8px;
+    /* position: relative;
+    left: -2%; */
+    margin-left: 5px;
+    margin-right: 0;
+    height: 500px;
+    /* border: red solid 2px; */
 }
 .extFeature>img {
     height: 375px;
     width: auto;
     position: relative;
     left: -50%;
+    top: -18%;
 }
 .extFeature>button {
     filter: drop-shadow(0px 3px 2px var(--disabledBackgroundHover));
 }
+
+.extSmiley {
+    z-index: 2;
+    position: relative;
+    /* bottom: -15%; */
+    right: -22%;
+    width: fit-content;
+}
+.extSmiley>img {
+    height: 150px; 
+    width: auto;
+}
+
 .extensionDownloadButton {
     position: relative;
-    top: -8%;
-    /* left: -2%; */
+    top: -25%;
+    left: -5%;
 }
 .chromeIcon {
     margin-left: 25px;
