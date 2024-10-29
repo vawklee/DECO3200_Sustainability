@@ -98,5 +98,5 @@ document.getElementById('buyNowButton').addEventListener('click', function(){
   });
   function redirectToSecondhand() {
     // console.log("Redirecting to secondhand.html");
-    window.location.href = '../secondhand.html'; // Redirects to the specified page
+    window.location.href = './secondhand.html'; // Redirects to the specified page
 }
