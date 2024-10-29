@@ -1,3 +1,7 @@
+import backgroundImage1 from './images/background_image-1.png'
+import backgroundImage2 from './images/background_image-2.png'
+import sustainabilityIconNeutral from './images/icon_neutral.png'
+
 // const targetPages = [
 //     "https://www.zara.com/au/en/trousers-with-side-taping-p05030505.html?v1=380022605",
 //     "https://www.zara.com/au/en/zw-collection-leather-trousers-with-seam-detail-p05479042.html?v1=379874391",
@@ -11,13 +15,28 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
     document.querySelector(".toggle-container").classList.toggle("panel-open");
   });
   // Function to change the background image dynamically
-function setBackgroundImage(imageUrl) {
-  document.body.style.backgroundImage = `url('${imageUrl}')`;
-  document.body.style.backgroundSize = 'cover'; // Ensures the image covers the whole page
-  document.body.style.backgroundRepeat = 'no-repeat'; // Prevents the image from repeating
-  //document.body.style.backgroundPosition = 'center'; // Centers the image
+// function setBackgroundImage(imageUrl) {
+//   document.body.style.backgroundImage = `url('${imageUrl}')`;
+//   document.body.style.backgroundSize = 'cover'; 
+//   // Ensures the image covers the whole page
+//   document.body.style.backgroundRepeat = 'no-repeat'; 
+//   // Prevents the image from repeating
+//   document.body.style.backgroundPosition = 'center'; 
+//   // Centers the image
+// }
+
+// on immediate loading of extension.html
+function setBackgroundImageImportOne() {
+  document.body.style.backgroundImage = `url(${backgroundImage1})`;
 }
-setBackgroundImage('images/background_image-1.png'); // image path to starting product
+
+function setBackgroundImageImportTwo() {
+  document.body.style.backgroundImage = `url(${backgroundImage2})`;
+}
+
+// setBackgroundImage('images/background_image-1.png'); 
+window.onload = setBackgroundImageImportOne();
+// image path to starting product
 // Function to close the modal
 // Function to close the modal by removing the 'panel-open' class
 function closeModal() {
@@ -27,14 +46,23 @@ function closeModal() {
   }
 }
 function changeSustainabilityIcon() {
-  const sustainabilityIcon = document.getElementById('sustainabilityButton');
-  if (sustainabilityIcon.src.includes('images/sustainability_icon.png')) {
-    sustainabilityIcon.src = 'images/icon_neutral.png'; // Change to the happy face image path
-  }
+  // const sustainabilityIcon = document.getElementById('sustainabilityButton');
+  // if (sustainabilityIcon.src.includes('images/sustainability_icon.png')) {
+  //   // sustainabilityIcon.src = 'images/icon_neutral.png'; 
+  //   // Change to the happy face image path
+  // }
+  // let sustainabilityIcon = document.getElementById('neutralContainer');
+  // let sustainabilityIconImage = new Image(320);
+  // sustainabilityIconImage.src = sustainabilityIconNeutral;
+  // sustainabilityIcon.appendChild(sustainabilityIconImage);
+  let sustainabilityIcon = document.getElementById('sustainabilityButton');
+  sustainabilityIcon.src = sustainabilityIconNeutral;
 }
 document.getElementById('buyNowButton').addEventListener('click', function(){
   //change the image when button is clicked
-  setBackgroundImage('images/background_image-2.png');
+  // setBackgroundImage('images/background_image-2.png');
+  console.log("buy button clicked");
+  setBackgroundImageImportTwo();
   closeModal(); // Close the modal
   changeSustainabilityIcon(); // Call the function to change the image
 });
@@ -96,7 +124,11 @@ document.getElementById('buyNowButton').addEventListener('click', function(){
     panel.classList.toggle('expanded');
     chevronIcon.classList.toggle('rotate')
   });
-  function redirectToSecondhand() {
-    // console.log("Redirecting to secondhand.html");
-    window.location.href = '../secondhand.html'; // Redirects to the specified page
+  
+function redirectToSecondhand() {
+    console.log("Redirecting to secondhand.html");
+    window.location.href = './secondhand.html'; // Redirects to the specified page
 }
+
+let redirectButton = document.getElementById('sechandRedirect');
+redirectButton.addEventListener('click', redirectToSecondhand);

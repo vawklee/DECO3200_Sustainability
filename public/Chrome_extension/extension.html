@@ -20,6 +20,7 @@
       <div class ="toggle-container">
         <!--logo image -->
       <img src="images/sustainability_icon.png" alt="sustainability extension logo" id="sustainabilityButton">
+      <div id="neutralContainer"></div>
       <!-- toggle button-->
        <!--https://codepen.io/dcode-software/pen/OJxEWWz-->
       <div class="button-modal-container">
@@ -168,7 +169,7 @@
                         </div>
                       </div><!--closes off the product-info-->
                 </div><!--closes off the card body-->
-                <button class="card-footer-btn" onclick="redirectToSecondhand()">
+                <button id="sechandRedirect" class="card-footer-btn">
                     Buy Now
                   </button>
             </div><!--closes off the card-->
@@ -189,6 +190,6 @@
       </div><!--closes off sustainability panel-->
       </div><!--closes off button-modal-container-->
     </div><!--closes off toggle-contaioner-->
-        <script src="extension.js"></script>
+        <script type='module' src="extension.js"></script>
     </body>
 </html>
