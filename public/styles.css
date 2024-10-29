@@ -710,6 +710,7 @@ img.menderMarkerHueChange {
 }
 .editButton:hover {
     background-color: var(--disabledBackgroundHover);
+    cursor: not-allowed;
 }
 .editButton img {
     margin-left: 25px;
