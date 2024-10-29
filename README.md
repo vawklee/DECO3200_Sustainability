@@ -9,32 +9,53 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 ## How to set up and deploy on a local machine <a id="setupAndDeploy"></a>
 1. Install Node.js
 2. Clone the [GitHub repository](https://github.com/vawklee/DECO3200_Sustainability.git)
-3. Using the terminal, run `npm install` to install all dependencies
-4. Using the terminal, run `npm run dev` to start the web server
-5. View on a web browser at http://localhost:1234/ (port number may vary)
-6. Using the terminal, press Control + C to stop the web server at any time
+3. In your preferred code editor, use the terminal and type `npm install` to install all package dependencies
 
-## How to view the styleguide
-1. Using the terminal, run `npm run styleguide` to start the web server
-2. View on a web browser at http://localhost:1234/ (port number may vary)
-3. Using the terminal, press Control + C to stop the web server at any time
+### Viewing the website (Repair & Rewear | index.html)
+1. Using the terminal, type `npm run dev` to start the web server
+2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
+3. Using the terminal, press `Control + C` to stop the web server at any time
+
+### Viewing the browser extension (Sustainable Shopping Assistant | extension.html)
+1. Using the terminal, type `npm run extension` to start the web server
+2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
+3. Using the terminal, press `Control + C` to stop the web server at any time
+
+### Viewing the styleguide
+1. Using the terminal, type `npm run styleguide` to start the web server
+2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
+3. Using the terminal, press `Control + C` to stop the web server at any time
+
+### Troubleshooting
+If at any time there are issues with parts of the website or browser extension not loading or presenting expected results, try the following steps. This is not a definitive list of troubleshooting steps, but can provide first steps towards fixing issues: <br>
+1. Refresh the page
+2. Visit the link http://localhost:1234/ (port number may var, refer to the terminal for any differences)
+3. Using the terminal, press `Control + C` to stop the web server
+4. Delete the file folder named `.parcel-cache` and type `npm run <command>` to start the web server again
 
 ## Testing Specifications <a id="specifications"></a>
-This prototype was developed and tested using Google Chrome as the main browser of choice.
+This prototype was developed and tested using Google Chrome as the main browser of choice. <br>
 The optimal viewing resolution for this prototype at the current stage of development is 2256 x 1504 on desktop.
 
-## References <a id="references"></a>
-https://codepen.io/sosuke/pen/Pjoqqp
-https://medium.com/@chilakaemmanuel/changing-svg-image-color-loaded-through-img-tag-with-css-3-filters-c8e912f52dd3
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items
-https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexbox-3511cd936af9
+## Source Code References <a id="references"></a>
+https://codepen.io/sosuke/pen/Pjoqqp <br>
 
-## To-Do
-- Reference list
-- DIY resources based on local storage
-- User's materials based on local storage
-- secondhand.html (change colour of dot based on which dot class is used / what string is used (text content))
-- secondhand.html (change border colour of each card based on available/request)
-- secondhand.html (change button colour of each card based on available/request)
-- secondhand Map colours are hard to see
-- secondhand map interactivity on click, on hover
+https://medium.com/@chilakaemmanuel/changing-svg-image-color-loaded-through-img-tag-with-css-3-filters-c8e912f52dd3 <br>
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Mastering_wrapping_of_flex_items <br>
+
+https://charlesfreeborn.medium.com/how-to-build-a-responsive-nav-using-css-flexbox-3511cd936af9 <br>
+
+https://webcode.tools/css-generator/drop-shadow <br>
+
+https://uiverse.io/ArturCodeCraft/afraid-fish-22 <br>
+
+https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/ <br>
+
+https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect <br>
+
+https://stackoverflow.com/questions/74212470/how-do-i-make-an-element-disappear-after-a-set-amount-of-time <br>
+
+https://stackoverflow.com/questions/52430565/how-do-i-style-form-results-posted-to-a-page <br>
+
+https://developer.mozilla.org/en-US/docs/Web/API/FileReader <br>
