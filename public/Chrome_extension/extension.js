@@ -13,8 +13,17 @@ import sustainabilityIconNeutral from './images/icon_neutral.png'
 // Handle panel toggle with both the image and button click
 document.querySelector(".side-panel-toggle").addEventListener("click", function() {
     document.querySelector(".toggle-container").classList.toggle("panel-open");
+    console.log("Side panel toggled.");
   });
   // Function to change the background image dynamically
+function setBackgroundImage(imageUrl) {
+  // const imageUrl = chrome.runtime.getURL(imageName);//this is what was added
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
+  document.body.style.backgroundSize = 'cover'; // Ensures the image covers the whole page
+  document.body.style.backgroundRepeat = 'no-repeat'; // Prevents the image from repeating
+  //document.body.style.backgroundPosition = 'center'; // Centers the image
+}
+setBackgroundImage('images/background_image-1.png'); // image path to starting product
 // function setBackgroundImage(imageUrl) {
 //   document.body.style.backgroundImage = `url('${imageUrl}')`;
 //   document.body.style.backgroundSize = 'cover'; 
@@ -124,6 +133,10 @@ document.getElementById('buyNowButton').addEventListener('click', function(){
     panel.classList.toggle('expanded');
     chevronIcon.classList.toggle('rotate')
   });
+  function redirectToSecondhand() {
+    // const url = chrome.runtime.getURL('./secondhand.html');
+    // window.location.href = url;
+    console.log("Redirecting to secondhand.html");
   
 function redirectToSecondhand() {
     console.log("Redirecting to secondhand.html");
