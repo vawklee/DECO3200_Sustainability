@@ -64,3 +64,9 @@ function onProfileSelectorClick(e) {
 //     }
 //     console.log("minimise clicked");
 // }
+
+// ---- LINK TO EXTENSION.HTML ----
+var extLinkButton = document.getElementById("extLinkButton");
+extLinkButton.onclick = function() {
+    window.location.href = "./extension.html";
+}

@@ -38,9 +38,9 @@ sechandMapUserBorder.on("mouseover", onMarkerHover);
 
 // Secondhand Materials Coordinates
 coordsDress = [-33.8826528, 151.2024924];
-popupDress = "<b>White Dress</b><br>Item available<br>Haymarket 2000<br>0.1 km away<br>Tel.: 04 364 981 662";
+popupDress = "<b>White Dress</b><br>Material requested<br>Haymarket 2000<br>0.1 km away<br>Tel.: 04 364 981 662";
 coordsDenim = [-33.8806001, 151.2106128];
-popupDenim = "<b>Denim Material</b><br>Material requested<br>Surry Hills 2010<br>0.5 km away<br>Tel.: 04 698 239 702";
+popupDenim = "<b>Denim Material</b><br>Item available<br>Surry Hills 2010<br>0.5 km away<br>Tel.: 04 698 239 702";
 coordsPants = [-33.8818452, 151.1989386];
 popupPants = "<b>Corduroy Pants</b><br>Item available<br>Ultimo 2007<br>1.2 km away<br>Tel.: 04 221 368 806";
 
