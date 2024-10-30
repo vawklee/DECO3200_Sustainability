@@ -54,7 +54,7 @@ function onProfileSelectorClick(e) {
     }
 }
 
-// ---- LINK TO EXTENSION.HTML ----
+// ---- LINK TO EXTENSION.HTML found on homepage / index.html ----
 var extLinkButton = document.getElementById("extLinkButton");
 extLinkButton.onclick = function() {
     window.location.href = "./extension.html";
