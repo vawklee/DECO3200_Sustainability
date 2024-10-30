@@ -68,6 +68,55 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 // ---- USED FOR FORM SUBMISSION OPTIONS: GIVE AWAY + ITEM ----
+document.addEventListener("DOMContentLoaded", () => {
+    const giveAwayItemForm = document.getElementById("giveAwayItemForm");
+    const giveAwayItemSubmit = document.getElementById("giveAwayItemSubmit");
+    const newPopUp = document.getElementById("newPopUp");
+
+    if (giveAwayItemForm && giveAwayItemSubmit && newPopUp) {
+        giveAwayItemSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            // prevents page from refreshing
+
+            // get the input data
+            const giveAwayItemName = document.getElementById("giveAwayItemName").value;
+            const giveAwayItemDescription = document.getElementById("giveAwayItemDescription").value;
+            const giveAwayItemColour = document.getElementById("giveAwayItemColour").value;
+            const giveAwayItemSize = document.getElementById("giveAwayItemSize").value;
+            const giveAwayItemImage = document.getElementById("giveAwayItemImage").files[0];
+
+            addGiveAway(
+                giveAwayItemName,
+                giveAwayItemDescription,
+                giveAwayItemColour,
+                giveAwayItemSize,
+                giveAwayItemImage
+            )
+
+            giveAwayItemForm.style.display = "none";
+            console.log(`Logging local storage: ${localStorage}`);
+
+            console.log("redirecting to the profile page");
+            window.location.href = "profileMaterials.html";
+
+            window.onload = function() {
+                var profileContainer = document.getElementById("profileContainer");
+                var materialContainer = document.getElementById("materialContainer");
+                var resourcesContainer = document.getElementById("resourcesContainer");
+                var profileSelector = document.getElementById("profileSelector");
+                var materialSelector = document.getElementById("materialSelector");
+                var resourceSelector = document.getElementById("resourceSelector");
+
+                profileSelector.className = "caption";
+                materialSelector.className = "caption pActive";
+                resourceSelector.className = "caption";
+                profileContainer.style.display = "none";
+                materialContainer.style.display = "block";
+                resourcesContainer.style.display = "none";
+            }
+        })
+    }
+})
 
 
 
@@ -136,6 +185,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ---- USED FOR FORM SUBMISSION OPTIONS: REQUEST + ITEM ----
 
+document.addEventListener("DOMContentLoaded", () => {
+    const requestItemForm = document.getElementById("requestItemForm");
+    const requesItemSubmit = document.getElementById("requestItemSubmit");
+    const newPopUp = document.getElementById("newPopUp");
+
+    if (requestItemForm && requestItemSubmit && newPopUp) {
+        requestItemSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log("submit button clicked")
+            // prevents page from refreshing
+
+            // get the input data
+            const requestItemName = document.getElementById("requestItemName").value;
+            const requestItemDescription = document.getElementById("requestItemDescription").value;
+            const requestItemColour = document.getElementById("requestItemColour").value;
+            const requestItemSize = document.getElementById("requestItemSize").value;
+            const requestItemDate = document.getElementById("requestItemDate").value;
+
+            addRequest(
+                requestItemName,
+                requestItemDescription,
+                requestItemColour,
+                requestItemSize,
+                requestItemDate
+            )
+
+            requestMaterialForm.style.display = "none";
+            console.log(`Logging local storage: ${localStorage}`);
+
+            console.log("redirecting to the profile page");
+            window.location.href = "profileMaterials.html";
+
+            window.onload = function() {
+                var profileContainer = document.getElementById("profileContainer");
+                var materialContainer = document.getElementById("materialContainer");
+                var resourcesContainer = document.getElementById("resourcesContainer");
+                var profileSelector = document.getElementById("profileSelector");
+                var materialSelector = document.getElementById("materialSelector");
+                var resourceSelector = document.getElementById("resourceSelector");
+
+                profileSelector.className = "caption";
+                materialSelector.className = "caption pActive";
+                resourceSelector.className = "caption";
+                profileContainer.style.display = "none";
+                materialContainer.style.display = "block";
+                resourcesContainer.style.display = "none";
+            }
+        })
+    }
+})
 
 
 
