@@ -1,310 +1,299 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="description" content="" />
-        <title>Repair & Rewear | Secondhand Hub</title>
-        <link rel="stylesheet" href="styles-em.css">
-        <link rel="icon" href="images/icons/favicon.ico">
-         <!-- Links for Google Fonts Krona One & Anek Telugu -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&family=Krona+One&display=swap" rel="stylesheet">
-        <!-- Link to Leaflet Map API -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    </head>
-    <body>
-        <header id="navBarContainer" class="navBarContainer">
-            <a class="navLogo" href="index.html">
-                <img src="images/icons/logo.svg">
-                <h2 class="heading">Repair & Rewear</h2>
-            </a>
-            <div class="navBarItems">
-                <a href="repair.html" class="caption">Repair Assistant</a>
-                <a href="secondhand.html" class="caption activeNav">Secondhand Hub</a>
-                <a href="profile.html" class="caption">Profile</a>
-                <a href="javascript:void(0);" class="hamburgerMenu" onclick="minimiseNavBar()"><i class="fa fa-bars"></i></a>
-            </div>
-        </header>
-        <main class="secondhandHub">
-            <a style="display:none;" href="test.html"></a>
 
-            <article class="secondhandMapPage">
-                <section class="secondhandHeader">
-                    <div>
-                        <h2 class="subheading" style="font-size: 25pt;">Secondhand Hub</h2>
-                        <button id="openSecondhandForm" type="button" class="greenButton caption">Giveaway or Request an Item or Material <img class="iconSize" src="images/icons/plus.svg"></button>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <title>Repair & Rewear | Secondhand Hub</title>
+    <link rel="stylesheet" href="styles-em.css">
+    <link rel="icon" href="images/icons/favicon.ico">
+    <!-- Links for Google Fonts Krona One & Anek Telugu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&family=Krona+One&display=swap" rel="stylesheet">
+    <!-- Link to Leaflet Map API -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <header id="navBarContainer" class="navBarContainer">
+        <a class="navLogo" href="index.html">
+            <img src="images/icons/logo.svg">
+            <h2 class="heading">Repair & Rewear</h2>
+        </a>
+        <div class="navBarItems">
+            <a href="repair.html" class="caption">Repair Assistant</a>
+            <a href="secondhand.html" class="caption activeNav">Secondhand Hub</a>
+            <a href="profile.html" class="caption">Profile</a>
+            <a href="javascript:void(0);" class="hamburgerMenu" onclick="minimiseNavBar()"><i
+                    class="fa fa-bars"></i></a>
+        </div>
+    </header>
+    <main class="secondhandHub">
+        <a style="display:none;" href="test.html"></a>
+
+        <article class="secondhandMapPage">
+            <section class="secondhandHeader">
+                <div>
+                    <h2 class="subheading" style="font-size: 25pt;">Secondhand Hub</h2>
+                    <button id="openSecondhandForm" type="button" class="greenButton caption">Giveaway or Request an
+                        Item or Material <img class="iconSize" src="images/icons/plus.svg"></button>
+                </div>
+                <!-- the search bar feature below currently does not work for the sake of assignment MVP -->
+                <!-- <input class="caption" type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials"><br> -->
+            </section>
+            <div class="mapContainer">
+                <section id="secondhandMap"></section>
+                <section class="sechandCardContainer">
+                    <div class="sechandCard classCardDress" id="cardDress">
+                        <div class="sThumbnail">
+                            <img class="sMatImg" src="images/imgs/material_whiteDress.png">
+                        </div>
+                        <div class="sInfo classCardDress">
+                            <p class="body sName classCardDress">White Dress</p>
+                            <p class="caption sType classCardDress"><span class="dotRequest"></span>Material requested
+                            </p>
+                            <p class="caption sAddress classCardDress"><img src="images/icons/location.svg">Haymarket
+                                2000</p>
+                            <p class="caption sSize classCardDress"><img src="images/icons/ruler.svg">Size 12</p>
+                            <p class="caption sComment classCardDress"><img
+                                    src="images/icons/speechBubble.svg">Excellent condition</p>
+                        </div>
+                        <a class="sButton"><button class="caption">Contact seller</button></a>
                     </div>
-                    <!-- the search bar feature below currently does not work for the sake of assignment MVP -->
-                    <input class="caption" type="search" name="mapSearch" id="mapSearch" placeholder="Search for clothing items or materials"><br>
+                    <div class="sechandCard classCardDenim" id="cardDenim">
+                        <div class="sThumbnail">
+                            <img class="sMatImg" src="images/imgs/material_denim.png">
+                        </div>
+                        <div class="sInfo classCardDenim">
+                            <p class="body sName classCardDenim">Denim Material</p>
+                            <p class="caption sType classCardDenim"><span class="dotAvailable"></span>Item available</p>
+                            <p class="caption sAddress classCardDenim"><img src="images/icons/location.svg">Surry Hills
+                                2010</p>
+                            <p class="caption sSize classCardDenim"><img src="images/icons/ruler.svg">12 metres</p>
+                            <p class="caption sComment classCardDenim"><img src="images/icons/speechBubble.svg">Blue,
+                                ripped</p>
+                        </div>
+                        <a class="sButton"><button class="caption">Contact seller</button></a>
+                    </div>
+                    <div class="sechandCard classCardPants" id="cardPants">
+                        <div class="sThumbnail">
+                            <img class="sMatImg" src="images/imgs/material_pants.png">
+                        </div>
+                        <div class="sInfo classCardPants">
+                            <p class="body sName classCardPants">Corduroy Pants</p>
+                            <p class="caption sType classCardPants"><span class="dotAvailable"></span>Item available</p>
+                            <p class="caption sAddress classCardPants"><img src="images/icons/location.svg">Ultimo 2007
+                            </p>
+                            <p class="caption sSize classCardPants"><img src="images/icons/ruler.svg">Size 10</p>
+                            <p class="caption sComment classCardPants"><img src="images/icons/speechBubble.svg">Good
+                                condition</p>
+                        </div>
+                        <a class="sButton"><button class="caption">Contact seller</button></a>
+                    </div>
                 </section>
-                <div class="mapContainer">
-                    <section id="secondhandMap"></section>
-                    <section class="sechandCardContainer">
-                        <div class="sechandCard classCardDress" id="cardDress">
-                            <div class="sThumbnail">
-                                <img class="sMatImg" src="images/imgs/material_whiteDress.png">
-                            </div>
-                            <div class="sInfo classCardDress">
-                                <p class="body sName classCardDress">White Dress</p>
-                                <p class="caption sType classCardDress"><span class="dotRequest"></span>Material requested</p>
-                                <p class="caption sAddress classCardDress"><img src="images/icons/location.svg">Haymarket 2000</p>
-                                <p class="caption sSize classCardDress"><img src="images/icons/ruler.svg">Size 12</p>
-                                <p class="caption sComment classCardDress"><img src="images/icons/speechBubble.svg">Excellent condition</p>
-                            </div>
-                            <a class="sButton"><button class="caption">Contact seller</button></a>
-                        </div>
-                        <div class="sechandCard classCardDenim" id="cardDenim">
-                            <div class="sThumbnail">
-                                <img class="sMatImg" src="images/imgs/material_denim.png">
-                            </div>
-                            <div class="sInfo classCardDenim">
-                                <p class="body sName classCardDenim">Denim Material</p>
-                                <p class="caption sType classCardDenim"><span class="dotAvailable"></span>Item available</p>
-                                <p class="caption sAddress classCardDenim"><img src="images/icons/location.svg">Surry Hills 2010</p>
-                                <p class="caption sSize classCardDenim"><img src="images/icons/ruler.svg">12 metres</p>
-                                <p class="caption sComment classCardDenim"><img src="images/icons/speechBubble.svg">Blue, ripped</p>
-                            </div>
-                            <a class="sButton"><button class="caption">Contact seller</button></a>
-                        </div>
-                        <div class="sechandCard classCardPants" id="cardPants">
-                            <div class="sThumbnail">
-                                <img class="sMatImg" src="images/imgs/material_pants.png">
-                            </div>
-                            <div class="sInfo classCardPants">
-                                <p class="body sName classCardPants">Corduroy Pants</p>
-                                <p class="caption sType classCardPants"><span class="dotAvailable"></span>Item available</p>
-                                <p class="caption sAddress classCardPants"><img src="images/icons/location.svg">Ultimo 2007</p>
-                                <p class="caption sSize classCardPants"><img src="images/icons/ruler.svg">Size 10</p>
-                                <p class="caption sComment classCardPants"><img src="images/icons/speechBubble.svg">Good condition</p>
-                            </div>
-                            <a class="sButton"><button class="caption">Contact seller</button></a>
-                        </div>
-                    </section>
-                </div>
-            </article>
-
-            <dialog id="selectPage">
-                <h1 class="formHeading">Secondhand Hub:</h1>
-                <p class="body">Select from the below to be directed to the correct form.</p>
-                <p class="caption">Give Away or Request: *</p>
-                <div class="question form-row">
-                    <button class="option giveAwayStyling" data-question="1" data-value="giveAway"> 
-                        <span class="greenCircle"></span> Give Away
-                    </button>
-                    <p class="caption">or</p> 
-                    <button class="option requestStyling" data-question="1" data-value="request">
-                        <span class="redCircle"></span> Request
-                    </button>
-                </div>
-                <p class="caption">Type: *</p>
-                <div class="question form-row">
-                    <button class="option secondhandTypeStyling" data-question="2" data-value="item">Clothing Item</button>
-                    <p class="caption">or</p> 
-                    <button class="option secondhandTypeStyling" data-question="2" data-value="material">Material</button>
-                </div>
-                <button type="button" id="selectCancel">Cancel</button>
-                <button type="button" id="typeSubmit" class="greenButton">Next</button>
-
-            </dialog>
-
-            <div id="newPopUp" class="materialCardNew" style="display:none;">
-                <!-- currently only works for one upload -->
-                <div class="materialCardContainer">
-                    <!-- <div id="materialContainer"> -->
-                        <div class="materialCardNew">
-                            <!-- <p><span class="dotAvailable"></span></p> -->
-                             <div class="sideBySide">
-                                <p id="newType" class="bold"></p>
-                                <!-- <img id="newTagImage" src="images/imgs/new-tag.png" class="rTitle"> -->
-                             </div>
-                            
-                             <div class="sideBySide">
-                                <!-- <p class="bold"><img src="images/icons/location.svg">Colour:</p> -->
-                                <p class="caption">Colour:</p>
-                                <p id="newColour" class="caption"></p>
-                             </div>
-                             <div class="sideBySide">
-                                <!-- <p class="bold">Size:<img src="images/icons/ruler.svg"></p> -->
-                                <p class="caption">Size:</p>
-                                <p id="newSize" class="caption"></p>
-                             </div>
-                             <div class="sideBySide">
-                                <!-- <p class="bold"><img src="images/icons/speechBubble.svg">Description:</p> -->
-                                <p class="caption">Description:</p>
-                                <p id="newDescription" class="caption"></p>
-                             </div>
-                             <div id="optionalDateDisplay" class="sideBySide" style="display:none;">
-                                <!-- <p class="bold"><img src="images/icons/speechBubble.svg">Description:</p> -->
-                                <p class="caption">Date Needed By:</p>
-                                <p id="newDate" class="caption"></p>
-                             </div>
-                             
-                        <!-- </div> -->
-                    </div>
-                </div>
             </div>
+        </article>
 
-            <!-- GIVE AWAY ITEM FORM -->
-            <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayItemForm">
-                <form class="secondPageFormStyling">
-                    <h1 class="heading">Give Away Item:</h1>
-                    <p class="caption">Add information for the clothing item you would like to give away below.</p>
-                    <label for="giveAwayItemName">Item Name: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="giveAwayItemName" name="giveAwayItemName" placeholder="eg. White dress" required><br>
-                    <label for="giveAwayItemDescription">Description: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="giveAwayItemDescription" name="giveAwayItemDescription"placeholder="eg. Style, length, etc" 
-                        required><br>
-                    <label for="giveAwayItemColour">Colour: <span class="redAsterisk">*</span></label>
-                    <select id="giveAwayItemColour" name="giveAwayItemColour" required>
-                        <option selected disabled>Select item colour</option>                            
-                        <option value="Black">Black</option>
-                        <option value="Blue">Blue</option>
-                        <option value="Brown">Brown</option>
-                        <option value="Green">Green</option>
-                        <option value="Orange">Orange</option>
-                        <option value="Pink">Pink</option>
-                        <option value="Purple">Purple</option>
-                        <option value="Red">Red</option>
-                        <option value="White">White</option>
-                        <option value="Yellow">Yellow</option>
-                        <option value="Other">Other</option>
-                    </select><br>
-                    <label for="giveAwayItemSize">Size: <span class="redAsterisk">*</span></label>
-                    <select id="giveAwayItemSize" name="giveAwayItemSize" required>
-                        <option selected disabled>Select item size</option>
-                        <option value="XXS">Extra Extra Small (XXS) / 0-2</option>                            
-                        <option value="XS">Extra Small (XS) / 4-6</option>
-                        <option value="S">Small (S) / 8-10</option>
-                        <option value="M">Medium (M) / 12-14</option>
-                        <option value="L">Large (L) / 16-18</option>
-                        <option value="XL">Extra Large (XL) / 20-22</option>
-                        <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
-                    </select><br>
-                    <label for="giveAwayItemImage">Item Image:</label>
-                    <input type="file" id="giveAwayItemImage" name="giveAwayItemImage">
-                    <br>
-                    <button type="button" id="giveAwayItemCancel">Cancel</button>   
-                    <button type="submit" id="giveAwayItemSubmit" class="greenButton">Submit</button>
-                </form>
-            </dialog>
+        <dialog id="selectPage">
+            <h1 class="formHeading">Secondhand Hub:</h1>
+            <p class="body">Select from the below to be directed to the correct form.</p>
+            <p class="caption">Give Away or Request: <span class="redAsterisk">*</span></p>
+            <div class="question form-row">
+                <button class="option giveAwayStyling" data-question="1" data-value="giveAway">
+                    <span class="greenCircle"></span> Give Away
+                </button>
+                <p class="caption">or</p>
+                <button class="option requestStyling" data-question="1" data-value="request">
+                    <span class="redCircle"></span> Request
+                </button>
+            </div>
+            <p class="caption">Type: <span class="redAsterisk">*</span></p>
+            <div class="question form-row">
+                <button class="option secondhandTypeStyling" data-question="2" data-value="item">Clothing Item</button>
+                <p class="caption">or</p>
+                <button class="option secondhandTypeStyling" data-question="2" data-value="material">Material</button>
+            </div>
+            <div>
+                <button type="button" id="selectCancel" class="cancelButton">Cancel</button>
+                <button type="button" id="typeSubmit" class="greenButton greenSubmit">Next</button>
+            </div>
+        </dialog>
+
+        <!-- GIVE AWAY ITEM FORM -->
+        <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayItemForm">
+            <form class="secondPageFormStyling">
+                <h1 class="heading">Give Away Item:</h1>
+                <p class="caption">Add information for the clothing item you would like to give away below.</p>
+                <label for="giveAwayItemName">Item Name: <span class="redAsterisk">*</span></label>
+                <input type="text" id="giveAwayItemName" name="giveAwayItemName" placeholder="eg. White dress"
+                    required><br>
+                <label for="giveAwayItemDescription">Description: <span class="redAsterisk">*</span></label>
+                <input type="text" id="giveAwayItemDescription" name="giveAwayItemDescription"
+                    placeholder="eg. Style, length, etc" required><br>
+                <label for="giveAwayItemColour">Colour: <span class="redAsterisk">*</span></label>
+                <select id="giveAwayItemColour" name="giveAwayItemColour" required>
+                    <option selected disabled>Select item colour</option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Green">Green</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Other">Other</option>
+                </select><br>
+                <label for="giveAwayItemSize">Size: <span class="redAsterisk">*</span></label>
+                <select id="giveAwayItemSize" name="giveAwayItemSize" required>
+                    <option selected disabled>Select item size</option>
+                    <option value="XXS">Extra Extra Small (XXS) / 0-2</option>
+                    <option value="XS">Extra Small (XS) / 4-6</option>
+                    <option value="S">Small (S) / 8-10</option>
+                    <option value="M">Medium (M) / 12-14</option>
+                    <option value="L">Large (L) / 16-18</option>
+                    <option value="XL">Extra Large (XL) / 20-22</option>
+                    <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
+                </select><br>
+                <label for="giveAwayItemImage">Item Image:</label>
+                <input type="file" id="giveAwayItemImage" name="giveAwayItemImage">
+                <br>
+                <button type="button" id="giveAwayItemCancel" class="cancelButton">Cancel</button>
+                <button type="submit" id="giveAwayItemSubmit" class="greenButton greenSubmit">Submit</button>
+            </form>
+        </dialog>
 
 
-            <!-- REQUEST ITEM FORM -->
-            <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestItemForm">
-                <form>
-                    <h1 class="heading">Request Item:</h1>
-                    <p class="caption">Add information for the clothing item you would like to request below.</p>
-                    <label for="requestItemName">Item Name: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestItemName" name="requestItemName"placeholder="eg. White dress" required><br>
-                    <label for="requestItemDescription">Description: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestItemDescription" name="requestItemDescription" placeholder="eg. Style, length, etc" required><br>
-                    <label for="requestItemColour">Colour: <span class="redAsterisk">*</span></label>
-                    <select id="requestItemColour" name="requestItemColour" required>
-                        <option selected disabled>Select item colour</option>                            
-                        <option value="Any Colour">Any Colour</option>
-                        <option value="Black">Black</option>
-                        <option value="Blue">Blue</option>
-                        <option value="Brown">Brown</option>
-                        <option value="Green">Green</option>
-                        <option value="Orange">Orange</option>
-                        <option value="Pink">Pink</option>
-                        <option value="Purple">Purple</option>
-                        <option value="Red">Red</option>
-                        <option value="White">White</option>
-                        <option value="Yellow">Yellow</option>
-                        <option value="Other">Other</option>
-                    </select><br>
-                    <label for="requestItemSize">Size: <span class="redAsterisk">*</span></label>
-                    <select id="requestItemSize" name="requestItemSize" required>
-                        <option selected disabled>Select item size</option> 
-                        <option value="XXS">Extra Extra Small (XXS) / 0-2</option>                            
-                        <option value="XS">Extra Small (XS) / 4-6</option>
-                        <option value="S">Small (S) / 8-10</option>
-                        <option value="M">Medium (M) / 12-14</option>
-                        <option value="L">Large (L) / 16-18</option>
-                        <option value="XL">Extra Large (XL) / 20-22</option>
-                        <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
-                    </select><br>
-                    <label for="requestItemDate">Needed Before:</label>
-                    <input type="date" id="requestItemDate" name="requestItemDate" placeholder="Select date needed before"><br>
-                    <button type="button" id="requestItemCancel">Cancel</button>   
-                    <button type="submit" id="requestItemSubmit" class="greenButton">Submit</button>      
-                </form>
-            </dialog>
+        <!-- REQUEST ITEM FORM -->
+        <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestItemForm">
+            <form>
+                <h1 class="heading">Request Item:</h1>
+                <p class="caption">Add information for the clothing item you would like to request below.</p>
+                <label for="requestItemName">Item Name: <span class="redAsterisk">*</span></label>
+                <input type="text" id="requestItemName" name="requestItemName" placeholder="eg. White dress"
+                    required><br>
+                <label for="requestItemDescription">Description: <span class="redAsterisk">*</span></label>
+                <input type="text" id="requestItemDescription" name="requestItemDescription"
+                    placeholder="eg. Style, length, etc" required><br>
+                <label for="requestItemColour">Colour: <span class="redAsterisk">*</span></label>
+                <select id="requestItemColour" name="requestItemColour" required>
+                    <option selected disabled>Select item colour</option>
+                    <option value="Any Colour">Any Colour</option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Green">Green</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Other">Other</option>
+                </select><br>
+                <label for="requestItemSize">Size: <span class="redAsterisk">*</span></label>
+                <select id="requestItemSize" name="requestItemSize" required>
+                    <option selected disabled>Select item size</option>
+                    <option value="XXS">Extra Extra Small (XXS) / 0-2</option>
+                    <option value="XS">Extra Small (XS) / 4-6</option>
+                    <option value="S">Small (S) / 8-10</option>
+                    <option value="M">Medium (M) / 12-14</option>
+                    <option value="L">Large (L) / 16-18</option>
+                    <option value="XL">Extra Large (XL) / 20-22</option>
+                    <option value="2XL">Extra Extra Large (2XL) / 24-26</option>
+                </select><br>
+                <label for="requestItemDate">Needed Before:</label>
+                <input type="date" id="requestItemDate" name="requestItemDate"
+                    placeholder="Select date needed before"><br>
+                <button type="button" id="requestItemCancel" class="" cancelButton">Cancel</button>
+                <button type="submit" id="requestItemSubmit" class="greenButton greenSubmit">Submit</button>
+            </form>
+        </dialog>
 
-            <!-- GIVEAWAY MATERIAL FORM -->
-            <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayMaterialForm">
-                <form>
-                    <h1 class="heading">Give Away Material:</h1>
-                    <p class="caption">Add information for the material you would like to give away below.</p>
-                    <label for="giveAwayMaterialName">Material Name: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="giveAwayMaterialName" name="giveAwayMaterialName" placeholder="eg. Denim scraps" required><br>
-                    <label for="giveAwayMaterialDescription">Description: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="giveAwayMaterialDescription" name="giveAwayMaterialDescription" placeholder="eg. Good condition, leftover from project"  required><br>
-                    <label for="giveAwayMaterialColour">Colour: <span class="redAsterisk">*</span></label>
-                    <select id="giveAwayMaterialColour" name="giveAwayMaterialColour" required>
-                        <option selected disabled>Select item colour</option>                            
-                        <option value="Black">Black</option>
-                        <option value="Blue">Blue</option>
-                        <option value="Brown">Brown</option>
-                        <option value="Green">Green</option>
-                        <option value="Orange">Orange</option>
-                        <option value="Pink">Pink</option>
-                        <option value="Purple">Purple</option>
-                        <option value="Red">Red</option>
-                        <option value="White">White</option>
-                        <option value="Yellow">Yellow</option>
-                        <option value="Other">Other</option>
-                    </select><br>
-                    <label for="giveAwayMaterialSize">Size: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="giveAwayMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 30cm x 10cm" required><br>
-                    <label for="giveAwayMaterialImage">Material Image:</label>
-                    <input type="file" id="giveAwayMaterialImage" name="giveAwayMaterialImage">
-                    <button type="button" id="giveAwayMaterialCancel">Cancel</button>   
-                    <button type="submit" id="giveAwayMaterialSubmit" class="greenButton">Submit</button>
-                </form>
-            </dialog>
+        <!-- GIVEAWAY MATERIAL FORM -->
+        <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayMaterialForm">
+            <form>
+                <h1 class="heading">Give Away Material:</h1>
+                <p class="caption">Add information for the material you would like to give away below.</p>
+                <label for="giveAwayMaterialName">Material Name: <span class="redAsterisk">*</span></label>
+                <input type="text" id="giveAwayMaterialName" name="giveAwayMaterialName" placeholder="eg. Denim scraps"
+                    required><br>
+                <label for="giveAwayMaterialDescription">Description: <span class="redAsterisk">*</span></label>
+                <input type="text" id="giveAwayMaterialDescription" name="giveAwayMaterialDescription"
+                    placeholder="eg. Good condition, leftover from project" required><br>
+                <label for="giveAwayMaterialColour">Colour: <span class="redAsterisk">*</span></label>
+                <select id="giveAwayMaterialColour" name="giveAwayMaterialColour" required>
+                    <option selected disabled>Select item colour</option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Green">Green</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Other">Other</option>
+                </select><br>
+                <label for="giveAwayMaterialSize">Size: <span class="redAsterisk">*</span></label>
+                <input type="text" id="giveAwayMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 30cm x 10cm"
+                    required><br>
+                <label for="giveAwayMaterialImage">Material Image:</label>
+                <input type="file" id="giveAwayMaterialImage" name="giveAwayMaterialImage">
+                <button type="button" id="giveAwayMaterialCancel" class="cancelButton">Cancel</button>
+                <button type="submit" id="giveAwayMaterialSubmit" class="greenButton greenSubmit">Submit</button>
+            </form>
+        </dialog>
 
-            <!-- REQUEST MATERIAL FORM -->
-            <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestMaterialForm">
-                <form>
-                    <h1 class="heading">Request Material:</h1>
-                    <p class="caption">Add information for the material you would like to request below.</p>
-                    <label for="requestMaterialName">Item Name: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestMaterialName" name="requestMaterialName"placeholder="eg. Linen" required><br>
-                    <label for="requestMaterialDescription">Description: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestMaterialDescription" name="requestMaterialDescription" placeholder="eg. Condition, Purpose" required><br>
-                    <label for="requestMaterialColour">Colour: <span class="redAsterisk">*</span></label>
-                    <select id="requestMaterialColour" name="requestMaterialColour" required>
-                        <option selected disabled>Select item colour</option>                            
-                        <option value="Any Colour">Any Colour</option>
-                        <option value="Black">Black</option>
-                        <option value="Blue">Blue</option>
-                        <option value="Brown">Brown</option>
-                        <option value="Green">Green</option>
-                        <option value="Orange">Orange</option>
-                        <option value="Pink">Pink</option>
-                        <option value="Purple">Purple</option>
-                        <option value="Red">Red</option>
-                        <option value="White">White</option>
-                        <option value="Yellow">Yellow</option>
-                        <option value="Other">Other</option>
-                    </select><br>
-                    <label for="requestMaterialSize">Minimum: <span class="redAsterisk">*</span></label>
-                    <input type="text" id="requestMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 1m x 1m" required><br>
-                    <label for="requestMaterialDate">Needed Before:</label>
-                    <input type="date" id="requestMaterialDate" name="requestMaterialDate" placeholder="Select date needed before"><br>
-                    <button type="button" id="requestMaterialCancel">Cancel</button>   
-                    <button class="greenButton" type="submit" id="requestMaterialSubmit">Submit</button>
-                </form>
-            </dialog>
+        <!-- REQUEST MATERIAL FORM -->
+        <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestMaterialForm">
+            <form>
+                <h1 class="heading">Request Material:</h1>
+                <p class="caption">Add information for the material you would like to request below.</p>
+                <label for="requestMaterialName">Item Name: <span class="redAsterisk">*</span></label>
+                <input type="text" id="requestMaterialName" name="requestMaterialName" placeholder="eg. Linen"
+                    required><br>
+                <label for="requestMaterialDescription">Description: <span class="redAsterisk">*</span></label>
+                <input type="text" id="requestMaterialDescription" name="requestMaterialDescription"
+                    placeholder="eg. Condition, Purpose" required><br>
+                <label for="requestMaterialColour">Colour: <span class="redAsterisk">*</span></label>
+                <select id="requestMaterialColour" name="requestMaterialColour" required>
+                    <option selected disabled>Select item colour</option>
+                    <option value="Any Colour">Any Colour</option>
+                    <option value="Black">Black</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">Brown</option>
+                    <option value="Green">Green</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Other">Other</option>
+                </select><br>
+                <label for="requestMaterialSize">Minimum: <span class="redAsterisk">*</span></label>
+                <input type="text" id="requestMaterialSize" name="giveAwayMaterialSize" placeholder="eg. 1m x 1m"
+                    required><br>
+                <label for="requestMaterialDate">Needed Before:</label>
+                <input type="date" id="requestMaterialDate" name="requestMaterialDate"
+                    placeholder="Select date needed before"><br>
+                <button type="button" id="requestMaterialCancel" class="cancelButton">Cancel</button>
+                <button class="greenButton greenSubmit" type="submit" id="requestMaterialSubmit">Submit</button>
+            </form>
+        </dialog>
 
-        </main>
-        <script src="secondhandMap.js" type="module"></script>
-        <script src="script-em.js"></script>
-        <script src="storageDisplay.js"></script>
-    </body>
+    </main>
+    <script src="secondhandMap.js" type="module"></script>
+    <script src="script-em.js"></script>
+    <script src="storageDisplay.js"></script>
+</body>
+
 </html>
