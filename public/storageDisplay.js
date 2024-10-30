@@ -2,7 +2,9 @@
 // Requirements: secondhand.html form on submit saves to local storage and displays on profile.html/my materials tab
 // the following code is derived from my Advanced Web Media Tracker code (author: Veronica)
 
-// import images from './images/imgs/*.png';
+// assigning the icon sources through imports from the image folder
+import rulerIconSrc from './images/icons/ruler.svg';
+import speechBubbleIconSrc from './images/icons/speechBubble.svg';
 
 // <section> element container used to display all of the 'cards' of different materials saved through form input
 // var materialDisplay = document.getElementById("materialDisplay");
@@ -194,8 +196,8 @@ function displayGiveAwayMaterials() {
             information.innerHTML = `<p class="matName bold">${material.name}</p>
                                         <div class="matInfo">
                                             <p class="matType caption"><span class="dotAvailable"></span>Available material</p>
-                                            <p class="matSize caption"><img src="images/icons/ruler.svg" class="rulerIcon">${material.size}</p>
-                                            <p class="matDescription caption"><img src="images/icons/speechBubble.svg" class="speechIcon">${material.description}</p>
+                                            <p class="matSize caption"><img src="${rulerIconSrc}" class="rulerIcon">${material.size}</p>
+                                            <p class="matDescription caption"><img src="${speechBubbleIconSrc}" class="speechIcon">${material.description}</p>
                                         </div>`;
 
             item.appendChild(thumbnail);
@@ -211,8 +213,8 @@ function displayGiveAwayMaterials() {
 displayGiveAwayMaterials();
 // document.getElementsByClassName("rulerIcon").src = "./images/icons/ruler.svg";
 // document.getElementsByClassName("speechIcon").src = "./images/icons/speechBubble.svg";
-document.getElementsByClassName("rulerIcon").src = "ruler.svg";
-document.getElementsByClassName("speechIcon").src = "speechBubble.svg";
+// document.getElementsByClassName("rulerIcon").src = rulerIconSrc;
+// document.getElementsByClassName("speechIcon").src = speechBubbleIconSrc;
 
 // THE FORBIDDEN BUTTON (profileMaterials.html)
 // THIS BUTTON IS USED ONLY TO CLEAR LOCAL STORAGE FOR DEBUGGING PURPOSES
