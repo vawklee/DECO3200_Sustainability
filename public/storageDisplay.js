@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const giveAwayMaterialSubmit = document.getElementById("giveAwayMaterialSubmit");
     const newPopUp = document.getElementById("newPopUp");
 
-    console.log("new pop =", newPopUp)
     if (giveAwayMaterialForm && giveAwayMaterialSubmit && newPopUp) {
         giveAwayMaterialSubmit.addEventListener('click', function(e) {
             e.preventDefault();
@@ -42,11 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             )
 
             giveAwayMaterialForm.style.display = "none";
-            console.log(`Logging local storage: ${localStorage}`);
-
-            console.log("redirecting to the profile page");
             window.location.href = "profileMaterials.html";
-
 
             window.onload = function() {
                 var profileContainer = document.getElementById("profileContainer");
@@ -69,6 +64,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ---- USED FOR FORM SUBMISSION OPTIONS: GIVE AWAY + ITEM ----
 
+document.addEventListener("DOMContentLoaded", () => {
+    const requestMaterialForm = document.getElementById("requestMaterialForm");
+    const requestMaterialSubmit = document.getElementById("requestMaterialSubmit");
+    const newPopUp = document.getElementById("newPopUp");
+
+
+    if (requestMaterialForm && requestMaterialSubmit && newPopUp) {
+        requestMaterialSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            // prevents page from refreshing
+
+            // get the input data
+            const requestMaterialName = document.getElementById("requestMaterialName").value;
+            const requestMaterialDescription = document.getElementById("requestMaterialDescription").value;
+            const requestMaterialColour = document.getElementById("requestMaterialColour").value;
+            const requestMaterialSize = document.getElementById("requestMaterialSize").value;
+            const requestMaterialDate = document.getElementById("requestMaterialDate").files[0];
+
+            console.log(requestMaterialName,
+                requestMaterialDescription,
+                requestMaterialColour,
+                requestMaterialSize,
+                requestMaterialDate);
+
+            addMaterial(
+                requestMaterialName,
+                requestMaterialDescription,
+                requestMaterialColour,
+                requestMaterialSize,
+                requestMaterialDate
+            )
+
+            requestMaterialForm.style.display = "none";
+
+            window.location.href = "profileMaterials.html";
+
+
+            window.onload = function() {
+                var profileContainer = document.getElementById("profileContainer");
+                var materialContainer = document.getElementById("materialContainer");
+                var resourcesContainer = document.getElementById("resourcesContainer");
+                var profileSelector = document.getElementById("profileSelector");
+                var materialSelector = document.getElementById("materialSelector");
+                var resourceSelector = document.getElementById("resourceSelector");
+
+                profileSelector.className = "caption";
+                materialSelector.className = "caption pActive";
+                resourceSelector.className = "caption";
+                profileContainer.style.display = "none";
+                materialContainer.style.display = "block";
+                resourcesContainer.style.display = "none";
+            }
+        })
+    }
+})
+
 // ---- USED FOR FORM SUBMISSION OPTIONS: REQUEST + MATERIALS ----
 
 // ---- USED FOR FORM SUBMISSION OPTIONS: REQUEST + ITEM ----
@@ -77,6 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // when edit button on My Materials Page is clicked
 // used for deleting items from local storage
 // var materialDeleteButton = document.getElementById("materialEditButton");
+
+
+
 
 // function to add material to local storage & create date and id for the item added
 function addMaterial(name, description, colour, size, image) {
@@ -104,11 +158,11 @@ function addMaterial(name, description, colour, size, image) {
     }
 
     localStorage.setItem("materials", JSON.stringify(localMaterials));
-    displayMaterials();
+    displayGiveAwayMaterials();
 }
 
 // display the materials saved in local storage on profile.html
-function displayMaterials() {
+function displayGiveAwayMaterials() {
     var materialDisplay =  document.getElementById("materialDisplay");
     materialDisplay.innerHTML = "";
     let localMaterials = JSON.parse(localStorage.getItem('materials'));
@@ -154,7 +208,7 @@ function displayMaterials() {
     }
 }
 
-displayMaterials();
+displayGiveAwayMaterials();
 // document.getElementsByClassName("rulerIcon").src = "./images/icons/ruler.svg";
 // document.getElementsByClassName("speechIcon").src = "./images/icons/speechBubble.svg";
 document.getElementsByClassName("rulerIcon").src = "ruler.svg";
