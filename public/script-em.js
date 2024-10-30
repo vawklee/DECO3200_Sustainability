@@ -78,10 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // change visibility of recommended tag based on damage type
     if (recommendedColour) {
-        if (recommendedColour === "Purple") {
+        if (recommendedColour === "Purple" && recommendedPurple) {
             recommendedPurple.style.display = "block"
         }
-        else if (recommendedColour === "Black") {
+        else if (recommendedColour === "Black" && recommendedBlack) {
             recommendedBlack.style.display = "block"
         }
     }
@@ -365,8 +365,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateGiveAwayDetails("Give Away Material", giveAwayMaterialColour, giveAwayMaterialSize, giveAwayMaterialDescription);
 
                     // window.location.href = "test.html";
-                    window.location.href = "profileMaterials.html";
                     console.log("redirecting to profile page");
+                    window.location.href = "profileMaterials.html";
                     // from veronica's script file
                     var profileContainer = document.getElementById("profileContainer");
                     var materialContainer = document.getElementById("materialContainer");
@@ -396,8 +396,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (newDescription) newDescription.innerHTML = giveAwayMaterialDescription;
                 // If no image is uploaded, just redirect to the new page
                 // window.location.href = "test.html";
-                window.location.href = "profileMaterials.html";
                 console.log("redirecting to profile page");
+                window.location.href = "profileMaterials.html";
                 // from veronica's script file
                 var profileContainer = document.getElementById("profileContainer");
                 var materialContainer = document.getElementById("materialContainer");
@@ -422,37 +422,37 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
 });
 
-// display the stored data in a card format
-document.addEventListener("DOMContentLoaded", () => {
-    const giveAwayMaterialName = localStorage.getItem("giveAwayMaterialName");
-    const giveAwayMaterialDescription = localStorage.getItem("giveAwayMaterialDescription");
-    const giveAwayMaterialColour = localStorage.getItem("giveAwayMaterialColour");
-    const giveAwayMaterialSize = localStorage.getItem("giveAwayMaterialSize");
-    const giveAwayMaterialImage = localStorage.getItem("giveAwayMaterialImage");
+// // display the stored data in a card format
+// document.addEventListener("DOMContentLoaded", () => {
+//     const giveAwayMaterialName = localStorage.getItem("giveAwayMaterialName");
+//     const giveAwayMaterialDescription = localStorage.getItem("giveAwayMaterialDescription");
+//     const giveAwayMaterialColour = localStorage.getItem("giveAwayMaterialColour");
+//     const giveAwayMaterialSize = localStorage.getItem("giveAwayMaterialSize");
+//     const giveAwayMaterialImage = localStorage.getItem("giveAwayMaterialImage");
   
-    // Create a card to display the material information
-    const materialCard = document.getElementById("newPopUp");
-    if (materialCard) {
-        const newCard = document.createElement("div");
-        newCard.className = "material-card";
+//     // Create a card to display the material information
+//     const materialCard = document.getElementById("newPopUp");
+//     if (materialCard) {
+//         const newCard = document.createElement("div");
+//         newCard.className = "material-card";
 
 
 
-        materialCard.classList.add("materialCardNew")
+//         materialCard.classList.add("materialCardNew")
     
-        materialCard.innerHTML = `
-            <h2>${giveAwayMaterialName}</h2>
-            <p>Description: ${giveAwayMaterialDescription}</p>
-            <p>Colour: ${giveAwayMaterialColour}</p>
-            <p>Size: ${giveAwayMaterialSize}</p>
-            ${giveAwayMaterialImage ? `<img src="${giveAwayMaterialImage}" 
-                alt="${giveAwayMaterialName}" style="max-width: 200px;">` : ""}`;
+//         materialCard.innerHTML = `
+//             <h2>${giveAwayMaterialName}</h2>
+//             <p>Description: ${giveAwayMaterialDescription}</p>
+//             <p>Colour: ${giveAwayMaterialColour}</p>
+//             <p>Size: ${giveAwayMaterialSize}</p>
+//             ${giveAwayMaterialImage ? `<img src="${giveAwayMaterialImage}" 
+//                 alt="${giveAwayMaterialName}" style="max-width: 200px;">` : ""}`;
 
-            materialCard.appendChild(newCard);
-    } else {
-        console.error("The element with ID 'material card was not found")
-    }
-});
+//             materialCard.appendChild(newCard);
+//     } else {
+//         console.error("The element with ID 'material card was not found")
+//     }
+// });
 
 
 
@@ -494,9 +494,11 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("requestMaterialDate", requestMaterialDate)
 
             requestMaterialForm.style.display = "none";
-            document.getElementById("newPopUp").style.display = "block"
+            // document.getElementById("newPopUp").style.display = "block"
             // https://stackoverflow.com/questions/74212470/how-do-i-make-an-element-disappear-after-a-set-amount-of-time
             disappear(newPopUp)
+
+            window.location.href = "profileMaterials.html";
         }); 
     } 
 });
@@ -538,7 +540,7 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("requestItemDate", requestItemDate)
 
             requestItemForm.style.display = "none";
-            document.getElementById("newPopUp").style.display = "block"
+            // document.getElementById("newPopUp").style.display = "block"
 
             disappear(newPopUp)
         }); 
@@ -582,7 +584,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // localStorage.setItem("giveAwayItemImage", giveAwayItemImage)
 
             giveAwayItemForm.style.display = "none";
-            document.getElementById("newPopUp").style.display = "block"
+            // document.getElementById("newPopUp").style.display = "block"
             disappear(newPopUp)
         }); 
             // if the user uploads an image

@@ -128,7 +128,7 @@
         <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayItemForm">
             <form class="secondPageFormStyling">
                 <h1 class="heading">Give Away Item:</h1>
-                <p class="caption">Add information for the clothing item you would like to give away below.</p>
+                <p class="body">Add information for the clothing item you would like to give away below.</p>
                 <label for="giveAwayItemName">Item Name: <span class="redAsterisk">*</span></label>
                 <input type="text" id="giveAwayItemName" name="giveAwayItemName" placeholder="eg. White dress"
                     required><br>
@@ -174,7 +174,7 @@
         <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestItemForm">
             <form>
                 <h1 class="heading">Request Item:</h1>
-                <p class="caption">Add information for the clothing item you would like to request below.</p>
+                <p class="body">Add information for the clothing item you would like to request below.</p>
                 <label for="requestItemName">Item Name: <span class="redAsterisk">*</span></label>
                 <input type="text" id="requestItemName" name="requestItemName" placeholder="eg. White dress"
                     required><br>
@@ -211,7 +211,7 @@
                 <label for="requestItemDate">Needed Before:</label>
                 <input type="date" id="requestItemDate" name="requestItemDate"
                     placeholder="Select date needed before"><br>
-                <button type="button" id="requestItemCancel" class="" cancelButton">Cancel</button>
+                <button type="button" id="requestItemCancel" class="cancelButton">Cancel</button>
                 <button type="submit" id="requestItemSubmit" class="greenButton greenSubmit">Submit</button>
             </form>
         </dialog>
@@ -260,7 +260,7 @@
         <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayMaterialForm">
             <form>
                 <h1 class="heading">Give Away Material:</h1>
-                <p class="caption">Add information for the material you would like to give away below.</p>
+                <p class="body">Add information for the material you would like to give away below.</p>
                 <label for="giveAwayMaterialName">Material Name: <span class="redAsterisk">*</span></label>
                 <input type="text" id="giveAwayMaterialName" name="giveAwayMaterialName" placeholder="eg. Denim scraps"
                     required><br>
@@ -296,7 +296,7 @@
         <dialog class="secondarySecondhandForm form-options requestFormBorderStyling" id="requestMaterialForm">
             <form>
                 <h1 class="heading">Request Material:</h1>
-                <p class="caption">Add information for the material you would like to request below.</p>
+                <p class="body">Add information for the material you would like to request below.</p>
                 <label for="requestMaterialName">Item Name: <span class="redAsterisk">*</span></label>
                 <input type="text" id="requestMaterialName" name="requestMaterialName" placeholder="eg. Linen"
                     required><br>
@@ -326,7 +326,7 @@
                 <input type="date" id="requestMaterialDate" name="requestMaterialDate"
                     placeholder="Select date needed before"><br>
                 <button type="button" id="requestMaterialCancel" class="cancelButton">Cancel</button>
-                <button class="greenButton greenSubmit" type="submit" id="requestMaterialSubmit greenSubmit">Submit</button>
+                <button class="greenButton greenSubmit" type="submit" id="requestMaterialSubmit" onclick="console.log('Button clicked')">Submit</button>
             </form>
         </dialog>
 

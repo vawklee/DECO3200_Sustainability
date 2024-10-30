@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const giveAwayMaterialSize = document.getElementById("giveAwayMaterialSize").value;
             const giveAwayMaterialImage = document.getElementById("giveAwayMaterialImage").files[0];
 
-            console.log(giveAwayMaterialName,
-                giveAwayMaterialDescription,
-                giveAwayMaterialColour,
-                giveAwayMaterialSize,
-                giveAwayMaterialImage);
+            // console.log(giveAwayMaterialName,
+            //     giveAwayMaterialDescription,
+            //     giveAwayMaterialColour,
+            //     giveAwayMaterialSize,
+            //     giveAwayMaterialImage);
 
-            addMaterial(
+            addGiveAway(
                 giveAwayMaterialName,
                 giveAwayMaterialDescription,
                 giveAwayMaterialColour,
@@ -45,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             giveAwayMaterialForm.style.display = "none";
             console.log(`Logging local storage: ${localStorage}`);
 
-            window.location.href = "profileMaterials.html";
             console.log("redirecting to the profile page");
+            window.location.href = "profileMaterials.html";
 
             window.onload = function() {
                 var profileContainer = document.getElementById("profileContainer");
@@ -69,9 +69,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ---- USED FOR FORM SUBMISSION OPTIONS: GIVE AWAY + ITEM ----
 
+
+
+
+
+
+
 // ---- USED FOR FORM SUBMISSION OPTIONS: REQUEST + MATERIALS ----
 
+document.addEventListener("DOMContentLoaded", () => {
+    const requestMaterialForm = document.getElementById("requestMaterialForm");
+    const requestMaterialSubmit = document.getElementById("requestMaterialSubmit");
+    const newPopUp = document.getElementById("newPopUp");
+
+    if (requestMaterialForm && requestMaterialSubmit && newPopUp) {
+        requestMaterialSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log("submit button clicked")
+            // prevents page from refreshing
+
+            // get the input data
+            const requestMaterialName = document.getElementById("requestMaterialName").value;
+            const requestMaterialDescription = document.getElementById("requestMaterialDescription").value;
+            const requestMaterialColour = document.getElementById("requestMaterialColour").value;
+            const requestMaterialSize = document.getElementById("requestMaterialSize").value;
+            const requestMaterialDate = document.getElementById("requestMaterialDate").value;
+
+            console.log(requestMaterialName,
+                requestMaterialDescription,
+                requestMaterialColour,
+                requestMaterialSize,
+                requestMaterialDate);
+
+            addRequest(
+                requestMaterialName,
+                requestMaterialDescription,
+                requestMaterialColour,
+                requestMaterialSize,
+                requestMaterialDate
+            )
+
+            requestMaterialForm.style.display = "none";
+            console.log(`Logging local storage: ${localStorage}`);
+
+            console.log("redirecting to the profile page");
+            window.location.href = "profileMaterials.html";
+
+            window.onload = function() {
+                var profileContainer = document.getElementById("profileContainer");
+                var materialContainer = document.getElementById("materialContainer");
+                var resourcesContainer = document.getElementById("resourcesContainer");
+                var profileSelector = document.getElementById("profileSelector");
+                var materialSelector = document.getElementById("materialSelector");
+                var resourceSelector = document.getElementById("resourceSelector");
+
+                profileSelector.className = "caption";
+                materialSelector.className = "caption pActive";
+                resourceSelector.className = "caption";
+                profileContainer.style.display = "none";
+                materialContainer.style.display = "block";
+                resourcesContainer.style.display = "none";
+            }
+        })
+    }
+})
+
 // ---- USED FOR FORM SUBMISSION OPTIONS: REQUEST + ITEM ----
+
+
 
 
 // when edit button on My Materials Page is clicked
@@ -79,15 +144,113 @@ document.addEventListener("DOMContentLoaded", () => {
 // var materialDeleteButton = document.getElementById("materialEditButton");
 
 // function to add material to local storage & create date and id for the item added
-function addMaterial(name, description, colour, size, image) {
+
+
+
+
+
+
+// -------------------------------------------------------------------------
+// - 
+// - FUNCTIONS FOR REQUESTS 
+// - 
+// -------------------------------------------------------------------------
+
+
+function addRequest(name, description, colour, size, dateNeeded) {
+    let request = {
+        name,
+        description,
+        colour,
+        size,
+        dateNeeded,
+        date: new Date().toDateString(),
+        id: Date.now()
+    }
+    saveRequestToLocalStorage(request);
+}
+
+function saveRequestToLocalStorage(request) {
+    let localRequests = JSON.parse(localStorage.getItem("requests"));
+
+    if (localRequests == null) {
+        localRequests = [request];
+    } else {
+        if (localRequests.find(element => element.id === request.id)) {
+            console.log("Material ID already exists");
+        } else {
+            localRequests.push(request);
+            console.log(`Request has been added to local storage: ${request}`);
+            console.log(request);
+        }
+    }
+
+    localStorage.setItem("requests", JSON.stringify(localRequests));
+    displayRequests();
+}
+
+
+function displayRequests() {
+    let localRequests = JSON.parse(localStorage.getItem('requests'));
+
+    // displaying each material added, if they exist
+    if (localRequests !== null) {
+        localRequests.forEach(function(request) {
+
+            // create item in list
+            let item = document.createElement('div');
+            item.setAttribute('data-id', request.id);
+            item.className = "materialCardNew";
+            // item.style.height = "300px";
+
+            // let information = document.createElement('p');
+            // information.innerHTML = `<p class="body">${material.name}<br>Description: ${material.description}<br>Colour: ${material.colour}<br>Size: ${material.size}</p>`;
+            let thumbnail = document.createElement('div');
+            thumbnail.className = "matPicContainer";
+            thumbnail.innerHTML = '<img src="" class="matPic">';
+
+            let information = document.createElement('div');
+            information.className = "matInfoContainer";
+
+            information.innerHTML = `<p class="matName bold">${request.name}</p>
+                                        <div class="matInfo">
+                                            <p class="matType caption"><span class="dotRequest"></span>Requested</p>
+                                            <p class="matSize caption"><img src="${rulerIconSrc}" class="rulerIcon">${request.size}</p>
+                                            <p class="matDescription caption"><img src="${speechBubbleIconSrc}" class="speechIcon">${request.description}</p>
+                                        </div>`;
+
+            item.appendChild(thumbnail);
+            item.appendChild(information);
+            materialDisplay.appendChild(item);
+        })
+    } else {
+        console.log("Requests in local storage is empty");
+        document.getElementById('recentlyAddedContainer').style.display = 'none';
+    }
+}
+
+
+
+
+
+
+
+
+// -------------------------------------------------------------------------
+// - 
+// - FUNCTIONS FOR GIVE AWAYS
+// - 
+// -------------------------------------------------------------------------
+
+function addGiveAway(name, description, colour, size, image) {
     let material = {
         name,
         description,
         colour,
         size,
-        image: null
-        // date: new Date().toDateString(),
-        // id: Date.now()
+        image: null,
+        date: new Date().toDateString(),
+        id: Date.now()
     }
 
     // If an image is uploaded, convert it to Base64
@@ -119,12 +282,11 @@ function saveMaterialToLocalStorage(material) {
     }
 
     localStorage.setItem("materials", JSON.stringify(localMaterials));
-    displayMaterials();
+    displayGiveAways();
 }
 
 // display the materials saved in local storage on profile.html
-function displayMaterials() {
-    materialDisplay.innerHTML = "";
+function displayGiveAways() {
     let localMaterials = JSON.parse(localStorage.getItem('materials'));
 
     // displaying each material added, if they exist
@@ -160,7 +322,7 @@ function displayMaterials() {
 
             information.innerHTML = `<p class="matName bold">${material.name}</p>
                                         <div class="matInfo">
-                                            <p class="matType caption"><span class="dotAvailable"></span>Available material</p>
+                                            <p class="matType caption"><span class="dotAvailable"></span>Available</p>
                                             <p class="matSize caption"><img src="${rulerIconSrc}" class="rulerIcon">${material.size}</p>
                                             <p class="matDescription caption"><img src="${speechBubbleIconSrc}" class="speechIcon">${material.description}</p>
                                         </div>`;
@@ -175,11 +337,8 @@ function displayMaterials() {
     }
 }
 
-displayMaterials();
-// document.getElementsByClassName("rulerIcon").src = "./images/icons/ruler.svg";
-// document.getElementsByClassName("speechIcon").src = "./images/icons/speechBubble.svg";
-document.getElementsByClassName("rulerIcon").src = "ruler.svg";
-document.getElementsByClassName("speechIcon").src = "speechBubble.svg";
+displayGiveAways();
+displayRequests();
 
 // THE FORBIDDEN BUTTON (profileMaterials.html)
 // THIS BUTTON IS USED ONLY TO CLEAR LOCAL STORAGE FOR DEBUGGING PURPOSES
@@ -189,3 +348,5 @@ clearLocalStorageButton.onclick = function() {
     localStorage.removeItem('materials');
     location.reload(true);
 }
+
+
