@@ -216,6 +216,46 @@
             </form>
         </dialog>
 
+
+        <div id="newPopUp" class="materialCardNew" style="display:none;">
+            <!-- currently only works for one upload -->
+            <div class="materialCardContainer">
+                <!-- <div id="materialContainer"> -->
+                    <div class="materialCardNew">
+                        <!-- <p><span class="dotAvailable"></span></p> -->
+                         <div class="sideBySide">
+                            <p id="newType" class="bold"></p>
+                            <!-- <img id="newTagImage" src="images/imgs/new-tag.png" class="rTitle"> -->
+                         </div>
+                        
+                         <div class="sideBySide">
+                            <!-- <p class="bold"><img src="images/icons/location.svg">Colour:</p> -->
+                            <p class="caption">Colour:</p>
+                            <p id="newColour" class="caption"></p>
+                         </div>
+                         <div class="sideBySide">
+                            <!-- <p class="bold">Size:<img src="images/icons/ruler.svg"></p> -->
+                            <p class="caption">Size:</p>
+                            <p id="newSize" class="caption"></p>
+                         </div>
+                         <div class="sideBySide">
+                            <!-- <p class="bold"><img src="images/icons/speechBubble.svg">Description:</p> -->
+                            <p class="caption">Description:</p>
+                            <p id="newDescription" class="caption"></p>
+                         </div>
+                         <div id="optionalDateDisplay" class="sideBySide" style="display:none;">
+                            <!-- <p class="bold"><img src="images/icons/speechBubble.svg">Description:</p> -->
+                            <p class="caption">Date Needed By:</p>
+                            <p id="newDate" class="caption"></p>
+                         </div>
+                         
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+
+
+
         <!-- GIVEAWAY MATERIAL FORM -->
         <dialog class="secondarySecondhandForm form-options giveawayFormBorderStyling" id="giveAwayMaterialForm">
             <form>
@@ -286,7 +326,7 @@
                 <input type="date" id="requestMaterialDate" name="requestMaterialDate"
                     placeholder="Select date needed before"><br>
                 <button type="button" id="requestMaterialCancel" class="cancelButton">Cancel</button>
-                <button class="greenButton greenSubmit" type="submit" id="requestMaterialSubmit">Submit</button>
+                <button class="greenButton greenSubmit" type="submit" id="requestMaterialSubmit greenSubmit">Submit</button>
             </form>
         </dialog>
 

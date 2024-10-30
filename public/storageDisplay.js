@@ -5,7 +5,7 @@
 // import images from './images/imgs/*.png';
 
 // <section> element container used to display all of the 'cards' of different materials saved through form input
-var materialDisplay = document.getElementById("materialDisplay");
+// var materialDisplay = document.getElementById("materialDisplay");
 
 // when form is submitted, adds Material to the storage list 
 // ---- USED FOR FORM SUBMISSION OPTIONS: GIVE AWAY + MATERIALS ----
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const giveAwayMaterialSubmit = document.getElementById("giveAwayMaterialSubmit");
     const newPopUp = document.getElementById("newPopUp");
 
+    console.log("new pop =", newPopUp)
     if (giveAwayMaterialForm && giveAwayMaterialSubmit && newPopUp) {
         giveAwayMaterialSubmit.addEventListener('click', function(e) {
             e.preventDefault();
@@ -43,8 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
             giveAwayMaterialForm.style.display = "none";
             console.log(`Logging local storage: ${localStorage}`);
 
-            window.location.href = "profileMaterials.html";
             console.log("redirecting to the profile page");
+            window.location.href = "profileMaterials.html";
+
 
             window.onload = function() {
                 var profileContainer = document.getElementById("profileContainer");
@@ -107,6 +109,7 @@ function addMaterial(name, description, colour, size, image) {
 
 // display the materials saved in local storage on profile.html
 function displayMaterials() {
+    var materialDisplay =  document.getElementById("materialDisplay");
     materialDisplay.innerHTML = "";
     let localMaterials = JSON.parse(localStorage.getItem('materials'));
 
