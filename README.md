@@ -14,16 +14,18 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 ### Viewing the website (Repair & Rewear | index.html)
 1. Using the terminal, type `npm run dev` to start the web server displaying the website
 2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
-3. Using the terminal, press `Control + C` to stop the web server at any time
+3. If you have viewed the browser extension beforehand, press Shift + F5 to refresh the webpage without cache
+4. Using the terminal, press `Control + C` to stop the web server at any time
 
 ### Viewing the browser extension (Sustainable Shopping Assistant | extension.html)
 1. Using the terminal, type `npm run extension` to start the web server displaying the browser extension prototype
 2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
-3. Using the terminal, press `Control + C` to stop the web server at any time
+3. If you have viewed the website beforehand, press Shift + F5 to refresh the webpage without cache
+4. Using the terminal, press `Control + C` to stop the web server at any time
 
 ### Troubleshooting
 If at any time there are issues with parts of the website or browser extension not loading or presenting expected results, try the following steps. This is not a definitive list of troubleshooting steps, but can provide some guidance towards fixing issues: <br>
-1. Refresh the webpage
+1. Press Shift + F5 to refresh the webpage without cache
 2. Close the webpage and re-visit the link http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. Using the terminal, press `Control + C` to stop the web server
 4. Delete the file folder named `.parcel-cache` and type `npm run <command>` to start the web server again
