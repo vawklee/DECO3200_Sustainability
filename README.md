@@ -24,7 +24,7 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 ### Troubleshooting
 If at any time there are issues with parts of the website or browser extension not loading or presenting expected results, try the following steps. This is not a definitive list of troubleshooting steps, but can provide some guidance towards fixing issues: <br>
 1. Refresh the webpage
-2. Visit the link http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
+2. Close the webpage and re-visit the link http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. Using the terminal, press `Control + C` to stop the web server
 4. Delete the file folder named `.parcel-cache` and type `npm run <command>` to start the web server again
 
