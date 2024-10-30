@@ -7,35 +7,32 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 3. [References](#references)
 
 ## How to set up and deploy on a local machine <a id="setupAndDeploy"></a>
-1. Install Node.js
-2. Clone the [GitHub repository](https://github.com/vawklee/DECO3200_Sustainability.git)
-3. In your preferred code editor, use the terminal and type `npm install` to install all package dependencies
+1. Install [Node.js](https://nodejs.org/en)
+2. In your preferred code editor, use the terminal and type `git clone https://github.com/vawklee/DECO3200_Sustainability.git` to clone the [GitHub Repository](https://github.com/vawklee/DECO3200_Sustainability.git)
+3. Use the terminal and type `npm install` to install all package dependencies
 
 ### Viewing the website (Repair & Rewear | index.html)
-1. Using the terminal, type `npm run dev` to start the web server
+1. Using the terminal, type `npm run dev` to start the web server displaying the website
 2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. Using the terminal, press `Control + C` to stop the web server at any time
 
 ### Viewing the browser extension (Sustainable Shopping Assistant | extension.html)
-1. Using the terminal, type `npm run extension` to start the web server
-2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
-3. Using the terminal, press `Control + C` to stop the web server at any time
-
-### Viewing the styleguide
-1. Using the terminal, type `npm run styleguide` to start the web server
+1. Using the terminal, type `npm run extension` to start the web server displaying the browser extension prototype
 2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. Using the terminal, press `Control + C` to stop the web server at any time
 
 ### Troubleshooting
-If at any time there are issues with parts of the website or browser extension not loading or presenting expected results, try the following steps. This is not a definitive list of troubleshooting steps, but can provide first steps towards fixing issues: <br>
-1. Refresh the page
-2. Visit the link http://localhost:1234/ (port number may var, refer to the terminal for any differences)
+If at any time there are issues with parts of the website or browser extension not loading or presenting expected results, try the following steps. This is not a definitive list of troubleshooting steps, but can provide some guidance towards fixing issues: <br>
+1. Refresh the webpage
+2. Visit the link http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. Using the terminal, press `Control + C` to stop the web server
 4. Delete the file folder named `.parcel-cache` and type `npm run <command>` to start the web server again
 
 ## Testing Specifications <a id="specifications"></a>
-This prototype was developed and tested using Google Chrome as the main browser of choice. <br>
-The optimal viewing resolution for this prototype at the current stage of development is 2256 x 1504 on desktop.
+### Web Browser
+This prototype was developed and tested using Google Chrome as the main web browser of choice. This project can also be viewed on Firefox, Microsoft Edge, etc.
+### Viewing Resolution
+The optimal viewing resolution for this prototype at the current stage of development is 2256px x 1504px on a laptop or desktop monitor. Similar screen sizes will produce the same results, however, the current prototype is not responsive for screen sizes smaller than 1546px wide.
 
 ## Source Code References <a id="references"></a>
 https://codepen.io/sosuke/pen/Pjoqqp <br>
