@@ -187,8 +187,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const requestItemForm = document.getElementById("requestItemForm");
-    const requesItemSubmit = document.getElementById("requestItemSubmit");
+    const requestItemSubmit = document.getElementById("requestItemSubmit");
     const newPopUp = document.getElementById("newPopUp");
+    console.log("request item form", requestItemForm)
+    console.log("request item submit", requestItemSubmit)
+    console.log("new pop up", newPopUp)
 
     if (requestItemForm && requestItemSubmit && newPopUp) {
         requestItemSubmit.addEventListener('click', function(e) {
@@ -211,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 requestItemDate
             )
 
-            requestMaterialForm.style.display = "none";
+            requestItemForm.style.display = "none";
             console.log(`Logging local storage: ${localStorage}`);
 
             console.log("redirecting to the profile page");
@@ -320,7 +323,9 @@ function displayRequests() {
 
             item.appendChild(thumbnail);
             item.appendChild(information);
-            materialDisplay.appendChild(item);
+            if (materialDisplay) {
+                materialDisplay.appendChild(item);
+            }
         })
     } else {
         console.log("Requests in local storage is empty");
@@ -443,17 +448,21 @@ displayRequests();
 // THIS BUTTON IS USED ONLY TO CLEAR LOCAL STORAGE FOR DEBUGGING PURPOSES
 // Not meant to be visible to the user at any given time
 var clearLocalStorageButton = document.getElementById("forbiddenButton");
-clearLocalStorageButton.onclick = function() {
-    localStorage.removeItem('materials');
-    location.reload(true);
+if (clearLocalStorageButton) {
+    clearLocalStorageButton.onclick = function() { 
+        localStorage.removeItem('materials');
+        location.reload(true);
+    }
 }
-
 // CHECKING LOCAL STORAGE: IF EMPTY GET RID OF PROFILEMATERIALS PAGE CONTAINER SAYING RECENTLY ADDED
 let localMaterials = JSON.parse(localStorage.getItem('materials'));
 let localRequests = JSON.parse(localStorage.getItem('requests'));
-if (localMaterials == null && localRequests == null) {
-    console.log("all local storage is empty");
-    document.getElementById('recentlyAddedContainer').style.display = 'none';
-} else {
-    document.getElementById('recentlyAddedContainer').style.display = 'block';
+var recentlyAddedContainer = document.getElementById('recentlyAddedContainer')
+if (recentlyAddedContainer) {
+    if (localMaterials == null && localRequests == null) {
+        console.log("all local storage is empty");
+        recentlyAddedContainer.style.display = 'none';
+    } else {
+        recentlyAddedContainer.style.display = 'block';
+    }
 }
