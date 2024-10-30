@@ -1,3 +1,9 @@
+/*-----------------------------------------------
+-
+- VERO'S ORIGINAL CSS FOR BRAND STYLING
+-
+------------------------------------------------*/
+
 /* setting up variables (e.g. set colour scheme) to be called later */
 /* Example for how to call a variable --> color: var(--primaryFont); */
 :root {
@@ -53,55 +59,6 @@ header {
 header h2{
     margin-left: 0.5vw;
     color: var(--secondary);
-}
-
-.navLogo {
-    align-self: center;
-    /* margin-left: 1vw; */
-    position: relative;
-    right: -2vw;
-    display: flex;
-    text-decoration: none;
-}
-.navLogo:hover {
-    text-decoration: none;
-}
-
-.navLogo img {
-    margin-right: 20px;
-}
-
-.navBarItems {
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    position: relative;
-    left: -1vw;
-}
-.navBarItems a {
-    color: var(--background);
-    text-align: center;
-    text-decoration: none;
-    padding: 15px 40px;
-    margin: 0 10px;
-    border-bottom: var(--primary) solid 2px;
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-}
-/* Use a.activeNav to highlight the active page you are on */
-.navBarItems a:hover, a.activeNav {
-    /* background-color: var(--primary); */
-    border-bottom: var(--secondary) solid 2px;
-    color: var(--secondary);
-    /* text-decoration: underline; */
-}
-/* .navBarItems a:hover {
-    text-decoration: underline;
-} */
-.navBarContainer .hamburgerMenu {
-    display: none;
-    background-color: red;
 }
 
 /* Heading font */
@@ -286,18 +243,6 @@ button.download:hover {
     border: var(--accentSecondaryHover) solid 2px;
 }
 
-/* Temp */
-.locationMarkerImgs {
-    display: flex;
-}
-code {
-    font-family: Consolas,"courier new";
-    color: crimson;
-    background-color: #f1f1f1;
-    padding: 2px;
-    font-size: 101%;
-}
-
 /* Location marker styling */
 .locationRepair, .locationRequest, .locationAvailable {
     margin: 15px;
@@ -310,181 +255,61 @@ code {
     filter: invert(90%) sepia(12%) saturate(1402%) hue-rotate(47deg) brightness(89%) contrast(91%);
 }
 
-/* Responsive styling */
-@media screen and (max-width: 840px){
-    body {
-        background-color: red;
-    }
-    .heading {
-        font-size: 28px;
-    }
-    .subheading {
-        font-size: 23px;
-    }
-    .body, .bold {
-        font-size: 18px;
-    }
-}
-
-@media screen and (max-width: 650px){
-    body {
-        background-color: blue;
-    }
-    header {
-        padding-top: 2px;
-        padding-bottom: 5px;
-    }
-    .navLogo h2{
-        width: 175px;
-    }
-    .navBarItems a {
-        padding: 5px 20px;
-        margin: 0 10px;
-    }
-
-    .navBarItems a:not(:last-child){
-        display: none;
-    }
-    .navBarContainer a.hamburgerMenu {
-        float: right;
-        display: block;
-    }
-    .navBarContainer.responsive {
-        position: relative;
-    }
-    .navBarContainer.responsive .hamburgerMenu {
-        position: absolute;
-        right: 0;
-        left: 0;
-    }
-    .navBarContainer.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
 
 
 
 
-
-/* ---- SECONDHAND MAP STYLING ---- (Author: Vero) */
-.dotAvailable, .dotRequest {
-    display: inline-flex;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    margin-right: 15px;
-}
-.dotAvailable {
-    background-color: var(--locationAvailable);
-}
-.dotRequest {
-    background-color: var(--locationRequest);
-}
-
-/* changes the Leaflet Map marker colours */
-img.sechandMarkerHueChangeReq {
-    filter: brightness(0) saturate(100%) invert(42%) sepia(99%) saturate(5063%) hue-rotate(350deg) brightness(110%) contrast(101%);
-}
-img.sechandMarkerHueChangeAvail {
-    /* filter: brightness(0) saturate(100%) invert(84%) sepia(10%) saturate(1552%) hue-rotate(55deg) brightness(95%) contrast(88%); */
-    filter: brightness(0) saturate(100%) invert(28%) sepia(9%) saturate(5486%) hue-rotate(134deg) brightness(93%) contrast(90%);
-}
-
-/* main page container & title + button */
-.secondhandHub, .secondhandHeader {
-    display: flex;
-    flex-direction: column;
-}
-.secondhandHeader>div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* contains map and cards */
-.secondhandMapPage {
-    margin-top: 20px;
+/*-----------------------------------------------
+-
+- VERO'S ORIGINAL CSS FOR NAV BAR
+-
+------------------------------------------------*/
+.navLogo {
     align-self: center;
-    background-color: var(--background);
-    border-radius: 15px;
-    height: 85vh;
-    width: 90vw;
-}
-
-.mapContainer {
+    /* margin-left: 1vw; */
+    position: relative;
+    right: -2vw;
     display: flex;
-    flex-direction: row;
-}
-#secondhandMap {
-    height: 75vh;
-    width: 70%;
-}
-.sechandCardContainer {
-    margin-left: 25px;
-    height: 75vh;
-    width: 30%;
-    overflow-y: scroll;
-}
-
-.sechandCard {
-    background-color: var(--background);
-    border: var(--disabledBackgroundHover) solid 2px;
-    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
-    border-radius: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.sThumbnail {
-    margin: 0px 5px;
-    width: 100%;
-    height: 100px;
-    align-self: center;
-}
-.sThumbnail>img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px 10px 0px 0px;
-}
-
-.sInfo {
-    margin: 15px 25px;
-}
-.sInfo p img {
-    width: 20px;
-    height: auto;
-    margin-right: 15px;
-}
-/* styling the actual text elements */
-.sechandCard p {
-    margin: 0px;
-}
-.sButton {
-    align-self: center;
-    width: 90%;
-    margin-bottom: 15px;
-}
-.sButton button {
-    width: 100%;
-    background-color: var(--fontColor);
-    color: var(--background);
     text-decoration: none;
 }
-.sButton button:hover {
-    text-decoration: underline;
+.navLogo:hover {
+    text-decoration: none;
 }
 
+.navLogo img {
+    margin-right: 20px;
+}
 
+.navBarItems {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    position: relative;
+    left: -1vw;
+}
+.navBarItems a {
+    color: var(--background);
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 40px;
+    margin: 0 10px;
+    border-bottom: var(--primary) solid 2px;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+/* Use a.activeNav to highlight the active page you are on */
+.navBarItems a:hover, a.activeNav {
+    /* background-color: var(--primary); */
+    border-bottom: var(--secondary) solid 2px;
+    color: var(--secondary);
+    /* text-decoration: underline; */
+}
 
-
-
-
-
+.navBarContainer .hamburgerMenu {
+    display: none;
+    background-color: red;
+}
 
 
 
@@ -495,19 +320,114 @@ img.sechandMarkerHueChangeAvail {
 - ALL PAGES 
 -
 ------------------------------------------------*/
-
+.form-row {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
 /*-----------------------------------------------
 -
 - REPAIR.HTML
 -
 ------------------------------------------------*/
 
+#repairAssistantBorderStyling {
+    background-color: var(--background);
+    border-top: var(--secondary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding: 20px 20px 50px 20px;
+    margin: 20px auto auto auto;
+}
 
+.repair-assistant-background {
+    background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+#repairSubmit {
+    width: 100%
+}
 /*-----------------------------------------------
 -
 - RESULTS.HTML
 -
 ------------------------------------------------*/
+.startHidden {
+    display: none;
+}
+
+hr.solid {
+    border-top: 2px solid var(--accent);
+    margin-top: 0;
+  }
+
+  .repairHeading {
+    color: var(--purple)
+  }
+
+  .instructionArticle {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+
+.displayRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.repairSubHeadings {
+    color: var(--purple);
+    font-family: "Krona One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15pt;
+    margin: 20px;
+}
+
+.iconSpacing {
+    margin-right: 30px;
+    cursor:not-allowed;
+}
+
+.repairInstructions {
+    margin-top:40px;
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.videoLink {
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    width: 60%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+
+.materialsList {
+    border: 2px solid var(--purple);
+    border-radius: 5px;
+    max-width: 30%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+  iframe {
+    width: 90%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
+
 
 /*-----------------------------------------------
 -
@@ -515,139 +435,13 @@ img.sechandMarkerHueChangeAvail {
 -
 ------------------------------------------------*/
 
-#newPopUp {
-    position: fixed; /* Use absolute positioning */
-    top: 0; /* Aligns to the top of the page */
-    right: 0; /* Aligns to the left of the page */
-    margin: 10px; /* Optional: adds some spacing from the edges */
-    background-color: var(--background); /* Optional: background color for visibility */
-    padding: 10px; /* Optional: padding for better readability */
-    height: fit-content
-}
-
-/*-----------------------------------------------
--
-- ALL PAGES 
--
-------------------------------------------------*/
-
-/*-----------------------------------------------
--
-- FROM VERO FOR CARDS
--
-------------------------------------------------*/
-
-/* All material card styling */
-.materialCardNew, .materialCardAvailable, .materialCardRequest {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    width: 425px;
-    /* max-height: 30vh; */
-    height: 300px;
-    justify-content: space-between;
-    background-color: var(----background); 
-}
-/* Recently added material card */
-.materialCardNew {
-    border: var(--locationAvailable) solid 3px;
-    background-color: var(--background); 
-}
-.dotAvailable, .dotRequest {
-    display: inline-flex;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-}
-.dotAvailable {
-    background-color: var(--locationAvailable);
-}
-.dotRequest {
-    background-color: var(--locationRequest);
-}
-.matInfoContainer {
-    margin: 0px 15px 10px 15px;
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-}
-.matName {
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-.matInfo p {
-    margin: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--background); 
-}
-/* label icons below */
-.matInfoContainer img {
-    height: auto;
-    width: 20px;
-}
-.dotAvailable, .dotRequest, .matInfoContainer img {
-    margin-right: 15px;
-}
-
-/* thumbnail of material card */
-.matPicContainer {
-    width: 100%;
-    height: 100px;
-}
-.matPic {
-    border-radius: 15px 15px 0 0;
-    align-self: center;
-    justify-self: flex-end;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Available material card */
-/* Requested material card */
-/* .materialCardAvailable, .materialCardRequest {
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    max-width: 25vw;
-    max-height: 30vh;
-    justify-content: space-between;
+/* .secondhand-hub-background {
+    background-image: url('images/imgs/secondhandHubBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
 } */
-.materialCardAvailable {
-    border: var(--locationAvailable) solid 3px;
-}
-.materialCardRequest {
-    border: var(--locationRequest) solid 3px;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-.startHidden {
-    display: none;
-}
-
-
-.greenButton {
-    background-color: var(--secondary);
-}
-.greenButton:hover {
-    background-color: var(--locationAvailable);
-}
-
-
-/* Dialog styling */
 dialog {
     background-color: var(--background);
     border: 2px solid var(--primary);
@@ -658,10 +452,6 @@ dialog {
     padding: 0;
     justify-content: center; 
     align-items: center;
-}
-
-#repairSubmit {
-    width: 100%
 }
 
 /* Make the form fill the dialog */
@@ -703,11 +493,46 @@ dialog {
     align-items: center; */
 }
 
-.form-row {
-    display: flex;
-    align-items: center; 
-    gap: 10px; 
+.secondhandHeader > div {
+    margin-bottom: 20px;
 }
+
+.greenButton {
+    background-color: var(--secondary);
+}
+.greenButton:hover {
+    background-color: var(--locationAvailable);
+}
+.cancelButton {
+    width: 45%;
+}
+.greenSubmit {
+    width: 45%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .resultsBox {
     background-color: var(--background);
@@ -721,16 +546,6 @@ dialog {
 }
 
 
-#repairAssistantBorderStyling {
-    background-color: var(--background);
-    border-top: var(--secondary) 10px solid;
-    border-left: var(--primary) 2px solid;
-    border-right:var(--primary) 2px solid;
-    border-bottom: var(--primary) 2px solid;
-    border-radius: 10px; 
-    padding: 20px 20px 50px 20px;
-    margin: 20px auto auto auto;
-}
 
 
 .giveawayFormBorderStyling {
@@ -757,18 +572,9 @@ dialog {
 }
 
 
-.repair-assistant-background {
-    background-image: url('images//imgs/repairAssistantBackground.jpg'); /* Path to your image */
-    background-size: cover;
-    background-position: center;
-}
 
-/* .secondhand-hub-background {
-    background-image: url('images/imgs/secondhandHubBackground.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 100;
-} */
+
+
 
 /* Default button style */
 .buttonCheckedStyling {
@@ -1023,25 +829,8 @@ background-color: #ffdddd;
     margin-right: 15px;
 }
 
-.instructionArticle {
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-}
 
-.displayRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
-.repairSubHeadings {
-    color: var(--purple);
-    font-family: "Krona One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15pt;
-}
 
 
 .purpleButton {
@@ -1081,20 +870,15 @@ li {
         "wdth" 100;
 }
 
-.materialsList, .videoLink, .repairInstructions{
-    border: 2px solid var(--purple);
-    border-radius: 5px;
-}
 
-.materialsList, .videolink {
+/* .materialsList, .videolink {
     width: 40%;
-}
+} */
 
 .sideBySide {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    
+    gap: 20px;  
 }
 
 #materialCardContainer {
@@ -1102,9 +886,209 @@ li {
 
 }
 
-
-
 .newTagImage {
     height: 35px;
     width: auto;
+}
+
+
+
+
+
+/*-----------------------------------------------
+-
+- SECONDHAND.HTML MAP STYLING AUTHOR: VERO
+-
+------------------------------------------------*/
+
+.dotAvailable, .dotRequest {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.dotAvailable {
+    background-color: var(--locationAvailable);
+}
+.dotRequest {
+    background-color: var(--locationRequest);
+}
+
+/* changes the Leaflet Map marker colours */
+img.sechandMarkerHueChangeReq {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(99%) saturate(5063%) hue-rotate(350deg) brightness(110%) contrast(101%);
+}
+img.sechandMarkerHueChangeAvail {
+    /* filter: brightness(0) saturate(100%) invert(84%) sepia(10%) saturate(1552%) hue-rotate(55deg) brightness(95%) contrast(88%); */
+    filter: brightness(0) saturate(100%) invert(28%) sepia(9%) saturate(5486%) hue-rotate(134deg) brightness(93%) contrast(90%);
+}
+
+/* main page container & title + button */
+.secondhandHub, .secondhandHeader {
+    display: flex;
+    flex-direction: column;
+}
+.secondhandHeader>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* contains map and cards */
+.secondhandMapPage {
+    margin-top: 20px;
+    align-self: center;
+    background-color: var(--background);
+    border-radius: 15px;
+    height: 85vh;
+    width: 90vw;
+}
+
+.mapContainer {
+    display: flex;
+    flex-direction: row;
+}
+#secondhandMap {
+    height: 75vh;
+    width: 70%;
+}
+.sechandCardContainer {
+    margin-left: 25px;
+    height: 75vh;
+    width: 30%;
+    overflow-y: scroll;
+}
+
+.sechandCard {
+    background-color: var(--background);
+    border: var(--disabledBackgroundHover) solid 2px;
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sThumbnail {
+    margin: 0px 5px;
+    width: 100%;
+    height: 100px;
+    align-self: center;
+}
+.sThumbnail>img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.sInfo {
+    margin: 15px 25px;
+}
+.sInfo p img {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+}
+/* styling the actual text elements */
+.sechandCard p {
+    margin: 0px;
+}
+.sButton {
+    align-self: center;
+    width: 90%;
+    margin-bottom: 15px;
+}
+.sButton button {
+    width: 100%;
+    background-color: var(--fontColor);
+    color: var(--background);
+    text-decoration: none;
+}
+.sButton button:hover {
+    text-decoration: underline;
+}
+
+
+/*-----------------------------------------------
+-
+- MATERIAL CARDS: VERO
+-
+------------------------------------------------*/
+
+/* All material card styling */
+.materialCardNew, .materialCardAvailable, .materialCardRequest {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 425px;
+    /* max-height: 30vh; */
+    height: 300px;
+    justify-content: space-between;
+    background-color: var(----background); 
+}
+/* Recently added material card */
+.materialCardNew {
+    border: var(--locationAvailable) solid 3px;
+    background-color: var(--background); 
+}
+.dotAvailable, .dotRequest {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.dotAvailable {
+    background-color: var(--locationAvailable);
+}
+.dotRequest {
+    background-color: var(--locationRequest);
+}
+.matInfoContainer {
+    margin: 0px 15px 10px 15px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+.matName {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.matInfo p {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--background); 
+}
+/* label icons below */
+.matInfoContainer img {
+    height: auto;
+    width: 20px;
+}
+.dotAvailable, .dotRequest, .matInfoContainer img {
+    margin-right: 15px;
+}
+
+/* thumbnail of material card */
+.matPicContainer {
+    width: 100%;
+    height: 100px;
+}
+.matPic {
+    border-radius: 15px 15px 0 0;
+    align-self: center;
+    justify-self: flex-end;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.materialCardAvailable {
+    border: var(--locationAvailable) solid 3px;
+}
+.materialCardRequest {
+    border: var(--locationRequest) solid 3px;
 }
