@@ -324,7 +324,7 @@ function displayRequests() {
         })
     } else {
         console.log("Requests in local storage is empty");
-        document.getElementById('recentlyAddedContainer').style.display = 'none';
+        // document.getElementById('recentlyAddedContainer').style.display = 'none';
     }
 }
 
@@ -432,7 +432,7 @@ function displayGiveAways() {
         })
     } else {
         console.log("Materials in local storage is empty");
-        document.getElementById('recentlyAddedContainer').style.display = 'none';
+        // document.getElementById('recentlyAddedContainer').style.display = 'none';
     }
 }
 
@@ -448,4 +448,12 @@ clearLocalStorageButton.onclick = function() {
     location.reload(true);
 }
 
-
+// CHECKING LOCAL STORAGE: IF EMPTY GET RID OF PROFILEMATERIALS PAGE CONTAINER SAYING RECENTLY ADDED
+let localMaterials = JSON.parse(localStorage.getItem('materials'));
+let localRequests = JSON.parse(localStorage.getItem('requests'));
+if (localMaterials == null && localRequests == null) {
+    console.log("all local storage is empty");
+    document.getElementById('recentlyAddedContainer').style.display = 'none';
+} else {
+    document.getElementById('recentlyAddedContainer').style.display = 'block';
+}
