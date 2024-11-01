@@ -439,12 +439,23 @@ hr.solid {
 -
 ------------------------------------------------*/
 
-/* .secondhand-hub-background {
+.secondhand-hub-background {
     background-image: url('images/imgs/secondhandHubBackground.jpg');
     background-size: cover;
     background-position: center;
-    z-index: 100;
-} */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    display: none;
+}
+
+.background-overlay.active {
+    display: block; /* Show when active */
+}
+
 
 dialog {
     background-color: var(--background);
@@ -452,7 +463,7 @@ dialog {
     border-radius: 8px;
     color: var(--fontColor);
     position: relative;
-    z-index: 0.5;
+    z-index: 9999;
     padding: 0;
     justify-content: center; 
     align-items: center;

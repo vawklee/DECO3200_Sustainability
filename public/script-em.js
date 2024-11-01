@@ -149,11 +149,13 @@ SECONDHAND.HTML - Opening The Select Form & Handling Which Form Opens Next
 //background for secondhand hub modal 
 
 function showDialog() {
-    document.body.classList.add('secondhand-hub-background');
-    document.getElementById("selectPage").showModal();
+    document.querySelector('.background-overlay').classList.add('active');
+    selectPage = document.getElementById("selectPage");
+    selectPage.showModal();
 }
+
 function closeDialog() {
-    document.body.classList.remove('secondhand-hub-background'); // Remove background when dialog is closed
+    document.querySelector('.background-overlay').classList.remove('active');
     document.getElementById("selectPage").close();
 }
 
@@ -164,8 +166,7 @@ const selectPage = document.getElementById("selectPage");
 
 if (openSecondhandForm) {
     openSecondhandForm.addEventListener("click", () => {
-        selectPage.style.display = "block";
-        document.body.classList.add('secondhand-hub-background');
+        document.querySelector('.background-overlay').classList.add('active');
         selectPage.showModal();
     });
 }
