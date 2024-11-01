@@ -123,7 +123,7 @@ button.active, #submitButton {
 }
 
 button.active:hover, #submitButton:hover {
-    background-color: var(--fontColor);
+    /* background-color: var(--fontColor); */
     border: var(--fontColor) solid 2px;
 }
 
@@ -503,9 +503,18 @@ dialog {
 
 .secondPageFormStyling input, select, input[type="file"] {
     width: 100%;
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center; */
+}
+
+.giveAwayStyling.active {
+    background-color: var(--locationAvailable); /* Color for active Give Away button */
+    color: var(--fontColor); /* Change text color if needed */
+    border: var(--locationAvailable) 2px solid; /* Ensure border matches active color */
+}
+
+.requestStyling.active {
+    background-color: var(--locationRequest); /* Color for active Request button */
+    color: var(--fontColor); /* Change text color if needed */
+    border: var(--locationRequest) 2px solid; /* Ensure border matches active color */
 }
 
 .secondhandHeader > div {
@@ -640,27 +649,6 @@ dialog {
     color: var(--background)
     }
     
-
-/* .fakeButton:hover .giveAwayStyling {
-    background: var(--locationAvailable)
-}
-
-.fakeButton:checked .giveAwayStyling {
-    background: var(--locationAvailable);
-}
-
-.fakeButton:hover .requestStyling {
-    background: var(--locationRequest);
-}
-
-.fakeButton:hover .secondhandTypeStyling {
-    background-color: var(--primary); 
-    color: #ffffff;
-} 
-.fakeButton:checked .secondhandTypeStyling {
-    background-color: var(--primary); 
-    color: #ffffff;
-}  */
 
 button { 
 font-family: 'Anek Telugu', sans-serif;
