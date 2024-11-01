@@ -895,7 +895,7 @@ img.menderMarkerHueChange {
     height: 100px;
 }
 .matPic {
-    background-color: var(--accent);
+    /* background-color: var(--accent); */
     border-radius: 15px 15px 0 0;
     align-self: center;
     justify-self: flex-end;

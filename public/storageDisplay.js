@@ -5,6 +5,8 @@
 // assigning the icon sources through imports from the image folder
 import rulerIconSrc from './images/icons/ruler.svg';
 import speechBubbleIconSrc from './images/icons/speechBubble.svg';
+import noImageDefaultSrc from './images/imgs/no_image_default.png';
+
 
 // <section> element container used to display all of the 'cards' of different materials saved through form input
 var materialDisplay = document.getElementById("materialDisplay");
@@ -308,8 +310,10 @@ function displayRequests() {
             // let information = document.createElement('p');
             // information.innerHTML = `<p class="body">${material.name}<br>Description: ${material.description}<br>Colour: ${material.colour}<br>Size: ${material.size}</p>`;
             let thumbnail = document.createElement('div');
+            console.log("thumbnail 1", thumbnail)
             thumbnail.className = "matPicContainer";
-            thumbnail.innerHTML = '<img src="" class="matPic">';
+            thumbnail.innerHTML = `<img src="${noImageDefaultSrc}" class="matPic">`;
+            console.log("thumbnail.innerhtml", thumbnail.innerHTML)
 
             let information = document.createElement('div');
             information.className = "matInfoContainer";
@@ -401,20 +405,17 @@ function displayGiveAways() {
             let item = document.createElement('div');
             item.setAttribute('data-id', material.id);
             item.className = "materialCardNew";
-            // item.style.height = "300px";
-
-            // let information = document.createElement('p');
-            // information.innerHTML = `<p class="body">${material.name}<br>Description: ${material.description}<br>Colour: ${material.colour}<br>Size: ${material.size}</p>`;
             let thumbnail = document.createElement('div');
             thumbnail.className = "matPicContainer";
             // thumbnail.innerHTML = '<img src="${material.image}" class="matPic">';
                 // Check if the image is a valid Base64 string
-                if (material.image) {
-                    console.log("Displaying image: ", material.image); // Debugging line
-                    thumbnail.innerHTML = `<img src="${material.image}" class="matPic">`; // Use Base64 image
-                } else {
-                    thumbnail.innerHTML = '<img src="images/imgs/material_whiteDress.png" class="matPic">'; // Default image
-                }
+            if (material.image) {
+                console.log("Displaying image: ", material.image); // Debugging line
+                thumbnail.innerHTML = `<img src="${material.image}" class="matPic">`; // Use Base64 image
+            } else {
+                console.log("using default image")
+                thumbnail.innerHTML = `<img src="${noImageDefaultSrc}" class="matPic">`; // Default image
+            }
             // let thumbnailImg = new Image(320);
             // thumbnailImg.src = images['material_denim'];
             // thumbnailImg.alt = "thumbnail of material";
@@ -433,7 +434,9 @@ function displayGiveAways() {
 
             item.appendChild(thumbnail);
             item.appendChild(information);
-            materialDisplay.appendChild(item);
+            if (materialDisplay) {
+                materialDisplay.appendChild(item);
+            }
         })
     } else {
         console.log("Materials in local storage is empty");
