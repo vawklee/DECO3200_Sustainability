@@ -40,6 +40,13 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
       sustainabilityIcon.src = sustainabilityIconNeutral;
     }
   }
+// Function to update the modal header
+function updateModalHeader(newHeaderText) {
+  const modalHeader = document.getElementById('modalHeader');
+  if (modalHeader) {
+    modalHeader.innerText = newHeaderText;
+  }
+}
 
 // Function to set sustainable alternative 1 dropdown content
 function setSustainableAlternativeDropdownContent() {
@@ -108,6 +115,7 @@ function updateContentForAlternative2() {
 document.getElementById('buyNowButton1').addEventListener('click', function() {
   setBackgroundImage(backgroundImage2);
   setSustainableAlternativeDropdownContent();
+  updateModalHeader("Linen Trousers");
   updateContentForAlternative1();
   closeModal();
   changeSustainabilityIcon();
@@ -116,6 +124,7 @@ document.getElementById('buyNowButton1').addEventListener('click', function() {
 document.getElementById('buyNowButton2').addEventListener('click', function() {
   setBackgroundImage(backgroundImage3);
   setSustainableAlternativeDropdownContent();
+  updateModalHeader("Linen Trousers");
   updateContentForAlternative2();
   closeModal();
   changeSustainabilityIcon();
