@@ -325,6 +325,47 @@ button.download:hover {
     align-items: center; 
     gap: 10px; 
 }
+
+button { 
+    font-family: 'Anek Telugu', sans-serif;
+    }
+    
+    /* Apply the custom fonts to the form elements */
+    label, input, select, option, input::placeholder, textarea::placeholder, input[type="search"], input[type="search"]::placeholder, input[type="file"]{
+        font-family: 'Anek Telugu', sans-serif;
+        font-size: 15pt;
+        margin: 5px;
+    }
+    
+    input[type="search"]{
+        min-width: 50vw;
+    }
+    
+    /* Input styling */
+    input, select {
+        /* width: 100%;  */
+        padding: 10px; /* Add some padding */
+        border: 1px solid var(--disabledBackground); /* Example border style */
+        border-radius: 5px;
+    }
+    
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+    background-color: #ffdddd;
+    }
+    
+    .formHeading {
+        font-family: "Krona One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 30pt;
+        margin-top: 0;
+        text-align: center;
+    }
+    .redAsterisk {
+        color: var(--locationRequest)
+    }
+    
 /*-----------------------------------------------
 -
 - REPAIR.HTML
@@ -353,6 +394,51 @@ button.download:hover {
     margin-top: 20px;
     font-size: 15pt;;
 }
+
+#repairAssistantPage {
+    background-image: url(images/imgs/repairAssistantBackground.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+#repairAssistantForm select {
+    width: 100%;
+    height:fit-content
+}
+
+#recommendedPurple, #recommendedBlack {
+    width: auto;
+    height:auto;
+    display: none;
+}
+
+.purpleButton {
+    background-color: var(--purple);
+    width: 82%;
+    align-self: center;
+    margin-bottom: 20px;
+    color: var(--background)
+}
+
+.blackButton {
+    background-color: var(--fontColor);
+    width: 82%;
+    align-self: center;
+    margin-bottom: 20px;
+    color: var(--background)
+}
+
+.recommendationContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+#diyButton:hover, #localButton:hover {
+    text-decoration: underline;
+}
+
 
 
 /*-----------------------------------------------
@@ -433,6 +519,41 @@ hr.solid {
   }
 
 
+.resultsBox {
+    background-color: var(--background);
+    border-top: var(--secondary) 10px solid;
+    border-left: var(--primary) 2px solid;
+    border-right:var(--primary) 2px solid;
+    border-bottom: var(--primary) 2px solid;
+    border-radius: 10px; 
+    padding-left: 20px;;
+    margin: 20px auto auto auto;
+}
+
+
+.diyRepairContainer {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    border: var(--purple) solid 3px;
+    border-radius: 10px;
+}
+.localRepairContainer {
+    margin-left: 10px;
+    border: var(--fontColor) solid 3px;
+    border-radius: 10px;
+}
+
+li {
+    font-family: "Anek Telugu", sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+
 /*-----------------------------------------------
 -
 - SECONDHAND.HTML
@@ -501,79 +622,6 @@ dialog {
     display: none;
 }
 
-.secondPageFormStyling input, select, input[type="file"] {
-    width: 100%;
-}
-
-.giveAwayStyling.active {
-    background-color: var(--locationAvailable); /* Color for active Give Away button */
-    color: var(--fontColor); /* Change text color if needed */
-    border: var(--locationAvailable) 2px solid; /* Ensure border matches active color */
-}
-
-.requestStyling.active {
-    background-color: var(--locationRequest); /* Color for active Request button */
-    color: var(--fontColor); /* Change text color if needed */
-    border: var(--locationRequest) 2px solid; /* Ensure border matches active color */
-}
-
-.secondhandHeader > div {
-    margin-bottom: 20px;
-}
-
-.greenButton {
-    background-color: var(--secondary);
-}
-.greenButton:hover {
-    background-color: var(--locationAvailable);
-}
-.cancelButton {
-    width: 45%;
-    font-size: 15pt;
-}
-.greenSubmit {
-    width: 45%;
-    font-size: 15pt;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.resultsBox {
-    background-color: var(--background);
-    border-top: var(--secondary) 10px solid;
-    border-left: var(--primary) 2px solid;
-    border-right:var(--primary) 2px solid;
-    border-bottom: var(--primary) 2px solid;
-    border-radius: 10px; 
-    padding-left: 20px;;
-    margin: 20px auto auto auto;
-}
-
-
-
-
 .giveawayFormBorderStyling {
     background-color: var(--background);
     border-top: var(--locationAvailable) 10px solid;
@@ -597,12 +645,6 @@ dialog {
 
 }
 
-
-
-
-
-
-/* Default button style */
 .buttonCheckedStyling {
     background-color: var(----background); 
     color: var(--fontColor);
@@ -648,56 +690,40 @@ dialog {
     background-color: var(--primary);
     color: var(--background)
     }
-    
 
-button { 
-font-family: 'Anek Telugu', sans-serif;
-}
-
-/* Apply the custom fonts to the form elements */
-label, input, select, option, input::placeholder, textarea::placeholder, input[type="search"], input[type="search"]::placeholder, input[type="file"]{
-    font-family: 'Anek Telugu', sans-serif;
-    font-size: 15pt;
-    margin: 5px;
-}
-
-input[type="search"]{
-    min-width: 50vw;
-}
-
-/* Input styling */
-input, select {
-    /* width: 100%;  */
-    padding: 10px; /* Add some padding */
-    border: 1px solid var(--disabledBackground); /* Example border style */
-    border-radius: 5px;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-background-color: #ffdddd;
-}
-
-.formHeading {
-    font-family: "Krona One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 30pt;
-    margin-top: 0;
-    text-align: center;
-}
-
-
-#repairAssistantPage {
-    background-image: url(images/imgs/repairAssistantBackground.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-
-#repairAssistantForm select {
+.secondPageFormStyling input, select, input[type="file"] {
     width: 100%;
-    height:fit-content
+}
+
+.giveAwayStyling.active {
+    background-color: var(--locationAvailable); /* Color for active Give Away button */
+    color: var(--fontColor); /* Change text color if needed */
+    border: var(--locationAvailable) 2px solid; /* Ensure border matches active color */
+}
+
+.requestStyling.active {
+    background-color: var(--locationRequest); /* Color for active Request button */
+    color: var(--fontColor); /* Change text color if needed */
+    border: var(--locationRequest) 2px solid; /* Ensure border matches active color */
+}
+
+.secondhandHeader > div {
+    margin-bottom: 20px;
+}
+
+.greenButton {
+    background-color: var(--secondary);
+}
+.greenButton:hover {
+    background-color: var(--locationAvailable);
+}
+.cancelButton {
+    width: 45%;
+    font-size: 15pt;
+}
+.greenSubmit {
+    width: 45%;
+    font-size: 15pt;
 }
 
 .redCircle {
@@ -716,7 +742,6 @@ background-color: #ffdddd;
     margin-right: 8px; /* Space between the circle and the text */
 }
 
-
 .option {
     display: inline-flex;
     align-items: center;
@@ -734,60 +759,29 @@ background-color: #ffdddd;
     margin-right: 8px;
 }
 
-
 .iconSize {
     height: 15px;
     width: auto;
     margin-left: 10px
 }
 
-
-.redAsterisk {
-    color: var(--locationRequest)
+.sideBySide {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;  
 }
+
+/*-----------------------------------------------
+-
+- PROFILE.HTML + SUB PAGES
+-
+------------------------------------------------*/
 
 .resourcesHeader {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 35px;
-}
-.diyRepairContainer {
-    display: flex;
-    flex-direction: row;
-    margin-right: 10px;
-    border: var(--purple) solid 3px;
-    border-radius: 10px;
-}
-.localRepairContainer {
-    margin-left: 10px;
-    border: var(--fontColor) solid 3px;
-    border-radius: 10px;
-}
-
-
-/* styling for each resource card */
-.resource {
-    border-radius: 10px;
-    background-color: var(--background);
-    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
-    display: flex;
-    flex-direction: column;
-}
-.rTitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 0 0 15px
-}
-.rTitle h2, .rTitle p {
-    margin: 10px;
-}
-
-#recommendedPurple, #recommendedBlack {
-    width: auto;
-    height:auto;
-    display: none;
 }
 
 .bookmarkIcon {
@@ -806,8 +800,6 @@ background-color: #ffdddd;
     align-self: center;
 }
 
-
-/* styling each individual tag */
 .rTags p {
     display: flex;
     flex-direction: row;
@@ -828,78 +820,38 @@ background-color: #ffdddd;
 
 }
 
-
 .rTags img {
     height: 20px;
     width: auto;
     margin-right: 15px;
 }
 
-
-
-
-
-.purpleButton {
-    background-color: var(--purple);
-    width: 82%;
-    align-self: center;
-    margin-bottom: 20px;
-    color: var(--background)
-}
-
-.blackButton {
-    background-color: var(--fontColor);
-    width: 82%;
-    align-self: center;
-    margin-bottom: 20px;
-    color: var(--background)
-}
-
-.recommendationContainer {
+/* styling for each resource card */
+.resource {
+    border-radius: 10px;
+    background-color: var(--background);
+    filter: drop-shadow(0px 2px 2px var(--disabledBackgroundHover));
     display: flex;
-    flex-direction: row;
-    margin-top: 30px;
+    flex-direction: column;
 }
-
-
-#diyButton:hover, #localButton:hover {
-    text-decoration: underline;
-}
-
-
-li {
-    font-family: "Anek Telugu", sans-serif;
-    font-size: 15pt;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
-}
-
-
-/* .materialsList, .videolink {
-    width: 40%;
-} */
-
-.sideBySide {
+.rTitle {
     display: flex;
-    flex-direction: row;
-    gap: 20px;  
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 0 0 15px
+}
+.rTitle h2, .rTitle p {
+    margin: 10px;
 }
 
 #materialCardContainer {
     margin: 20px;
-
 }
 
 .newTagImage {
     height: 35px;
     width: auto;
 }
-
-
-
-
 
 /*-----------------------------------------------
 -
@@ -1097,16 +1049,4 @@ img.sechandMarkerHueChangeAvail {
 }
 .materialCardRequest {
     border: var(--locationRequest) solid 3px;
-}
-
-
-
-#newPopUp {
-    position: fixed; /* Use absolute positioning */
-    top: 0; /* Aligns to the top of the page */
-    right: 0; /* Aligns to the left of the page */
-    margin: 10px; /* Optional: adds some spacing from the edges */
-    background-color: var(--background); /* Optional: background color for visibility */
-    padding: 10px; /* Optional: padding for better readability */
-    height: fit-content
 }
