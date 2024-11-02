@@ -550,6 +550,11 @@ li {
         "wdth" 100;
 }
 
+.repairIcon {
+    height: 100px;
+    width: auto;
+    margin: 10px;
+}
 
 /*-----------------------------------------------
 -

@@ -1,3 +1,8 @@
+import instructionZipper from './images/imgs/instruction_zipper.jpeg';
+import instructionHem from './images/imgs/instruction_hem.jpeg';
+import instructionRip from './images/imgs/instruction_rip.jpg';
+import instructionButton from './images/imgs/instruction_button.jpeg';
+
 /*
 --------------------------------------------------------------------------
 VERONICA'S NAV BAR
@@ -41,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("materialType", materialType);
             localStorage.setItem("clothingType", clothingType);
             localStorage.setItem("damageType", damageType);
-            console.log("damage type = ", damageType)
 
             if (damageType === "Broken Zipper" || damageType === "Rip/Tear/Hole"){
                 localStorage.setItem("recommendedType", "Black");
@@ -55,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // use backticks for template literals
             localStorage.setItem("repairResult", `Your results for: ${materialType} ${clothingType} with ${damageType}`);
 
+
             console.log("Redirecting to results.html");
             window.location.href = "results.html";
             // https://stackoverflow.com/questions/15759020/window-location-href-doesnt-redirect
@@ -67,10 +72,25 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const repairResult = document.getElementById("repairResult");
     var recommendedColour = localStorage.getItem("recommendedType");
-        // retrieve the repair result from localStorage
     const storedResult = localStorage.getItem("repairResult");
     const recommendedBlack = document.getElementById("recommendedBlack")
     const recommendedPurple = document.getElementById("recommendedPurple")
+    const damageType = localStorage.getItem("damageType")
+    const instructionImage = document.getElementById("repairImage")
+
+    // set icons for each repair type for additional user feedback 
+    if(damageType === "Broken Zipper") {
+        instructionImage.src = instructionZipper;
+    }
+    else if (damageType === "Rip/Tear/Hole") {
+        instructionImage.src = instructionRip
+    }
+    else if (damageType === "Replacing Button") {
+        instructionImage.src = instructionButton
+    }
+    else if (damageType === "Fallen Hem") {
+        instructionImage.src = instructionHem
+    }
 
     if (storedResult && repairResult) {
         // update with the stored result
