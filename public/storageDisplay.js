@@ -304,7 +304,7 @@ function displayRequests() {
             // create item in list
             let item = document.createElement('div');
             item.setAttribute('data-id', request.id);
-            item.className = "materialCardNew";
+            item.className = "materialCardNew materialCardNewRequest";
             // item.style.height = "300px";
 
             // let information = document.createElement('p');
@@ -404,7 +404,7 @@ function displayGiveAways() {
             // create item in list
             let item = document.createElement('div');
             item.setAttribute('data-id', material.id);
-            item.className = "materialCardNew";
+            item.className = "materialCardNew materialCardNewAvailable";
             let thumbnail = document.createElement('div');
             thumbnail.className = "matPicContainer";
             // thumbnail.innerHTML = '<img src="${material.image}" class="matPic">';

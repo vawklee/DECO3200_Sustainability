@@ -849,9 +849,23 @@ img.menderMarkerHueChange {
     justify-content: space-between;
 }
 /* Recently added material card */
-.materialCardNew {
+/* .materialCardNew {
+
+} */
+
+/* em added these */
+
+.materialCardNewAvailable {
     border: var(--locationAvailable) solid 3px;
 }
+
+.materialCardNewRequest {
+    border: var(--locationRequest) solid 3px;
+}
+
+
+
+
 .dotAvailable, .dotRequest {
     display: inline-flex;
     height: 20px;
