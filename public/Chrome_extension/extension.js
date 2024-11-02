@@ -1,5 +1,6 @@
 import backgroundImage1 from './images/background_image-1.png'
 import backgroundImage2 from './images/background_image-2.png'
+import backgroundImage3 from './images/background_image-3.png'
 import sustainabilityIconNeutral from './images/icon_neutral.png'
 
 // const targetPages = [
@@ -42,6 +43,9 @@ function setBackgroundImageImportOne() {
 function setBackgroundImageImportTwo() {
   document.body.style.backgroundImage = `url(${backgroundImage2})`;
 }
+function setBackgroundImageImportThree() {
+  document.body.style.backgroundImage = `url(${backgroundImage3})`;
+}
 
 // setBackgroundImage('images/background_image-1.png'); 
 window.onload = setBackgroundImageImportOne();
@@ -67,11 +71,19 @@ function changeSustainabilityIcon() {
   let sustainabilityIcon = document.getElementById('sustainabilityButton');
   sustainabilityIcon.src = sustainabilityIconNeutral;
 }
-document.getElementById('buyNowButton').addEventListener('click', function(){
+document.getElementById('buyNowButton1').addEventListener('click', function(){
   //change the image when button is clicked
   // setBackgroundImage('images/background_image-2.png');
   console.log("buy button clicked");
   setBackgroundImageImportTwo();
+  closeModal(); // Close the modal
+  changeSustainabilityIcon(); // Call the function to change the image
+});
+document.getElementById('buyNowButton2').addEventListener('click', function(){
+  //change the image when button is clicked
+  // setBackgroundImage('images/background_image-2.png');
+  console.log("buy button clicked");
+  setBackgroundImageImportThree();
   closeModal(); // Close the modal
   changeSustainabilityIcon(); // Call the function to change the image
 });
