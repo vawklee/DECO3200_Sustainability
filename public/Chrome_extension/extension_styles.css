@@ -292,6 +292,16 @@ font-weight: normal;
   position: relative;
   overflow: hidden;
 }
+.centered-card {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  /* height: 55vh; Full viewport height to center vertically */
+}
+
+.centered-card .card {
+  margin: 0 auto; /* Ensure the card stays centered */
+}
 .label{
   position: absolute;
   top: 10px;
