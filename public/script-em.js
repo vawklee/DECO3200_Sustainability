@@ -81,15 +81,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // set icons for each repair type for additional user feedback 
     if(damageType === "Broken Zipper") {
         instructionImage.src = instructionZipper;
+        instructionImage.alt = "Icon of Replacing a Zipper";
     }
     else if (damageType === "Rip/Tear/Hole") {
-        instructionImage.src = instructionRip
+        instructionImage.src = instructionRip;
+        instructionImage.alt = "Icon of Repairing Rip or Tear";
     }
     else if (damageType === "Replacing Button") {
-        instructionImage.src = instructionButton
+        instructionImage.src = instructionButton;
+        instructionImage.alt = "Icon of Replacing a Button";
     }
     else if (damageType === "Fallen Hem") {
-        instructionImage.src = instructionHem
+        instructionImage.src = instructionHem;
+        instructionImage.alt = "Icon of Repairing a Fallen Hem";
     }
 
     if (storedResult && repairResult) {
