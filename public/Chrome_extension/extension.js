@@ -88,7 +88,7 @@ const useCases = {
     modalHeader: "Green Skirt",
     banner: {
       title: "Low sustainability rating",
-      description: "Viscose is water and carbon-intensive.",
+      description: "Polyster is water and carbon-intensive.",
       color: "#ffcccb",
       image: productImage4
     },
@@ -179,7 +179,23 @@ function applyUseCase(useCaseKey) {
 // Update content based on selected product card
 function updateContentForAlternative(card) {
   updateSustainabilityBanner("Sustainable Alternative", "Consider secondhand items to reduce waste.", card.image, "#e8f5e9");
-
+  const sustainableDropdownContent = {
+    fabric: "Linen Fabric:",  // Example for a linen alternative
+    reason: "Sustainable Alternative",
+    details: [
+      {
+        icon: "waves",
+        title: "Water Usage",
+        description: "Linen requires significantly less water compared to cotton, making it a more sustainable choice."
+      },
+      {
+        icon: "cloud",
+        title: "Carbon Footprint",
+        description: "Linen has a smaller carbon footprint due to fewer pesticides and lower energy requirements."
+      },
+    ]
+  };
+  updateDropdownContent(sustainableDropdownContent);
   // Show only the secondhand product card
   document.querySelectorAll('.card').forEach((el, index) => {
     el.style.display = index === 2 ? 'block' : 'none';
