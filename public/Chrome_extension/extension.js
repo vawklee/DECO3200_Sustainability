@@ -12,6 +12,8 @@ import productImage3 from './images/product_3.jpg';
 import productImage4 from './images/product_4.jpeg';
 import productImage5 from './images/product_5.jpeg';
 import productImage6 from './images/product_6.jpeg';
+import secondhandImage1 from './images/secondhand-alternative_1.webp';
+import secondhandImage2 from './images/secondhand-alternative_2.png';
 import hmLogo from './images/hm-logo.png';
 import zaraLogo from './images/zara-logo.png';
 
@@ -72,7 +74,7 @@ const useCases = {
         size: "10",
         material: "cotton,Elastane",
         description: "Lightly used",
-        image: productImage2,
+        image: secondhandImage1,
         label: " Secondhand Alternative",
         // logo: "./images/zara-logo.png"
       },
@@ -91,51 +93,51 @@ const useCases = {
       image: productImage4
     },
     dropdownContent: {
-      fabric: "Viscose Fabric:",
+      fabric: "Polyester 99%, Elastane 1%",
       reason: "Current Fabric",
       details: [
         {
           icon: "waves",
           title: "Water Usage",
-          description: "Viscose production uses a large amount of water, which affects its sustainability rating."
+          description: "Polyester production uses less water compared to natural fibers like cotton, but is heavily reliant on non-renewable resources."
         },
         {
           icon: "cloud",
           title: "Carbon Footprint",
-          description: "The carbon footprint of viscose production is high due to energy-intensive processes."
-        }
+          description: "Polyester has a high carbon footprint due to its petroleum-based production, which emits significant greenhouse gases."
+        },
       ]
     },
     productCards: [
       {
-        title: "BAMBOO SKIRT",
-        price: "$89.99",
+        title: "SATIN SKIRT",
+        price: "$59.99",
         size: "S",
-        material: "100% Bamboo",
-        description: "Light Green",
+        material: "Polyester 98%, Elastane 2%",
+        description: "Light khaki green",
         image: productImage5,
         label: "Alternative",
         logo: hmLogo,
         background: backgroundImage5
       },
       {
-        title: "BAMBOO SKIRT",
-        price: "$89.99",
+        title: "LINEN SKIRT",
+        price: "$59.99",
         size: "S",
-        material: "100% Bamboo",
-        description: "Light Green",
+        material: "Viscose 70%, Linen 30%",
+        description: "Green/Floral",
         image: productImage6,
         label: "Alternative",
         logo: hmLogo,
         background: backgroundImage6
       },
       {
-        title: "BAMBOO SKIRT",
-        price: "$89.99",
-        size: "S",
-        material: "100% Bamboo",
-        description: "Light Green",
-        image: productImage4,
+        title: "MIDI SKIRT",
+        price: "$19.50",
+        size: "L",
+        material: "Linen, Viscose",
+        description: "Khaki",
+        image: secondhandImage2,
         label: "Secondhand Alternative",
         //logo: hmLogo
       },
