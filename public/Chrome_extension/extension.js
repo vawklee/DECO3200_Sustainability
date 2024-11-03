@@ -2,15 +2,193 @@
 import backgroundImage1 from './images/background_image-1.png';
 import backgroundImage2 from './images/background_image-2.png';
 import backgroundImage3 from './images/background_image-3.png';
+import backgroundImage4 from './images/background_image-4.png';
+import backgroundImage5 from './images/background_image-5.png';
+import backgroundImage6 from './images/background_image-6.png';
 import sustainabilityIconNeutral from './images/icon_neutral.png';
-import bannerImage1 from './images/product_1_card.webp';
-import bannerImage2 from './images/product_2.jpg';
-import bannerImage3 from './images/product_3.jpg';
+import productImage1 from './images/product_1_card.webp';
+import productImage2 from './images/product_2.jpg';
+import productImage3 from './images/product_3.jpg';
+import productImage4 from './images/product_4.jpeg';
+import productImage5 from './images/product_5.jpeg';
+import productImage6 from './images/product_6.jpeg';
+import hmLogo from './images/hm-logo.png';
+import zaraLogo from './images/zara-logo.png';
 
-// Immediately set the initial background image and content
-setBackgroundImage(backgroundImage1);
-updateBannerImage(bannerImage1);
-updateContentForDefault();
+const useCases = {
+  zaraTrousers: {
+    backgroundImage: backgroundImage1,
+    modalHeader: "Cotton Trousers",
+    banner: {
+      title: "Low sustainability rating",
+      description: "Cotton uses more water than most.",
+      color: "#ffeae9",
+      image: productImage1
+    },
+    dropdownContent:{
+      fabric:"Denim Fabric:",
+      reason: "Current Fabric",
+      details: [
+        {
+          icon: "waves",
+          title: "Water Usage",
+          description: "Denim is a highly water-intensive crop, needing thousands of litres of water to produce a single item."
+        },
+        {
+          icon: "cloud",
+          title: "Carbon Footprint",
+          description: "Cotton farming has a larger carbon footprint due to intensive farming practices, synthetic fertilizers, and water usage."
+        }
+      ]
+    },
+    productCards: [
+      {
+        title: "LINEN TROUSERS",
+        price: "$105.00",
+        size: "M",
+        material: "100% Linen",
+        description: "Black",
+        image: productImage2,
+        label: "Alternative",
+        logo: zaraLogo
+      },
+      //Product card 2 
+      {
+        title: "LINEN TROUSERS",
+        price: "$119.00",
+        size: "M",
+        material: "100% Linen",
+        description: "Black",
+        image: productImage3,
+        label: "Alternative",
+        logo: zaraLogo
+      },
+      //PRODUCT 3
+      {
+        title: "SLEEK PANTS",
+        price: "$39.90",
+        size: "10",
+        material: "cotton,Elastane",
+        description: "Lightly used",
+        image: productImage2,
+        label: " Secondhand Alternative",
+        // logo: "./images/zara-logo.png"
+      },
+    ],
+    secondhandRedirectUrl: "./secondhand.html",
+    finalIcon: sustainabilityIconNeutral,
+  },
+
+  hmGreenSkirt: {
+    backgroundImage: backgroundImage4,
+    modalHeader: "Green Skirt",
+    banner: {
+      title: "Low sustainability rating",
+      description: "Viscose is water and carbon-intensive.",
+      color: "#ffcccb",
+      image: './images/green_skirt_banner.jpg'
+    },
+    dropdownContent: {
+      fabric: "Viscose Fabric:",
+      reason: "Current Fabric",
+      details: [
+        {
+          icon: "waves",
+          title: "Water Usage",
+          description: "Viscose production uses a large amount of water, which affects its sustainability rating."
+        },
+        {
+          icon: "cloud",
+          title: "Carbon Footprint",
+          description: "The carbon footprint of viscose production is high due to energy-intensive processes."
+        }
+      ]
+    },
+    productCards: [
+      {
+        title: "BAMBOO SKIRT",
+        price: "$89.99",
+        size: "S",
+        material: "100% Bamboo",
+        description: "Light Green",
+        image: productImage5,
+        label: "Alternative",
+        logo: hmLogo
+      },
+      {
+        title: "BAMBOO SKIRT",
+        price: "$89.99",
+        size: "S",
+        material: "100% Bamboo",
+        description: "Light Green",
+        image: productImage6,
+        label: "Alternative",
+        logo: hmLogo
+      },
+      {
+        title: "BAMBOO SKIRT",
+        price: "$89.99",
+        size: "S",
+        material: "100% Bamboo",
+        description: "Light Green",
+        image: productImage4,
+        label: "Secondhand Alternative",
+        //logo: hmLogo
+      },
+    ],
+    secondhandRedirectUrl: "./secondhand_hub.html",
+    finalIcon: './images/icon_neutral.png',
+  }
+};
+// Randomly select a use case
+function getRandomUseCase() {
+  const useCaseKeys = Object.keys(useCases);
+  const randomKey = useCaseKeys[Math.floor(Math.random() * useCaseKeys.length)];
+  return randomKey;
+}
+// Apply the randomly selected use case on extension load
+window.onload = function() {
+  const selectedUseCase = getRandomUseCase();
+  applyUseCase(selectedUseCase);
+};
+
+function applyUseCase(useCaseKey) {
+  const config = useCases[useCaseKey];
+    // Set background image
+    setBackgroundImage(config.backgroundImage);
+
+    // Update modal header
+    updateModalHeader(config.modalHeader);
+  
+    // Update sustainability banner
+    updateSustainabilityBanner(config.banner.title, config.banner.description, config.banner.image, config.banner.color);
+  
+    // Update dropdown content
+    updateDropdownContent(config.dropdownContent);
+  
+    // Update product cards
+    updateProductCards(config.productCards);
+  
+    // Handle secondhand redirect
+    const redirectButton = document.getElementById('sechandRedirect');
+    redirectButton.onclick = () => {
+      window.location.href = config.secondhandRedirectUrl;
+    };
+    // Set event listeners for Buy Now buttons to change icon
+  document.getElementById('buyNowButton1').onclick = () => {
+    setBackgroundImage(backgroundImage5);
+    changeSustainabilityIcon(config.finalIcon);
+  };
+  document.getElementById('buyNowButton2').onclick = () => {
+    setBackgroundImage(backgroundImage6);
+    changeSustainabilityIcon(config.finalIcon);
+  };
+}
+
+// // Immediately set the initial background image and content
+// setBackgroundImage(backgroundImage1);
+// updateBannerImage(productImage1);
+// updateContentForDefault();
 //setDefaultDropdownContent(); // Load default dropdown content
 // Utility Functions
 function setBackgroundImage(image) {
@@ -18,6 +196,45 @@ function setBackgroundImage(image) {
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundRepeat = 'no-repeat';
 }
+  // Function to update default content (initial view)
+  function updateSustainabilityBanner(title, description, image, color) {
+    document.getElementById('bannerTitle').innerText = title;
+    document.getElementById('bannerDescription').innerText = description;
+    document.getElementById('sustainabilityBanner').style.backgroundColor = color;
+    document.getElementById('bannerImage').src = image;
+  }
+  function updateModalHeader(headerText) {
+    document.getElementById('modalHeader').innerText = headerText;
+  }
+  function updateDropdownContent(content) {
+    document.querySelector('.panel-header h2').innerText = content.fabric;
+    document.querySelector('.panel-header p').innerText = content.reason;
+    const details = document.querySelector('.sustainability-details');
+    details.innerHTML = content.details.map(detail => `
+      <div class="detail-item">
+        <span class="material-icons">${detail.icon}</span>
+        <p><strong>${detail.title}:</strong></p>
+      </div>
+      <p>${detail.description}</p>
+      <hr>
+    `).join('');
+  }
+  function updateProductCards(cards) {
+    const cardElements = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      if (cardElements[index]) {
+        cardElements[index].querySelector('.product-title').innerText = card.title;
+        cardElements[index].querySelector('.product-price').innerText = card.price;
+        cardElements[index].querySelector('.product-details h4:nth-child(1)').innerHTML = `<strong>Size:</strong> ${card.size}`;
+        cardElements[index].querySelector('.product-details h4:nth-child(2)').innerHTML = `<strong>Material:</strong> ${card.material}`;
+        cardElements[index].querySelector('.product-details h4:nth-child(3)').innerHTML = `<strong>Description:</strong> ${card.description}`;
+        cardElements[index].querySelector('.card-image-container img').src = card.image;
+        cardElements[index].querySelector('.label img').src = card.logo;
+        cardElements[index].querySelector('.label span').innerText = card.label;
+        cardElements[index].style.display = 'block';
+      }
+    });
+  }
 function updateBannerImage(image) {
   document.getElementById('bannerImage').src = image;
 }
@@ -41,12 +258,10 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
     }
   }
 // Function to update the modal header
-function updateModalHeader(newHeaderText) {
-  const modalHeader = document.getElementById('modalHeader');
-  if (modalHeader) {
-    modalHeader.innerText = newHeaderText;
-  }
-}
+// function updateModalHeader(newHeaderText) {
+//   const modalHeader = document.getElementById('modalHeader');
+//   modalHeader.innerText = newHeaderText;
+// }
 
 // Function to set sustainable alternative 1 dropdown content
 function setSustainableAlternativeDropdownContent() {
@@ -68,23 +283,33 @@ function setSustainableAlternativeDropdownContent() {
     <p>Linen has a lower carbon footprint due to fewer pesticide and fertilizer requirements.</p>
   `;
 }
-  // Function to update default content (initial view)
+//   // Function to update default content (initial view)
+// function updateSustainabilityBanner(title, description, image, color) {
+//   document.getElementById('bannerTitle').innerText = title;
+//   document.getElementById('bannerDescription').innerText = description;
+//   document.getElementById('sustainabilityBanner').style.backgroundColor = color;
+//   document.getElementById('bannerImage').src = image;
+// }
+
+
 function updateContentForDefault() {
   // Reset banner content
-  document.getElementById('bannerTitle').innerText = "Low sustainability rating";
-  document.getElementById('bannerDescription').innerText = "Cotton uses more water than most.";
-  document.getElementById('sustainabilityBanner').style.backgroundColor = "#ffeae9";
-
+  // document.getElementById('bannerTitle').innerText = "Low sustainability rating";
+  // document.getElementById('bannerDescription').innerText = "Cotton uses more water than most.";
+  // document.getElementById('sustainabilityBanner').style.backgroundColor = "#ffeae9";
+  updateSustainabilityBanner("Low sustainability rating", "Cotton uses more water than most.", productImage1, "#ffeae9")
   // Show all product cards and pagination
   document.querySelectorAll('.card').forEach(card => card.style.display = 'block');
   document.querySelector('.pagination-dots').style.display = 'flex';
 }
 //Product Card 1
-function updateContentForAlternative1() {
-  document.getElementById('bannerTitle').innerText = "Sustainable Alternative";
-  document.getElementById('bannerDescription').innerText = "Consider secondhand items to reduce waste.";
-  document.getElementById('sustainabilityBanner').style.backgroundColor = "#e8f5e9";
-  updateBannerImage(bannerImage2);
+function updateContentForAlternative1(title, des, bannerColor) {
+  // document.getElementById('bannerTitle').innerText = "Sustainable Alternative";
+  // document.getElementById('bannerDescription').innerText = "Consider secondhand items to reduce waste.";
+  // document.getElementById('sustainabilityBanner').style.backgroundColor = "#e8f5e9";
+  // updateBannerImage(productImage2);
+  updateSustainabilityBanner("Sustainable Alternative", "Consider secondhand items to reduce waste.", productImage2, '#e8f5e9')
+
 
   // Show only the secondhand product card
   document.querySelectorAll('.card').forEach((card, index) => {
@@ -100,7 +325,7 @@ function updateContentForAlternative2() {
   document.getElementById('bannerTitle').innerText = "Sustainable Alternative";
   document.getElementById('bannerDescription').innerText = "Consider secondhand items to reduce waste.";
   document.getElementById('sustainabilityBanner').style.backgroundColor = "#e8f5e9";
-  updateBannerImage(bannerImage3);
+  updateBannerImage(productImage3);
 
   // Show only the secondhand product card
   document.querySelectorAll('.card').forEach((card, index) => {
@@ -129,95 +354,10 @@ document.getElementById('buyNowButton2').addEventListener('click', function() {
   closeModal();
   changeSustainabilityIcon();
 });
-  // function setBannerImage(imageKey) {
-  //   document.getElementById('bannerImage').src = bannerImages[imageKey];
-  // }
-  
-// // on immediate loading of extension.html
-// function setBackgroundImageImportOne() {
-//   document.body.style.backgroundImage = `url(${backgroundImage1})`;
-// }
 
-// function setBackgroundImageImportTwo() {
-//   document.body.style.backgroundImage = `url(${backgroundImage2})`;
-// }
-// function setBackgroundImageImportThree() {
-//   document.body.style.backgroundImage = `url(${backgroundImage3})`;
-// }
-
-// setBackgroundImage('images/background_image-1.png'); 
-//window.onload = setBackgroundImageImportOne();
-// image path to starting product
-// Function to close the modal
-// Function to close the modal by removing the 'panel-open' class
-// function closeModal() {
-//   const toggleContainer = document.querySelector('.toggle-container');
-//   if (toggleContainer && toggleContainer.classList.contains('panel-open')) {
-//     toggleContainer.classList.remove('panel-open');
-//   }
-// }
-// function changeSustainabilityIcon() {
-//   const sustainabilityIcon = document.getElementById('sustainabilityButton');
-//   if (sustainabilityIcon) {
-//     sustainabilityIcon.src = sustainabilityIconNeutral;
-//   }
-// }
-// // Function to update default content (initial view)
-// function updateContentForDefault() {
-//   // Reset banner content
-//   document.getElementById('bannerTitle').innerText = "Low sustainability rating";
-//   document.getElementById('bannerDescription').innerText = "Cotton uses more water than most.";
-//   document.getElementById('sustainabilityBanner').style.backgroundColor = "#ffeae9";
-
-//   // Show all product cards and pagination
-//   document.querySelectorAll('.card').forEach(card => card.style.display = 'block');
-//   document.querySelector('.pagination-dots').style.display = 'flex';
-// }
-// document.getElementById('buyNowButton1').addEventListener('click', function(){
-//   //change the image when button is clicked
-//   // setBackgroundImage('images/background_image-2.png');
-//   console.log("buy button clicked");
-//   setBackgroundImageImportTwo();
-//   updateContentForSecondhand();
-//   closeModal(); // Close the modal
-//   changeSustainabilityIcon(); // Call the function to change the image
-// });
-// document.getElementById('buyNowButton2').addEventListener('click', function(){
-//   //change the image when button is clicked
-//   // setBackgroundImage('images/background_image-2.png');
-//   console.log("buy button clicked");
-//   setBackgroundImageImportThree();
-//   closeModal(); // Close the modal
-//   changeSustainabilityIcon(); // Call the function to change the image
-// });
-// Set the initial background image for bannerImage on window load
-// window.onload = function() {
-//   document.getElementById('bannerImage').src = bannerImage1;
-// };
-//   // Function to update content for the secondhand alternative view
-// function updateContentForSecondhand() {
-//   // Update the banner content for secondhand
-//   document.getElementById('bannerTitle').innerText = "Sustainable Alternative";
-//   document.getElementById('bannerDescription').innerText = "Consider secondhand items to reduce waste.";
-//   document.getElementById('sustainabilityBanner').style.backgroundColor = "#e8f5e9";
-// // Update the banner image
-// const bannerImage = document.getElementById('bannerImage');
-// bannerImage.src = 'images/product_2.jpg'; // Replace with the path to the new image
-//   // Show only the secondhand product card
-//   document.querySelectorAll('.card').forEach((card, index) => {
-//     card.style.display = index === 2 ? 'block' : 'none'; // Show only the third card
-//   });
-
-//   // Hide pagination indicators
-//   document.querySelector('.pagination-dots').style.display = 'none';
-//   // Add the centering class to the container
-//   document.querySelector('.scrolling-wrapper').classList.add('centered-card');
-// }
-//   // Call the function to update the banner on page load
-//   updateBanner();
- document.getElementById("sustainabilityButton").addEventListener("click", function() {
-    document.querySelector(".toggle-container").classList.toggle("panel-open");
-   });
+document.getElementById("sustainabilityButton").addEventListener("click", function() {
+  document.querySelector(".toggle-container").classList.toggle("panel-open");
+  });
   
    const scrollingWrapper = document.querySelector('.scrolling-wrapper');
    const dots = document.querySelectorAll('.dot');
