@@ -1,7 +1,8 @@
-import instructionZipper from './images/imgs/instruction_zipper.jpeg';
-import instructionHem from './images/imgs/instruction_hem.jpeg';
-import instructionRip from './images/imgs/instruction_rip.jpg';
-import instructionButton from './images/imgs/instruction_button.jpeg';
+// TODO: fix these imports - they fail with 'Browser scripts cannot have imports or exports.'
+// import instructionZipper from './images/imgs/instruction_zipper.jpeg';
+// import instructionHem from './images/imgs/instruction_hem.jpeg';
+// import instructionRip from './images/imgs/instruction_rip.jpg';
+// import instructionButton from './images/imgs/instruction_button.jpeg';
 
 /*
 --------------------------------------------------------------------------
@@ -206,7 +207,6 @@ function closeDialog() {
 // opening the secondhand hub modal 
 
 const openSecondhandForm = document.getElementById("openSecondhandForm");
-const selectPage = document.getElementById("selectPage");
 
 if (openSecondhandForm) {
     openSecondhandForm.addEventListener("click", () => {
