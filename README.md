@@ -12,13 +12,13 @@ This is for the DECO3200 Interactive Design Product Studio. Our project addresse
 3. Use the terminal and type `npm install` to install all package dependencies
 
 ### Viewing the website (Repair & Rewear | index.html)
-1. Using the terminal, type `npm run dev` to start the web server displaying the website
+1. Using the terminal, type `npm run dev` to start the web server displaying the website (this may take some time)
 2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. If you have viewed the browser extension beforehand, press Shift + F5 to refresh the webpage without cache
 4. Using the terminal, press `Control + C` to stop the web server at any time
 
 ### Viewing the browser extension (Sustainable Shopping Assistant | extension.html)
-1. Using the terminal, type `npm run extension` to start the web server displaying the browser extension prototype
+1. Using the terminal, type `npm run extension` to start the web server displaying the browser extension prototype (this may take some time)
 2. View on a web browser at http://localhost:1234/ (port number may vary, refer to the terminal for any differences)
 3. If you have viewed the website beforehand, press Shift + F5 to refresh the webpage without cache
 4. Using the terminal, press `Control + C` to stop the web server at any time
