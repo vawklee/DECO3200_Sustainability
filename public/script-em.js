@@ -78,22 +78,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const damageType = localStorage.getItem("damageType")
     const instructionImage = document.getElementById("repairImage")
 
-    // set icons for each repair type for additional user feedback 
-    if(damageType === "Broken Zipper") {
-        instructionImage.src = instructionZipper;
-        instructionImage.alt = "Icon of Replacing a Zipper";
-    }
-    else if (damageType === "Rip/Tear/Hole") {
-        instructionImage.src = instructionRip;
-        instructionImage.alt = "Icon of Repairing Rip or Tear";
-    }
-    else if (damageType === "Replacing Button") {
-        instructionImage.src = instructionButton;
-        instructionImage.alt = "Icon of Replacing a Button";
-    }
-    else if (damageType === "Fallen Hem") {
-        instructionImage.src = instructionHem;
-        instructionImage.alt = "Icon of Repairing a Fallen Hem";
+    if(damageType && instructionImage) {
+        // set icons for each repair type for additional user feedback 
+        if(damageType === "Broken Zipper") {
+            instructionImage.src = instructionZipper;
+            instructionImage.alt = "Icon of Replacing a Zipper";
+        }
+        else if (damageType === "Rip/Tear/Hole") {
+            instructionImage.src = instructionRip;
+            instructionImage.alt = "Icon of Repairing Rip or Tear";
+        }
+        else if (damageType === "Replacing Button") {
+            instructionImage.src = instructionButton;
+            instructionImage.alt = "Icon of Replacing a Button";
+        }
+        else if (damageType === "Fallen Hem") {
+            instructionImage.src = instructionHem;
+            instructionImage.alt = "Icon of Repairing a Fallen Hem";
+        }
     }
 
     if (storedResult && repairResult) {
@@ -110,6 +112,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+const backButton = document.getElementById("editRepairButton")
+
+if (backButton){
+    backButton.addEventListener("click", () => {
+        history.back();
+    });
+}
+
+const newResult = document.getElementById("newResult")
+
+if (newResult){
+    newResult.addEventListener("click", () => {
+        window.location.href = "repair.html"
+    });
+}
+
+
 
 // change which instructions are displayed 
 document.addEventListener("DOMContentLoaded", () => {

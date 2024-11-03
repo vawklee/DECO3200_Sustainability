@@ -29,11 +29,15 @@
         <main>
             
             <article id="repairAssistantResults">
-                <h1 class="heading">Repair Assistant</h1>
+                <div class="sideBySide">
+                    <h1 class="heading">Repair Assistant</h1>
+                    <button id="newResult" class="greenButton caption">New Result <img class="iconSize" src="images/icons/plus.svg"></button>
+                </div>
                 <div id="resultsBox" class="resultsBox sideBySide">
                     <!-- no alt text as this is set dynamically in js -->
                     <img class="repairIcon" id="repairImage">
                     <p class="caption" id="repairResult"></p>
+                    <button id="editRepairButton" class="caption editButton">Edit<img src="images/icons/edit.svg"  alt="Edit icon"></button>
                 </div>
                 <section class="recommendationContainer">
                     <section class="diyRepairContainer">

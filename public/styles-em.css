@@ -436,8 +436,6 @@ button {
     text-decoration: underline;
 }
 
-
-
 /*-----------------------------------------------
 -
 - RESULTS.HTML
@@ -554,6 +552,20 @@ li {
     height: 100px;
     width: auto;
     margin: 10px;
+}
+
+.editButton {
+    background-color: var(--disabledBackground);
+    max-height: 55px;
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.editButton img {
+    margin-left: 25px;
+    vertical-align: middle;
+    height: 20px;
+    width: auto;
 }
 
 /*-----------------------------------------------
@@ -770,7 +782,9 @@ dialog {
 .sideBySide {
     display: flex;
     flex-direction: row;
-    gap: 20px;  
+    gap: 20px; 
+    justify-content:space-between;
+    align-items: center;
 }
 
 /*-----------------------------------------------
