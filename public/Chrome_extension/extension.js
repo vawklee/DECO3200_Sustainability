@@ -50,7 +50,8 @@ const useCases = {
         description: "Black",
         image: productImage2,
         label: "Alternative",
-        logo: zaraLogo
+        logo: zaraLogo,
+        background: backgroundImage2
       },
       //Product card 2 
       {
@@ -61,7 +62,8 @@ const useCases = {
         description: "Black",
         image: productImage3,
         label: "Alternative",
-        logo: zaraLogo
+        logo: zaraLogo,
+        background: backgroundImage3
       },
       //PRODUCT 3
       {
@@ -86,7 +88,7 @@ const useCases = {
       title: "Low sustainability rating",
       description: "Viscose is water and carbon-intensive.",
       color: "#ffcccb",
-      image: './images/green_skirt_banner.jpg'
+      image: productImage4
     },
     dropdownContent: {
       fabric: "Viscose Fabric:",
@@ -113,7 +115,8 @@ const useCases = {
         description: "Light Green",
         image: productImage5,
         label: "Alternative",
-        logo: hmLogo
+        logo: hmLogo,
+        background: backgroundImage5
       },
       {
         title: "BAMBOO SKIRT",
@@ -123,7 +126,8 @@ const useCases = {
         description: "Light Green",
         image: productImage6,
         label: "Alternative",
-        logo: hmLogo
+        logo: hmLogo,
+        background: backgroundImage6
       },
       {
         title: "BAMBOO SKIRT",
@@ -147,10 +151,15 @@ function getRandomUseCase() {
   return randomKey;
 }
 // Apply the randomly selected use case on extension load
-window.onload = function() {
+// window.onload = function() {
+//   const selectedUseCase = getRandomUseCase();
+//   applyUseCase(selectedUseCase);
+// };
+// Apply the randomly selected use case on extension load
+document.addEventListener("DOMContentLoaded", () => {
   const selectedUseCase = getRandomUseCase();
   applyUseCase(selectedUseCase);
-};
+});
 
 function applyUseCase(useCaseKey) {
   const config = useCases[useCaseKey];
@@ -168,21 +177,48 @@ function applyUseCase(useCaseKey) {
   
     // Update product cards
     updateProductCards(config.productCards);
+  // // Event listeners for "Buy Now" buttons with debug statements
+  // const buyNowButton1 = document.getElementById('buyNowButton1');
+  // const buyNowButton2 = document.getElementById('buyNowButton2');
+  //   // Event listeners for "Buy Now" buttons
+  //   if (buyNowButton1) {
+  //     buyNowButton1.onclick = () => {
+  //       console.log("Buy Now Button 1 clicked");
+  //       setBackgroundImage(config.productCards[0].background || config.backgroundImage);
+  //       updateModalHeader(config.productCards[0].title);
+  //       updateContentForAlternative(config.productCards[0]);
+  //       closeModal();
+  //       changeSustainabilityIcon(config.finalIcon);
+  //     };
+  //   } else {
+  //     console.warn("buyNowButton1 not found");
+  //   }
   
-    // Handle secondhand redirect
-    const redirectButton = document.getElementById('sechandRedirect');
-    redirectButton.onclick = () => {
-      window.location.href = config.secondhandRedirectUrl;
-    };
-    // Set event listeners for Buy Now buttons to change icon
-  document.getElementById('buyNowButton1').onclick = () => {
-    setBackgroundImage(backgroundImage5);
-    changeSustainabilityIcon(config.finalIcon);
-  };
-  document.getElementById('buyNowButton2').onclick = () => {
-    setBackgroundImage(backgroundImage6);
-    changeSustainabilityIcon(config.finalIcon);
-  };
+  //   if (buyNowButton2) {
+  //     buyNowButton2.onclick = () => {
+  //       console.log("Buy Now Button 2 clicked");
+  //       setBackgroundImage(config.productCards[1].background || config.backgroundImage);
+  //       updateModalHeader(config.productCards[1].title);
+  //       updateContentForAlternative(config.productCards[1]);
+  //       closeModal();
+  //       changeSustainabilityIcon(config.finalIcon);
+  //     };
+  //   } else {
+  //     console.warn("buyNowButton2 not found");
+  //   }
+  }
+// Update content based on selected product card
+function updateContentForAlternative(card) {
+  updateSustainabilityBanner("Sustainable Alternative", "Consider secondhand items to reduce waste.", card.image, "#e8f5e9");
+
+  // Show only the secondhand product card
+  document.querySelectorAll('.card').forEach((el, index) => {
+    el.style.display = index === 2 ? 'block' : 'none';
+  });
+
+  // Hide pagination and center the card
+  document.querySelector('.pagination-dots').style.display = 'none';
+  document.querySelector('.scrolling-wrapper').classList.add('centered-card');
 }
 
 // // Immediately set the initial background image and content
@@ -232,6 +268,19 @@ function setBackgroundImage(image) {
         cardElements[index].querySelector('.label img').src = card.logo;
         cardElements[index].querySelector('.label span').innerText = card.label;
         cardElements[index].style.display = 'block';
+
+          // Add event listener for Buy Now button within each card
+      const buyNowButton = cardElements[index].querySelector('.card-footer-btn');
+      if (buyNowButton) {
+        buyNowButton.onclick = () => {
+          console.log(`Buy Now Button ${index + 1} clicked`);
+          setBackgroundImage(card.background || config.backgroundImage);
+          updateModalHeader(card.title);
+          updateContentForAlternative(card);
+          closeModal();
+          changeSustainabilityIcon(config.finalIcon);
+        };
+      }
       }
     });
   }
@@ -336,24 +385,25 @@ function updateContentForAlternative2() {
   document.querySelector('.pagination-dots').style.display = 'none';
   document.querySelector('.scrolling-wrapper').classList.add('centered-card');
 }
-// Event Listeners for "Buy Now" Buttons
-document.getElementById('buyNowButton1').addEventListener('click', function() {
-  setBackgroundImage(backgroundImage2);
-  setSustainableAlternativeDropdownContent();
-  updateModalHeader("Linen Trousers");
-  updateContentForAlternative1();
-  closeModal();
-  changeSustainabilityIcon();
-});
+// // Event Listeners for "Buy Now" Buttons
+// document.getElementById('buyNowButton1').addEventListener('click', function() {
+//   setBackgroundImage(backgroundImage2);
+//   setSustainableAlternativeDropdownContent();
+//   updateModalHeader("Linen Trousers");
+//   updateContentForAlternative1();
+//   closeModal();
+//   changeSustainabilityIcon();
+// });
 
-document.getElementById('buyNowButton2').addEventListener('click', function() {
-  setBackgroundImage(backgroundImage3);
-  setSustainableAlternativeDropdownContent();
-  updateModalHeader("Linen Trousers");
-  updateContentForAlternative2();
-  closeModal();
-  changeSustainabilityIcon();
-});
+
+// document.getElementById('buyNowButton2').addEventListener('click', function() {
+//   setBackgroundImage(backgroundImage3);
+//   setSustainableAlternativeDropdownContent();
+//   updateModalHeader("Linen Trousers");
+//   updateContentForAlternative2();
+//   closeModal();
+//   changeSustainabilityIcon();
+// });
 
 document.getElementById("sustainabilityButton").addEventListener("click", function() {
   document.querySelector(".toggle-container").classList.toggle("panel-open");
