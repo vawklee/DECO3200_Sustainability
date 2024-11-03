@@ -24,12 +24,8 @@ function minimiseNavBar() {
  REPAIR.HTML & UPDATING RESULTS.HTML
 --------------------------------------------------------------------------
 */
-
-
 // repair assistant submission and results 
 // https://www.freecodecamp.org/news/how-to-submit-a-form-with-javascript/
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const repairAssistantForm = document.getElementById("repairAssistantForm");
@@ -76,28 +72,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const storedResult = localStorage.getItem("repairResult");
     const recommendedBlack = document.getElementById("recommendedBlack")
     const recommendedPurple = document.getElementById("recommendedPurple")
-    const damageType = localStorage.getItem("damageType")
-    const instructionImage = document.getElementById("repairImage")
+    // const damageType = localStorage.getItem("damageType")
+    // const instructionImage = document.getElementById("repairImage")
 
-    if(damageType && instructionImage) {
-        // set icons for each repair type for additional user feedback 
-        if(damageType === "Broken Zipper") {
-            instructionImage.src = instructionZipper;
-            instructionImage.alt = "Icon of Replacing a Zipper";
-        }
-        else if (damageType === "Rip/Tear/Hole") {
-            instructionImage.src = instructionRip;
-            instructionImage.alt = "Icon of Repairing Rip or Tear";
-        }
-        else if (damageType === "Replacing Button") {
-            instructionImage.src = instructionButton;
-            instructionImage.alt = "Icon of Replacing a Button";
-        }
-        else if (damageType === "Fallen Hem") {
-            instructionImage.src = instructionHem;
-            instructionImage.alt = "Icon of Repairing a Fallen Hem";
-        }
-    }
+    // if(damageType && instructionImage) {
+    //     // set icons for each repair type for additional user feedback 
+    //     if(damageType === "Broken Zipper") {
+    //         instructionImage.src = instructionZipper;
+    //         instructionImage.alt = "Icon of Replacing a Zipper";
+    //     }
+    //     else if (damageType === "Rip/Tear/Hole") {
+    //         instructionImage.src = instructionRip;
+    //         instructionImage.alt = "Icon of Repairing Rip or Tear";
+    //     }
+    //     else if (damageType === "Replacing Button") {
+    //         instructionImage.src = instructionButton;
+    //         instructionImage.alt = "Icon of Replacing a Button";
+    //     }
+    //     else if (damageType === "Fallen Hem") {
+    //         instructionImage.src = instructionHem;
+    //         instructionImage.alt = "Icon of Repairing a Fallen Hem";
+    //     }
+    // }
 
     if (storedResult && repairResult) {
         // update with the stored result
