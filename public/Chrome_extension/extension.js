@@ -150,16 +150,12 @@ function getRandomUseCase() {
   const randomKey = useCaseKeys[Math.floor(Math.random() * useCaseKeys.length)];
   return randomKey;
 }
-// Apply the randomly selected use case on extension load
-// window.onload = function() {
-//   const selectedUseCase = getRandomUseCase();
-//   applyUseCase(selectedUseCase);
-// };
-// Apply the randomly selected use case on extension load
-document.addEventListener("DOMContentLoaded", () => {
+//Apply the randomly selected use case on extension load
+window.onload = function() {
   const selectedUseCase = getRandomUseCase();
   applyUseCase(selectedUseCase);
-});
+};
+
 
 function applyUseCase(useCaseKey) {
   const config = useCases[useCaseKey];
@@ -176,36 +172,7 @@ function applyUseCase(useCaseKey) {
     updateDropdownContent(config.dropdownContent);
   
     // Update product cards
-    updateProductCards(config.productCards);
-  // // Event listeners for "Buy Now" buttons with debug statements
-  // const buyNowButton1 = document.getElementById('buyNowButton1');
-  // const buyNowButton2 = document.getElementById('buyNowButton2');
-  //   // Event listeners for "Buy Now" buttons
-  //   if (buyNowButton1) {
-  //     buyNowButton1.onclick = () => {
-  //       console.log("Buy Now Button 1 clicked");
-  //       setBackgroundImage(config.productCards[0].background || config.backgroundImage);
-  //       updateModalHeader(config.productCards[0].title);
-  //       updateContentForAlternative(config.productCards[0]);
-  //       closeModal();
-  //       changeSustainabilityIcon(config.finalIcon);
-  //     };
-  //   } else {
-  //     console.warn("buyNowButton1 not found");
-  //   }
-  
-  //   if (buyNowButton2) {
-  //     buyNowButton2.onclick = () => {
-  //       console.log("Buy Now Button 2 clicked");
-  //       setBackgroundImage(config.productCards[1].background || config.backgroundImage);
-  //       updateModalHeader(config.productCards[1].title);
-  //       updateContentForAlternative(config.productCards[1]);
-  //       closeModal();
-  //       changeSustainabilityIcon(config.finalIcon);
-  //     };
-  //   } else {
-  //     console.warn("buyNowButton2 not found");
-  //   }
+    updateProductCards(config.productCards, config);
   }
 // Update content based on selected product card
 function updateContentForAlternative(card) {
@@ -220,12 +187,6 @@ function updateContentForAlternative(card) {
   document.querySelector('.pagination-dots').style.display = 'none';
   document.querySelector('.scrolling-wrapper').classList.add('centered-card');
 }
-
-// // Immediately set the initial background image and content
-// setBackgroundImage(backgroundImage1);
-// updateBannerImage(productImage1);
-// updateContentForDefault();
-//setDefaultDropdownContent(); // Load default dropdown content
 // Utility Functions
 function setBackgroundImage(image) {
   document.body.style.backgroundImage = `url(${image})`;
@@ -255,35 +216,59 @@ function setBackgroundImage(image) {
       <hr>
     `).join('');
   }
-  function updateProductCards(cards) {
+  function updateProductCards(cards, config) {
     const cardElements = document.querySelectorAll('.card');
     cards.forEach((card, index) => {
       if (cardElements[index]) {
+        const imageContainer = cardElements[index].querySelector('.card-image-container');
+        
+        if (imageContainer) {
+          // Remove the existing image container and create a new one
+          imageContainer.innerHTML = '';  // Clear the container
+          const newImageElement = document.createElement('img');
+          newImageElement.src = card.image;
+          newImageElement.alt = `Product image for ${card.title}`;
+          
+          // Append the new image to the container
+          imageContainer.appendChild(newImageElement);
+          console.log(`Replaced image for card ${index + 1} with: ${card.image}`);
+        } else {
+          console.warn(`Image container not found for card ${index + 1}`);
+        }
+  
+        // Update other card details
         cardElements[index].querySelector('.product-title').innerText = card.title;
         cardElements[index].querySelector('.product-price').innerText = card.price;
         cardElements[index].querySelector('.product-details h4:nth-child(1)').innerHTML = `<strong>Size:</strong> ${card.size}`;
         cardElements[index].querySelector('.product-details h4:nth-child(2)').innerHTML = `<strong>Material:</strong> ${card.material}`;
         cardElements[index].querySelector('.product-details h4:nth-child(3)').innerHTML = `<strong>Description:</strong> ${card.description}`;
-        cardElements[index].querySelector('.card-image-container img').src = card.image;
-        cardElements[index].querySelector('.label img').src = card.logo;
-        cardElements[index].querySelector('.label span').innerText = card.label;
-        cardElements[index].style.display = 'block';
-
-          // Add event listener for Buy Now button within each card
-      const buyNowButton = cardElements[index].querySelector('.card-footer-btn');
-      if (buyNowButton) {
-        buyNowButton.onclick = () => {
-          console.log(`Buy Now Button ${index + 1} clicked`);
-          setBackgroundImage(card.background || config.backgroundImage);
-          updateModalHeader(card.title);
-          updateContentForAlternative(card);
-          closeModal();
-          changeSustainabilityIcon(config.finalIcon);
-        };
-      }
+        
+        const logoElement = cardElements[index].querySelector('.label img');
+        if (logoElement) {
+          logoElement.src = card.logo;
+          console.log(`Set logo for card ${index + 1} to: ${card.logo}`);
+        } else {
+          console.warn(`Logo element not found for card ${index + 1}`);
+        }
+  
+        // Add "Buy Now" button functionality
+        const buyNowButton = cardElements[index].querySelector('.card-footer-btn');
+        if (buyNowButton) {
+          buyNowButton.onclick = () => {
+            console.log(`Buy Now Button ${index + 1} clicked`);
+            setBackgroundImage(card.background || config.backgroundImage);
+            updateModalHeader(card.title);
+            updateContentForAlternative(card);
+            closeModal();
+            changeSustainabilityIcon(config.finalIcon);
+          };
+        } else {
+          console.warn(`Buy Now button not found for card ${index + 1}`);
+        }
       }
     });
   }
+  
 function updateBannerImage(image) {
   document.getElementById('bannerImage').src = image;
 }
@@ -306,11 +291,6 @@ document.querySelector(".side-panel-toggle").addEventListener("click", function(
       sustainabilityIcon.src = sustainabilityIconNeutral;
     }
   }
-// Function to update the modal header
-// function updateModalHeader(newHeaderText) {
-//   const modalHeader = document.getElementById('modalHeader');
-//   modalHeader.innerText = newHeaderText;
-// }
 
 // Function to set sustainable alternative 1 dropdown content
 function setSustainableAlternativeDropdownContent() {
@@ -332,14 +312,6 @@ function setSustainableAlternativeDropdownContent() {
     <p>Linen has a lower carbon footprint due to fewer pesticide and fertilizer requirements.</p>
   `;
 }
-//   // Function to update default content (initial view)
-// function updateSustainabilityBanner(title, description, image, color) {
-//   document.getElementById('bannerTitle').innerText = title;
-//   document.getElementById('bannerDescription').innerText = description;
-//   document.getElementById('sustainabilityBanner').style.backgroundColor = color;
-//   document.getElementById('bannerImage').src = image;
-// }
-
 
 function updateContentForDefault() {
   // Reset banner content
@@ -385,25 +357,6 @@ function updateContentForAlternative2() {
   document.querySelector('.pagination-dots').style.display = 'none';
   document.querySelector('.scrolling-wrapper').classList.add('centered-card');
 }
-// // Event Listeners for "Buy Now" Buttons
-// document.getElementById('buyNowButton1').addEventListener('click', function() {
-//   setBackgroundImage(backgroundImage2);
-//   setSustainableAlternativeDropdownContent();
-//   updateModalHeader("Linen Trousers");
-//   updateContentForAlternative1();
-//   closeModal();
-//   changeSustainabilityIcon();
-// });
-
-
-// document.getElementById('buyNowButton2').addEventListener('click', function() {
-//   setBackgroundImage(backgroundImage3);
-//   setSustainableAlternativeDropdownContent();
-//   updateModalHeader("Linen Trousers");
-//   updateContentForAlternative2();
-//   closeModal();
-//   changeSustainabilityIcon();
-// });
 
 document.getElementById("sustainabilityButton").addEventListener("click", function() {
   document.querySelector(".toggle-container").classList.toggle("panel-open");
